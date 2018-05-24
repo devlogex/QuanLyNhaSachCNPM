@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9E5D7581-8DFC-4ECF-B89A-F6A9D6481029}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QuanLyNhaSach</RootNamespace>
+    <AssemblyName>QuanLyNhaSach</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FBill.Designer.cs">
+      <DependentUpon>FBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FManage.Designer.cs">
+      <DependentUpon>FManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FImportBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FImportBook.Designer.cs">
+      <DependentUpon>FImportBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FListBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FListBill.Designer.cs">
+      <DependentUpon>FListBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FListImportBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FListImportBook.Designer.cs">
+      <DependentUpon>FListImportBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FManageBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FManageBook.Designer.cs">
+      <DependentUpon>FManageBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FReceipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FReceipt.Designer.cs">
+      <DependentUpon>FReceipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FReportBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FReportBook.Designer.cs">
+      <DependentUpon>FReportBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FReportDebt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FReportDebt.Designer.cs">
+      <DependentUpon>FReportDebt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FBill.resx">
+      <DependentUpon>FBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FListBill.resx">
+      <DependentUpon>FListBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FManage.resx">
+      <DependentUpon>FManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FImportBook.resx">
+      <DependentUpon>FImportBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FListImportBook.resx">
+      <DependentUpon>FListImportBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FManageBook.resx">
+      <DependentUpon>FManageBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FReceipt.resx">
+      <DependentUpon>FReceipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FReportBook.resx">
+      <DependentUpon>FReportBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FReportDebt.resx">
+      <DependentUpon>FReportDebt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Double Down_16px.png" />
+    <Content Include="Resources\f4408a5c77ebaa90931ba19539718bb2.jpg" />
+    <Content Include="Resources\mau-slide-powerpoint-dep-031.png" />
+    <Content Include="Resources\my-journal-powerpoint-backgrounds.jpg" />
+    <Content Include="Resources\school-education-powerpoint-templates-presentation-9365-ppt-background-images-coloring-download-as-zip-4f.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
