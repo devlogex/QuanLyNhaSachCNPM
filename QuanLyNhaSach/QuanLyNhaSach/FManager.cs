@@ -42,7 +42,8 @@ namespace QuanLyNhaSach
 
         private void lbManageCustomer_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            FManageCustomer f = new FManageCustomer();
+            f.ShowDialog();
         }
     }
 }

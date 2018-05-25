@@ -96,6 +96,12 @@
     <Compile Include="FAddCategory.designer.cs">
       <DependentUpon>FAddCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="FAddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAddCustomer.designer.cs">
+      <DependentUpon>FAddCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="FBill.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,12 @@
     </Compile>
     <Compile Include="FManageCategoryAndAuthor.Designer.cs">
       <DependentUpon>FManageCategoryAndAuthor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FManageCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FManageCustomer.Designer.cs">
+      <DependentUpon>FManageCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="FManager.cs">
       <SubType>Form</SubType>
@@ -180,6 +192,12 @@
     <Compile Include="FUpdateCategory.designer.cs">
       <DependentUpon>FUpdateCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="FUpdateCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FUpdateCustomer.designer.cs">
+      <DependentUpon>FUpdateCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FAddAuthor.resx">
@@ -190,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FAddCategory.resx">
       <DependentUpon>FAddCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FAddCustomer.resx">
+      <DependentUpon>FAddCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FBill.resx">
       <DependentUpon>FBill.cs</DependentUpon>
@@ -202,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FManageCategoryAndAuthor.resx">
       <DependentUpon>FManageCategoryAndAuthor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FManageCustomer.resx">
+      <DependentUpon>FManageCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FManager.resx">
       <DependentUpon>FManager.cs</DependentUpon>
@@ -232,6 +256,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FUpdateCategory.resx">
       <DependentUpon>FUpdateCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FUpdateCustomer.resx">
+      <DependentUpon>FUpdateCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
