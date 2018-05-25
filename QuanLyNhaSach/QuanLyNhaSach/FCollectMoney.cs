@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyNhaSach
 {
-    public partial class FReceipt : Form
+    public partial class FCollectMoney : Form
     {
-        public FReceipt()
+        public FCollectMoney()
         {
             InitializeComponent();
         }

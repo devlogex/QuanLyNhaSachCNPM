@@ -46,17 +46,79 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\AuthorDAO.cs" />
+    <Compile Include="DAO\BillDAO.cs" />
+    <Compile Include="DAO\BillInfoDAO.cs" />
+    <Compile Include="DAO\BookDAO.cs" />
+    <Compile Include="DAO\BookTitleDAO.cs" />
+    <Compile Include="DAO\CategoryBookDAO.cs" />
+    <Compile Include="DAO\CollectMoneyDAO.cs" />
+    <Compile Include="DAO\CustomerDAO.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\ImportBookDAO.cs" />
+    <Compile Include="DAO\ImportBookInfoDAO.cs" />
+    <Compile Include="DAO\ReportCountDAO.cs" />
+    <Compile Include="DAO\ReportCountInfoDAO.cs" />
+    <Compile Include="DAO\ReportOweDAO.cs" />
+    <Compile Include="DAO\ReportOweInfoDAO.cs" />
+    <Compile Include="DAO\ThamSoDAO.cs" />
+    <Compile Include="DTO\Account.cs" />
+    <Compile Include="DTO\Author.cs" />
+    <Compile Include="DTO\Bill.cs" />
+    <Compile Include="DTO\BillInfo.cs" />
+    <Compile Include="DTO\Book.cs" />
+    <Compile Include="DTO\BookTitle.cs" />
+    <Compile Include="DTO\CategoryBook.cs" />
+    <Compile Include="DTO\CollectMoney.cs" />
+    <Compile Include="DTO\Customer.cs" />
+    <Compile Include="DTO\ImportBook.cs" />
+    <Compile Include="DTO\ImportBookInfo.cs" />
+    <Compile Include="DTO\ReportCount.cs" />
+    <Compile Include="DTO\ReportCountInfo.cs" />
+    <Compile Include="DTO\ReportOwe.cs" />
+    <Compile Include="DTO\ReportOweInfo.cs" />
+    <Compile Include="FAddAuthor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAddAuthor.designer.cs">
+      <DependentUpon>FAddAuthor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FAddBookTitle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAddBookTitle.designer.cs">
+      <DependentUpon>FAddBookTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FAddCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAddCategory.designer.cs">
+      <DependentUpon>FAddCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="FBill.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FBill.Designer.cs">
       <DependentUpon>FBill.cs</DependentUpon>
     </Compile>
-    <Compile Include="FManage.cs">
+    <Compile Include="FLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FManage.Designer.cs">
-      <DependentUpon>FManage.cs</DependentUpon>
+    <Compile Include="FLogin.designer.cs">
+      <DependentUpon>FLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FManageCategoryAndAuthor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FManageCategoryAndAuthor.Designer.cs">
+      <DependentUpon>FManageCategoryAndAuthor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FManager.Designer.cs">
+      <DependentUpon>FManager.cs</DependentUpon>
     </Compile>
     <Compile Include="FImportBook.cs">
       <SubType>Form</SubType>
@@ -76,17 +138,17 @@
     <Compile Include="FListImportBook.Designer.cs">
       <DependentUpon>FListImportBook.cs</DependentUpon>
     </Compile>
-    <Compile Include="FManageBook.cs">
+    <Compile Include="FManageBookTitle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FManageBook.Designer.cs">
-      <DependentUpon>FManageBook.cs</DependentUpon>
+    <Compile Include="FManageBookTitle.Designer.cs">
+      <DependentUpon>FManageBookTitle.cs</DependentUpon>
     </Compile>
-    <Compile Include="FReceipt.cs">
+    <Compile Include="FCollectMoney.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FReceipt.Designer.cs">
-      <DependentUpon>FReceipt.cs</DependentUpon>
+    <Compile Include="FCollectMoney.Designer.cs">
+      <DependentUpon>FCollectMoney.cs</DependentUpon>
     </Compile>
     <Compile Include="FReportBook.cs">
       <SubType>Form</SubType>
@@ -94,22 +156,49 @@
     <Compile Include="FReportBook.Designer.cs">
       <DependentUpon>FReportBook.cs</DependentUpon>
     </Compile>
-    <Compile Include="FReportDebt.cs">
+    <Compile Include="FReportOwe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FReportDebt.Designer.cs">
-      <DependentUpon>FReportDebt.cs</DependentUpon>
+    <Compile Include="FReportOwe.Designer.cs">
+      <DependentUpon>FReportOwe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FUpdateAuthor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FUpdateAuthor.designer.cs">
+      <DependentUpon>FUpdateAuthor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FUpdateCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FUpdateCategory.designer.cs">
+      <DependentUpon>FUpdateCategory.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FAddAuthor.resx">
+      <DependentUpon>FAddAuthor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FAddBookTitle.resx">
+      <DependentUpon>FAddBookTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FAddCategory.resx">
+      <DependentUpon>FAddCategory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FBill.resx">
       <DependentUpon>FBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FListBill.resx">
       <DependentUpon>FListBill.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FManage.resx">
-      <DependentUpon>FManage.cs</DependentUpon>
+    <EmbeddedResource Include="FLogin.resx">
+      <DependentUpon>FLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FManageCategoryAndAuthor.resx">
+      <DependentUpon>FManageCategoryAndAuthor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FManager.resx">
+      <DependentUpon>FManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FImportBook.resx">
       <DependentUpon>FImportBook.cs</DependentUpon>
@@ -117,17 +206,23 @@
     <EmbeddedResource Include="FListImportBook.resx">
       <DependentUpon>FListImportBook.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FManageBook.resx">
-      <DependentUpon>FManageBook.cs</DependentUpon>
+    <EmbeddedResource Include="FManageBookTitle.resx">
+      <DependentUpon>FManageBookTitle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FReceipt.resx">
-      <DependentUpon>FReceipt.cs</DependentUpon>
+    <EmbeddedResource Include="FCollectMoney.resx">
+      <DependentUpon>FCollectMoney.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FReportBook.resx">
       <DependentUpon>FReportBook.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FReportDebt.resx">
-      <DependentUpon>FReportDebt.cs</DependentUpon>
+    <EmbeddedResource Include="FReportOwe.resx">
+      <DependentUpon>FReportOwe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FUpdateAuthor.resx">
+      <DependentUpon>FUpdateAuthor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FUpdateCategory.resx">
+      <DependentUpon>FUpdateCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

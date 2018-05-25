@@ -1,6 +1,6 @@
 ﻿namespace QuanLyNhaSach
 {
-    partial class FReportDebt
+    partial class FReportOwe
     {
         /// <summary>
         /// Required designer variable.

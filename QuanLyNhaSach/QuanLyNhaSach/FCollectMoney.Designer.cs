@@ -1,6 +1,6 @@
 ﻿namespace QuanLyNhaSach
 {
-    partial class FReceipt
+    partial class FCollectMoney
     {
         /// <summary>
         /// Required designer variable.

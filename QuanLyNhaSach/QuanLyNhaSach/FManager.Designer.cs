@@ -1,6 +1,6 @@
 ﻿namespace QuanLyNhaSach
 {
-    partial class FManage
+    partial class FManager
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FManage));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FManager));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -41,6 +41,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.linkLabel7 = new System.Windows.Forms.LinkLabel();
             this.linkLabel9 = new System.Windows.Forms.LinkLabel();
+            this.label3 = new System.Windows.Forms.Label();
             this.linkLabel10 = new System.Windows.Forms.LinkLabel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -52,18 +53,16 @@
             this.linkLabel16 = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.lbManageBookTitle = new System.Windows.Forms.LinkLabel();
+            this.lbManageCategoryAndAuthor = new System.Windows.Forms.LinkLabel();
+            this.lbManageCustomer = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.tàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tàiKhoảnToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label3 = new System.Windows.Forms.Label();
+            this.itemDisplayName = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemAccount = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemLogOut = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemExit = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -220,6 +219,17 @@
             this.linkLabel9.TabStop = true;
             this.linkLabel9.Text = "Lập phiếu thu tiền";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Olive;
+            this.label3.Location = new System.Drawing.Point(130, 1);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(109, 22);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Kinh doanh";
+            // 
             // linkLabel10
             // 
             this.linkLabel10.AutoSize = true;
@@ -334,10 +344,9 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
-            this.panel4.Controls.Add(this.linkLabel2);
-            this.panel4.Controls.Add(this.linkLabel4);
-            this.panel4.Controls.Add(this.linkLabel3);
-            this.panel4.Controls.Add(this.linkLabel1);
+            this.panel4.Controls.Add(this.lbManageBookTitle);
+            this.panel4.Controls.Add(this.lbManageCategoryAndAuthor);
+            this.panel4.Controls.Add(this.lbManageCustomer);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Location = new System.Drawing.Point(58, 54);
@@ -345,49 +354,41 @@
             this.panel4.Size = new System.Drawing.Size(358, 116);
             this.panel4.TabIndex = 1;
             // 
-            // linkLabel2
+            // lbManageBookTitle
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.Location = new System.Drawing.Point(131, 23);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(86, 17);
-            this.linkLabel2.TabIndex = 2;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Quản lý sách";
+            this.lbManageBookTitle.AutoSize = true;
+            this.lbManageBookTitle.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbManageBookTitle.Location = new System.Drawing.Point(131, 23);
+            this.lbManageBookTitle.Name = "lbManageBookTitle";
+            this.lbManageBookTitle.Size = new System.Drawing.Size(113, 17);
+            this.lbManageBookTitle.TabIndex = 2;
+            this.lbManageBookTitle.TabStop = true;
+            this.lbManageBookTitle.Text = "Quản lý đầu sách";
+            this.lbManageBookTitle.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbManageBookTitle_LinkClicked);
             // 
-            // linkLabel4
+            // lbManageCategoryAndAuthor
             // 
-            this.linkLabel4.AutoSize = true;
-            this.linkLabel4.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel4.Location = new System.Drawing.Point(129, 90);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(100, 17);
-            this.linkLabel4.TabIndex = 2;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "Quản lý tác giả";
+            this.lbManageCategoryAndAuthor.AutoSize = true;
+            this.lbManageCategoryAndAuthor.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbManageCategoryAndAuthor.Location = new System.Drawing.Point(130, 68);
+            this.lbManageCategoryAndAuthor.Name = "lbManageCategoryAndAuthor";
+            this.lbManageCategoryAndAuthor.Size = new System.Drawing.Size(163, 17);
+            this.lbManageCategoryAndAuthor.TabIndex = 2;
+            this.lbManageCategoryAndAuthor.TabStop = true;
+            this.lbManageCategoryAndAuthor.Text = "Quản lý thể loại && tác giả";
+            this.lbManageCategoryAndAuthor.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbManageCategoryAndAuthor_LinkClicked);
             // 
-            // linkLabel3
+            // lbManageCustomer
             // 
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel3.Location = new System.Drawing.Point(130, 68);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(105, 17);
-            this.linkLabel3.TabIndex = 2;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "Quản lý thể loại";
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(130, 44);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(130, 17);
-            this.linkLabel1.TabIndex = 2;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Quản lý khách hàng";
+            this.lbManageCustomer.AutoSize = true;
+            this.lbManageCustomer.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbManageCustomer.Location = new System.Drawing.Point(130, 44);
+            this.lbManageCustomer.Name = "lbManageCustomer";
+            this.lbManageCustomer.Size = new System.Drawing.Size(130, 17);
+            this.lbManageCustomer.TabIndex = 2;
+            this.lbManageCustomer.TabStop = true;
+            this.lbManageCustomer.Text = "Quản lý khách hàng";
+            this.lbManageCustomer.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbManageCustomer_LinkClicked);
             // 
             // label1
             // 
@@ -416,62 +417,51 @@
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tàiKhoảnToolStripMenuItem});
+            this.itemDisplayName});
             this.menuStrip1.Location = new System.Drawing.Point(773, 3);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(103, 27);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // tàiKhoảnToolStripMenuItem
+            // itemDisplayName
             // 
-            this.tàiKhoảnToolStripMenuItem.BackColor = System.Drawing.Color.Gray;
-            this.tàiKhoảnToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tàiKhoảnToolStripMenuItem1,
-            this.đăngXuấtToolStripMenuItem,
-            this.thoátToolStripMenuItem});
-            this.tàiKhoảnToolStripMenuItem.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tàiKhoảnToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.tàiKhoảnToolStripMenuItem.Name = "tàiKhoảnToolStripMenuItem";
-            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(95, 23);
-            this.tàiKhoảnToolStripMenuItem.Text = "Tài khoản";
+            this.itemDisplayName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
+            this.itemDisplayName.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.itemAccount,
+            this.itemLogOut,
+            this.itemExit});
+            this.itemDisplayName.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.itemDisplayName.ForeColor = System.Drawing.Color.Blue;
+            this.itemDisplayName.Name = "itemDisplayName";
+            this.itemDisplayName.Size = new System.Drawing.Size(95, 23);
+            this.itemDisplayName.Text = "Tài khoản";
             // 
-            // tàiKhoảnToolStripMenuItem1
+            // itemAccount
             // 
-            this.tàiKhoảnToolStripMenuItem1.BackColor = System.Drawing.Color.Gray;
-            this.tàiKhoảnToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
-            this.tàiKhoảnToolStripMenuItem1.Name = "tàiKhoảnToolStripMenuItem1";
-            this.tàiKhoảnToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
-            this.tàiKhoảnToolStripMenuItem1.Text = "Tài khoản";
+            this.itemAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
+            this.itemAccount.ForeColor = System.Drawing.Color.Blue;
+            this.itemAccount.Name = "itemAccount";
+            this.itemAccount.Size = new System.Drawing.Size(180, 24);
+            this.itemAccount.Text = "Tài khoản";
             // 
-            // đăngXuấtToolStripMenuItem
+            // itemLogOut
             // 
-            this.đăngXuấtToolStripMenuItem.BackColor = System.Drawing.Color.Gray;
-            this.đăngXuấtToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
+            this.itemLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
+            this.itemLogOut.ForeColor = System.Drawing.Color.Blue;
+            this.itemLogOut.Name = "itemLogOut";
+            this.itemLogOut.Size = new System.Drawing.Size(180, 24);
+            this.itemLogOut.Text = "Đăng xuất";
             // 
-            // thoátToolStripMenuItem
+            // itemExit
             // 
-            this.thoátToolStripMenuItem.BackColor = System.Drawing.Color.Gray;
-            this.thoátToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.thoátToolStripMenuItem.Text = "Thoát";
+            this.itemExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
+            this.itemExit.ForeColor = System.Drawing.Color.Blue;
+            this.itemExit.Name = "itemExit";
+            this.itemExit.Size = new System.Drawing.Size(180, 24);
+            this.itemExit.Text = "Thoát";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Olive;
-            this.label3.Location = new System.Drawing.Point(130, 1);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 22);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Kinh doanh";
-            // 
-            // FManage
+            // FManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -482,7 +472,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "FManage";
+            this.Name = "FManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý nhà sách";
             this.panel1.ResumeLayout(false);
@@ -515,10 +505,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.LinkLabel linkLabel4;
-        private System.Windows.Forms.LinkLabel linkLabel3;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel lbManageBookTitle;
+        private System.Windows.Forms.LinkLabel lbManageCategoryAndAuthor;
+        private System.Windows.Forms.LinkLabel lbManageCustomer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label6;
@@ -538,10 +527,10 @@
         private System.Windows.Forms.LinkLabel linkLabel16;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem tàiKhoảnToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tàiKhoảnToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem itemDisplayName;
+        private System.Windows.Forms.ToolStripMenuItem itemAccount;
+        private System.Windows.Forms.ToolStripMenuItem itemLogOut;
+        private System.Windows.Forms.ToolStripMenuItem itemExit;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;

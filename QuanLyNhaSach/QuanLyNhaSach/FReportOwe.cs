@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyNhaSach
 {
-    public partial class FManage : Form
+    public partial class FReportOwe : Form
     {
-        public FManage()
+        public FReportOwe()
         {
             InitializeComponent();
         }

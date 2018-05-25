@@ -429,3 +429,4 @@ BEGIN
 	WHERE MaKhachHang=@id
 END
 GO
+
