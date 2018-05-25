@@ -31,19 +31,19 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnRemoveBookTitle = new System.Windows.Forms.Button();
+            this.btnUpdateBookTitle = new System.Windows.Forms.Button();
+            this.btnAddBookTitle = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dtgvManageBookTitle = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.author = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.countVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAddBookTitle = new System.Windows.Forms.Button();
-            this.btnUpdateBookTitle = new System.Windows.Forms.Button();
-            this.btnRemoveBookTitle = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -84,6 +84,46 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(868, 15);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.TabIndex = 0;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnRemoveBookTitle
+            // 
+            this.btnRemoveBookTitle.Location = new System.Drawing.Point(275, 15);
+            this.btnRemoveBookTitle.Name = "btnRemoveBookTitle";
+            this.btnRemoveBookTitle.Size = new System.Drawing.Size(75, 23);
+            this.btnRemoveBookTitle.TabIndex = 0;
+            this.btnRemoveBookTitle.Text = "Xóa";
+            this.btnRemoveBookTitle.UseVisualStyleBackColor = true;
+            this.btnRemoveBookTitle.Click += new System.EventHandler(this.btnRemoveBookTitle_Click);
+            // 
+            // btnUpdateBookTitle
+            // 
+            this.btnUpdateBookTitle.Location = new System.Drawing.Point(161, 15);
+            this.btnUpdateBookTitle.Name = "btnUpdateBookTitle";
+            this.btnUpdateBookTitle.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateBookTitle.TabIndex = 0;
+            this.btnUpdateBookTitle.Text = "Cập nhật";
+            this.btnUpdateBookTitle.UseVisualStyleBackColor = true;
+            this.btnUpdateBookTitle.Click += new System.EventHandler(this.btnUpdateBookTitle_Click);
+            // 
+            // btnAddBookTitle
+            // 
+            this.btnAddBookTitle.Location = new System.Drawing.Point(54, 15);
+            this.btnAddBookTitle.Name = "btnAddBookTitle";
+            this.btnAddBookTitle.Size = new System.Drawing.Size(75, 23);
+            this.btnAddBookTitle.TabIndex = 0;
+            this.btnAddBookTitle.Text = "Thêm";
+            this.btnAddBookTitle.UseVisualStyleBackColor = true;
+            this.btnAddBookTitle.Click += new System.EventHandler(this.btnAddBookTitle_Click);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dtgvManageBookTitle);
@@ -104,8 +144,8 @@
             this.dtgvManageBookTitle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvManageBookTitle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
-            this.ID,
-            this.nameBook,
+            this.id,
+            this.name,
             this.category,
             this.author,
             this.countVersion,
@@ -125,21 +165,21 @@
             this.STT.Name = "STT";
             this.STT.ReadOnly = true;
             // 
-            // ID
+            // id
             // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ID.DataPropertyName = "id";
-            this.ID.HeaderText = "Mã  đầu sách";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "Mã đầu sách";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
             // 
-            // nameBook
+            // name
             // 
-            this.nameBook.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameBook.DataPropertyName = "name";
-            this.nameBook.HeaderText = "Tên đầu sách";
-            this.nameBook.Name = "nameBook";
-            this.nameBook.ReadOnly = true;
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Tên đầu sách";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
             // 
             // category
             // 
@@ -172,44 +212,6 @@
             this.totalCount.HeaderText = "Tổng lượng tồn";
             this.totalCount.Name = "totalCount";
             this.totalCount.ReadOnly = true;
-            // 
-            // btnAddBookTitle
-            // 
-            this.btnAddBookTitle.Location = new System.Drawing.Point(54, 15);
-            this.btnAddBookTitle.Name = "btnAddBookTitle";
-            this.btnAddBookTitle.Size = new System.Drawing.Size(75, 23);
-            this.btnAddBookTitle.TabIndex = 0;
-            this.btnAddBookTitle.Text = "Thêm";
-            this.btnAddBookTitle.UseVisualStyleBackColor = true;
-            this.btnAddBookTitle.Click += new System.EventHandler(this.btnAddBookTitle_Click);
-            // 
-            // btnUpdateBookTitle
-            // 
-            this.btnUpdateBookTitle.Location = new System.Drawing.Point(161, 15);
-            this.btnUpdateBookTitle.Name = "btnUpdateBookTitle";
-            this.btnUpdateBookTitle.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdateBookTitle.TabIndex = 0;
-            this.btnUpdateBookTitle.Text = "Cập nhật";
-            this.btnUpdateBookTitle.UseVisualStyleBackColor = true;
-            // 
-            // btnRemoveBookTitle
-            // 
-            this.btnRemoveBookTitle.Location = new System.Drawing.Point(275, 15);
-            this.btnRemoveBookTitle.Name = "btnRemoveBookTitle";
-            this.btnRemoveBookTitle.Size = new System.Drawing.Size(75, 23);
-            this.btnRemoveBookTitle.TabIndex = 0;
-            this.btnRemoveBookTitle.Text = "Xóa";
-            this.btnRemoveBookTitle.UseVisualStyleBackColor = true;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Location = new System.Drawing.Point(868, 15);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
-            this.btnExit.TabIndex = 0;
-            this.btnExit.Text = "Thoát";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FManageBookTitle
             // 
@@ -244,8 +246,8 @@
         private System.Windows.Forms.Button btnAddBookTitle;
         private System.Windows.Forms.DataGridView dtgvManageBookTitle;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameBook;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn category;
         private System.Windows.Forms.DataGridViewTextBoxColumn author;
         private System.Windows.Forms.DataGridViewTextBoxColumn countVersion;
