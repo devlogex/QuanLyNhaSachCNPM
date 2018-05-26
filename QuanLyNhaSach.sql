@@ -430,5 +430,33 @@ BEGIN
 END
 GO
 
+CREATE PROC USP_GetNewIDImportBook
+AS
+BEGIN
+	SELECT MAX(SoPhieuNhap)+1 FROM PHIEUNHAPSACH
+END
+GO
 
+CREATE PROC USP_GetPublishingByBookTitleID
+@id INT
+AS
+BEGIN
+	SELECT NhaXuatBan as publishCompany,NamXuatBan as publishYear FROM SACH WHERE MaDauSach=@id
+END
+GO
 
+CREATE PROC USP_AddBook
+@idBookTitle INT,
+@publishCompany NVARCHAR(100),
+@publishYear INT
+AS
+BEGIN
+	INSERT SACH(MaDauSach,NhaXuatBan,NamXuatBan,SoLuongTon,DonGiaNhap)VALUES(
+	@idBookTitle,
+	@publishCompany,
+	@publishYear,
+	0,
+	0
+	)
+END
+GO

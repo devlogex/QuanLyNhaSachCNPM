@@ -32,10 +32,11 @@ namespace QuanLyNhaSach.DAO
 
                 string author = "";
                 DataTable tableAuthor = DataProvider.Instance.ExecuteQuery("EXEC USP_GetAuthorsByBookTitleID @id", new object[] { id });
-                foreach (DataRow row in tableAuthor.Rows)
+                for(int j=0;j<tableAuthor.Rows.Count-1;j++)
                 {
-                    author += row["name"].ToString() + ", ";
+                    author += tableAuthor.Rows[j]["name"].ToString() + ", ";
                 }
+                author += tableAuthor.Rows[tableAuthor.Rows.Count - 1]["name"].ToString();
                 data.Rows[i]["author"] = author;
 
                 DataTable tableCountVerion = DataProvider.Instance.ExecuteQuery("EXEC USP_GetCountVersionByBookTitleID @id", new object[] { id });
@@ -98,5 +99,8 @@ namespace QuanLyNhaSach.DAO
         {
             return DataProvider.Instance.ExecuteNonQuery("EXEC USP_RemoveBookTitleByBookTitleID @id", new object[] { id }) > 0;
         }
+       
     }
 }
+
+

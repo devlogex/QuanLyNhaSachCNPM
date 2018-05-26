@@ -34,9 +34,9 @@ namespace QuanLyNhaSach
 
             int index = -1;
             int i = 0;
-            foreach(CategoryBook item in cbCategory.Items)
+            foreach (CategoryBook item in cbCategory.Items)
             {
-                if(item.ID==BookTitle.IdCategory)
+                if (item.ID == BookTitle.IdCategory)
                 {
                     index = i;
                     break;

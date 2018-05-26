@@ -162,6 +162,12 @@
     <Compile Include="FCollectMoney.Designer.cs">
       <DependentUpon>FCollectMoney.cs</DependentUpon>
     </Compile>
+    <Compile Include="FPublishing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FPublishing.Designer.cs">
+      <DependentUpon>FPublishing.cs</DependentUpon>
+    </Compile>
     <Compile Include="FReportBook.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FCollectMoney.resx">
       <DependentUpon>FCollectMoney.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FPublishing.resx">
+      <DependentUpon>FPublishing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FReportBook.resx">
       <DependentUpon>FReportBook.cs</DependentUpon>
