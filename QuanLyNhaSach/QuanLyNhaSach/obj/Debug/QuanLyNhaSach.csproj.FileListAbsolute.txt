@@ -22,7 +22,6 @@ C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\ob
 C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FManager.resources
 C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FImportBook.resources
 C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FListImportBook.resources
-C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FCollectMoney.resources
 C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FReportBook.resources
 C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FReportOwe.resources
 C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Properties.Resources.resources
@@ -41,4 +40,4 @@ C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\ob
 C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FManageCustomer.resources
 C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FAddCustomer.resources
 C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FUpdateCustomer.resources
-C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FPublishing.resources
+C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FReceipt.resources

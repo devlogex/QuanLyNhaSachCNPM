@@ -460,3 +460,20 @@ BEGIN
 	)
 END
 GO
+
+CREATE PROC USP_GetListBook
+AS
+BEGIN
+	SELECT s.MaSach as id,s.MaDauSach as idBookTitle,d.TenDauSach as name,s.NhaXuatBan as publishCompany,s.NamXuatBan as publishYear,s.SoLuongTon as count,s.DonGiaNhap as priceIn
+	FROM SACH s, DAUSACH d
+	WHERE S.MaDauSach=D.MaDauSach
+END
+GO
+
+CREATE PROC USP_GetCategoryBookByBookTitleID
+@id INT
+AS
+BEGIN
+	SELECT th.MaTheLoai as id,th.TenTheLoai as name FROM THELOAISACH th,DAUSACH d WHERE th.MaTheLoai=d.MaTheLoai
+END
+GO

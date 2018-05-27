@@ -28,18 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lb = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnAddBookTitle = new System.Windows.Forms.Button();
-            this.btnHistoryImport = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnPrintImport = new System.Windows.Forms.Button();
-            this.btnAddImport = new System.Windows.Forms.Button();
             this.btnSaveImport = new System.Windows.Forms.Button();
+            this.btnAddBook = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txbPublishYear = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cbIDBookTitle = new System.Windows.Forms.ComboBox();
+            this.txbIDBook = new System.Windows.Forms.TextBox();
+            this.txbPublishCompany = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.btnAddBookTitle = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.txbAuthor = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txbNameBookTitle = new System.Windows.Forms.TextBox();
+            this.txbIDBookTitle = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txbTotalPrice = new System.Windows.Forms.TextBox();
             this.txbIDImportBook = new System.Windows.Forms.TextBox();
@@ -58,10 +75,12 @@
             this.count = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ttAdd = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvImportBook)).BeginInit();
@@ -89,8 +108,11 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.lb);
-            this.panel2.Controls.Add(this.groupBox4);
             this.panel2.Controls.Add(this.groupBox3);
+            this.panel2.Controls.Add(this.btnAddBook);
+            this.panel2.Controls.Add(this.groupBox4);
+            this.panel2.Controls.Add(this.btnAddBookTitle);
+            this.panel2.Controls.Add(this.groupBox5);
             this.panel2.Controls.Add(this.groupBox2);
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -102,55 +124,28 @@
             // lb
             // 
             this.lb.AutoSize = true;
-            this.lb.Location = new System.Drawing.Point(20, 403);
+            this.lb.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb.Location = new System.Drawing.Point(12, 404);
             this.lb.Name = "lb";
-            this.lb.Size = new System.Drawing.Size(427, 13);
-            this.lb.TabIndex = 8;
+            this.lb.Size = new System.Drawing.Size(544, 17);
+            this.lb.TabIndex = 15;
             this.lb.Text = "*Chỉ nhập các sách có số lượng tồn nhỏ hơn 300. Số lượng nhập lớn hơn hoặc bằng 1" +
     "50";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.btnAddBookTitle);
-            this.groupBox4.Controls.Add(this.btnHistoryImport);
-            this.groupBox4.Location = new System.Drawing.Point(616, 6);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(321, 112);
-            this.groupBox4.TabIndex = 7;
-            this.groupBox4.TabStop = false;
-            // 
-            // btnAddBookTitle
-            // 
-            this.btnAddBookTitle.Location = new System.Drawing.Point(6, 26);
-            this.btnAddBookTitle.Name = "btnAddBookTitle";
-            this.btnAddBookTitle.Size = new System.Drawing.Size(309, 36);
-            this.btnAddBookTitle.TabIndex = 0;
-            this.btnAddBookTitle.Text = "Thêm đầu sách mới";
-            this.btnAddBookTitle.UseVisualStyleBackColor = true;
-            // 
-            // btnHistoryImport
-            // 
-            this.btnHistoryImport.Location = new System.Drawing.Point(6, 68);
-            this.btnHistoryImport.Name = "btnHistoryImport";
-            this.btnHistoryImport.Size = new System.Drawing.Size(309, 35);
-            this.btnHistoryImport.TabIndex = 0;
-            this.btnHistoryImport.Text = "Danh sách phiếu nhập";
-            this.btnHistoryImport.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnExit);
             this.groupBox3.Controls.Add(this.btnPrintImport);
-            this.groupBox3.Controls.Add(this.btnAddImport);
             this.groupBox3.Controls.Add(this.btnSaveImport);
-            this.groupBox3.Location = new System.Drawing.Point(15, 419);
+            this.groupBox3.Location = new System.Drawing.Point(7, 424);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(946, 49);
-            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             // 
             // btnExit
             // 
+            this.btnExit.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Location = new System.Drawing.Point(824, 10);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(105, 35);
@@ -161,31 +156,221 @@
             // 
             // btnPrintImport
             // 
-            this.btnPrintImport.Location = new System.Drawing.Point(256, 14);
+            this.btnPrintImport.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintImport.Location = new System.Drawing.Point(146, 10);
             this.btnPrintImport.Name = "btnPrintImport";
             this.btnPrintImport.Size = new System.Drawing.Size(106, 35);
             this.btnPrintImport.TabIndex = 0;
             this.btnPrintImport.Text = "In";
             this.btnPrintImport.UseVisualStyleBackColor = true;
             // 
-            // btnAddImport
-            // 
-            this.btnAddImport.Location = new System.Drawing.Point(6, 14);
-            this.btnAddImport.Name = "btnAddImport";
-            this.btnAddImport.Size = new System.Drawing.Size(106, 35);
-            this.btnAddImport.TabIndex = 0;
-            this.btnAddImport.Text = "Tạo mới";
-            this.btnAddImport.UseVisualStyleBackColor = true;
-            this.btnAddImport.Click += new System.EventHandler(this.btnAddImport_Click);
-            // 
             // btnSaveImport
             // 
-            this.btnSaveImport.Location = new System.Drawing.Point(130, 14);
+            this.btnSaveImport.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveImport.Location = new System.Drawing.Point(8, 10);
             this.btnSaveImport.Name = "btnSaveImport";
             this.btnSaveImport.Size = new System.Drawing.Size(106, 35);
             this.btnSaveImport.TabIndex = 0;
             this.btnSaveImport.Text = "Lưu";
             this.btnSaveImport.UseVisualStyleBackColor = true;
+            this.btnSaveImport.Click += new System.EventHandler(this.btnSaveImport_Click);
+            // 
+            // btnAddBook
+            // 
+            this.btnAddBook.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddBook.Location = new System.Drawing.Point(868, 102);
+            this.btnAddBook.Name = "btnAddBook";
+            this.btnAddBook.Size = new System.Drawing.Size(72, 35);
+            this.btnAddBook.TabIndex = 13;
+            this.btnAddBook.Text = "Thêm";
+            this.ttAdd.SetToolTip(this.btnAddBook, "Thêm sách");
+            this.btnAddBook.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.txbPublishYear);
+            this.groupBox4.Controls.Add(this.label13);
+            this.groupBox4.Controls.Add(this.cbIDBookTitle);
+            this.groupBox4.Controls.Add(this.txbIDBook);
+            this.groupBox4.Controls.Add(this.txbPublishCompany);
+            this.groupBox4.Controls.Add(this.label9);
+            this.groupBox4.Controls.Add(this.label10);
+            this.groupBox4.Controls.Add(this.label11);
+            this.groupBox4.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(621, 6);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(241, 136);
+            this.groupBox4.TabIndex = 12;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Thêm sách mới";
+            // 
+            // txbPublishYear
+            // 
+            this.txbPublishYear.Location = new System.Drawing.Point(115, 107);
+            this.txbPublishYear.Name = "txbPublishYear";
+            this.txbPublishYear.Size = new System.Drawing.Size(103, 24);
+            this.txbPublishYear.TabIndex = 8;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(13, 107);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(105, 19);
+            this.label13.TabIndex = 7;
+            this.label13.Text = "Năm xuất bản";
+            // 
+            // cbIDBookTitle
+            // 
+            this.cbIDBookTitle.FormattingEnabled = true;
+            this.cbIDBookTitle.Location = new System.Drawing.Point(115, 22);
+            this.cbIDBookTitle.Margin = new System.Windows.Forms.Padding(2);
+            this.cbIDBookTitle.Name = "cbIDBookTitle";
+            this.cbIDBookTitle.Size = new System.Drawing.Size(103, 24);
+            this.cbIDBookTitle.TabIndex = 6;
+            // 
+            // txbIDBook
+            // 
+            this.txbIDBook.Location = new System.Drawing.Point(115, 50);
+            this.txbIDBook.Name = "txbIDBook";
+            this.txbIDBook.Size = new System.Drawing.Size(103, 24);
+            this.txbIDBook.TabIndex = 5;
+            // 
+            // txbPublishCompany
+            // 
+            this.txbPublishCompany.Location = new System.Drawing.Point(116, 80);
+            this.txbPublishCompany.Name = "txbPublishCompany";
+            this.txbPublishCompany.Size = new System.Drawing.Size(103, 24);
+            this.txbPublishCompany.TabIndex = 4;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(14, 80);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(99, 19);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Nhà sản xuất";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(13, 50);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 19);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Mã sách";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(13, 22);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(95, 19);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Mã đầu sách";
+            // 
+            // btnAddBookTitle
+            // 
+            this.btnAddBookTitle.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddBookTitle.Location = new System.Drawing.Point(527, 105);
+            this.btnAddBookTitle.Name = "btnAddBookTitle";
+            this.btnAddBookTitle.Size = new System.Drawing.Size(72, 35);
+            this.btnAddBookTitle.TabIndex = 11;
+            this.btnAddBookTitle.Text = "Thêm";
+            this.ttAdd.SetToolTip(this.btnAddBookTitle, "Thêm đầu sách");
+            this.btnAddBookTitle.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.cbCategory);
+            this.groupBox5.Controls.Add(this.txbAuthor);
+            this.groupBox5.Controls.Add(this.label12);
+            this.groupBox5.Controls.Add(this.txbNameBookTitle);
+            this.groupBox5.Controls.Add(this.txbIDBookTitle);
+            this.groupBox5.Controls.Add(this.label6);
+            this.groupBox5.Controls.Add(this.label7);
+            this.groupBox5.Controls.Add(this.label8);
+            this.groupBox5.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.Location = new System.Drawing.Point(281, 6);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(240, 136);
+            this.groupBox5.TabIndex = 10;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Thêm đầu sách mới";
+            // 
+            // cbCategory
+            // 
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Location = new System.Drawing.Point(128, 78);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(103, 24);
+            this.cbCategory.TabIndex = 8;
+            // 
+            // txbAuthor
+            // 
+            this.txbAuthor.Location = new System.Drawing.Point(128, 107);
+            this.txbAuthor.Name = "txbAuthor";
+            this.txbAuthor.Size = new System.Drawing.Size(103, 24);
+            this.txbAuthor.TabIndex = 7;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(22, 107);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(56, 19);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Tác giả";
+            // 
+            // txbNameBookTitle
+            // 
+            this.txbNameBookTitle.Location = new System.Drawing.Point(128, 50);
+            this.txbNameBookTitle.Name = "txbNameBookTitle";
+            this.txbNameBookTitle.Size = new System.Drawing.Size(103, 24);
+            this.txbNameBookTitle.TabIndex = 5;
+            // 
+            // txbIDBookTitle
+            // 
+            this.txbIDBookTitle.Location = new System.Drawing.Point(128, 22);
+            this.txbIDBookTitle.Name = "txbIDBookTitle";
+            this.txbIDBookTitle.Size = new System.Drawing.Size(103, 24);
+            this.txbIDBookTitle.TabIndex = 4;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(22, 78);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(64, 19);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Thể loại";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(22, 50);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(99, 19);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Tên đầu sách";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(22, 22);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(95, 19);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Mã đầu sách";
             // 
             // groupBox2
             // 
@@ -195,73 +380,73 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.dtpk);
-            this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(6, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(413, 108);
-            this.groupBox2.TabIndex = 5;
+            this.groupBox2.Size = new System.Drawing.Size(253, 108);
+            this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin phiếu nhập";
             // 
             // txbTotalPrice
             // 
-            this.txbTotalPrice.Location = new System.Drawing.Point(188, 78);
+            this.txbTotalPrice.Location = new System.Drawing.Point(140, 78);
             this.txbTotalPrice.Name = "txbTotalPrice";
-            this.txbTotalPrice.ReadOnly = true;
-            this.txbTotalPrice.Size = new System.Drawing.Size(191, 20);
+            this.txbTotalPrice.Size = new System.Drawing.Size(103, 24);
             this.txbTotalPrice.TabIndex = 4;
             // 
             // txbIDImportBook
             // 
-            this.txbIDImportBook.Location = new System.Drawing.Point(188, 22);
+            this.txbIDImportBook.Location = new System.Drawing.Point(140, 22);
             this.txbIDImportBook.Name = "txbIDImportBook";
-            this.txbIDImportBook.ReadOnly = true;
-            this.txbIDImportBook.Size = new System.Drawing.Size(191, 20);
+            this.txbIDImportBook.Size = new System.Drawing.Size(103, 24);
             this.txbIDImportBook.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 82);
+            this.label4.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(22, 78);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 16);
+            this.label4.Size = new System.Drawing.Size(73, 19);
             this.label4.TabIndex = 3;
             this.label4.Text = "Tổng tiền";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 52);
+            this.label1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(22, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 16);
+            this.label1.Size = new System.Drawing.Size(69, 19);
             this.label1.TabIndex = 3;
             this.label1.Text = "Ngày lập";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 26);
+            this.label2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(22, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 16);
+            this.label2.Size = new System.Drawing.Size(108, 19);
             this.label2.TabIndex = 3;
             this.label2.Text = "Số phiếu nhập";
             // 
             // dtpk
             // 
-            this.dtpk.Location = new System.Drawing.Point(188, 48);
+            this.dtpk.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpk.Location = new System.Drawing.Point(140, 50);
             this.dtpk.Name = "dtpk";
-            this.dtpk.Size = new System.Drawing.Size(191, 20);
+            this.dtpk.Size = new System.Drawing.Size(103, 24);
             this.dtpk.TabIndex = 2;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dtgvImportBook);
             this.groupBox1.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(3, 118);
+            this.groupBox1.Location = new System.Drawing.Point(3, 169);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(958, 277);
+            this.groupBox1.Size = new System.Drawing.Size(958, 226);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chi tiết phiếu nhập sách";
@@ -284,7 +469,7 @@
             this.dtgvImportBook.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvImportBook.Location = new System.Drawing.Point(3, 21);
             this.dtgvImportBook.Name = "dtgvImportBook";
-            this.dtgvImportBook.Size = new System.Drawing.Size(952, 253);
+            this.dtgvImportBook.Size = new System.Drawing.Size(952, 202);
             this.dtgvImportBook.TabIndex = 0;
             this.dtgvImportBook.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvImportBook_CellEndEdit);
             this.dtgvImportBook.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dtgvImportBook_EditingControlShowing);
@@ -304,17 +489,18 @@
             // 
             this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.id.FillWeight = 283.2487F;
-            this.id.HeaderText = "Mã đầu sách";
+            this.id.HeaderText = "Mã sách";
             this.id.Name = "id";
             this.id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.id.Width = 77;
             // 
             // name
             // 
             this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.name.DataPropertyName = "name";
             this.name.FillWeight = 77.1657F;
-            this.name.HeaderText = "Tên đầu sách";
+            this.name.HeaderText = "Tên sách";
             this.name.Name = "name";
             this.name.ReadOnly = true;
             // 
@@ -385,8 +571,11 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -400,24 +589,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txbTotalPrice;
-        private System.Windows.Forms.TextBox txbIDImportBook;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dtpk;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dtgvImportBook;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button btnAddBookTitle;
-        private System.Windows.Forms.Button btnHistoryImport;
-        private System.Windows.Forms.Label lb;
-        private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnPrintImport;
-        private System.Windows.Forms.Button btnAddImport;
-        private System.Windows.Forms.Button btnSaveImport;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewComboBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
@@ -427,5 +600,38 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn count;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceIn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalPrice;
+        private System.Windows.Forms.Button btnAddBook;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox txbPublishYear;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cbIDBookTitle;
+        private System.Windows.Forms.TextBox txbIDBook;
+        private System.Windows.Forms.TextBox txbPublishCompany;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnAddBookTitle;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.ComboBox cbCategory;
+        private System.Windows.Forms.TextBox txbAuthor;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txbNameBookTitle;
+        private System.Windows.Forms.TextBox txbIDBookTitle;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox txbTotalPrice;
+        private System.Windows.Forms.TextBox txbIDImportBook;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dtpk;
+        private System.Windows.Forms.Label lb;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnPrintImport;
+        private System.Windows.Forms.Button btnSaveImport;
+        private System.Windows.Forms.ToolTip ttAdd;
     }
 }

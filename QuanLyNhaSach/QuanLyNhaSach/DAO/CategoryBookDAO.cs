@@ -41,13 +41,13 @@ namespace QuanLyNhaSach.DAO
         {
             return DataProvider.Instance.ExecuteNonQuery("EXEC USP_UpdateCategory @id , @name", new object[] { id, name }) > 0;
         }
-        //public CategoryBook GetCategoryBookByBookID(int id)
-        //{
-        //    DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_GetCategoryBookByBookID @id",new object[] { id });
-        //    if (data.Rows.Count > 0)
-        //        return new CategoryBook(data.Rows[0]);
-        //    else
-        //        return null;
-        //}
+        public CategoryBook GetCategoryBookByBookTitleID(int id)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_GetCategoryBookByBookTitleID @id", new object[] { id });
+            if (data.Rows.Count > 0)
+                return new CategoryBook(data.Rows[0]);
+            else
+                return null;
+        }
     }
 }

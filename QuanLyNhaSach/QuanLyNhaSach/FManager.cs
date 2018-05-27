@@ -45,5 +45,11 @@ namespace QuanLyNhaSach
             FManageCustomer f = new FManageCustomer();
             f.ShowDialog();
         }
+
+        private void lbImportBook_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FImportBook f = new FImportBook();
+            f.ShowDialog();
+        }
     }
 }

@@ -41,6 +41,20 @@ namespace QuanLyNhaSach.DAO
         {
             return DataProvider.Instance.ExecuteNonQuery("EXEC USP_AddBook @idBookTitle , @publishCompany , @publishYear", new object[] { idBookTitle, publishCompany, publishYear })>0;
         }
+        public List<Book> GetListBook()
+        {
+            List<Book> list = new List<Book>();
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_GetListBook");
+
+            foreach(DataRow item in data.Rows)
+            {
+                List<Author> authors = AuthorDAO.Instance.GetListAuthorByBookTitleID(Int32.Parse(item["id"].ToString()));
+                CategoryBook category = CategoryBookDAO.Instance.GetCategoryBookByBookTitleID(Int32.Parse(item["id"].ToString()));
+                list.Add(new Book(item, category, authors));
+            }
+
+            return list;
+        }
         //public bool AddBook(string name, int idCategory, string author, int count, int price)
         //{
         //    return DataProvider.Instance.ExecuteNonQuery("EXEC USP_AddBook @name , @idCategory , @author , @priceIn , @count",new object[] {name,idCategory,author,price,count }) > 0;

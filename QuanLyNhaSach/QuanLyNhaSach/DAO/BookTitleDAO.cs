@@ -36,7 +36,8 @@ namespace QuanLyNhaSach.DAO
                 {
                     author += tableAuthor.Rows[j]["name"].ToString() + ", ";
                 }
-                author += tableAuthor.Rows[tableAuthor.Rows.Count - 1]["name"].ToString();
+                if(tableAuthor.Rows.Count>0)
+                    author += tableAuthor.Rows[tableAuthor.Rows.Count - 1]["name"].ToString();
                 data.Rows[i]["author"] = author;
 
                 DataTable tableCountVerion = DataProvider.Instance.ExecuteQuery("EXEC USP_GetCountVersionByBookTitleID @id", new object[] { id });
@@ -71,16 +72,8 @@ namespace QuanLyNhaSach.DAO
         public BookTitle GetBookTitleByBookTitleID(int id)
         {
             DataTable dataBookTitle = DataProvider.Instance.ExecuteQuery("EXEC USP_GetBookTitleByBookTitleID @id", new object[] { id });
-
-            List<Author> authors = new List<Author>();
-            DataTable dataAuthor = DataProvider.Instance.ExecuteQuery("EXEC USP_GetAuthorsByBookTitleID @id", new object[] { id });
-            foreach(DataRow item in dataAuthor.Rows)
-            {
-                authors.Add(new Author(item));
-            }
-
+            List<Author> authors = AuthorDAO.Instance.GetListAuthorByBookTitleID(id);
             return new BookTitle(dataBookTitle.Rows[0], authors);
-            
         }
         public bool UpdateBookTitle(int id,string name,int idCategory,List<int>authors)
         {

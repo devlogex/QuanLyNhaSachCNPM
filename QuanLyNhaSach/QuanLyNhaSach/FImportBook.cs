@@ -23,7 +23,7 @@ namespace QuanLyNhaSach
         {
             txbIDImportBook.Text = ImportBookDAO.Instance.GetNewIDImportBook().ToString();
             dtpk.Value = DateTime.Now;
-            LoadBookTitleIntoCombobox();
+            LoadListBookIntoCombobox();
             txbTotalPrice.Text = "0";
 
             LoadSTT();
@@ -33,18 +33,14 @@ namespace QuanLyNhaSach
             for (int i = 0; i < dtgvImportBook.RowCount; i++)
                 dtgvImportBook.Rows[i].Cells["STT"].Value = i + 1;
         }
-        public void LoadBookTitleIntoCombobox()
+        public void LoadListBookIntoCombobox()
         {
-            id.DataSource = BookTitleDAO.Instance.LoadListBookTitle();
+            id.DataSource = BookDAO.Instance.GetListBook();
             id.DisplayMember = "id";
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-        private void F_LoadAfterChosePublish(object sender, EventArgs e)
-        {
-            dtgvImportBook.CurrentCell.OwningRow.Cells["publishing"].Value = sender as string;
         }
 
         private void dtgvImportBook_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -107,16 +103,21 @@ namespace QuanLyNhaSach
         {
             if (cbm != null)
             {
-                DataRowView data = cbm.SelectedItem as DataRowView;
-                if (data != null)
+                Book book = cbm.SelectedItem as Book;
+                if (book != null)
                 {
-                    dtgvImportBook.SelectedCells[0].OwningRow.Cells["name"].Value = data["name"].ToString();
-                    dtgvImportBook.SelectedCells[0].OwningRow.Cells["author"].Value = data["author"].ToString();
-                    dtgvImportBook.SelectedCells[0].OwningRow.Cells["category"].Value = data["category"].ToString();
+                    dtgvImportBook.SelectedCells[0].OwningRow.Cells["name"].Value = book.Name;
+                    string authors = "";
+                    for(int i=0;i<book.Authors.Count-1;i++)
+                    {
+                        authors += book.Authors[i].Name+", ";
+                    }
+                    if (book.Authors.Count > 0)
+                        authors += book.Authors[book.Authors.Count - 1].Name;
+                    dtgvImportBook.SelectedCells[0].OwningRow.Cells["author"].Value = authors;
+                    dtgvImportBook.SelectedCells[0].OwningRow.Cells["category"].Value = book.Category.Name;
+                    dtgvImportBook.SelectedCells[0].OwningRow.Cells["publishing"].Value ="Nhà xuất bản "+book.PublishCompany+", năm "+book.PublishYear;
 
-                    FPublishing f = new FPublishing(Int32.Parse(data["id"].ToString()));
-                    f.UpdateForm += F_LoadAfterChosePublish;
-                    f.ShowDialog();
 
                     this.dtgvImportBook.EndEdit();
                 }
@@ -132,10 +133,9 @@ namespace QuanLyNhaSach
             LoadSTT();
         }
 
-        private void btnAddImport_Click(object sender, EventArgs e)
+        private void btnSaveImport_Click(object sender, EventArgs e)
         {
-           
-           
+
         }
     }
 }

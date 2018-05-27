@@ -29,6 +29,16 @@ namespace QuanLyNhaSach.DAO
             }
             return list;
         }
+        public List<Author>GetListAuthorByBookTitleID(int id)
+        {
+            List<Author> authors = new List<Author>();
+            DataTable dataAuthor = DataProvider.Instance.ExecuteQuery("EXEC USP_GetAuthorsByBookTitleID @id", new object[] { id });
+            foreach (DataRow item in dataAuthor.Rows)
+            {
+                authors.Add(new Author(item));
+            }
+            return authors;
+        }
         public bool AddAuthor(string name)
         {
             return DataProvider.Instance.ExecuteNonQuery("EXEC USP_AddAuthor @name",new object[] { name })>0;
