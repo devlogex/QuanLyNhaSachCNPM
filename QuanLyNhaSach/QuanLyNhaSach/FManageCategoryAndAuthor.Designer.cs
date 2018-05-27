@@ -256,7 +256,7 @@
             // 
             this.idAuthor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.idAuthor.DataPropertyName = "id";
-            this.idAuthor.HeaderText = "Mã thể loại";
+            this.idAuthor.HeaderText = "Mã tác giả";
             this.idAuthor.Name = "idAuthor";
             this.idAuthor.ReadOnly = true;
             // 
@@ -264,7 +264,7 @@
             // 
             this.nameAuthor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nameAuthor.DataPropertyName = "name";
-            this.nameAuthor.HeaderText = "Tên thể loại";
+            this.nameAuthor.HeaderText = "Tên tác giả";
             this.nameAuthor.Name = "nameAuthor";
             this.nameAuthor.ReadOnly = true;
             // 
@@ -308,11 +308,11 @@
         private System.Windows.Forms.DataGridView dtgvManageCategory;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dtgvManageAuthor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STTAuthor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idAuthor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameAuthor;
         private System.Windows.Forms.DataGridViewTextBoxColumn STTCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameCategory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STTAuthor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idAuthor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameAuthor;
     }
 }

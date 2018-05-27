@@ -32,6 +32,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>.\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>.\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker">
+      <HintPath>.\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>.\itextsharp.xtra.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
@@ -56,6 +68,7 @@
     <Compile Include="DAO\CollectMoneyDAO.cs" />
     <Compile Include="DAO\CustomerDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\ExportDataToPDF.cs" />
     <Compile Include="DAO\ImportBookDAO.cs" />
     <Compile Include="DAO\ImportBookInfoDAO.cs" />
     <Compile Include="DAO\ReportCountDAO.cs" />
@@ -283,11 +296,32 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="itextsharp.dll" />
     <Content Include="Resources\Double Down_16px.png" />
     <Content Include="Resources\f4408a5c77ebaa90931ba19539718bb2.jpg" />
     <Content Include="Resources\mau-slide-powerpoint-dep-031.png" />
     <Content Include="Resources\my-journal-powerpoint-backgrounds.jpg" />
     <Content Include="Resources\school-education-powerpoint-templates-presentation-9365-ppt-background-images-coloring-download-as-zip-4f.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="PDFCreatorPilotLib">
+      <Guid>{F68529F8-9F30-4AEE-B5D0-6DA79CB9E802}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

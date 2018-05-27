@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -183,6 +184,16 @@ namespace QuanLyNhaSach
 
         private void btnSaveImport_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < dtgvImportBook.RowCount - 1; i++)
+            {
+                if (dtgvImportBook.Rows[i].Cells["totalPrice"].Value == null)
+                {
+                    MessageBox.Show("Bạn chưa nhập đủ dữ liệu ở hàng thứ " + (i + 1).ToString());
+                    return;
+                }
+                
+            }
+
             DateTime date = dtpk.Value;
             SaveImportBook(date);
         }
@@ -285,6 +296,19 @@ namespace QuanLyNhaSach
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnPrintImport_Click(object sender, EventArgs e)
+        {
+            //string name = "PHIEUNHAPSACH" + txbIDImportBook.Text.ToString() + ".pdf";
+
+            //if (ExportDataToPDF.Instance.ExportDTGVToPdf(dtgvImportBook,name))
+            //{
+            //    MessageBox.Show("In thành công");
+            //    Process.Start(@"C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\"+name);
+            //}
+            //else
+            //    MessageBox.Show("In thất bại ");
         }
     }
 }

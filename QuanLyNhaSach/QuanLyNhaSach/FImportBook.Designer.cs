@@ -33,6 +33,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lb = new System.Windows.Forms.Label();
+            this.btnAddBookTitle = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnPrintImport = new System.Windows.Forms.Button();
@@ -47,8 +48,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.btnAddBookTitle = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.cbAuthor = new System.Windows.Forms.ComboBox();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txbNameBookTitle = new System.Windows.Forms.TextBox();
@@ -75,7 +76,6 @@
             this.priceIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ttAdd = new System.Windows.Forms.ToolTip(this.components);
-            this.cbAuthor = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -132,6 +132,18 @@
             this.lb.Text = "*Chỉ nhập các sách có số lượng tồn nhỏ hơn 300. Số lượng nhập lớn hơn hoặc bằng 1" +
     "50";
             // 
+            // btnAddBookTitle
+            // 
+            this.btnAddBookTitle.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddBookTitle.Location = new System.Drawing.Point(429, 140);
+            this.btnAddBookTitle.Name = "btnAddBookTitle";
+            this.btnAddBookTitle.Size = new System.Drawing.Size(72, 35);
+            this.btnAddBookTitle.TabIndex = 11;
+            this.btnAddBookTitle.Text = "Thêm";
+            this.ttAdd.SetToolTip(this.btnAddBookTitle, "Thêm đầu sách");
+            this.btnAddBookTitle.UseVisualStyleBackColor = true;
+            this.btnAddBookTitle.Click += new System.EventHandler(this.btnAddBookTitle_Click);
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnExit);
@@ -163,6 +175,7 @@
             this.btnPrintImport.TabIndex = 0;
             this.btnPrintImport.Text = "In";
             this.btnPrintImport.UseVisualStyleBackColor = true;
+            this.btnPrintImport.Click += new System.EventHandler(this.btnPrintImport_Click);
             // 
             // btnSaveImport
             // 
@@ -277,18 +290,6 @@
             this.label11.TabIndex = 3;
             this.label11.Text = "Mã đầu sách";
             // 
-            // btnAddBookTitle
-            // 
-            this.btnAddBookTitle.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddBookTitle.Location = new System.Drawing.Point(429, 140);
-            this.btnAddBookTitle.Name = "btnAddBookTitle";
-            this.btnAddBookTitle.Size = new System.Drawing.Size(72, 35);
-            this.btnAddBookTitle.TabIndex = 11;
-            this.btnAddBookTitle.Text = "Thêm";
-            this.ttAdd.SetToolTip(this.btnAddBookTitle, "Thêm đầu sách");
-            this.btnAddBookTitle.UseVisualStyleBackColor = true;
-            this.btnAddBookTitle.Click += new System.EventHandler(this.btnAddBookTitle_Click);
-            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.cbAuthor);
@@ -306,6 +307,15 @@
             this.groupBox5.TabIndex = 10;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Thêm đầu sách mới";
+            // 
+            // cbAuthor
+            // 
+            this.cbAuthor.FormattingEnabled = true;
+            this.cbAuthor.Location = new System.Drawing.Point(128, 104);
+            this.cbAuthor.Name = "cbAuthor";
+            this.cbAuthor.Size = new System.Drawing.Size(200, 24);
+            this.cbAuthor.TabIndex = 9;
+            this.cbAuthor.SelectedIndexChanged += new System.EventHandler(this.cbAuthor_SelectedIndexChanged);
             // 
             // cbCategory
             // 
@@ -555,15 +565,6 @@
             this.totalPrice.HeaderText = "Thành tiền";
             this.totalPrice.Name = "totalPrice";
             this.totalPrice.ReadOnly = true;
-            // 
-            // cbAuthor
-            // 
-            this.cbAuthor.FormattingEnabled = true;
-            this.cbAuthor.Location = new System.Drawing.Point(128, 104);
-            this.cbAuthor.Name = "cbAuthor";
-            this.cbAuthor.Size = new System.Drawing.Size(200, 24);
-            this.cbAuthor.TabIndex = 9;
-            this.cbAuthor.SelectedIndexChanged += new System.EventHandler(this.cbAuthor_SelectedIndexChanged);
             // 
             // FImportBook
             // 
