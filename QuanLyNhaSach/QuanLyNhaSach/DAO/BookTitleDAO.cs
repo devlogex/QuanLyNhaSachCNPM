@@ -18,7 +18,7 @@ namespace QuanLyNhaSach.DAO
             set => instance = value;
         }
         private BookTitleDAO() { }
-        
+
         public DataTable LoadListBookTitle()
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_LoadListBookTitle");
@@ -32,11 +32,11 @@ namespace QuanLyNhaSach.DAO
 
                 string author = "";
                 DataTable tableAuthor = DataProvider.Instance.ExecuteQuery("EXEC USP_GetAuthorsByBookTitleID @id", new object[] { id });
-                for(int j=0;j<tableAuthor.Rows.Count-1;j++)
+                for (int j = 0; j < tableAuthor.Rows.Count - 1; j++)
                 {
                     author += tableAuthor.Rows[j]["name"].ToString() + ", ";
                 }
-                if(tableAuthor.Rows.Count>0)
+                if (tableAuthor.Rows.Count > 0)
                     author += tableAuthor.Rows[tableAuthor.Rows.Count - 1]["name"].ToString();
                 data.Rows[i]["author"] = author;
 
@@ -83,7 +83,7 @@ namespace QuanLyNhaSach.DAO
             }
             foreach (int idAuthor in authors)
             {
-                if (DataProvider.Instance.ExecuteNonQuery("EXEC USP_AddAuthorInfo @idAuthor", new object[] { idAuthor }) == 0)
+                if (DataProvider.Instance.ExecuteNonQuery("EXEC USP_AddAuthorInfoByBookTitleID @id , @idAuthor", new object[] { id, idAuthor }) == 0)
                     return false;
             }
             return true;
@@ -92,7 +92,27 @@ namespace QuanLyNhaSach.DAO
         {
             return DataProvider.Instance.ExecuteNonQuery("EXEC USP_RemoveBookTitleByBookTitleID @id", new object[] { id }) > 0;
         }
-       
+       public List<BookTitle>GetListBookTitle()
+        {
+            List<BookTitle> list = new List<BookTitle>();
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_GetListBookTitle");
+            foreach (DataRow item in data.Rows)
+            {
+                List<Author> authors = AuthorDAO.Instance.GetListAuthorByBookTitleID(Int32.Parse(item["id"].ToString()));
+                list.Add(new BookTitle(item, authors));
+            }
+            return list;
+        }
+        public int GetNewIDBookTitle()
+        {
+            int id;
+            if (Int32.TryParse(DataProvider.Instance.ExecuteQuery("EXEC USP_GetNewIDBookTitle").Rows[0][0].ToString(), out id))
+            {
+                return id;
+            }
+            else
+                return 1;
+        }
     }
 }
 

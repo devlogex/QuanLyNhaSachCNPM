@@ -19,24 +19,22 @@ namespace QuanLyNhaSach.DAO
         }
         private ImportBookInfoDAO() { }
 
-        public bool InsertImportBookInfo(int idBook,int count,float priceIn)
+        public bool InsertImportBookInfo(int idBook, int count, float priceIn, float money)
         {
-            return DataProvider.Instance.ExecuteNonQuery("EXEC USP_InsertImportBookInfoIntoDatabase @idBook , @count , @priceIn", new object[] {idBook,count,priceIn}) > 0;
+            return DataProvider.Instance.ExecuteNonQuery("EXEC USP_InsertImportBookInfoIntoDatabase @idBook , @count , @priceIn , @money", new object[] { idBook, count, priceIn, money }) > 0;
         }
-        public List<ImportBookInfo> GetListImportBookInfoByTime(int month,int year)
-        {
-            List<ImportBookInfo> list = new List<ImportBookInfo>();
-            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_GetListImportBookInfoByTime @month , @year", new object[] { month, year });
-            foreach(DataRow item in data.Rows)
-            {
-                list.Add(new ImportBookInfo(item));
-            }
-            return list;
-        }
-        public DataTable LoadListImportBookInfo(int id)
-        {
-            return DataProvider.Instance.ExecuteQuery("EXEC USP_LoadListImportBookInfo @id", new object[] { id });
-        }
-
+        //public List<ImportBookInfo> GetListImportBookInfoByTime(int month,int year)
+        //{
+        //    List<ImportBookInfo> list = new List<ImportBookInfo>();
+        //    DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_GetListImportBookInfoByTime @month , @year", new object[] { month, year });
+        //    foreach(DataRow item in data.Rows)
+        //    {
+        //        list.Add(new ImportBookInfo(item));
+        //    }
+        //    return list;
+        //}
+        //public DataTable LoadListImportBookInfo(int id)
+        //{
+        //    return DataProvider.Instance.ExecuteQuery("EXEC USP_LoadListImportBookInfo @id", new object[] { id });
     }
 }

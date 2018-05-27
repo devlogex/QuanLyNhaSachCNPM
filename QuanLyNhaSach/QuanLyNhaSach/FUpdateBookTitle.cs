@@ -133,14 +133,14 @@ namespace QuanLyNhaSach
 
             if (UpdateBookTitle(BookTitle.ID,name, idCategory, authors))
             {
-                MessageBox.Show("Cập nhật đầu sách thành công!");
+                MessageBox.Show("Cập nhật thành công!");
                 if (updateForm != null)
                 {
                     updateForm(this, new EventArgs());
                 }
             }
             else
-                MessageBox.Show("Sửa đầu sách thất bại !");
+                MessageBox.Show("Cập nhật thất bại !");
         }
     }
 }

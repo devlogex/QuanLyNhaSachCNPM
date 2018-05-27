@@ -437,6 +437,20 @@ BEGIN
 END
 GO
 
+CREATE PROC USP_GetNewIDBookTitle
+AS
+BEGIN
+	SELECT MAX(MaDauSach)+1 FROM DAUSACH
+END
+GO
+
+CREATE PROC USP_GetNewIDBook
+AS
+BEGIN
+	SELECT MAX(MaSach)+1 FROM SACH
+END
+GO
+
 CREATE PROC USP_GetPublishingByBookTitleID
 @id INT
 AS
@@ -475,5 +489,40 @@ CREATE PROC USP_GetCategoryBookByBookTitleID
 AS
 BEGIN
 	SELECT th.MaTheLoai as id,th.TenTheLoai as name FROM THELOAISACH th,DAUSACH d WHERE th.MaTheLoai=d.MaTheLoai
+END
+GO
+
+CREATE PROC USP_InsertImportBookIntoDatabase
+@date DATE
+AS
+BEGIN
+	INSERT PHIEUNHAPSACH(NgayLap,TongTien) VALUES (@date,0)
+END
+GO
+
+CREATE PROC USP_InsertImportBookInfoIntoDatabase
+@idBook INT,
+@count INT,
+@priceIn FLOAT,
+@money FLOAT
+AS
+BEGIN
+	DECLARE @importBookID INT
+	SELECT @importBookID=MAX(SoPhieuNhap) FROM PHIEUNHAPSACH
+
+	INSERT CT_PHIEUNHAPSACH(SoPhieuNhap,MaSach,	SoLuongNhap ,DonGiaNhap,ThanhTien)VALUES(
+		@importBookID,
+		@idBook,
+		@count,
+		@priceIn,
+		@money
+		)
+END
+GO
+
+CREATE PROC USP_GetListBookTitle
+AS 
+BEGIN
+	SELECT MaDauSach as id,TenDauSach as name,MaTheLoai as idCategory FROM DAUSACH
 END
 GO

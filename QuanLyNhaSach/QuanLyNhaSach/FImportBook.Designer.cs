@@ -41,7 +41,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txbPublishYear = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.cbIDBookTitle = new System.Windows.Forms.ComboBox();
+            this.cbBookTitle = new System.Windows.Forms.ComboBox();
             this.txbIDBook = new System.Windows.Forms.TextBox();
             this.txbPublishCompany = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -50,7 +50,6 @@
             this.btnAddBookTitle = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.cbCategory = new System.Windows.Forms.ComboBox();
-            this.txbAuthor = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txbNameBookTitle = new System.Windows.Forms.TextBox();
             this.txbIDBookTitle = new System.Windows.Forms.TextBox();
@@ -76,6 +75,7 @@
             this.priceIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ttAdd = new System.Windows.Forms.ToolTip(this.components);
+            this.cbAuthor = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -108,10 +108,10 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.lb);
+            this.panel2.Controls.Add(this.btnAddBookTitle);
             this.panel2.Controls.Add(this.groupBox3);
             this.panel2.Controls.Add(this.btnAddBook);
             this.panel2.Controls.Add(this.groupBox4);
-            this.panel2.Controls.Add(this.btnAddBookTitle);
             this.panel2.Controls.Add(this.groupBox5);
             this.panel2.Controls.Add(this.groupBox2);
             this.panel2.Controls.Add(this.groupBox1);
@@ -178,19 +178,20 @@
             // btnAddBook
             // 
             this.btnAddBook.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddBook.Location = new System.Drawing.Point(868, 102);
+            this.btnAddBook.Location = new System.Drawing.Point(760, 140);
             this.btnAddBook.Name = "btnAddBook";
             this.btnAddBook.Size = new System.Drawing.Size(72, 35);
             this.btnAddBook.TabIndex = 13;
             this.btnAddBook.Text = "Thêm";
             this.ttAdd.SetToolTip(this.btnAddBook, "Thêm sách");
             this.btnAddBook.UseVisualStyleBackColor = true;
+            this.btnAddBook.Click += new System.EventHandler(this.btnAddBook_Click);
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.txbPublishYear);
             this.groupBox4.Controls.Add(this.label13);
-            this.groupBox4.Controls.Add(this.cbIDBookTitle);
+            this.groupBox4.Controls.Add(this.cbBookTitle);
             this.groupBox4.Controls.Add(this.txbIDBook);
             this.groupBox4.Controls.Add(this.txbPublishCompany);
             this.groupBox4.Controls.Add(this.label9);
@@ -199,7 +200,7 @@
             this.groupBox4.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(621, 6);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(241, 136);
+            this.groupBox4.Size = new System.Drawing.Size(331, 136);
             this.groupBox4.TabIndex = 12;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thêm sách mới";
@@ -208,8 +209,9 @@
             // 
             this.txbPublishYear.Location = new System.Drawing.Point(115, 107);
             this.txbPublishYear.Name = "txbPublishYear";
-            this.txbPublishYear.Size = new System.Drawing.Size(103, 24);
+            this.txbPublishYear.Size = new System.Drawing.Size(201, 24);
             this.txbPublishYear.TabIndex = 8;
+            this.txbPublishYear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPublishYear_KeyPress);
             // 
             // label13
             // 
@@ -221,27 +223,28 @@
             this.label13.TabIndex = 7;
             this.label13.Text = "Năm xuất bản";
             // 
-            // cbIDBookTitle
+            // cbBookTitle
             // 
-            this.cbIDBookTitle.FormattingEnabled = true;
-            this.cbIDBookTitle.Location = new System.Drawing.Point(115, 22);
-            this.cbIDBookTitle.Margin = new System.Windows.Forms.Padding(2);
-            this.cbIDBookTitle.Name = "cbIDBookTitle";
-            this.cbIDBookTitle.Size = new System.Drawing.Size(103, 24);
-            this.cbIDBookTitle.TabIndex = 6;
+            this.cbBookTitle.FormattingEnabled = true;
+            this.cbBookTitle.Location = new System.Drawing.Point(115, 22);
+            this.cbBookTitle.Margin = new System.Windows.Forms.Padding(2);
+            this.cbBookTitle.Name = "cbBookTitle";
+            this.cbBookTitle.Size = new System.Drawing.Size(200, 24);
+            this.cbBookTitle.TabIndex = 6;
             // 
             // txbIDBook
             // 
             this.txbIDBook.Location = new System.Drawing.Point(115, 50);
             this.txbIDBook.Name = "txbIDBook";
-            this.txbIDBook.Size = new System.Drawing.Size(103, 24);
+            this.txbIDBook.ReadOnly = true;
+            this.txbIDBook.Size = new System.Drawing.Size(200, 24);
             this.txbIDBook.TabIndex = 5;
             // 
             // txbPublishCompany
             // 
             this.txbPublishCompany.Location = new System.Drawing.Point(116, 80);
             this.txbPublishCompany.Name = "txbPublishCompany";
-            this.txbPublishCompany.Size = new System.Drawing.Size(103, 24);
+            this.txbPublishCompany.Size = new System.Drawing.Size(200, 24);
             this.txbPublishCompany.TabIndex = 4;
             // 
             // label9
@@ -277,18 +280,19 @@
             // btnAddBookTitle
             // 
             this.btnAddBookTitle.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddBookTitle.Location = new System.Drawing.Point(527, 105);
+            this.btnAddBookTitle.Location = new System.Drawing.Point(429, 140);
             this.btnAddBookTitle.Name = "btnAddBookTitle";
             this.btnAddBookTitle.Size = new System.Drawing.Size(72, 35);
             this.btnAddBookTitle.TabIndex = 11;
             this.btnAddBookTitle.Text = "Thêm";
             this.ttAdd.SetToolTip(this.btnAddBookTitle, "Thêm đầu sách");
             this.btnAddBookTitle.UseVisualStyleBackColor = true;
+            this.btnAddBookTitle.Click += new System.EventHandler(this.btnAddBookTitle_Click);
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.cbAuthor);
             this.groupBox5.Controls.Add(this.cbCategory);
-            this.groupBox5.Controls.Add(this.txbAuthor);
             this.groupBox5.Controls.Add(this.label12);
             this.groupBox5.Controls.Add(this.txbNameBookTitle);
             this.groupBox5.Controls.Add(this.txbIDBookTitle);
@@ -298,7 +302,7 @@
             this.groupBox5.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(281, 6);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(240, 136);
+            this.groupBox5.Size = new System.Drawing.Size(334, 136);
             this.groupBox5.TabIndex = 10;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Thêm đầu sách mới";
@@ -308,15 +312,8 @@
             this.cbCategory.FormattingEnabled = true;
             this.cbCategory.Location = new System.Drawing.Point(128, 78);
             this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(103, 24);
+            this.cbCategory.Size = new System.Drawing.Size(200, 24);
             this.cbCategory.TabIndex = 8;
-            // 
-            // txbAuthor
-            // 
-            this.txbAuthor.Location = new System.Drawing.Point(128, 107);
-            this.txbAuthor.Name = "txbAuthor";
-            this.txbAuthor.Size = new System.Drawing.Size(103, 24);
-            this.txbAuthor.TabIndex = 7;
             // 
             // label12
             // 
@@ -332,14 +329,15 @@
             // 
             this.txbNameBookTitle.Location = new System.Drawing.Point(128, 50);
             this.txbNameBookTitle.Name = "txbNameBookTitle";
-            this.txbNameBookTitle.Size = new System.Drawing.Size(103, 24);
+            this.txbNameBookTitle.Size = new System.Drawing.Size(200, 24);
             this.txbNameBookTitle.TabIndex = 5;
             // 
             // txbIDBookTitle
             // 
             this.txbIDBookTitle.Location = new System.Drawing.Point(128, 22);
             this.txbIDBookTitle.Name = "txbIDBookTitle";
-            this.txbIDBookTitle.Size = new System.Drawing.Size(103, 24);
+            this.txbIDBookTitle.ReadOnly = true;
+            this.txbIDBookTitle.Size = new System.Drawing.Size(200, 24);
             this.txbIDBookTitle.TabIndex = 4;
             // 
             // label6
@@ -392,6 +390,7 @@
             // 
             this.txbTotalPrice.Location = new System.Drawing.Point(140, 78);
             this.txbTotalPrice.Name = "txbTotalPrice";
+            this.txbTotalPrice.ReadOnly = true;
             this.txbTotalPrice.Size = new System.Drawing.Size(103, 24);
             this.txbTotalPrice.TabIndex = 4;
             // 
@@ -399,6 +398,7 @@
             // 
             this.txbIDImportBook.Location = new System.Drawing.Point(140, 22);
             this.txbIDImportBook.Name = "txbIDImportBook";
+            this.txbIDImportBook.ReadOnly = true;
             this.txbIDImportBook.Size = new System.Drawing.Size(103, 24);
             this.txbIDImportBook.TabIndex = 4;
             // 
@@ -556,6 +556,15 @@
             this.totalPrice.Name = "totalPrice";
             this.totalPrice.ReadOnly = true;
             // 
+            // cbAuthor
+            // 
+            this.cbAuthor.FormattingEnabled = true;
+            this.cbAuthor.Location = new System.Drawing.Point(128, 104);
+            this.cbAuthor.Name = "cbAuthor";
+            this.cbAuthor.Size = new System.Drawing.Size(200, 24);
+            this.cbAuthor.TabIndex = 9;
+            this.cbAuthor.SelectedIndexChanged += new System.EventHandler(this.cbAuthor_SelectedIndexChanged);
+            // 
             // FImportBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -604,7 +613,7 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox txbPublishYear;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox cbIDBookTitle;
+        private System.Windows.Forms.ComboBox cbBookTitle;
         private System.Windows.Forms.TextBox txbIDBook;
         private System.Windows.Forms.TextBox txbPublishCompany;
         private System.Windows.Forms.Label label9;
@@ -613,7 +622,6 @@
         private System.Windows.Forms.Button btnAddBookTitle;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.ComboBox cbCategory;
-        private System.Windows.Forms.TextBox txbAuthor;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txbNameBookTitle;
         private System.Windows.Forms.TextBox txbIDBookTitle;
@@ -633,5 +641,6 @@
         private System.Windows.Forms.Button btnPrintImport;
         private System.Windows.Forms.Button btnSaveImport;
         private System.Windows.Forms.ToolTip ttAdd;
+        private System.Windows.Forms.ComboBox cbAuthor;
     }
 }

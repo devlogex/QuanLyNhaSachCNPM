@@ -108,6 +108,12 @@
     <Compile Include="FBill.Designer.cs">
       <DependentUpon>FBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="FChooseAuthor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FChooseAuthor.Designer.cs">
+      <DependentUpon>FChooseAuthor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,12 +149,6 @@
     </Compile>
     <Compile Include="FListBill.Designer.cs">
       <DependentUpon>FListBill.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FListImportBook.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FListImportBook.Designer.cs">
-      <DependentUpon>FListImportBook.cs</DependentUpon>
     </Compile>
     <Compile Include="FManageBookTitle.cs">
       <SubType>Form</SubType>
@@ -215,6 +215,9 @@
     <EmbeddedResource Include="FBill.resx">
       <DependentUpon>FBill.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FChooseAuthor.resx">
+      <DependentUpon>FChooseAuthor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FListBill.resx">
       <DependentUpon>FListBill.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,9 +235,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FImportBook.resx">
       <DependentUpon>FImportBook.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FListImportBook.resx">
-      <DependentUpon>FListImportBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FManageBookTitle.resx">
       <DependentUpon>FManageBookTitle.cs</DependentUpon>

@@ -55,6 +55,16 @@ namespace QuanLyNhaSach.DAO
 
             return list;
         }
+        public int GetNewIDBook()
+        {
+            int id;
+            if (Int32.TryParse(DataProvider.Instance.ExecuteQuery("EXEC USP_GetNewIDBook").Rows[0][0].ToString(), out id))
+            {
+                return id;
+            }
+            else
+                return 1;
+        }
         //public bool AddBook(string name, int idCategory, string author, int count, int price)
         //{
         //    return DataProvider.Instance.ExecuteNonQuery("EXEC USP_AddBook @name , @idCategory , @author , @priceIn , @count",new object[] {name,idCategory,author,price,count }) > 0;
