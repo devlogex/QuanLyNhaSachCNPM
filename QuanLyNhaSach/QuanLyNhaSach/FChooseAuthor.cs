@@ -28,7 +28,9 @@ namespace QuanLyNhaSach
         }
         public void LoadAuthorIntoCombobox()
         {
-            cbAuthor.DataSource = AuthorDAO.Instance.GetListAuthor();
+            List<Author> list = AuthorDAO.Instance.GetListAuthor();
+            list.Add(new Author(-1, "Thêm"));
+            cbAuthor.DataSource = list;
             cbAuthor.DisplayMember = "name";
         }
         private void pbAddAuthor_Click(object sender, EventArgs e)
@@ -55,6 +57,11 @@ namespace QuanLyNhaSach
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            if(dtgvAuthor.RowCount==0)
+            {
+                MessageBox.Show("Bạn chưa nhập tác giả");
+                return;
+            }
             List<Author> authors = new List<Author>();
             foreach(DataGridViewRow item in dtgvAuthor.Rows)
             {
@@ -63,6 +70,18 @@ namespace QuanLyNhaSach
             if (updateForm != null)
                 updateForm(authors, new EventArgs());
             this.Close();
+        }
+        private void cbAuthor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ((cbAuthor.SelectedItem as Author).ID == -1)
+            {
+                FAddAuthor f = new FAddAuthor();
+                f.UpdateForm += delegate (object _sender, EventArgs _e)
+                {
+                    LoadAuthorIntoCombobox();
+                };
+                f.ShowDialog();
+            }
         }
     }
 }

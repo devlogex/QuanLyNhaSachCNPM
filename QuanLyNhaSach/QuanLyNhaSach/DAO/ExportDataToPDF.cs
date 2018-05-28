@@ -10,13 +10,15 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace QuanLyNhaSach.DAO
 {
     public class ExportDataToPDF
     {
         private static ExportDataToPDF instance;
-        
+
         public static ExportDataToPDF Instance
         {
             get { if (instance == null) instance = new ExportDataToPDF(); return instance; }
@@ -24,63 +26,104 @@ namespace QuanLyNhaSach.DAO
         }
         private ExportDataToPDF() { }
 
-        //public bool ExportDTGVToPdf(DataGridView ExDataTable,string name) 
+        //public bool EDTGVToPdf(DataGridView dtgv, string name)
         //{
-        //    //Here set page size as A4
 
-        //    Document pdfDoc = new Document(PageSize.A4,10,10,10,10);
-        //    FileStream fs = new FileStream(name, FileMode.Create, FileAccess.Write, FileShare.None);
-        //    try
-        //    {
-        //        PdfWriter writer = PdfWriter.GetInstance(pdfDoc, fs);
-        //        pdfDoc.Open();
+        //        BaseFont font = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
+        //        PdfPTable table = new PdfPTable(dtgv.ColumnCount);
+        //        table.DefaultCell.Padding = 3;
+        //        table.WidthPercentage = 100;
+        //        table.HorizontalAlignment = Element.ALIGN_LEFT;
+        //        table.DefaultCell.BorderWidth = 1;
 
-        //        //Set Font Properties for PDF File
-        //        Font fnt = FontFactory.GetFont("Times New Roman", 10);
-        //        DataGridView dt = ExDataTable;
-
-        //        if (dt != null)
+        //        Font text = new Font(font, 10, Font.NORMAL);
+        //        foreach (DataGridViewColumn item in dtgv.Columns)
         //        {
-
-        //            PdfPTable PdfTable = new PdfPTable(dt.Columns.Count);
-        //            PdfPCell PdfPCell = null;
-
-        //            //Here we create PDF file tables
-
-        //            for (int rows = 0; rows < dt.Rows.Count; rows++)
-        //            {
-        //                if (rows == 0)
-        //                {
-        //                    for (int column = 0; column < dt.Columns.Count; column++)
-        //                    {
-        //                        PdfPCell = new PdfPCell(new Phrase(new Chunk(dt.Columns[column].HeaderText, fnt)));
-        //                        PdfTable.AddCell(PdfPCell);
-        //                    }
-        //                }
-        //                for (int column = 0; column < dt.Columns.Count; column++)
-        //                {
-        //                    if (dt.Rows[rows].Cells[column] != null)
-        //                        PdfPCell = new PdfPCell(new Phrase(new Chunk(dt.Rows[rows].Cells[column].Value.ToString(), fnt)));
-        //                    else
-        //                        PdfPCell = new PdfPCell(new Phrase(""));
-        //                    PdfTable.AddCell(PdfPCell);
-        //                }
-        //            }
-
-        //            // Finally Add pdf table to the document 
-        //            pdfDoc.Add(PdfTable);
+        //            PdfPCell cell = new PdfPCell(new Phrase(item.Name, text));
+        //            cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
+        //            table.AddCell(cell);
         //        }
 
-        //        pdfDoc.Close();
+        //        foreach (DataGridViewRow row in dtgv.Rows)
+        //        {
+        //            foreach (DataGridViewCell cell in row.Cells)
+        //            {
+        //                if(cell.Value!=null)
+        //                    table.AddCell(new Phrase(cell.Value.ToString(), text));
+        //                else
+        //                table.AddCell(new Phrase("", text));
+        //        }
+        //    }
 
+        //        using (FileStream stream = new FileStream(name, FileMode.Create))
+        //        {
+        //            Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+        //            PdfWriter.GetInstance(pdfDoc, stream);
+        //            pdfDoc.Open();
+        //            pdfDoc.Add(table);
+        //            pdfDoc.Close();
+        //            stream.Close();
+        //        }
         //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return false;
-        //    }
         //}
-    
+        public static string convertToUnSign3(string s)
+        {
+            Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
+            string temp = s.Normalize(NormalizationForm.FormD);
+            return regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D');
+        }
+        public PdfPTable GetTable(DataGridView dtgv )
+        {
+
+            BaseFont font = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
+            PdfPTable table = new PdfPTable(dtgv.ColumnCount);
+            table.DefaultCell.Padding = 3;
+            table.WidthPercentage = 100;
+            table.HorizontalAlignment = Element.ALIGN_LEFT;
+            table.DefaultCell.BorderWidth = 1;
+
+            Font text = new Font(font, 10, Font.NORMAL);
+            foreach (DataGridViewColumn item in dtgv.Columns)
+            {
+                PdfPCell cell = new PdfPCell(new Phrase(convertToUnSign3(item.HeaderText), text));
+                cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
+                table.AddCell(cell);
+            }
+
+            foreach (DataGridViewRow row in dtgv.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value != null)
+                        table.AddCell(new Phrase(convertToUnSign3(cell.Value.ToString()), text));
+                    else
+                        table.AddCell(new Phrase("", text));
+                }
+            }
+            return table;
+        }
+        public Phrase GetPhrase(string data)
+        {
+            Font text = FontFactory.GetFont(BaseFont.HELVETICA, "Cp1254", BaseFont.NOT_EMBEDDED, 24, Font.BOLD, BaseColor.BLACK);
+
+            Phrase phrase = new Phrase(convertToUnSign3(data), text);
+            return phrase;
+        }
+        public bool ExportDataToPdf(string name,List<Phrase> datas, PdfPTable table=null)
+        {
+            using (FileStream stream = new FileStream(name, FileMode.Create))
+            {
+                Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+                PdfWriter.GetInstance(pdfDoc, stream);
+                pdfDoc.Open();
+                foreach (Phrase item in datas)
+                    pdfDoc.Add(item);
+                if(table!=null)
+                    pdfDoc.Add(table);
+                pdfDoc.Close();
+                stream.Close();
+            }
+            return true;
         }
     }
 }

@@ -46,6 +46,9 @@ namespace QuanLyNhaSach
             cbCategory.SelectedIndex = index;
 
             LoadListAuthor();
+
+            cbAuthor.SelectedIndexChanged += cbAuthor_SelectedIndexChanged;
+            cbCategory.SelectedIndexChanged += cbCategory_SelectedIndexChanged;
         }
         public void LoadListAuthor()
         {
@@ -56,12 +59,16 @@ namespace QuanLyNhaSach
         }
         public void LoadCategoryIntoCombobox()
         {
-            cbCategory.DataSource = CategoryBookDAO.Instance.GetListCategory();
+            List<CategoryBook> list = CategoryBookDAO.Instance.GetListCategory();
+            list.Add(new CategoryBook(-1, "Thêm"));
+            cbCategory.DataSource = list;
             cbCategory.DisplayMember = "name";
         }
         public void LoadAuthorIntoCombobox()
         {
-            cbAuthor.DataSource = AuthorDAO.Instance.GetListAuthor();
+            List<Author> list = AuthorDAO.Instance.GetListAuthor();
+            list.Add(new Author(-1, "Thêm"));
+            cbAuthor.DataSource = list;
             cbAuthor.DisplayMember = "name";
         }
         public bool UpdateBookTitle(int id, string name, int idCategory, List<int> authors)
@@ -141,6 +148,31 @@ namespace QuanLyNhaSach
             }
             else
                 MessageBox.Show("Cập nhật thất bại !");
+        }
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ((cbCategory.SelectedItem as CategoryBook).ID == -1)
+            {
+                FAddCategory f = new FAddCategory();
+                f.UpdateForm += delegate (object _sender, EventArgs _e)
+                {
+                    LoadCategoryIntoCombobox();
+                };
+                f.ShowDialog();
+            }
+        }
+
+        private void cbAuthor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ((cbAuthor.SelectedItem as Author).ID == -1)
+            {
+                FAddAuthor f = new FAddAuthor();
+                f.UpdateForm += delegate (object _sender, EventArgs _e)
+                {
+                    LoadAuthorIntoCombobox();
+                };
+                f.ShowDialog();
+            }
         }
     }
 }

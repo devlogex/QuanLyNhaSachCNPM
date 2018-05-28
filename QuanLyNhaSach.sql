@@ -509,14 +509,21 @@ AS
 BEGIN
 	DECLARE @importBookID INT
 	SELECT @importBookID=MAX(SoPhieuNhap) FROM PHIEUNHAPSACH
-
-	INSERT CT_PHIEUNHAPSACH(SoPhieuNhap,MaSach,	SoLuongNhap ,DonGiaNhap,ThanhTien)VALUES(
-		@importBookID,
-		@idBook,
-		@count,
-		@priceIn,
-		@money
-		)
+	IF((SELECT count(*) FROM CT_PHIEUNHAPSACH WHERE SoPhieuNhap=@importBookID AND MaSach=@idBook)=0)
+		INSERT CT_PHIEUNHAPSACH(SoPhieuNhap,MaSach,	SoLuongNhap ,DonGiaNhap,ThanhTien)VALUES(
+			@importBookID,
+			@idBook,
+			@count,
+			@priceIn,
+			@money
+			)
+	ELSE
+		UPDATE CT_PHIEUNHAPSACH
+		SET	SoLuongNhap=SoLuongNhap+ @count,
+			DonGiaNhap= @priceIn,
+			ThanhTien=ThanhTien+ @money
+		WHERE SoPhieuNhap= @importBookID and MaSach=@idBook
+			
 END
 GO
 

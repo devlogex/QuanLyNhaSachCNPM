@@ -1,4 +1,5 @@
-﻿using QuanLyNhaSach.DAO;
+﻿using iTextSharp.text;
+using QuanLyNhaSach.DAO;
 using QuanLyNhaSach.DTO;
 using System;
 using System.Collections.Generic;
@@ -48,7 +49,9 @@ namespace QuanLyNhaSach
         }
         public void LoadCategoryIntoCombobox()
         {
-            cbCategory.DataSource = CategoryBookDAO.Instance.GetListCategory();
+            List<CategoryBook> list = CategoryBookDAO.Instance.GetListCategory();
+            list.Add(new CategoryBook(-1, "Thêm"));
+            cbCategory.DataSource = list;
             cbCategory.DisplayMember = "name";
         }
         public void LoadBookTitleIntoCombobox()
@@ -64,18 +67,18 @@ namespace QuanLyNhaSach
                 return;
             }
 
-            for (int i = 0; i < dtgvImportBook.Rows.Count-1; i++)
+            for (int i = 0; i < dtgvImportBook.Rows.Count - 1; i++)
             {
                 int idBook = Int32.Parse(dtgvImportBook.Rows[i].Cells["id"].Value.ToString());
                 int count = Int32.Parse(dtgvImportBook.Rows[i].Cells["count"].Value.ToString());
                 float priceIn = (float)Double.Parse(dtgvImportBook.Rows[i].Cells["priceIn"].Value.ToString());
-                if (!ImportBookInfoDAO.Instance.InsertImportBookInfo(idBook, count, priceIn,count*priceIn))
+                if (!ImportBookInfoDAO.Instance.InsertImportBookInfo(idBook, count, priceIn, count * priceIn))
                 {
-                    MessageBox.Show(String.Format("Có lỗi khi lưu sách {0}", dtgvImportBook.Rows[i].Cells["nameBook"].Value));
                     return;
                 }
             }
             MessageBox.Show("Lưu phiếu nhập sách thành công !");
+            btnSaveImport.Tag = 1;
         }
         public bool AddBookTitle(string name, int idCategory, List<int> authors)
         {
@@ -98,29 +101,14 @@ namespace QuanLyNhaSach
             {
                 cbm.SelectedIndexChanged -= new EventHandler(ComboBox_SelectedIndexChanged);
             }
-
-            if(dtgvImportBook.Rows[e.RowIndex].Cells["count"].Value!=null && dtgvImportBook.Rows[e.RowIndex].Cells["priceIn"].Value!=null)
+            try
             {
-                dtgvImportBook.Rows[e.RowIndex].Cells["totalPrice"].Value = Double.Parse(dtgvImportBook.Rows[e.RowIndex].Cells["priceIn"].Value.ToString()) * Int64.Parse(dtgvImportBook.Rows[e.RowIndex].Cells["count"].Value.ToString());
+                if (dtgvImportBook.Rows[e.RowIndex].Cells["count"].Value != null && dtgvImportBook.Rows[e.RowIndex].Cells["priceIn"].Value != null)
+                {
+                    dtgvImportBook.Rows[e.RowIndex].Cells["totalPrice"].Value = Double.Parse(dtgvImportBook.Rows[e.RowIndex].Cells["priceIn"].Value.ToString()) * Int64.Parse(dtgvImportBook.Rows[e.RowIndex].Cells["count"].Value.ToString());
+                }
             }
-
-            //if(dtgvImportBook.Rows[e.RowIndex].Cells["id"].Value!=null && dtgvImportBook.Rows[e.RowIndex].Cells["count"].Value != null && dtgvImportBook.Rows[e.RowIndex].Cells["priceIn"].Value != null && dtgvImportBook.Rows[e.RowIndex].Cells["publishing"].Value != null)
-            //{
-            //    DataGridViewRow data = dtgvImportBook.Rows[e.RowIndex];
-            //    for(int i=0;i<dtgvImportBook.RowCount-1;i++)
-            //    {
-            //        if(i!=e.RowIndex)
-            //        {
-            //            if(dtgvImportBook.Rows[i].Cells["id"].Value.ToString()==data.Cells["id"].Value.ToString() && dtgvImportBook.Rows[i].Cells["publishing"].Value.ToString()==data.Cells["publishing"].Value.ToString())
-            //            {
-            //                dtgvImportBook.Rows[i].Cells["count"].Value = Int64.Parse(dtgvImportBook.Rows[i].Cells["count"].Value.ToString()) + Int64.Parse(data.Cells["count"].Value.ToString());
-            //                dtgvImportBook.Rows[i].Cells["priceIn"].Value =Double.Parse(data.Cells["priceIn"].Value.ToString());
-            //                dtgvImportBook.Rows.Remove(data);
-
-            //            }
-            //        }
-            //    }
-            //}
+            catch { MessageBox.Show("Lỗi dữ liệu nhập không đúng định dạng !"); }
 
             double totalPrice = 0.0;
             foreach(DataGridViewRow item in dtgvImportBook.Rows)
@@ -184,6 +172,11 @@ namespace QuanLyNhaSach
 
         private void btnSaveImport_Click(object sender, EventArgs e)
         {
+            if (btnSaveImport.Tag !=null)
+            {
+                MessageBox.Show("Bạn phải tạo phiếu nhập mới !");
+                return;
+            }
             for (int i = 0; i < dtgvImportBook.RowCount - 1; i++)
             {
                 if (dtgvImportBook.Rows[i].Cells["totalPrice"].Value == null)
@@ -262,7 +255,6 @@ namespace QuanLyNhaSach
 
         }
 
-        #endregion
 
         private void btnAddBook_Click(object sender, EventArgs e)
         {
@@ -300,15 +292,43 @@ namespace QuanLyNhaSach
 
         private void btnPrintImport_Click(object sender, EventArgs e)
         {
-            //string name = "PHIEUNHAPSACH" + txbIDImportBook.Text.ToString() + ".pdf";
+            if (btnSaveImport.Tag == null)
+            {
+                MessageBox.Show("Bạn phải lưu phiếu nhập trước !");
+                return;
+            }
 
-            //if (ExportDataToPDF.Instance.ExportDTGVToPdf(dtgvImportBook,name))
-            //{
-            //    MessageBox.Show("In thành công");
-            //    Process.Start(@"C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\"+name);
-            //}
-            //else
-            //    MessageBox.Show("In thất bại ");
+            string name = "PHIEUNHAPSACH" + txbIDImportBook.Text.ToString() + ".pdf";
+            try
+            {
+                List<Phrase> data = new List<Phrase>()
+                {
+                    ExportDataToPDF.Instance.GetPhrase("Số phiếu nhập: "),
+                    ExportDataToPDF.Instance.GetPhrase(txbIDImportBook.Text+'\n'),
+                    ExportDataToPDF.Instance.GetPhrase("Ngày lập: "+ dtpk.Value.ToString()+'\n'),
+                    ExportDataToPDF.Instance.GetPhrase("Tổng tiền: "+txbTotalPrice.Text+'\n')
+                };
+                ExportDataToPDF.Instance.ExportDataToPdf(name,data,ExportDataToPDF.Instance.GetTable(dtgvImportBook));
+                MessageBox.Show("In thành công");
+                Process.Start(@"C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\" + name);
+            }
+            catch { MessageBox.Show("In thất bại "); }
+
         }
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ((cbCategory.SelectedItem as CategoryBook).ID == -1)
+            {
+                FAddCategory f = new FAddCategory();
+                f.UpdateForm += delegate (object _sender, EventArgs _e)
+                {
+                    LoadCategoryIntoCombobox();
+                };
+                f.ShowDialog();
+            }
+        }
+
+        #endregion
+
     }
 }

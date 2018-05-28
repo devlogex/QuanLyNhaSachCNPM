@@ -27,12 +27,16 @@ namespace QuanLyNhaSach
         }
         public void LoadCategoryIntoCombobox()
         {
-            cbCategory.DataSource = CategoryBookDAO.Instance.GetListCategory();
+            List<CategoryBook>list= CategoryBookDAO.Instance.GetListCategory();
+            list.Add(new CategoryBook(-1, "Thêm"));
+            cbCategory.DataSource = list;
             cbCategory.DisplayMember = "name";
         }
         public void LoadAuthorIntoCombobox()
         {
-            cbAuthor.DataSource = AuthorDAO.Instance.GetListAuthor();
+            List<Author> list = AuthorDAO.Instance.GetListAuthor();
+            list.Add(new Author(-1, "Thêm"));
+            cbAuthor.DataSource = list;
             cbAuthor.DisplayMember = "name";
         }
         public bool AddBookTitle(string name, int idCategory, List<int> authors)
@@ -112,6 +116,32 @@ namespace QuanLyNhaSach
             if(dtgvAuthor.SelectedRows.Count>0)
             {
                 dtgvAuthor.Rows.RemoveAt(dtgvAuthor.SelectedRows[0].Index);
+            }
+        }
+
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if((cbCategory.SelectedItem as CategoryBook).ID==-1)
+            {
+                FAddCategory f = new FAddCategory();
+                f.UpdateForm += delegate (object _sender, EventArgs _e)
+                  {
+                      LoadCategoryIntoCombobox();
+                  };
+                f.ShowDialog();
+            }
+        }
+
+        private void cbAuthor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ((cbAuthor.SelectedItem as Author).ID == -1)
+            {
+                FAddAuthor f = new FAddAuthor();
+                f.UpdateForm += delegate (object _sender, EventArgs _e)
+                {
+                    LoadAuthorIntoCombobox();
+                };
+                f.ShowDialog();
             }
         }
     }
