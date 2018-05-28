@@ -350,6 +350,7 @@
             this.lbBill.TabIndex = 2;
             this.lbBill.TabStop = true;
             this.lbBill.Text = "Lập hóa đơn bán sách";
+            this.lbBill.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbBill_LinkClicked);
             // 
             // lbManageCategoryAndAuthor
             // 

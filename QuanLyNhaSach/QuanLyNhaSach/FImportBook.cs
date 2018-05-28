@@ -21,10 +21,16 @@ namespace QuanLyNhaSach
             InitializeComponent();
             LoadForm();
         }
+        private int minImport;
+        private int maxCount;
         #region Method
 
         public void LoadForm()
         {
+            minImport = ThamSoDAO.Instance.GetMinImport();
+            maxCount = ThamSoDAO.Instance.GetMaxCount();
+            lb.Text = "*Chỉ nhập các sách có số lượng tồn nhỏ hơn " + maxCount.ToString() + ". Số lượng nhập lớn hơn hoặc bằng " + minImport.ToString();
+
             txbIDImportBook.Text = ImportBookDAO.Instance.GetNewIDImportBook().ToString();
             txbIDBookTitle.Text = BookTitleDAO.Instance.GetNewIDBookTitle().ToString();
             txbIDBook.Text = BookDAO.Instance.GetNewIDBook().ToString();
@@ -103,6 +109,16 @@ namespace QuanLyNhaSach
             }
             try
             {
+                if (dtgvImportBook.Rows[e.RowIndex].Cells["count"].Value != null)
+                {
+                    if(Int64.Parse(dtgvImportBook.Rows[e.RowIndex].Cells["count"].Value.ToString())<minImport)
+                    {
+                        MessageBox.Show("Số lượng nhập tối thiểu là " + minImport.ToString());
+                        dtgvImportBook.Rows[e.RowIndex].Cells["count"].Value = "";
+                        return;
+                    }
+                }
+
                 if (dtgvImportBook.Rows[e.RowIndex].Cells["count"].Value != null && dtgvImportBook.Rows[e.RowIndex].Cells["priceIn"].Value != null)
                 {
                     dtgvImportBook.Rows[e.RowIndex].Cells["totalPrice"].Value = Double.Parse(dtgvImportBook.Rows[e.RowIndex].Cells["priceIn"].Value.ToString()) * Int64.Parse(dtgvImportBook.Rows[e.RowIndex].Cells["count"].Value.ToString());
@@ -140,7 +156,15 @@ namespace QuanLyNhaSach
         {
             if (cbm != null)
             {
+                if (cbm.SelectedIndex == -1)
+                    return;
                 Book book = cbm.SelectedItem as Book;
+                if(book.Count>=maxCount)
+                {
+                    MessageBox.Show("Chỉ nhập các sách có số lượng nhỏ hơn " + maxCount.ToString() + ".\nSách " + book.Name + " có lượng tồn là " + book.Count.ToString());
+                    dtgvImportBook.Rows.RemoveAt(dtgvImportBook.SelectedCells[0].OwningRow.Index);
+                    return;
+                }
                 if (book != null)
                 {
                     dtgvImportBook.SelectedCells[0].OwningRow.Cells["name"].Value = book.Name;
@@ -303,14 +327,15 @@ namespace QuanLyNhaSach
             {
                 List<Phrase> data = new List<Phrase>()
                 {
+                    ExportDataToPDF.Instance.GetPhraseHeader("PHIẾU NHẬP SÁCH\n"),
                     ExportDataToPDF.Instance.GetPhrase("Số phiếu nhập: "),
                     ExportDataToPDF.Instance.GetPhrase(txbIDImportBook.Text+'\n'),
                     ExportDataToPDF.Instance.GetPhrase("Ngày lập: "+ dtpk.Value.ToString()+'\n'),
                     ExportDataToPDF.Instance.GetPhrase("Tổng tiền: "+txbTotalPrice.Text+'\n')
                 };
                 ExportDataToPDF.Instance.ExportDataToPdf(name,data,ExportDataToPDF.Instance.GetTable(dtgvImportBook));
-                MessageBox.Show("In thành công");
-                Process.Start(@"C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\" + name);
+                if(MessageBox.Show("In thành công ! Bạn có muốn mở file ?","Thông báo",MessageBoxButtons.YesNo)==DialogResult.Yes)
+                    Process.Start(@"C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\" + name);
             }
             catch { MessageBox.Show("In thất bại "); }
 

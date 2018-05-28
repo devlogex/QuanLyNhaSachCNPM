@@ -16,7 +16,7 @@ namespace QuanLyNhaSach.DTO
         private string publishYear;
         private CategoryBook category;
         private List<Author> authors;
-        private int priceIn;
+        private float priceIn;
         private int count;
 
         public int ID { get => iD; set => iD = value; }
@@ -25,7 +25,7 @@ namespace QuanLyNhaSach.DTO
         public string PublishCompany { get => publishCompany; set => publishCompany = value; }
         public string PublishYear { get => publishYear; set => publishYear = value; }
         public CategoryBook Category { get => category; set => category = value; }
-        public int PriceIn { get => priceIn; set => priceIn = value; }
+        public float PriceIn { get => priceIn; set => priceIn = value; }
         public int Count { get => count; set => count = value; }
         public List<Author> Authors { get => authors; set => authors = value; }
 

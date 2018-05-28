@@ -68,15 +68,6 @@ namespace QuanLyNhaSach.DAO
             }
             return list;
         }
-        public List<int> GetListCustomerID()
-        {
-            List<int> list = new List<int>();
-            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_GetListCustomerID");
-            foreach (DataRow item in data.Rows)
-            {
-                list.Add((int)item[0]);
-            }
-            return list;
-        }
+
     }
 }

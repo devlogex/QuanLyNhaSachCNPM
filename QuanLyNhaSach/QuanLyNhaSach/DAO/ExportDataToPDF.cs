@@ -104,7 +104,14 @@ namespace QuanLyNhaSach.DAO
         }
         public Phrase GetPhrase(string data)
         {
-            Font text = FontFactory.GetFont(BaseFont.HELVETICA, "Cp1254", BaseFont.NOT_EMBEDDED, 24, Font.BOLD, BaseColor.BLACK);
+            Font text = FontFactory.GetFont(BaseFont.HELVETICA, "Cp1254", BaseFont.NOT_EMBEDDED, 12, Font.NORMAL, BaseColor.BLACK);
+
+            Phrase phrase = new Phrase(convertToUnSign3(data), text);
+            return phrase;
+        }
+        public Phrase GetPhraseHeader(string data)
+        {
+            Font text = FontFactory.GetFont(BaseFont.HELVETICA, "Cp1254", BaseFont.EMBEDDED, 24, Font.BOLD, BaseColor.GRAY);
 
             Phrase phrase = new Phrase(convertToUnSign3(data), text);
             return phrase;

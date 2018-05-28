@@ -48,8 +48,8 @@ namespace QuanLyNhaSach.DAO
 
             foreach(DataRow item in data.Rows)
             {
-                List<Author> authors = AuthorDAO.Instance.GetListAuthorByBookTitleID(Int32.Parse(item["id"].ToString()));
-                CategoryBook category = CategoryBookDAO.Instance.GetCategoryBookByBookTitleID(Int32.Parse(item["id"].ToString()));
+                List<Author> authors = AuthorDAO.Instance.GetListAuthorByBookTitleID(Int32.Parse(item["idBookTitle"].ToString()));
+                CategoryBook category = CategoryBookDAO.Instance.GetCategoryBookByBookTitleID(Int32.Parse(item["idBookTitle"].ToString()));
                 list.Add(new Book(item, category, authors));
             }
 

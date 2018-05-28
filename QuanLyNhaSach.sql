@@ -177,6 +177,96 @@ INSERT THAMSO VALUES('SoLuongNhapToiThieu ',150)
 INSERT THAMSO VALUES('ApDungQD4 ',1)
 GO
 
+CREATE PROC USP_GetMinImport
+AS
+BEGIN
+	SELECT GiaTri FROM THAMSO WHERE TenThamSo='SoLuongNhapToiThieu'
+END
+GO
+
+CREATE PROC USP_SetMinImport
+@minImport INT
+AS
+BEGIN
+	UPDATE THAMSO SET GiaTri=@minImport WHERE TenThamSo='SoLuongNhapToiThieu'
+END
+GO
+
+CREATE PROC USP_GetMaxCount
+AS
+BEGIN
+	SELECT GiaTri FROM THAMSO WHERE TenThamSo='SoLuongTonToiDa'
+END
+GO
+
+CREATE PROC USP_SetMaxCount
+@maxCount INT
+AS
+BEGIN
+	UPDATE THAMSO SET GiaTri=@maxCount WHERE TenThamSo='SoLuongTonToiDa'
+END
+GO
+
+CREATE PROC USP_GetMinCount
+AS
+BEGIN
+	SELECT GiaTri FROM THAMSO WHERE TenThamSo='SoLuongTonToiThieu'
+END
+GO
+
+CREATE PROC USP_SetMinCount
+@minCount INT
+AS
+BEGIN
+	UPDATE THAMSO SET GiaTri=@minCount WHERE TenThamSo='SoLuongTonToiThieu'
+END
+GO
+
+CREATE PROC USP_GetMaxOwe
+AS
+BEGIN
+	SELECT GiaTri FROM THAMSO WHERE TenThamSo='SoTienNoToiDa'
+END
+GO
+
+CREATE PROC USP_SetMaxOwe
+@maxOwe INT
+AS
+BEGIN
+	UPDATE THAMSO SET GiaTri=@maxOwe WHERE TenThamSo='SoTienNoToiDa'
+END
+GO
+
+CREATE PROC USP_GetPercentPrice
+AS
+BEGIN
+	SELECT GiaTri FROM THAMSO WHERE TenThamSo='TiLeTinhDonGiaBan'
+END
+GO
+
+CREATE PROC USP_SetPercentPrice
+@percentPrice INT
+AS
+BEGIN
+	UPDATE THAMSO SET GiaTri=@percentPrice WHERE TenThamSo='TiLeTinhDonGiaBan'
+END
+GO
+
+CREATE PROC USP_GetCheck
+AS
+BEGIN
+	SELECT GiaTri FROM THAMSO WHERE TenThamSo='ApDungQD4'
+END
+GO
+
+CREATE PROC USP_SetCheck
+@check INT
+AS
+BEGIN
+	UPDATE THAMSO SET GiaTri=@check WHERE TenThamSo='ApDungQD4'
+END
+GO
+
 INSERT NHOMNGUOIDUNG(TenNhom)values('admin')
 INSERT NGUOIDUNG VALUES('admin','admin','admin',2)
 go
@@ -488,7 +578,7 @@ CREATE PROC USP_GetCategoryBookByBookTitleID
 @id INT
 AS
 BEGIN
-	SELECT th.MaTheLoai as id,th.TenTheLoai as name FROM THELOAISACH th,DAUSACH d WHERE th.MaTheLoai=d.MaTheLoai
+	SELECT th.MaTheLoai as id,th.TenTheLoai as name FROM THELOAISACH th,DAUSACH d WHERE d.MaDauSach=@id AND d.MaTheLoai=th.MaTheLoai
 END
 GO
 
@@ -510,6 +600,7 @@ BEGIN
 	DECLARE @importBookID INT
 	SELECT @importBookID=MAX(SoPhieuNhap) FROM PHIEUNHAPSACH
 	IF((SELECT count(*) FROM CT_PHIEUNHAPSACH WHERE SoPhieuNhap=@importBookID AND MaSach=@idBook)=0)
+	BEGIN
 		INSERT CT_PHIEUNHAPSACH(SoPhieuNhap,MaSach,	SoLuongNhap ,DonGiaNhap,ThanhTien)VALUES(
 			@importBookID,
 			@idBook,
@@ -517,13 +608,18 @@ BEGIN
 			@priceIn,
 			@money
 			)
+
+	END
 	ELSE
+	BEGIN
 		UPDATE CT_PHIEUNHAPSACH
 		SET	SoLuongNhap=SoLuongNhap+ @count,
 			DonGiaNhap= @priceIn,
 			ThanhTien=ThanhTien+ @money
 		WHERE SoPhieuNhap= @importBookID and MaSach=@idBook
-			
+	END
+	UPDATE SACH SET DonGiaNhap=@priceIn, SoLuongTon=SoLuongTon+@count WHERE MaSach=@idBook
+
 END
 GO
 
@@ -533,3 +629,13 @@ BEGIN
 	SELECT MaDauSach as id,TenDauSach as name,MaTheLoai as idCategory FROM DAUSACH
 END
 GO
+
+CREATE PROC USP_GetNewIDBill
+AS
+BEGIN
+	SELECT MAX(SoHoaDon)+1 FROM HOADON
+END
+GO
+
+EXEC USP_GetCategoryBookByBookTitleID @id=2
+select SACH.MaSach,TACGIA.TenTacGia from SACH,TACGIA,CT_TACGIA WHERE SACH.MaDauSach=CT_TACGIA.MaDauSach AND CT_TACGIA.MaTacGia=TACGIA.MaTacGia

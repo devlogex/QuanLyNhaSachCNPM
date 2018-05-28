@@ -51,5 +51,11 @@ namespace QuanLyNhaSach
             FImportBook f = new FImportBook();
             f.ShowDialog();
         }
+
+        private void lbBill_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FBill f = new FBill();
+            f.ShowDialog();
+        }
     }
 }
