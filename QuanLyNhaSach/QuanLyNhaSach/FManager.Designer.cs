@@ -210,6 +210,7 @@
             this.lbCollectMoney.TabIndex = 2;
             this.lbCollectMoney.TabStop = true;
             this.lbCollectMoney.Text = "Lập phiếu thu tiền";
+            this.lbCollectMoney.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbCollectMoney_LinkClicked);
             // 
             // label3
             // 

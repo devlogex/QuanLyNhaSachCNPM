@@ -30,9 +30,9 @@ namespace QuanLyNhaSach.DAO
                 return 1;
         }
 
-        public bool InsertBill(Customer customer, DateTime date, float value, float owe)
+        public bool InsertBill(Customer customer, DateTime date, float totalMoney, float receiveMoney,float moneyOwe)
         {
-            return DataProvider.Instance.ExecuteNonQuery("EXEC USP_InsertBillIntoDatabase @idCustomer , @date , @value , @owe", new object[] { customer.ID, date, value, owe }) > 0;
+            return DataProvider.Instance.ExecuteNonQuery("EXEC USP_InsertBillIntoDatabase @idCustomer , @date , @totalMoney , @receiveMoney , @moneyOwe", new object[] { customer.ID, date, totalMoney, receiveMoney,moneyOwe }) > 0;
         }
         public List<Bill> GetListBillByTime(int month, int year)
         {
@@ -48,6 +48,7 @@ namespace QuanLyNhaSach.DAO
         {
             return DataProvider.Instance.ExecuteQuery("EXEC USP_GetListBill");
         }
+
 
     }
 }

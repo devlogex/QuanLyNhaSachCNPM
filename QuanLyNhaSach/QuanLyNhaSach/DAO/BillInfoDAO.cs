@@ -19,9 +19,9 @@ namespace QuanLyNhaSach.DAO
         }
         private BillInfoDAO() { }
 
-        public bool InsertBillInfo(int idBook,int count,float priceOut)
+        public bool InsertBillInfo(int idBook,int count,float priceOut,float totalPrice)
         {
-            return DataProvider.Instance.ExecuteNonQuery("EXEC USP_InsertBillInfoIntoDatabase @idBook , @count , @priceOut", new object[] { idBook,count,priceOut }) > 0;
+            return DataProvider.Instance.ExecuteNonQuery("EXEC USP_InsertBillInfoIntoDatabase @idBook , @count , @priceOut , @totalPrice", new object[] { idBook,count,priceOut,totalPrice }) > 0;
         }
         public List<BillInfo> GetListBillInfoByTime(int month,int year)
         {

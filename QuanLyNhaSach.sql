@@ -637,5 +637,51 @@ BEGIN
 END
 GO
 
-EXEC USP_GetCategoryBookByBookTitleID @id=2
-select SACH.MaSach,TACGIA.TenTacGia from SACH,TACGIA,CT_TACGIA WHERE SACH.MaDauSach=CT_TACGIA.MaDauSach AND CT_TACGIA.MaTacGia=TACGIA.MaTacGia
+CREATE PROC USP_InsertBillIntoDatabase
+	@idCustomer INT ,
+	@date DATE,
+	@totalMoney FLOAT,
+	@receiveMoney FLOAT,
+	@moneyOwe FLOAT
+AS
+BEGIN
+	INSERT HOADON ( MaKhachHang,NgayLap,TongTien,ThanhToan,ConLai )VALUES
+	(
+		@idCustomer,
+		@date,
+		@totalMoney,
+		@receiveMoney,
+		@moneyOwe
+	)
+	IF(@moneyOwe >0)
+		UPDATE KHACHHANG SET SoTienNo=SoTienNo+@moneyOwe WHERE MaKhachHang=@idCustomer
+END
+GO
+
+CREATE PROC USP_InsertBillInfoIntoDatabase
+	@idBook INT ,
+	@count INT ,
+	@priceOut FLOAT,
+	@totalPrice FLOAT
+AS
+BEGIN
+	DECLARE @idBill INT
+	SELECT @idBill=MAX(SoHoaDon) FROM HOADON
+	INSERT CT_HOADON (SoHoaDon,MaSach ,SoLuong ,DonGiaBan ,	ThanhTien )VALUES
+	(
+		@idBill,
+		@idBook  ,
+		@count  ,
+		@priceOut ,
+		@totalPrice 
+	)
+	UPDATE SACH SET SoLuongTon=SoLuongTon-@count WHERE MaSach=@idBook
+END
+GO
+
+CREATE PROC USP_GetNewIDCustomer
+AS
+BEGIN
+	SELECT MAX(MaKhachHang+1) FROM KHACHHANG
+END
+GO

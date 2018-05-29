@@ -15,21 +15,11 @@ namespace QuanLyNhaSach
         public FReceipt()
         {
             InitializeComponent();
+            LoadForm();
         }
-
-        private void label1_Click(object sender, EventArgs e)
+        public void LoadForm()
         {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
+            
         }
     }
 }

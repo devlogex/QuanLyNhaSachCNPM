@@ -57,5 +57,11 @@ namespace QuanLyNhaSach
             FBill f = new FBill();
             f.ShowDialog();
         }
+
+        private void lbCollectMoney_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FReceipt f = new FReceipt();
+            f.ShowDialog();
+        }
     }
 }

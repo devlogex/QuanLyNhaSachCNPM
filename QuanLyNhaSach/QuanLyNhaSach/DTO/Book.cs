@@ -33,7 +33,7 @@ namespace QuanLyNhaSach.DTO
         {
             this.ID = (int)row["id"];
             this.Name = row["name"].ToString();
-            this.PriceIn = Int32.Parse(row["priceIn"].ToString());
+            this.PriceIn = (float)Double.Parse(row["priceIn"].ToString());
             this.Count = Int32.Parse(row["count"].ToString());
             this.IdBookTitle = Int32.Parse(row["idBookTitle"].ToString());
             this.PublishCompany = row["publishCompany"].ToString();

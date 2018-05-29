@@ -109,9 +109,10 @@ namespace QuanLyNhaSach
             }
             try
             {
+
                 if (dtgvImportBook.Rows[e.RowIndex].Cells["count"].Value != null)
                 {
-                    if(Int64.Parse(dtgvImportBook.Rows[e.RowIndex].Cells["count"].Value.ToString())<minImport)
+                    if (Int64.Parse(dtgvImportBook.Rows[e.RowIndex].Cells["count"].Value.ToString()) < minImport)
                     {
                         MessageBox.Show("Số lượng nhập tối thiểu là " + minImport.ToString());
                         dtgvImportBook.Rows[e.RowIndex].Cells["count"].Value = "";
@@ -124,7 +125,12 @@ namespace QuanLyNhaSach
                     dtgvImportBook.Rows[e.RowIndex].Cells["totalPrice"].Value = Double.Parse(dtgvImportBook.Rows[e.RowIndex].Cells["priceIn"].Value.ToString()) * Int64.Parse(dtgvImportBook.Rows[e.RowIndex].Cells["count"].Value.ToString());
                 }
             }
-            catch { MessageBox.Show("Lỗi dữ liệu nhập không đúng định dạng !"); }
+            catch
+            {
+                dtgvImportBook.Rows[e.RowIndex].Cells["count"].Value = null;
+                dtgvImportBook.Rows[e.RowIndex].Cells["priceIn"].Value = null;
+                MessageBox.Show("Lỗi dữ liệu nhập không đúng định dạng !");
+            }
 
             double totalPrice = 0.0;
             foreach(DataGridViewRow item in dtgvImportBook.Rows)
@@ -273,6 +279,8 @@ namespace QuanLyNhaSach
             {
                 MessageBox.Show("Thêm đầu sách thành công!");
                 LoadBookTitleIntoCombobox();
+                txbIDBookTitle.Text = BookTitleDAO.Instance.GetNewIDBookTitle().ToString();
+                txbNameBookTitle.Text = "";
             }
             else
                 MessageBox.Show("Thêm đầu sách thất bại !");
@@ -301,6 +309,9 @@ namespace QuanLyNhaSach
             {
                 MessageBox.Show("Thêm sách thành công !");
                 LoadListBookIntoCombobox();
+                txbIDBook.Text = BookDAO.Instance.GetNewIDBook().ToString();
+                txbPublishCompany.Text = "";
+                txbPublishYear.Text = "";
             }
             else
                 MessageBox.Show("Thêm sách thất bại !");
