@@ -103,7 +103,6 @@ namespace QuanLyNhaSach
 
             if (CheckReportCount(date.Month, date.Year))
             {
-
                 LoadReportCount(date.Month, date.Year);
             }
             else

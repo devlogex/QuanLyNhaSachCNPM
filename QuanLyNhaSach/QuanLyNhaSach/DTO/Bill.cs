@@ -36,7 +36,8 @@ namespace QuanLyNhaSach.DTO
             this.Date = (DateTime)row["date"];
             this.Value = (float)Double.Parse(row["value"].ToString());
             this.Owe = (float)Double.Parse(row["owe"].ToString());
-
+            if (this.Owe < 0)
+                this.Owe = 0;
         }
     }
 }

@@ -763,7 +763,7 @@ BEGIN
 END
 GO
 
-CREATE PROC USP_GetReportCountInfoByTimeAndBookID
+CREATE PROC USP_GetReportCountByTimeAndBookID
 @month INT,
 @year INT,
 @idBook INT
@@ -796,4 +796,89 @@ BEGIN
 END
 GO
 
+
+
+CREATE PROC USP_GetListCollectMoneyByTime
+@month INT,
+@year INT
+AS
+BEGIN
+	SELECT SoPhieuThu as iD,MaKhachHang as idCustomer,NgayLap as date, SoTienThu as money
+	FROM PHIEUTHUTIEN 
+	WHERE MONTH(NgayLap)=@month AND YEAR(NgayLap)=@year 
+END
+GO
+
+CREATE PROC USP_GetListBillByTime
+@month INT,
+@year INT
+AS
+BEGIN
+	SELECT SoHoaDon as iD,MaKhachHang as idCustomer,NgayLap as date, TongTien as value, ConLai as owe
+	FROM HOADON 
+	WHERE MONTH(NgayLap)=@month AND YEAR(NgayLap)=@year 
+END
+GO
+
+CREATE PROC USP_GetReportOwe
+@month INT,
+@year INT
+AS
+BEGIN
+	SELECT Thang as month, Nam as year, MaKhachHang as idCustomer, NoDau as firstOwe, PhatSinh as addOwe, NoCuoi as lastOwe
+	FROM BAOCAOCONGNO
+	WHERE Thang=@month AND Nam=@year
+END
+GO
+
+CREATE PROC USP_LoadReportOwe
+@month INT,
+@year INT
+AS
+BEGIN
+	SELECT MaKhachHang as idCustomer,NoDau as firstOwe, PhatSinh as addOwe, NoCuoi as lastOwe
+	FROM BAOCAOCONGNO
+	WHERE Thang=@month AND Nam=@year
+END
+GO
+
+CREATE PROC USP_GetReportOweByTimeAndCustomerID
+@month INT,
+@year INT,
+@idCustomer INT
+AS
+BEGIN
+	SELECT Thang as month, Nam as year, MaKhachHang as idCustomer, NoDau as firstOwe, PhatSinh as addOwe, NoCuoi as lastOwe
+	FROM BAOCAOCONGNO
+	WHERE Thang=@month and Nam=@year and MaKhachHang=@idCustomer
+END
+GO
+
+CREATE PROC USP_InsertReportOwe 
+@month INT,
+@year INT, 
+@idCustomer INT, 
+@firstOwe INT, 
+@addOwe INT,
+@lastOwe INT
+AS
+BEGIN
+	INSERT BAOCAOCONGNO VALUES
+	(
+		@month ,
+	@year , 
+	@idCustomer , 
+	@firstOwe , 
+	@addOwe , 
+	@lastOwe
+	)
+END
+GO
+delete CT_HOADON
+delete HOADON
+delete CT_PHIEUNHAPSACH
+delete PHIEUNHAPSACH
+delete PHIEUTHUTIEN
+delete BAOCAOCONGNO
 delete BAOCAOTON
+delete SACH

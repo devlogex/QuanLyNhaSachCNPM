@@ -78,7 +78,6 @@
     <Compile Include="DAO\ImportBookInfoDAO.cs" />
     <Compile Include="DAO\ReportCountDAO.cs" />
     <Compile Include="DAO\ReportOweDAO.cs" />
-    <Compile Include="DAO\ReportOweInfoDAO.cs" />
     <Compile Include="DAO\ThamSoDAO.cs" />
     <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\Author.cs" />

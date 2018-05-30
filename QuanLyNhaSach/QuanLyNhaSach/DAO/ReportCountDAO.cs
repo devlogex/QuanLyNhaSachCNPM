@@ -33,7 +33,7 @@ namespace QuanLyNhaSach.DAO
         }
         public ReportCount GetReportCountInfoByTimeAndBookID(int month,int year,int idBook)
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_GetReportCountInfoByTimeAndBookID @month , @year , @idBook", new object[] { month, year, idBook });
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_GetReportCountByTimeAndBookID @month , @year , @idBook", new object[] { month, year, idBook });
             if (data.Rows.Count == 0)
                 return null;
             else

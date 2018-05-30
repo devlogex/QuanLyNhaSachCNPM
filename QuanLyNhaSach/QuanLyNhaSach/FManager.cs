@@ -63,5 +63,23 @@ namespace QuanLyNhaSach
             FReceipt f = new FReceipt();
             f.ShowDialog();
         }
+
+        private void lbReportCount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FReportBook f = new FReportBook();
+            f.ShowDialog();
+        }
+
+        private void lbReportOwe_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FReportOwe f = new FReportOwe();
+            f.ShowDialog();
+        }
+
+        private void itemLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

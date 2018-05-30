@@ -36,7 +36,6 @@
             this.itemDisplayName = new System.Windows.Forms.ToolStripMenuItem();
             this.itemAccount = new System.Windows.Forms.ToolStripMenuItem();
             this.itemLogOut = new System.Windows.Forms.ToolStripMenuItem();
-            this.itemExit = new System.Windows.Forms.ToolStripMenuItem();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.lbReportOwe = new System.Windows.Forms.LinkLabel();
@@ -113,7 +112,7 @@
             this.itemDisplayName});
             this.menuStrip1.Location = new System.Drawing.Point(776, 8);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(103, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(223, 27);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -122,8 +121,7 @@
             this.itemDisplayName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
             this.itemDisplayName.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.itemAccount,
-            this.itemLogOut,
-            this.itemExit});
+            this.itemLogOut});
             this.itemDisplayName.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.itemDisplayName.ForeColor = System.Drawing.Color.Blue;
             this.itemDisplayName.Name = "itemDisplayName";
@@ -143,16 +141,9 @@
             this.itemLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
             this.itemLogOut.ForeColor = System.Drawing.Color.Blue;
             this.itemLogOut.Name = "itemLogOut";
-            this.itemLogOut.Size = new System.Drawing.Size(157, 24);
+            this.itemLogOut.Size = new System.Drawing.Size(180, 24);
             this.itemLogOut.Text = "Đăng xuất";
-            // 
-            // itemExit
-            // 
-            this.itemExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
-            this.itemExit.ForeColor = System.Drawing.Color.Blue;
-            this.itemExit.Name = "itemExit";
-            this.itemExit.Size = new System.Drawing.Size(157, 24);
-            this.itemExit.Text = "Thoát";
+            this.itemLogOut.Click += new System.EventHandler(this.itemLogOut_Click);
             // 
             // panel5
             // 
@@ -188,6 +179,7 @@
             this.lbReportOwe.TabIndex = 2;
             this.lbReportOwe.TabStop = true;
             this.lbReportOwe.Text = "Báo cáo công nợ";
+            this.lbReportOwe.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbReportOwe_LinkClicked);
             // 
             // lbSearchCustomer
             // 
@@ -317,6 +309,7 @@
             this.lbReportCount.TabIndex = 2;
             this.lbReportCount.TabStop = true;
             this.lbReportCount.Text = "Báo cáo tồn";
+            this.lbReportCount.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbReportCount_LinkClicked);
             // 
             // lbSearchBook
             // 
@@ -448,7 +441,6 @@
         private System.Windows.Forms.ToolStripMenuItem itemDisplayName;
         private System.Windows.Forms.ToolStripMenuItem itemAccount;
         private System.Windows.Forms.ToolStripMenuItem itemLogOut;
-        private System.Windows.Forms.ToolStripMenuItem itemExit;
     }
 }
 
