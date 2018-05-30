@@ -28,9 +28,9 @@ namespace QuanLyNhaSach.DTO
         }
         public ImportBookInfo(DataRow row)
         {
-            this.IDImportBook = (int)row["idImportBook"];
-            this.IDBook = (int)row["idBook"];
-            this.Count = (int)row["count"];
+            this.IDImportBook = Int32.Parse(row["idImportBook"].ToString());
+            this.IDBook = Int32.Parse(row["idBook"].ToString());
+            this.Count = Int32.Parse(row["count"].ToString());
             this.PriceIn = (float)Double.Parse(row["priceIn"].ToString());
         }
     }

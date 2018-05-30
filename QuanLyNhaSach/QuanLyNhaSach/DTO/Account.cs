@@ -32,7 +32,7 @@ namespace QuanLyNhaSach.DTO
             this.UserName = row["userName"].ToString();
             this.DisplayName = row["displayName"].ToString();
             this.PassWord = row["passWord"].ToString();
-            this.Type = (int)row["type"];
+            this.Type = Int32.Parse(row["type"].ToString());
         }
     }
 }

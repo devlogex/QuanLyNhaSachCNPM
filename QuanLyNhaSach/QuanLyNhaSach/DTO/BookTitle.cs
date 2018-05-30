@@ -21,9 +21,9 @@ namespace QuanLyNhaSach.DTO
 
         public BookTitle(DataRow row,List<Author>authors)
         {
-            this.ID = (int)row["id"];
+            this.ID = Int32.Parse(row["id"].ToString());
             this.name = row["name"].ToString();
-            this.IdCategory = (int)row["idCategory"];
+            this.IdCategory =Int32.Parse(row["idCategory"].ToString());
             this.Authors = authors;
         }
     }

@@ -339,10 +339,10 @@ namespace QuanLyNhaSach
                 List<Phrase> data = new List<Phrase>()
                 {
                     ExportDataToPDF.Instance.GetPhraseHeader("PHIẾU NHẬP SÁCH\n"),
-                    ExportDataToPDF.Instance.GetPhrase("Số phiếu nhập: "),
+                    ExportDataToPDF.Instance.GetPhrase("Số phiếu nhập: \t"),
                     ExportDataToPDF.Instance.GetPhrase(txbIDImportBook.Text+'\n'),
-                    ExportDataToPDF.Instance.GetPhrase("Ngày lập: "+ dtpk.Value.ToString()+'\n'),
-                    ExportDataToPDF.Instance.GetPhrase("Tổng tiền: "+txbTotalPrice.Text+'\n')
+                    ExportDataToPDF.Instance.GetPhrase("Ngày lập: \t"+ dtpk.Value.ToString()+'\n'),
+                    ExportDataToPDF.Instance.GetPhrase("Tổng tiền: \t"+txbTotalPrice.Text+'\n')
                 };
                 ExportDataToPDF.Instance.ExportDataToPdf(name,data,ExportDataToPDF.Instance.GetTable(dtgvImportBook));
                 if(MessageBox.Show("In thành công ! Bạn có muốn mở file ?","Thông báo",MessageBoxButtons.YesNo)==DialogResult.Yes)

@@ -22,6 +22,17 @@ namespace QuanLyNhaSach.DAO
         }
         private CollectMoneyDAO() { }
         
+        public int GetNewID()
+        {
+            int id;
+            if (Int32.TryParse(DataProvider.Instance.ExecuteQuery("EXEC USP_GetNewIDCollectMoney").Rows[0][0].ToString(), out id))
+            {
+                return id;
+            }
+            else
+                return 1;
+        }
+        
         public bool SaveCollectMoney(int idCustomer,DateTime date,float moneyCollect)
         {
             return DataProvider.Instance.ExecuteNonQuery("EXEC USP_InsertCollectMoneyIntoDatabase @idCustomer , @date , @money", new object[] { idCustomer,date,moneyCollect }) > 0;

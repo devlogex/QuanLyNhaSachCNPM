@@ -21,7 +21,7 @@ namespace QuanLyNhaSach.DTO
         }
         public ImportBook(DataRow row)
         {
-            this.ID = (int)row["id"];
+            this.ID = Int32.Parse(row["id"].ToString());
             this.Date = (DateTime)row["date"];
         }
     }

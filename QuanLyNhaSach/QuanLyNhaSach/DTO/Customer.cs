@@ -34,7 +34,7 @@ namespace QuanLyNhaSach.DTO
         }
         public Customer(DataRow row)
         {
-            this.ID = (int)row["id"];
+            this.ID = Int32.Parse(row["id"].ToString());
             this.Name = row["name"].ToString();
             this.Address = row["address"].ToString(); ;
             this.Phonenumber = row["phonenumber"].ToString();

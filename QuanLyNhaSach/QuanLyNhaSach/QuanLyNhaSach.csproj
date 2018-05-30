@@ -77,7 +77,6 @@
     <Compile Include="DAO\ImportBookDAO.cs" />
     <Compile Include="DAO\ImportBookInfoDAO.cs" />
     <Compile Include="DAO\ReportCountDAO.cs" />
-    <Compile Include="DAO\ReportCountInfoDAO.cs" />
     <Compile Include="DAO\ReportOweDAO.cs" />
     <Compile Include="DAO\ReportOweInfoDAO.cs" />
     <Compile Include="DAO\ThamSoDAO.cs" />
@@ -93,9 +92,7 @@
     <Compile Include="DTO\ImportBook.cs" />
     <Compile Include="DTO\ImportBookInfo.cs" />
     <Compile Include="DTO\ReportCount.cs" />
-    <Compile Include="DTO\ReportCountInfo.cs" />
     <Compile Include="DTO\ReportOwe.cs" />
-    <Compile Include="DTO\ReportOweInfo.cs" />
     <Compile Include="FAddAuthor.cs">
       <SubType>Form</SubType>
     </Compile>

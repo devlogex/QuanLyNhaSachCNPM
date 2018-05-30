@@ -120,7 +120,7 @@ namespace QuanLyNhaSach.DAO
         {
             using (FileStream stream = new FileStream(name, FileMode.Create))
             {
-                Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+                Document pdfDoc = new Document(PageSize.A4, 30f, 30f, 30f, 0f);
                 PdfWriter.GetInstance(pdfDoc, stream);
                 pdfDoc.Open();
                 foreach (Phrase item in datas)

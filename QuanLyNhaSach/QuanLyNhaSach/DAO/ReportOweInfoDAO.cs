@@ -19,11 +19,11 @@ namespace QuanLyNhaSach.DAO
         }
         private ReportOweInfoDAO() { }
 
-        public ReportOweInfo GetReportOweInfoByTimeAndCustomerID(int month,int year,int idCustomer)
+        public ReportOwe GetReportOweInfoByTimeAndCustomerID(int month,int year,int idCustomer)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_GetReportOweInfoByTimeAndCustomerID @month , @year , @idCustomer", new object[] { month, year, idCustomer });
             if (data.Rows.Count > 0)
-                return new ReportOweInfo(data.Rows[0]);
+                return new ReportOwe(data.Rows[0]);
             else
                 return null;
         }

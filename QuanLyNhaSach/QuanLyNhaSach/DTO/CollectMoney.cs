@@ -28,8 +28,8 @@ namespace QuanLyNhaSach.DTO
         }
         public CollectMoney(DataRow row)
         {
-            this.ID = (int)row["id"];
-            this.IdCustomer = (int)row["idCustomer"];
+            this.ID = Int32.Parse(row["id"].ToString());
+            this.IdCustomer = Int32.Parse(row["idCustomer"].ToString());
             this.Date = (DateTime)row["date"];
             this.Money = (float)Double.Parse(row["money"].ToString());
         }

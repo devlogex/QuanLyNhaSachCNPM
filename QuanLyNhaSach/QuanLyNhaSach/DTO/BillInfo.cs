@@ -28,9 +28,9 @@ namespace QuanLyNhaSach.DTO
         }
         public BillInfo(DataRow row)
         {
-            this.IdBill = (int)row["idBill"];
-            this.IdBook = (int)row["idBook"];
-            this.Count = (int)row["count"];
+            this.IdBill = Int32.Parse(row["idBill"].ToString());
+            this.IdBook = Int32.Parse(row["idBook"].ToString());
+            this.Count = Int32.Parse(row["count"].ToString());
             this.PriceOut = (float)Double.Parse(row["priceOut"].ToString());
         }
     }

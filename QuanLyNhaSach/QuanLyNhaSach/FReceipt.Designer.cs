@@ -51,9 +51,10 @@
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
-            this.btnPrint = new System.Windows.Forms.Button();
+            this.lb = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -61,6 +62,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lb);
             this.groupBox2.Controls.Add(this.txbMoneyOwe);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.cbCustomer);
@@ -277,6 +279,7 @@
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCreate
             // 
@@ -288,6 +291,7 @@
             this.btnCreate.TabIndex = 11;
             this.btnCreate.Text = "Tạo mới";
             this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // btnExit
             // 
@@ -299,6 +303,7 @@
             this.btnExit.TabIndex = 12;
             this.btnExit.Text = "Đóng";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // groupBox1
             // 
@@ -311,6 +316,18 @@
             this.groupBox1.Size = new System.Drawing.Size(668, 76);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.Location = new System.Drawing.Point(338, 26);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(141, 43);
+            this.btnPrint.TabIndex = 10;
+            this.btnPrint.Text = "In";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // panel2
             // 
@@ -332,16 +349,15 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "LẬP PHIẾU THU TIỀN";
             // 
-            // btnPrint
+            // lb
             // 
-            this.btnPrint.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.Location = new System.Drawing.Point(338, 26);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(141, 43);
-            this.btnPrint.TabIndex = 10;
-            this.btnPrint.Text = "In";
-            this.btnPrint.UseVisualStyleBackColor = true;
+            this.lb.AutoSize = true;
+            this.lb.ForeColor = System.Drawing.Color.Red;
+            this.lb.Location = new System.Drawing.Point(83, 467);
+            this.lb.Name = "lb";
+            this.lb.Size = new System.Drawing.Size(347, 17);
+            this.lb.TabIndex = 10;
+            this.lb.Text = "Số tiền thu không vượt quá số tiền khách hàng đang nợ";
             // 
             // FReceipt
             // 
@@ -393,5 +409,6 @@
         private System.Windows.Forms.TextBox txbMoneyOwe;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Label lb;
     }
 }

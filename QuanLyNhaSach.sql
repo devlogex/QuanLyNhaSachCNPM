@@ -541,6 +541,14 @@ BEGIN
 END
 GO
 
+
+CREATE PROC USP_GetNewIDCollectMoney
+AS
+BEGIN
+	SELECT MAX(SoPhieuThu)+1 FROM PHIEUTHUTIEN
+END
+GO
+
 CREATE PROC USP_GetPublishingByBookTitleID
 @id INT
 AS
@@ -685,3 +693,107 @@ BEGIN
 	SELECT MAX(MaKhachHang+1) FROM KHACHHANG
 END
 GO
+
+CREATE PROC USP_InsertCollectMoneyIntoDatabase
+@idCustomer INT,
+@date DATE,
+@money FLOAT
+AS
+BEGIN
+	INSERT PHIEUTHUTIEN(MaKhachHang,NgayLap,SoTienThu)VALUES
+	(
+		@idCustomer,
+		@date,
+		@money
+	)
+	UPDATE KHACHHANG SET SoTienNo=SoTienNo-@money WHERE MaKhachHang=@idCustomer
+END
+GO
+
+CREATE PROC USP_GetListImportBookInfoByTime
+@month INT,
+@year INT
+AS
+BEGIN
+	SELECT p.SoPhieuNhap as idImportBook,cp.MaSach as idBook,cp.SoLuongNhap as count,cp.DonGiaNhap as priceIn 
+	FROM PHIEUNHAPSACH p,CT_PHIEUNHAPSACH cp 
+	WHERE p.SoPhieuNhap=cp.SoPhieuNhap AND MONTH(p.NgayLap)=@month AND YEAR(p.NgayLap)=@year 
+END
+GO
+
+CREATE PROC USP_GetListBillInfoByTime
+@month INT,
+@year INT
+AS
+BEGIN
+	SELECT h.SoHoaDon as idBill,ch.MaSach as idBook,ch.SoLuong as count,ch.DonGiaBan as priceOut
+	FROM HOADON h,CT_HOADON ch
+	WHERE h.SoHoaDon=ch.SoHoaDon AND MONTH(h.NgayLap)=@month AND YEAR(h.NgayLap)=@year 
+END
+GO
+
+CREATE PROC USP_GetReportCountByTime
+@month INT,
+@year INT
+AS
+BEGIN
+	SELECT Thang as month, Nam as year, MaSach as idBook, TonDau as firstCount, PhatSinh as addCount, TonCuoi as lastCount
+	FROM BAOCAOTON
+	WHERE Thang=@month AND Nam=@year
+END
+GO
+
+CREATE PROC USP_LoadReportCount
+@month INT,
+@year INT
+AS
+BEGIN
+	SELECT MaSach as idBook,TonDau as firstCount, PhatSinh as addCount, TonCuoi as lastCount
+	FROM BAOCAOTON
+	WHERE Thang=@month AND Nam=@year
+END
+GO
+
+CREATE PROC USP_RemoveReportCount
+@month INT,
+@year INT
+AS
+BEGIN
+	DELETE BAOCAOTON WHERE Thang=@month and Nam=@year
+END
+GO
+
+CREATE PROC USP_GetReportCountInfoByTimeAndBookID
+@month INT,
+@year INT,
+@idBook INT
+AS
+BEGIN
+	SELECT Thang as month, Nam as year, MaSach as idBook, TonDau as firstCount, PhatSinh as addCount, TonCuoi as lastCount
+	FROM BAOCAOTON
+	WHERE Thang=@month and Nam=@year and MaSach=@idBook
+END
+GO
+
+CREATE PROC USP_InsertReportCount 
+@month INT,
+@year INT, 
+@idBook INT, 
+@firstCount INT, 
+@addCount INT, 
+@lastCount INT
+AS
+BEGIN
+	INSERT BAOCAOTON VALUES
+	(
+		@month ,
+	@year , 
+	@idBook , 
+	@firstCount , 
+	@addCount , 
+	@lastCount
+	)
+END
+GO
+
+delete BAOCAOTON

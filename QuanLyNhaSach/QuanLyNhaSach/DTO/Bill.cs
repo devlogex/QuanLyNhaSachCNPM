@@ -31,8 +31,8 @@ namespace QuanLyNhaSach.DTO
         }
         public Bill(DataRow row)
         {
-            this.ID = (int)row["id"];
-            this.IdCustomer = (int)row["idCustomer"];
+            this.ID = Int32.Parse(row["id"].ToString());
+            this.IdCustomer = Int32.Parse(row["idCustomer"].ToString());
             this.Date = (DateTime)row["date"];
             this.Value = (float)Double.Parse(row["value"].ToString());
             this.Owe = (float)Double.Parse(row["owe"].ToString());

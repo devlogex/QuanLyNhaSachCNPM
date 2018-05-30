@@ -31,7 +31,7 @@ namespace QuanLyNhaSach.DTO
 
         public Book(DataRow row,CategoryBook category,List<Author>authors)
         {
-            this.ID = (int)row["id"];
+            this.ID = Int32.Parse(row["id"].ToString());
             this.Name = row["name"].ToString();
             this.PriceIn = (float)Double.Parse(row["priceIn"].ToString());
             this.Count = Int32.Parse(row["count"].ToString());
