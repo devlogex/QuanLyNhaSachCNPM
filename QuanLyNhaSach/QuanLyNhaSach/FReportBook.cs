@@ -93,7 +93,7 @@ namespace QuanLyNhaSach
         private void btnReportBook_Click(object sender, EventArgs e)
         {
             DateTime today = DateTime.Now;
-            DateTime date = new DateTime((int)nmYear.Value, (int)nmMonth.Value, today.Day);
+            DateTime date = new DateTime((int)nmYear.Value, (int)nmMonth.Value, 1);
 
             if (date > today)
             {

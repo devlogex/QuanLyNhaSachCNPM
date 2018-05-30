@@ -245,7 +245,7 @@ END
 GO
 
 CREATE PROC USP_SetPercentPrice
-@percentPrice INT
+@percentPrice FLOAT
 AS
 BEGIN
 	UPDATE THAMSO SET GiaTri=@percentPrice WHERE TenThamSo='TiLeTinhDonGiaBan'
@@ -882,3 +882,5 @@ delete PHIEUTHUTIEN
 delete BAOCAOCONGNO
 delete BAOCAOTON
 delete SACH
+
+select *from THAMSO where TenThamSo='TiLeTinhDonGiaBan'

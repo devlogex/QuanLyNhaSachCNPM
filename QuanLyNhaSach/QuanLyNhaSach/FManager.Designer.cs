@@ -56,6 +56,7 @@
             this.lbManageCategoryAndAuthor = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.itemAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -121,7 +122,8 @@
             this.itemDisplayName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
             this.itemDisplayName.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.itemAccount,
-            this.itemLogOut});
+            this.itemLogOut,
+            this.itemAdmin});
             this.itemDisplayName.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.itemDisplayName.ForeColor = System.Drawing.Color.Blue;
             this.itemDisplayName.Name = "itemDisplayName";
@@ -133,7 +135,7 @@
             this.itemAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
             this.itemAccount.ForeColor = System.Drawing.Color.Blue;
             this.itemAccount.Name = "itemAccount";
-            this.itemAccount.Size = new System.Drawing.Size(157, 24);
+            this.itemAccount.Size = new System.Drawing.Size(180, 24);
             this.itemAccount.Text = "Tài khoản";
             // 
             // itemLogOut
@@ -259,6 +261,7 @@
             this.lbSystem.TabIndex = 2;
             this.lbSystem.TabStop = true;
             this.lbSystem.Text = "Quản lý quy định";
+            this.lbSystem.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbSystem_LinkClicked);
             // 
             // label5
             // 
@@ -379,6 +382,14 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // itemAdmin
+            // 
+            this.itemAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
+            this.itemAdmin.ForeColor = System.Drawing.Color.Blue;
+            this.itemAdmin.Name = "itemAdmin";
+            this.itemAdmin.Size = new System.Drawing.Size(180, 24);
+            this.itemAdmin.Text = "Admin";
+            // 
             // FManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -441,6 +452,7 @@
         private System.Windows.Forms.ToolStripMenuItem itemDisplayName;
         private System.Windows.Forms.ToolStripMenuItem itemAccount;
         private System.Windows.Forms.ToolStripMenuItem itemLogOut;
+        private System.Windows.Forms.ToolStripMenuItem itemAdmin;
     }
 }
 

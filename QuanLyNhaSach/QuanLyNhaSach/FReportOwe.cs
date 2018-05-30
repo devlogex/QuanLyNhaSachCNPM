@@ -87,7 +87,7 @@ namespace QuanLyNhaSach
         private void btnReportOwe_Click(object sender, EventArgs e)
         {
             DateTime today = DateTime.Now;
-            DateTime date = new DateTime((int)nmYear.Value, (int)nmMonth.Value, today.Day);
+            DateTime date = new DateTime((int)nmYear.Value, (int)nmMonth.Value, 1);
             if (date > today)
             {
                 MessageBox.Show("Thời gian không hợp lệ !");

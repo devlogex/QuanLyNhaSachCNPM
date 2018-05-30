@@ -81,5 +81,10 @@ namespace QuanLyNhaSach
             this.Close();
         }
 
+        private void lbSystem_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FSystem f = new FSystem();
+            f.ShowDialog();
+        }
     }
 }

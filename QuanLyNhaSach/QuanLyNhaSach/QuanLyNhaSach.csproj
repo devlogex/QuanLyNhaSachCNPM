@@ -188,6 +188,12 @@
     <Compile Include="FReportOwe.Designer.cs">
       <DependentUpon>FReportOwe.cs</DependentUpon>
     </Compile>
+    <Compile Include="FSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FSystem.Designer.cs">
+      <DependentUpon>FSystem.cs</DependentUpon>
+    </Compile>
     <Compile Include="FUpdateAuthor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FReportOwe.resx">
       <DependentUpon>FReportOwe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FSystem.resx">
+      <DependentUpon>FSystem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FUpdateAuthor.resx">
       <DependentUpon>FUpdateAuthor.cs</DependentUpon>
