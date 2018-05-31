@@ -133,7 +133,7 @@ namespace QuanLyNhaSach
                 };
                 ExportDataToPDF.Instance.ExportDataToPdf(name, data, ExportDataToPDF.Instance.GetTable(dtgvReportOwe));
                 if (MessageBox.Show("In thành công ! Bạn có muốn mở file ?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    Process.Start(@"C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\" + name);
+                    Process.Start(name);
             }
             catch { MessageBox.Show("In thất bại "); }
         }
