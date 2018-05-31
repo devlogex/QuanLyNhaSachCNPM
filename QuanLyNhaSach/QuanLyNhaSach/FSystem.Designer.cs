@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txbPercentPrice = new System.Windows.Forms.TextBox();
             this.btnUpdateSystem = new System.Windows.Forms.Button();
@@ -44,13 +42,15 @@
             this.nmUD3 = new System.Windows.Forms.NumericUpDown();
             this.nmUD2 = new System.Windows.Forms.NumericUpDown();
             this.nmUD1 = new System.Windows.Forms.NumericUpDown();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmUD4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmUD3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmUD2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmUD1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -61,28 +61,8 @@
             this.panel1.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(633, 482);
+            this.panel1.Size = new System.Drawing.Size(687, 482);
             this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(633, 72);
-            this.panel2.TabIndex = 22;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Cambria", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Blue;
-            this.label3.Location = new System.Drawing.Point(133, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(396, 47);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "THAY ĐỔI QUY ĐINH";
             // 
             // groupBox1
             // 
@@ -98,31 +78,32 @@
             this.groupBox1.Controls.Add(this.nmUD3);
             this.groupBox1.Controls.Add(this.nmUD2);
             this.groupBox1.Controls.Add(this.nmUD1);
+            this.groupBox1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(29, 78);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(576, 387);
+            this.groupBox1.Size = new System.Drawing.Size(628, 387);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             // 
             // txbPercentPrice
             // 
-            this.txbPercentPrice.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbPercentPrice.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbPercentPrice.ForeColor = System.Drawing.Color.Black;
-            this.txbPercentPrice.Location = new System.Drawing.Point(374, 217);
+            this.txbPercentPrice.Location = new System.Drawing.Point(418, 218);
             this.txbPercentPrice.Name = "txbPercentPrice";
-            this.txbPercentPrice.Size = new System.Drawing.Size(187, 25);
-            this.txbPercentPrice.TabIndex = 46;
+            this.txbPercentPrice.Size = new System.Drawing.Size(187, 26);
+            this.txbPercentPrice.TabIndex = 4;
             this.txbPercentPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPercentPrice_KeyPress);
             // 
             // btnUpdateSystem
             // 
             this.btnUpdateSystem.BackColor = System.Drawing.Color.DarkGray;
-            this.btnUpdateSystem.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateSystem.ForeColor = System.Drawing.Color.Blue;
-            this.btnUpdateSystem.Location = new System.Drawing.Point(374, 303);
+            this.btnUpdateSystem.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateSystem.ForeColor = System.Drawing.Color.Black;
+            this.btnUpdateSystem.Location = new System.Drawing.Point(441, 312);
             this.btnUpdateSystem.Name = "btnUpdateSystem";
             this.btnUpdateSystem.Size = new System.Drawing.Size(155, 50);
-            this.btnUpdateSystem.TabIndex = 45;
+            this.btnUpdateSystem.TabIndex = 6;
             this.btnUpdateSystem.Text = "Cập nhật";
             this.btnUpdateSystem.UseVisualStyleBackColor = false;
             this.btnUpdateSystem.Click += new System.EventHandler(this.btnUpdateSystem_Click);
@@ -130,145 +111,166 @@
             // cbQD4
             // 
             this.cbQD4.AutoSize = true;
-            this.cbQD4.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbQD4.ForeColor = System.Drawing.Color.Blue;
+            this.cbQD4.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbQD4.ForeColor = System.Drawing.Color.Black;
             this.cbQD4.Location = new System.Drawing.Point(14, 258);
             this.cbQD4.Name = "cbQD4";
-            this.cbQD4.Size = new System.Drawing.Size(366, 21);
-            this.cbQD4.TabIndex = 44;
+            this.cbQD4.Size = new System.Drawing.Size(410, 23);
+            this.cbQD4.TabIndex = 5;
             this.cbQD4.Text = "Số tiền thu không vượt quá số tiền khách hàng đang nợ";
             this.cbQD4.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Blue;
+            this.label5.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(11, 225);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(272, 17);
+            this.label5.Size = new System.Drawing.Size(308, 19);
             this.label5.TabIndex = 39;
             this.label5.Text = "Phần trăm đơn giá bán so với đơn giá nhập";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Blue;
+            this.label4.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(11, 191);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(257, 17);
+            this.label4.Size = new System.Drawing.Size(289, 19);
             this.label4.TabIndex = 40;
             this.label4.Text = "Lượng tồn tối thiểu của sách sau khi bán";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Blue;
+            this.label1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(11, 154);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(311, 17);
+            this.label1.Size = new System.Drawing.Size(351, 19);
             this.label1.TabIndex = 41;
             this.label1.Text = "Số tiền nợ tối đa của khách hàng sau khi bán sách";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Blue;
+            this.label2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(11, 117);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(357, 17);
+            this.label2.Size = new System.Drawing.Size(402, 19);
             this.label2.TabIndex = 42;
             this.label2.Text = "Lượng tồn tối thiểu của sách khi nhập sách phải nhỏ hơn";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Blue;
+            this.label6.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(11, 81);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(240, 17);
+            this.label6.Size = new System.Drawing.Size(270, 19);
             this.label6.TabIndex = 43;
             this.label6.Text = "Số lượng sách tối thiểu khi  nhập sách";
             // 
             // nmUD4
             // 
-            this.nmUD4.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nmUD4.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nmUD4.ForeColor = System.Drawing.Color.Black;
-            this.nmUD4.Location = new System.Drawing.Point(374, 183);
+            this.nmUD4.Location = new System.Drawing.Point(418, 184);
             this.nmUD4.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
             this.nmUD4.Name = "nmUD4";
-            this.nmUD4.Size = new System.Drawing.Size(187, 25);
-            this.nmUD4.TabIndex = 35;
+            this.nmUD4.Size = new System.Drawing.Size(187, 26);
+            this.nmUD4.TabIndex = 3;
             // 
             // nmUD3
             // 
-            this.nmUD3.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nmUD3.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nmUD3.ForeColor = System.Drawing.Color.Black;
-            this.nmUD3.Location = new System.Drawing.Point(374, 146);
+            this.nmUD3.Location = new System.Drawing.Point(419, 147);
             this.nmUD3.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
             this.nmUD3.Name = "nmUD3";
-            this.nmUD3.Size = new System.Drawing.Size(186, 25);
-            this.nmUD3.TabIndex = 36;
+            this.nmUD3.Size = new System.Drawing.Size(186, 26);
+            this.nmUD3.TabIndex = 2;
             // 
             // nmUD2
             // 
-            this.nmUD2.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nmUD2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nmUD2.ForeColor = System.Drawing.Color.Black;
-            this.nmUD2.Location = new System.Drawing.Point(374, 109);
+            this.nmUD2.Location = new System.Drawing.Point(420, 110);
             this.nmUD2.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
             this.nmUD2.Name = "nmUD2";
-            this.nmUD2.Size = new System.Drawing.Size(187, 25);
-            this.nmUD2.TabIndex = 37;
+            this.nmUD2.Size = new System.Drawing.Size(185, 26);
+            this.nmUD2.TabIndex = 1;
             // 
             // nmUD1
             // 
-            this.nmUD1.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nmUD1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nmUD1.ForeColor = System.Drawing.Color.Black;
-            this.nmUD1.Location = new System.Drawing.Point(374, 73);
+            this.nmUD1.Location = new System.Drawing.Point(421, 74);
             this.nmUD1.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
             this.nmUD1.Name = "nmUD1";
-            this.nmUD1.Size = new System.Drawing.Size(186, 25);
-            this.nmUD1.TabIndex = 38;
+            this.nmUD1.Size = new System.Drawing.Size(184, 26);
+            this.nmUD1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(687, 72);
+            this.panel2.TabIndex = 22;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Cambria", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(133, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(396, 47);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "THAY ĐỔI QUY ĐINH";
             // 
             // FSystem
             // 
+            this.AcceptButton = this.btnUpdateSystem;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 482);
+            this.ClientSize = new System.Drawing.Size(687, 482);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FSystem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thay đổi quy định";
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmUD4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmUD3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmUD2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmUD1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }

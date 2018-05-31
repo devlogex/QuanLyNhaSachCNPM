@@ -93,18 +93,19 @@
             this.btnUpdate.Location = new System.Drawing.Point(27, 19);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(106, 35);
-            this.btnUpdate.TabIndex = 1;
+            this.btnUpdate.TabIndex = 12;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdateBookTitle_Click);
             // 
             // btnExit
             // 
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Location = new System.Drawing.Point(834, 19);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(106, 35);
-            this.btnExit.TabIndex = 1;
+            this.btnExit.TabIndex = 13;
             this.btnExit.Text = "Đóng";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -222,7 +223,7 @@
             this.ckbIDBookTitle.Margin = new System.Windows.Forms.Padding(2);
             this.ckbIDBookTitle.Name = "ckbIDBookTitle";
             this.ckbIDBookTitle.Size = new System.Drawing.Size(114, 23);
-            this.ckbIDBookTitle.TabIndex = 2;
+            this.ckbIDBookTitle.TabIndex = 0;
             this.ckbIDBookTitle.Text = "Mã đầu sách";
             this.ckbIDBookTitle.UseVisualStyleBackColor = true;
             this.ckbIDBookTitle.CheckedChanged += new System.EventHandler(this.ckbIDBookTitle_CheckedChanged);
@@ -235,7 +236,7 @@
             this.ckbAuthor.Margin = new System.Windows.Forms.Padding(2);
             this.ckbAuthor.Name = "ckbAuthor";
             this.ckbAuthor.Size = new System.Drawing.Size(75, 23);
-            this.ckbAuthor.TabIndex = 2;
+            this.ckbAuthor.TabIndex = 6;
             this.ckbAuthor.Text = "Tác giả";
             this.ckbAuthor.UseVisualStyleBackColor = true;
             this.ckbAuthor.CheckedChanged += new System.EventHandler(this.ckbAuthor_CheckedChanged);
@@ -248,7 +249,7 @@
             this.ckbCount.Margin = new System.Windows.Forms.Padding(2);
             this.ckbCount.Name = "ckbCount";
             this.ckbCount.Size = new System.Drawing.Size(90, 23);
-            this.ckbCount.TabIndex = 3;
+            this.ckbCount.TabIndex = 8;
             this.ckbCount.Text = "Số lượng";
             this.ckbCount.UseVisualStyleBackColor = true;
             this.ckbCount.CheckedChanged += new System.EventHandler(this.ckbCount_CheckedChanged);
@@ -259,7 +260,7 @@
             this.btnSearch.Location = new System.Drawing.Point(764, 139);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(106, 35);
-            this.btnSearch.TabIndex = 1;
+            this.btnSearch.TabIndex = 11;
             this.btnSearch.Text = "Tra cứu";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -272,7 +273,7 @@
             this.ckbCategory.Margin = new System.Windows.Forms.Padding(2);
             this.ckbCategory.Name = "ckbCategory";
             this.ckbCategory.Size = new System.Drawing.Size(83, 23);
-            this.ckbCategory.TabIndex = 3;
+            this.ckbCategory.TabIndex = 4;
             this.ckbCategory.Text = "Thể loại";
             this.ckbCategory.UseVisualStyleBackColor = true;
             this.ckbCategory.CheckedChanged += new System.EventHandler(this.ckbCategory_CheckedChanged);
@@ -307,7 +308,7 @@
             this.txbNameBookTitle.Location = new System.Drawing.Point(204, 86);
             this.txbNameBookTitle.Name = "txbNameBookTitle";
             this.txbNameBookTitle.Size = new System.Drawing.Size(212, 26);
-            this.txbNameBookTitle.TabIndex = 30;
+            this.txbNameBookTitle.TabIndex = 3;
             // 
             // ckbNameBookTitle
             // 
@@ -316,7 +317,7 @@
             this.ckbNameBookTitle.Location = new System.Drawing.Point(34, 89);
             this.ckbNameBookTitle.Name = "ckbNameBookTitle";
             this.ckbNameBookTitle.Size = new System.Drawing.Size(118, 23);
-            this.ckbNameBookTitle.TabIndex = 29;
+            this.ckbNameBookTitle.TabIndex = 2;
             this.ckbNameBookTitle.Text = "Tên đầu sách";
             this.ckbNameBookTitle.UseVisualStyleBackColor = true;
             this.ckbNameBookTitle.CheckedChanged += new System.EventHandler(this.ckbNameBookTitle_CheckedChanged);
@@ -327,7 +328,7 @@
             this.cbIDBookTitle.Location = new System.Drawing.Point(204, 46);
             this.cbIDBookTitle.Name = "cbIDBookTitle";
             this.cbIDBookTitle.Size = new System.Drawing.Size(212, 27);
-            this.cbIDBookTitle.TabIndex = 28;
+            this.cbIDBookTitle.TabIndex = 1;
             // 
             // cbCategory
             // 
@@ -335,7 +336,7 @@
             this.cbCategory.Location = new System.Drawing.Point(204, 128);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(212, 27);
-            this.cbCategory.TabIndex = 27;
+            this.cbCategory.TabIndex = 5;
             // 
             // cbAuthor
             // 
@@ -343,7 +344,7 @@
             this.cbAuthor.Location = new System.Drawing.Point(658, 41);
             this.cbAuthor.Name = "cbAuthor";
             this.cbAuthor.Size = new System.Drawing.Size(212, 27);
-            this.cbAuthor.TabIndex = 27;
+            this.cbAuthor.TabIndex = 7;
             // 
             // pictureBox2
             // 
@@ -368,7 +369,7 @@
             0});
             this.nmCountTo.Name = "nmCountTo";
             this.nmCountTo.Size = new System.Drawing.Size(84, 26);
-            this.nmCountTo.TabIndex = 24;
+            this.nmCountTo.TabIndex = 10;
             // 
             // nmCountFrom
             // 
@@ -378,12 +379,14 @@
             this.nmCountFrom.Location = new System.Drawing.Point(658, 89);
             this.nmCountFrom.Name = "nmCountFrom";
             this.nmCountFrom.Size = new System.Drawing.Size(84, 26);
-            this.nmCountFrom.TabIndex = 25;
+            this.nmCountFrom.TabIndex = 9;
             // 
             // FSearchBook
             // 
+            this.AcceptButton = this.btnSearch;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(964, 552);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);

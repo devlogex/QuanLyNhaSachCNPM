@@ -1,4 +1,5 @@
-﻿using QuanLyNhaSach.DTO;
+﻿using QuanLyNhaSach.DAO;
+using QuanLyNhaSach.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,6 +27,8 @@ namespace QuanLyNhaSach
         public void LoadForm()
         {
             itemDisplayName.Text = this.Acc.DisplayName;
+            if (this.Acc.Type == 1)
+                msAccount.Items.Remove(itemAdmin);
         }
 
         private void lbManageCategoryAndAuthor_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -96,6 +99,23 @@ namespace QuanLyNhaSach
         private void lbSearchCustomer_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FSearchCustomer f = new FSearchCustomer();
+            f.ShowDialog();
+        }
+
+        private void itemAccount_Click(object sender, EventArgs e)
+        {
+            FUpdateAccount f = new FUpdateAccount(this.Acc);
+            f.UpdateListAccount += delegate (object _sender, EventArgs _e)
+              {
+                  this.Acc = AccountDAO.Instance.GetAccountByUserName(this.Acc.UserName);
+                  itemDisplayName.Text = this.Acc.DisplayName;
+              };
+            f.ShowDialog();
+        }
+
+        private void itemAdmin_Click(object sender, EventArgs e)
+        {
+            FAccount f = new FAccount();
             f.ShowDialog();
         }
     }

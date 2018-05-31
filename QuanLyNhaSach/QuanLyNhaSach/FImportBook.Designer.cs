@@ -69,13 +69,13 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.cbAuthor = new System.Windows.Forms.ComboBox();
             this.txbIDBookTitle = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbAuthor = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvImportBook)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -92,7 +92,7 @@
             this.cbCategory.Location = new System.Drawing.Point(128, 78);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(103, 27);
-            this.cbCategory.TabIndex = 8;
+            this.cbCategory.TabIndex = 5;
             this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
             // 
             // txbNameBookTitle
@@ -100,7 +100,7 @@
             this.txbNameBookTitle.Location = new System.Drawing.Point(128, 50);
             this.txbNameBookTitle.Name = "txbNameBookTitle";
             this.txbNameBookTitle.Size = new System.Drawing.Size(103, 26);
-            this.txbNameBookTitle.TabIndex = 5;
+            this.txbNameBookTitle.TabIndex = 4;
             // 
             // totalPrice
             // 
@@ -133,7 +133,7 @@
             this.txbTotalPrice.Name = "txbTotalPrice";
             this.txbTotalPrice.ReadOnly = true;
             this.txbTotalPrice.Size = new System.Drawing.Size(111, 26);
-            this.txbTotalPrice.TabIndex = 4;
+            this.txbTotalPrice.TabIndex = 2;
             // 
             // txbIDImportBook
             // 
@@ -141,7 +141,7 @@
             this.txbIDImportBook.Name = "txbIDImportBook";
             this.txbIDImportBook.ReadOnly = true;
             this.txbIDImportBook.Size = new System.Drawing.Size(111, 26);
-            this.txbIDImportBook.TabIndex = 4;
+            this.txbIDImportBook.TabIndex = 0;
             // 
             // label4
             // 
@@ -179,7 +179,7 @@
             this.dtpk.Location = new System.Drawing.Point(140, 50);
             this.dtpk.Name = "dtpk";
             this.dtpk.Size = new System.Drawing.Size(111, 26);
-            this.dtpk.TabIndex = 2;
+            this.dtpk.TabIndex = 1;
             // 
             // label12
             // 
@@ -304,7 +304,7 @@
             this.btnAddBookTitle.Location = new System.Drawing.Point(248, 94);
             this.btnAddBookTitle.Name = "btnAddBookTitle";
             this.btnAddBookTitle.Size = new System.Drawing.Size(72, 35);
-            this.btnAddBookTitle.TabIndex = 11;
+            this.btnAddBookTitle.TabIndex = 7;
             this.btnAddBookTitle.Text = "Thêm";
             this.ttAdd.SetToolTip(this.btnAddBookTitle, "Thêm đầu sách");
             this.btnAddBookTitle.UseVisualStyleBackColor = true;
@@ -316,7 +316,7 @@
             this.btnAddBook.Location = new System.Drawing.Point(235, 96);
             this.btnAddBook.Name = "btnAddBook";
             this.btnAddBook.Size = new System.Drawing.Size(72, 35);
-            this.btnAddBook.TabIndex = 13;
+            this.btnAddBook.TabIndex = 12;
             this.btnAddBook.Text = "Thêm";
             this.ttAdd.SetToolTip(this.btnAddBook, "Thêm sách");
             this.btnAddBook.UseVisualStyleBackColor = true;
@@ -340,6 +340,7 @@
             // 
             this.lb.AutoSize = true;
             this.lb.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb.ForeColor = System.Drawing.Color.Red;
             this.lb.Location = new System.Drawing.Point(12, 404);
             this.lb.Name = "lb";
             this.lb.Size = new System.Drawing.Size(544, 17);
@@ -360,11 +361,12 @@
             // 
             // btnExit
             // 
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Location = new System.Drawing.Point(824, 10);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(105, 35);
-            this.btnExit.TabIndex = 0;
+            this.btnExit.TabIndex = 15;
             this.btnExit.Text = "Đóng";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -375,7 +377,7 @@
             this.btnPrintImport.Location = new System.Drawing.Point(146, 10);
             this.btnPrintImport.Name = "btnPrintImport";
             this.btnPrintImport.Size = new System.Drawing.Size(106, 35);
-            this.btnPrintImport.TabIndex = 0;
+            this.btnPrintImport.TabIndex = 14;
             this.btnPrintImport.Text = "In";
             this.btnPrintImport.UseVisualStyleBackColor = true;
             this.btnPrintImport.Click += new System.EventHandler(this.btnPrintImport_Click);
@@ -386,7 +388,7 @@
             this.btnSaveImport.Location = new System.Drawing.Point(8, 10);
             this.btnSaveImport.Name = "btnSaveImport";
             this.btnSaveImport.Size = new System.Drawing.Size(106, 35);
-            this.btnSaveImport.TabIndex = 0;
+            this.btnSaveImport.TabIndex = 13;
             this.btnSaveImport.Text = "Lưu";
             this.btnSaveImport.UseVisualStyleBackColor = true;
             this.btnSaveImport.Click += new System.EventHandler(this.btnSaveImport_Click);
@@ -415,7 +417,7 @@
             this.txbPublishYear.Location = new System.Drawing.Point(115, 107);
             this.txbPublishYear.Name = "txbPublishYear";
             this.txbPublishYear.Size = new System.Drawing.Size(104, 26);
-            this.txbPublishYear.TabIndex = 8;
+            this.txbPublishYear.TabIndex = 11;
             // 
             // label13
             // 
@@ -434,7 +436,7 @@
             this.cbBookTitle.Margin = new System.Windows.Forms.Padding(2);
             this.cbBookTitle.Name = "cbBookTitle";
             this.cbBookTitle.Size = new System.Drawing.Size(103, 27);
-            this.cbBookTitle.TabIndex = 6;
+            this.cbBookTitle.TabIndex = 8;
             // 
             // txbIDBook
             // 
@@ -442,14 +444,14 @@
             this.txbIDBook.Name = "txbIDBook";
             this.txbIDBook.ReadOnly = true;
             this.txbIDBook.Size = new System.Drawing.Size(103, 26);
-            this.txbIDBook.TabIndex = 5;
+            this.txbIDBook.TabIndex = 9;
             // 
             // txbPublishCompany
             // 
             this.txbPublishCompany.Location = new System.Drawing.Point(115, 80);
             this.txbPublishCompany.Name = "txbPublishCompany";
             this.txbPublishCompany.Size = new System.Drawing.Size(104, 26);
-            this.txbPublishCompany.TabIndex = 4;
+            this.txbPublishCompany.TabIndex = 10;
             // 
             // label9
             // 
@@ -500,13 +502,22 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Thêm đầu sách mới";
             // 
+            // cbAuthor
+            // 
+            this.cbAuthor.FormattingEnabled = true;
+            this.cbAuthor.Location = new System.Drawing.Point(128, 107);
+            this.cbAuthor.Name = "cbAuthor";
+            this.cbAuthor.Size = new System.Drawing.Size(103, 27);
+            this.cbAuthor.TabIndex = 6;
+            this.cbAuthor.SelectedIndexChanged += new System.EventHandler(this.cbAuthor_SelectedIndexChanged);
+            // 
             // txbIDBookTitle
             // 
             this.txbIDBookTitle.Location = new System.Drawing.Point(128, 22);
             this.txbIDBookTitle.Name = "txbIDBookTitle";
             this.txbIDBookTitle.ReadOnly = true;
             this.txbIDBookTitle.Size = new System.Drawing.Size(103, 26);
-            this.txbIDBookTitle.TabIndex = 4;
+            this.txbIDBookTitle.TabIndex = 3;
             // 
             // label6
             // 
@@ -557,19 +568,12 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "LẬP PHIẾU NHẬP SÁCH";
             // 
-            // cbAuthor
-            // 
-            this.cbAuthor.FormattingEnabled = true;
-            this.cbAuthor.Location = new System.Drawing.Point(128, 107);
-            this.cbAuthor.Name = "cbAuthor";
-            this.cbAuthor.Size = new System.Drawing.Size(103, 27);
-            this.cbAuthor.TabIndex = 12;
-            this.cbAuthor.SelectedIndexChanged += new System.EventHandler(this.cbAuthor_SelectedIndexChanged);
-            // 
             // FImportBook
             // 
+            this.AcceptButton = this.btnSaveImport;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(964, 552);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

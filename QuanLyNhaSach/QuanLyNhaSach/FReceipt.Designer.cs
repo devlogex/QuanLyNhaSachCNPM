@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lb = new System.Windows.Forms.Label();
             this.txbMoneyOwe = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cbCustomer = new System.Windows.Forms.ComboBox();
@@ -54,7 +55,6 @@
             this.btnPrint = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
-            this.lb = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -90,6 +90,16 @@
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             // 
+            // lb
+            // 
+            this.lb.AutoSize = true;
+            this.lb.ForeColor = System.Drawing.Color.Red;
+            this.lb.Location = new System.Drawing.Point(83, 467);
+            this.lb.Name = "lb";
+            this.lb.Size = new System.Drawing.Size(347, 17);
+            this.lb.TabIndex = 10;
+            this.lb.Text = "Số tiền thu không vượt quá số tiền khách hàng đang nợ";
+            // 
             // txbMoneyOwe
             // 
             this.txbMoneyOwe.Location = new System.Drawing.Point(257, 373);
@@ -97,7 +107,7 @@
             this.txbMoneyOwe.Name = "txbMoneyOwe";
             this.txbMoneyOwe.ReadOnly = true;
             this.txbMoneyOwe.Size = new System.Drawing.Size(315, 24);
-            this.txbMoneyOwe.TabIndex = 9;
+            this.txbMoneyOwe.TabIndex = 7;
             // 
             // label3
             // 
@@ -117,7 +127,7 @@
             this.cbCustomer.Margin = new System.Windows.Forms.Padding(5);
             this.cbCustomer.Name = "cbCustomer";
             this.cbCustomer.Size = new System.Drawing.Size(315, 24);
-            this.cbCustomer.TabIndex = 7;
+            this.cbCustomer.TabIndex = 2;
             // 
             // label7
             // 
@@ -137,7 +147,7 @@
             this.txbIDReceipt.Name = "txbIDReceipt";
             this.txbIDReceipt.ReadOnly = true;
             this.txbIDReceipt.Size = new System.Drawing.Size(315, 24);
-            this.txbIDReceipt.TabIndex = 6;
+            this.txbIDReceipt.TabIndex = 0;
             // 
             // txbReceiveMoney
             // 
@@ -145,7 +155,7 @@
             this.txbReceiveMoney.Margin = new System.Windows.Forms.Padding(5);
             this.txbReceiveMoney.Name = "txbReceiveMoney";
             this.txbReceiveMoney.Size = new System.Drawing.Size(315, 24);
-            this.txbReceiveMoney.TabIndex = 6;
+            this.txbReceiveMoney.TabIndex = 8;
             // 
             // label9
             // 
@@ -196,7 +206,7 @@
             this.txbPhoneNumber.Name = "txbPhoneNumber";
             this.txbPhoneNumber.ReadOnly = true;
             this.txbPhoneNumber.Size = new System.Drawing.Size(315, 24);
-            this.txbPhoneNumber.TabIndex = 6;
+            this.txbPhoneNumber.TabIndex = 5;
             // 
             // label4
             // 
@@ -216,7 +226,7 @@
             this.txbAddress.Name = "txbAddress";
             this.txbAddress.ReadOnly = true;
             this.txbAddress.Size = new System.Drawing.Size(315, 24);
-            this.txbAddress.TabIndex = 6;
+            this.txbAddress.TabIndex = 4;
             // 
             // label2
             // 
@@ -236,7 +246,7 @@
             this.txbCustomerName.Name = "txbCustomerName";
             this.txbCustomerName.ReadOnly = true;
             this.txbCustomerName.Size = new System.Drawing.Size(315, 24);
-            this.txbCustomerName.TabIndex = 6;
+            this.txbCustomerName.TabIndex = 3;
             // 
             // label5
             // 
@@ -267,7 +277,7 @@
             this.dtpk.Margin = new System.Windows.Forms.Padding(5);
             this.dtpk.Name = "dtpk";
             this.dtpk.Size = new System.Drawing.Size(315, 24);
-            this.dtpk.TabIndex = 2;
+            this.dtpk.TabIndex = 1;
             // 
             // btnSave
             // 
@@ -276,7 +286,7 @@
             this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(141, 43);
-            this.btnSave.TabIndex = 10;
+            this.btnSave.TabIndex = 9;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -288,13 +298,14 @@
             this.btnCreate.Margin = new System.Windows.Forms.Padding(4);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(141, 43);
-            this.btnCreate.TabIndex = 11;
+            this.btnCreate.TabIndex = 10;
             this.btnCreate.Text = "Tạo mới";
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // btnExit
             // 
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Location = new System.Drawing.Point(496, 26);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
@@ -324,7 +335,7 @@
             this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(141, 43);
-            this.btnPrint.TabIndex = 10;
+            this.btnPrint.TabIndex = 11;
             this.btnPrint.Text = "In";
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
@@ -342,27 +353,19 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Cambria", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(177, 26);
+            this.label10.Location = new System.Drawing.Point(185, 22);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(410, 47);
             this.label10.TabIndex = 0;
             this.label10.Text = "LẬP PHIẾU THU TIỀN";
             // 
-            // lb
-            // 
-            this.lb.AutoSize = true;
-            this.lb.ForeColor = System.Drawing.Color.Red;
-            this.lb.Location = new System.Drawing.Point(83, 467);
-            this.lb.Name = "lb";
-            this.lb.Size = new System.Drawing.Size(347, 17);
-            this.lb.TabIndex = 10;
-            this.lb.Text = "Số tiền thu không vượt quá số tiền khách hàng đang nợ";
-            // 
             // FReceipt
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(798, 706);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox1);

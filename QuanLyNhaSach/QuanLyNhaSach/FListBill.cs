@@ -40,6 +40,8 @@ namespace QuanLyNhaSach
             {
                 cell.Selected = false;
             }
+
+            dtgvListBill.CellClick += dtgvListBill_CellClick;
         }
 
         private void dtgvListBill_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -37,37 +37,40 @@
             // 
             // txbAuthor
             // 
-            this.txbAuthor.Location = new System.Drawing.Point(78, 59);
+            this.txbAuthor.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbAuthor.Location = new System.Drawing.Point(92, 59);
             this.txbAuthor.Name = "txbAuthor";
-            this.txbAuthor.Size = new System.Drawing.Size(247, 20);
+            this.txbAuthor.Size = new System.Drawing.Size(220, 26);
             this.txbAuthor.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 61);
+            this.label1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(30, 62);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 18);
+            this.label1.Size = new System.Drawing.Size(56, 19);
             this.label1.TabIndex = 19;
             this.label1.Text = "Tác giả";
             // 
             // lbManangeBook
             // 
             this.lbManangeBook.AutoSize = true;
-            this.lbManangeBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbManangeBook.ForeColor = System.Drawing.Color.Blue;
-            this.lbManangeBook.Location = new System.Drawing.Point(109, 9);
+            this.lbManangeBook.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbManangeBook.ForeColor = System.Drawing.Color.Black;
+            this.lbManangeBook.Location = new System.Drawing.Point(99, 9);
             this.lbManangeBook.Name = "lbManangeBook";
-            this.lbManangeBook.Size = new System.Drawing.Size(112, 20);
+            this.lbManangeBook.Size = new System.Drawing.Size(151, 28);
             this.lbManangeBook.TabIndex = 42;
             this.lbManangeBook.Text = "Thêm tác giả";
             // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.DarkGray;
-            this.btnExit.ForeColor = System.Drawing.Color.Blue;
-            this.btnExit.Location = new System.Drawing.Point(227, 100);
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnExit.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.Black;
+            this.btnExit.Location = new System.Drawing.Point(218, 100);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(85, 30);
             this.btnExit.TabIndex = 43;
@@ -78,8 +81,9 @@
             // btnAddAuthor
             // 
             this.btnAddAuthor.BackColor = System.Drawing.Color.DarkGray;
-            this.btnAddAuthor.ForeColor = System.Drawing.Color.Blue;
-            this.btnAddAuthor.Location = new System.Drawing.Point(136, 100);
+            this.btnAddAuthor.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddAuthor.ForeColor = System.Drawing.Color.Black;
+            this.btnAddAuthor.Location = new System.Drawing.Point(127, 100);
             this.btnAddAuthor.Name = "btnAddAuthor";
             this.btnAddAuthor.Size = new System.Drawing.Size(85, 30);
             this.btnAddAuthor.TabIndex = 43;
@@ -89,9 +93,11 @@
             // 
             // FAddAuthor
             // 
+            this.AcceptButton = this.btnAddAuthor;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(337, 152);
             this.Controls.Add(this.btnAddAuthor);
             this.Controls.Add(this.btnExit);

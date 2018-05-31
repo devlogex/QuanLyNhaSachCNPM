@@ -128,39 +128,16 @@ CREATE TABLE BAOCAOCONGNO
 )
 GO
 
-
-CREATE TABLE CHUCNANG
-(
-	MaChucNang INT PRIMARY KEY,
-	TenChucNang NVARCHAR(100),
-	TenManHinhDuocLoad VARCHAR(100)
-)
-GO
-
-CREATE TABLE NHOMNGUOIDUNG
-(
-	MaNhom INT IDENTITY PRIMARY KEY,
-	TenNhom NVARCHAR(100)
-)
-GO
-
-
-CREATE TABLE PHANQUYEN
-(
-	MaNhom INT FOREIGN KEY REFERENCES NHOMNGUOIDUNG(MaNhom),
-	MaChucNang INT FOREIGN KEY REFERENCES CHUCNANG(MaChucNang)
-	CONSTRAINT PK_PHANQUYEN PRIMARY KEY(MaNhom,MaChucNang)
-) 
-GO
-
 CREATE TABLE NGUOIDUNG
 (
 	TenDangNhap VARCHAR(100) NOT NULL DEFAULT '' PRIMARY KEY,
 	TenHienThi NVARCHAR(100),
 	MatKhau VARCHAR(100) NOT NULL DEFAULT '',
-	MaNhom INT NOT NULL FOREIGN KEY REFERENCES NHOMNGUOIDUNG(MaNhom)
+	LoaiTaiKhoan INT NOT NULL DEFAULT 0 --0:ADMIN , 1:STAFF
 )
 GO 
+INSERT NGUOIDUNG VALUES('admin','admin','admin',0)
+GO
 
 CREATE TABLE THAMSO
 (
@@ -338,7 +315,7 @@ CREATE PROC USP_GetAccountByUserName
 @userName VARCHAR(100)
 AS
 BEGIN
-	SELECT TenDangNhap as userName,TenHienThi as displayName,MatKhau as passWord,MaNhom as type FROM NGUOIDUNG WHERE TenDangNhap=@userName
+	SELECT TenDangNhap as userName,TenHienThi as displayName,MatKhau as passWord,LoaiTaiKhoan as type FROM NGUOIDUNG WHERE TenDangNhap=@userName
 END
 GO
 
@@ -945,3 +922,40 @@ END
 GO
 select*from SACH
 exec USP_GetPublishingByBookID @id=11
+
+CREATE PROC USP_UpdateAccountByUserName 
+@userName VARCHAR(100),
+@displayName NVARCHAR(100),
+@passWord VARCHAR(100)
+AS
+BEGIN
+	UPDATE NGUOIDUNG SET TenHienThi=@displayName , MatKhau=@passWord WHERE TenDangNhap=@userName
+END
+GO
+
+CREATE PROC USP_InsertAccount 
+@userName VARCHAR(100),
+@displayName NVARCHAR(100),
+@passWord VARCHAR(100)
+AS
+BEGIN
+	INSERT NGUOIDUNG VALUES( @userName,@displayName , @passWord,1)
+END
+GO
+
+CREATE PROC USP_GetListAccount
+AS
+BEGIN
+	SELECT TenDangNhap as userName,TenHienThi as displayName,MatKhau as passWord,LoaiTaiKhoan as type
+	FROM NGUOIDUNG 
+	WHERE LoaiTaiKhoan=1
+END
+GO
+
+CREATE PROC USP_RemoveAccountByUserName 
+@userName VARCHAR(100)
+AS
+BEGIN
+	DELETE NGUOIDUNG WHERE TenDangNhap=@userName
+END
+GO

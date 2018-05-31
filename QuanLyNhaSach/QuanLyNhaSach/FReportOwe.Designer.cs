@@ -83,11 +83,12 @@
             // 
             // btnExit
             // 
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Location = new System.Drawing.Point(527, 19);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(106, 35);
-            this.btnExit.TabIndex = 13;
+            this.btnExit.TabIndex = 4;
             this.btnExit.Text = "Đóng";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -98,7 +99,7 @@
             this.btnPrint.Location = new System.Drawing.Point(19, 19);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(106, 35);
-            this.btnPrint.TabIndex = 11;
+            this.btnPrint.TabIndex = 3;
             this.btnPrint.Text = "In";
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
@@ -134,7 +135,7 @@
             0});
             this.nmMonth.Name = "nmMonth";
             this.nmMonth.Size = new System.Drawing.Size(59, 24);
-            this.nmMonth.TabIndex = 18;
+            this.nmMonth.TabIndex = 0;
             this.nmMonth.Value = new decimal(new int[] {
             4,
             0,
@@ -168,7 +169,7 @@
             0});
             this.nmYear.Name = "nmYear";
             this.nmYear.Size = new System.Drawing.Size(59, 24);
-            this.nmYear.TabIndex = 17;
+            this.nmYear.TabIndex = 1;
             this.nmYear.Value = new decimal(new int[] {
             2018,
             0,
@@ -262,7 +263,7 @@
             this.btnReportOwe.Location = new System.Drawing.Point(331, 28);
             this.btnReportOwe.Name = "btnReportOwe";
             this.btnReportOwe.Size = new System.Drawing.Size(102, 38);
-            this.btnReportOwe.TabIndex = 19;
+            this.btnReportOwe.TabIndex = 2;
             this.btnReportOwe.Text = "Thống kê";
             this.btnReportOwe.UseVisualStyleBackColor = false;
             this.btnReportOwe.Click += new System.EventHandler(this.btnReportOwe_Click);
@@ -280,7 +281,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cambria", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Blue;
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(161, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(445, 47);
@@ -291,6 +292,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(756, 552);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);

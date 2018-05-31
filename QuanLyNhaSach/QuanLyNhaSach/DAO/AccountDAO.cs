@@ -35,27 +35,27 @@ namespace QuanLyNhaSach.DAO
             Account acc = new Account(data.Rows[0]);
             return acc;
         }
-        //public List<Account>GetListAccount()
-        //{
-        //    List<Account> list = new List<Account>();
-        //    DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_GetListAccount");
-        //    foreach(DataRow item in data.Rows)
-        //    {
-        //        list.Add(new Account(item));
-        //    }
-        //    return list;
-        //}
-        //public bool InsertAccount(string userName,string displayName,string passWord,int type)
-        //{
-        //    return DataProvider.Instance.ExecuteNonQuery("EXEC USP_InsertAccount @userName , @displayName , @passWord , @type", new object[] { userName,displayName, passWord, type }) > 0;
-        //}
-        //public bool RemoveAccountByUserName(string userName)
-        //{
-        //    return DataProvider.Instance.ExecuteNonQuery("USP_RemoveAccountByUserName @userName", new object[] { userName })>0;
-        //}
-        //public bool UpdateAccountByUserName(string userName,string displayName, string passWord,int type)
-        //{
-        //    return DataProvider.Instance.ExecuteNonQuery("EXEC USP_UpdateAccountByUserName @userName , @displayName , @passWord , @type", new object[] { userName,displayName ,passWord,type }) > 0;
-        //}
+        public List<Account> GetListAccount()
+        {
+            List<Account> list = new List<Account>();
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_GetListAccount");
+            foreach (DataRow item in data.Rows)
+            {
+                list.Add(new Account(item));
+            }
+            return list;
+        }
+        public bool InsertAccount(string userName, string displayName, string passWord)
+        {
+            return DataProvider.Instance.ExecuteNonQuery("EXEC USP_InsertAccount @userName , @displayName , @passWord ", new object[] { userName, displayName, passWord }) > 0;
+        }
+        public bool RemoveAccountByUserName(string userName)
+        {
+            return DataProvider.Instance.ExecuteNonQuery("USP_RemoveAccountByUserName @userName", new object[] { userName }) > 0;
+        }
+        public bool UpdateAccountByUserName(string userName, string displayName, string passWord)
+        {
+            return DataProvider.Instance.ExecuteNonQuery("EXEC USP_UpdateAccountByUserName @userName , @displayName , @passWord", new object[] { userName, displayName, passWord }) > 0;
+        }
     }
 }

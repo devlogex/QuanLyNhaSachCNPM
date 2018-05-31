@@ -34,14 +34,14 @@
             this.button4 = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.owe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phonenumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtgvManageCustomer = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phonenumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.owe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txbPhoneNumber = new System.Windows.Forms.TextBox();
@@ -85,7 +85,7 @@
             this.btnHistoryBill.Location = new System.Drawing.Point(155, 19);
             this.btnHistoryBill.Name = "btnHistoryBill";
             this.btnHistoryBill.Size = new System.Drawing.Size(162, 35);
-            this.btnHistoryBill.TabIndex = 1;
+            this.btnHistoryBill.TabIndex = 13;
             this.btnHistoryBill.Text = "Lịch sử mua hàng";
             this.btnHistoryBill.UseVisualStyleBackColor = true;
             this.btnHistoryBill.Click += new System.EventHandler(this.btnHistoryBill_Click);
@@ -96,7 +96,7 @@
             this.button4.Location = new System.Drawing.Point(834, 19);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(106, 35);
-            this.button4.TabIndex = 1;
+            this.button4.TabIndex = 14;
             this.button4.Text = "Đóng";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.btnExit_Click);
@@ -107,7 +107,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(27, 19);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(106, 35);
-            this.btnUpdate.TabIndex = 1;
+            this.btnUpdate.TabIndex = 12;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdateCustomer_Click);
@@ -122,60 +122,6 @@
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách khách hàng";
-            // 
-            // owe
-            // 
-            this.owe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.owe.DataPropertyName = "owe";
-            this.owe.HeaderText = "Số tiền nợ";
-            this.owe.Name = "owe";
-            this.owe.ReadOnly = true;
-            // 
-            // email
-            // 
-            this.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.email.DataPropertyName = "email";
-            this.email.HeaderText = "Email";
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            // 
-            // phonenumber
-            // 
-            this.phonenumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.phonenumber.DataPropertyName = "phonenumber";
-            this.phonenumber.HeaderText = "Số điện thoại";
-            this.phonenumber.Name = "phonenumber";
-            this.phonenumber.ReadOnly = true;
-            // 
-            // address
-            // 
-            this.address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.address.DataPropertyName = "address";
-            this.address.HeaderText = "Địa chỉ";
-            this.address.Name = "address";
-            this.address.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "Tên khách hàng";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "Mã khách hàng";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
             // 
             // dtgvManageCustomer
             // 
@@ -198,6 +144,60 @@
             this.dtgvManageCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvManageCustomer.Size = new System.Drawing.Size(910, 164);
             this.dtgvManageCustomer.TabIndex = 2;
+            // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "Mã khách hàng";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Tên khách hàng";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // address
+            // 
+            this.address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.address.DataPropertyName = "address";
+            this.address.HeaderText = "Địa chỉ";
+            this.address.Name = "address";
+            this.address.ReadOnly = true;
+            // 
+            // phonenumber
+            // 
+            this.phonenumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.phonenumber.DataPropertyName = "phonenumber";
+            this.phonenumber.HeaderText = "Số điện thoại";
+            this.phonenumber.Name = "phonenumber";
+            this.phonenumber.ReadOnly = true;
+            // 
+            // email
+            // 
+            this.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.email.DataPropertyName = "email";
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            // 
+            // owe
+            // 
+            this.owe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.owe.DataPropertyName = "owe";
+            this.owe.HeaderText = "Số tiền nợ";
+            this.owe.Name = "owe";
+            this.owe.ReadOnly = true;
             // 
             // label3
             // 
@@ -225,7 +225,7 @@
             this.txbPhoneNumber.Margin = new System.Windows.Forms.Padding(2);
             this.txbPhoneNumber.Name = "txbPhoneNumber";
             this.txbPhoneNumber.Size = new System.Drawing.Size(212, 26);
-            this.txbPhoneNumber.TabIndex = 1;
+            this.txbPhoneNumber.TabIndex = 5;
             // 
             // txbEmail
             // 
@@ -233,7 +233,7 @@
             this.txbEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(212, 26);
-            this.txbEmail.TabIndex = 1;
+            this.txbEmail.TabIndex = 7;
             // 
             // txbNameCustomer
             // 
@@ -241,7 +241,7 @@
             this.txbNameCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.txbNameCustomer.Name = "txbNameCustomer";
             this.txbNameCustomer.Size = new System.Drawing.Size(212, 26);
-            this.txbNameCustomer.TabIndex = 1;
+            this.txbNameCustomer.TabIndex = 3;
             // 
             // ckbIDCustomer
             // 
@@ -251,7 +251,7 @@
             this.ckbIDCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.ckbIDCustomer.Name = "ckbIDCustomer";
             this.ckbIDCustomer.Size = new System.Drawing.Size(132, 23);
-            this.ckbIDCustomer.TabIndex = 2;
+            this.ckbIDCustomer.TabIndex = 0;
             this.ckbIDCustomer.Text = "Mã khách hàng";
             this.ckbIDCustomer.UseVisualStyleBackColor = true;
             this.ckbIDCustomer.CheckedChanged += new System.EventHandler(this.ckbIDCustomer_CheckedChanged);
@@ -264,7 +264,7 @@
             this.ckbPhoneNumber.Margin = new System.Windows.Forms.Padding(2);
             this.ckbPhoneNumber.Name = "ckbPhoneNumber";
             this.ckbPhoneNumber.Size = new System.Drawing.Size(56, 23);
-            this.ckbPhoneNumber.TabIndex = 2;
+            this.ckbPhoneNumber.TabIndex = 4;
             this.ckbPhoneNumber.Text = "SĐT";
             this.ckbPhoneNumber.UseVisualStyleBackColor = true;
             this.ckbPhoneNumber.CheckedChanged += new System.EventHandler(this.ckbPhoneNumber_CheckedChanged);
@@ -277,7 +277,7 @@
             this.ckbNameCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.ckbNameCustomer.Name = "ckbNameCustomer";
             this.ckbNameCustomer.Size = new System.Drawing.Size(74, 23);
-            this.ckbNameCustomer.TabIndex = 3;
+            this.ckbNameCustomer.TabIndex = 2;
             this.ckbNameCustomer.Text = "Họ tên";
             this.ckbNameCustomer.UseVisualStyleBackColor = true;
             this.ckbNameCustomer.CheckedChanged += new System.EventHandler(this.ckbNameCustomer_CheckedChanged);
@@ -290,7 +290,7 @@
             this.ckbEmail.Margin = new System.Windows.Forms.Padding(2);
             this.ckbEmail.Name = "ckbEmail";
             this.ckbEmail.Size = new System.Drawing.Size(66, 23);
-            this.ckbEmail.TabIndex = 3;
+            this.ckbEmail.TabIndex = 6;
             this.ckbEmail.Text = "Email";
             this.ckbEmail.UseVisualStyleBackColor = true;
             this.ckbEmail.CheckedChanged += new System.EventHandler(this.ckbEmail_CheckedChanged);
@@ -303,7 +303,7 @@
             this.ckbMoneyOwe.Margin = new System.Windows.Forms.Padding(2);
             this.ckbMoneyOwe.Name = "ckbMoneyOwe";
             this.ckbMoneyOwe.Size = new System.Drawing.Size(98, 23);
-            this.ckbMoneyOwe.TabIndex = 3;
+            this.ckbMoneyOwe.TabIndex = 8;
             this.ckbMoneyOwe.Text = "Số tiền nợ";
             this.ckbMoneyOwe.UseVisualStyleBackColor = true;
             this.ckbMoneyOwe.CheckedChanged += new System.EventHandler(this.ckbMoneyOwe_CheckedChanged);
@@ -316,7 +316,7 @@
             this.nmOweFrom.Location = new System.Drawing.Point(644, 72);
             this.nmOweFrom.Name = "nmOweFrom";
             this.nmOweFrom.Size = new System.Drawing.Size(84, 26);
-            this.nmOweFrom.TabIndex = 28;
+            this.nmOweFrom.TabIndex = 9;
             // 
             // nmOweTo
             // 
@@ -331,7 +331,7 @@
             0});
             this.nmOweTo.Name = "nmOweTo";
             this.nmOweTo.Size = new System.Drawing.Size(84, 26);
-            this.nmOweTo.TabIndex = 27;
+            this.nmOweTo.TabIndex = 10;
             // 
             // pictureBox2
             // 
@@ -349,7 +349,7 @@
             this.btnSearch.Location = new System.Drawing.Point(750, 123);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(106, 35);
-            this.btnSearch.TabIndex = 30;
+            this.btnSearch.TabIndex = 11;
             this.btnSearch.Text = "Tra cứu";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -385,7 +385,7 @@
             this.cbIDCustomer.Location = new System.Drawing.Point(201, 36);
             this.cbIDCustomer.Name = "cbIDCustomer";
             this.cbIDCustomer.Size = new System.Drawing.Size(212, 27);
-            this.cbIDCustomer.TabIndex = 31;
+            this.cbIDCustomer.TabIndex = 1;
             // 
             // FSearchCustomer
             // 

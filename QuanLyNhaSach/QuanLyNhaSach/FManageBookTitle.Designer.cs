@@ -92,18 +92,19 @@
             this.btnSearchBook.Location = new System.Drawing.Point(389, 20);
             this.btnSearchBook.Name = "btnSearchBook";
             this.btnSearchBook.Size = new System.Drawing.Size(106, 35);
-            this.btnSearchBook.TabIndex = 2;
+            this.btnSearchBook.TabIndex = 3;
             this.btnSearchBook.Text = "Tìm sách";
             this.btnSearchBook.UseVisualStyleBackColor = true;
             this.btnSearchBook.Click += new System.EventHandler(this.btnSearchBook_Click);
             // 
             // btnExit
             // 
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
             this.btnExit.Location = new System.Drawing.Point(846, 19);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(106, 34);
-            this.btnExit.TabIndex = 0;
+            this.btnExit.TabIndex = 4;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -114,7 +115,7 @@
             this.btnRemoveBookTitle.Location = new System.Drawing.Point(262, 20);
             this.btnRemoveBookTitle.Name = "btnRemoveBookTitle";
             this.btnRemoveBookTitle.Size = new System.Drawing.Size(106, 35);
-            this.btnRemoveBookTitle.TabIndex = 0;
+            this.btnRemoveBookTitle.TabIndex = 2;
             this.btnRemoveBookTitle.Text = "Xóa";
             this.btnRemoveBookTitle.UseVisualStyleBackColor = true;
             this.btnRemoveBookTitle.Click += new System.EventHandler(this.btnRemoveBookTitle_Click);
@@ -125,7 +126,7 @@
             this.btnUpdateBookTitle.Location = new System.Drawing.Point(137, 20);
             this.btnUpdateBookTitle.Name = "btnUpdateBookTitle";
             this.btnUpdateBookTitle.Size = new System.Drawing.Size(106, 34);
-            this.btnUpdateBookTitle.TabIndex = 0;
+            this.btnUpdateBookTitle.TabIndex = 1;
             this.btnUpdateBookTitle.Text = "Cập nhật";
             this.btnUpdateBookTitle.UseVisualStyleBackColor = true;
             this.btnUpdateBookTitle.Click += new System.EventHandler(this.btnUpdateBookTitle_Click);
@@ -234,6 +235,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(964, 552);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

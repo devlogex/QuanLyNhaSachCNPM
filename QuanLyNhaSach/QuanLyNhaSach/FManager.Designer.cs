@@ -32,7 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.msAccount = new System.Windows.Forms.MenuStrip();
             this.itemDisplayName = new System.Windows.Forms.ToolStripMenuItem();
             this.itemAccount = new System.Windows.Forms.ToolStripMenuItem();
             this.itemLogOut = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,7 +59,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.msAccount.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel7.SuspendLayout();
@@ -95,7 +95,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.menuStrip1);
+            this.panel2.Controls.Add(this.msAccount);
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.panel7);
             this.panel2.Controls.Add(this.panel4);
@@ -105,17 +105,17 @@
             this.panel2.Size = new System.Drawing.Size(901, 449);
             this.panel2.TabIndex = 1;
             // 
-            // menuStrip1
+            // msAccount
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.msAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
+            this.msAccount.Dock = System.Windows.Forms.DockStyle.None;
+            this.msAccount.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.itemDisplayName});
-            this.menuStrip1.Location = new System.Drawing.Point(776, 8);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(103, 27);
-            this.menuStrip1.TabIndex = 3;
-            this.menuStrip1.Text = "menuStrip1";
+            this.msAccount.Location = new System.Drawing.Point(703, 3);
+            this.msAccount.Name = "msAccount";
+            this.msAccount.Size = new System.Drawing.Size(223, 27);
+            this.msAccount.TabIndex = 3;
+            this.msAccount.Text = "menuStrip1";
             // 
             // itemDisplayName
             // 
@@ -135,15 +135,16 @@
             this.itemAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
             this.itemAccount.ForeColor = System.Drawing.Color.Blue;
             this.itemAccount.Name = "itemAccount";
-            this.itemAccount.Size = new System.Drawing.Size(157, 24);
+            this.itemAccount.Size = new System.Drawing.Size(180, 24);
             this.itemAccount.Text = "Tài khoản";
+            this.itemAccount.Click += new System.EventHandler(this.itemAccount_Click);
             // 
             // itemLogOut
             // 
             this.itemLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
             this.itemLogOut.ForeColor = System.Drawing.Color.Blue;
             this.itemLogOut.Name = "itemLogOut";
-            this.itemLogOut.Size = new System.Drawing.Size(157, 24);
+            this.itemLogOut.Size = new System.Drawing.Size(180, 24);
             this.itemLogOut.Text = "Đăng xuất";
             this.itemLogOut.Click += new System.EventHandler(this.itemLogOut_Click);
             // 
@@ -152,8 +153,9 @@
             this.itemAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
             this.itemAdmin.ForeColor = System.Drawing.Color.Blue;
             this.itemAdmin.Name = "itemAdmin";
-            this.itemAdmin.Size = new System.Drawing.Size(157, 24);
+            this.itemAdmin.Size = new System.Drawing.Size(180, 24);
             this.itemAdmin.Text = "Admin";
+            this.itemAdmin.Click += new System.EventHandler(this.itemAdmin_Click);
             // 
             // panel5
             // 
@@ -410,8 +412,8 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.msAccount.ResumeLayout(false);
+            this.msAccount.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -450,7 +452,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip msAccount;
         private System.Windows.Forms.ToolStripMenuItem itemDisplayName;
         private System.Windows.Forms.ToolStripMenuItem itemAccount;
         private System.Windows.Forms.ToolStripMenuItem itemLogOut;
