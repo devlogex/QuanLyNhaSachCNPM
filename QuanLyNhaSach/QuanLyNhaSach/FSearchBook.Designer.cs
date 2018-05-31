@@ -28,365 +28,414 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FSearchBook));
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dtgvManageCustomer = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtgvManageBookTitle = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phonenumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvManageCustomer)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.author = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ckbIDBookTitle = new System.Windows.Forms.CheckBox();
+            this.ckbAuthor = new System.Windows.Forms.CheckBox();
+            this.ckbCount = new System.Windows.Forms.CheckBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.ckbCategory = new System.Windows.Forms.CheckBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txbNameBookTitle = new System.Windows.Forms.TextBox();
+            this.ckbNameBookTitle = new System.Windows.Forms.CheckBox();
+            this.cbIDBookTitle = new System.Windows.Forms.ComboBox();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.cbAuthor = new System.Windows.Forms.ComboBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.nmCountTo = new System.Windows.Forms.NumericUpDown();
+            this.nmCountFrom = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvManageBookTitle)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmCountTo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmCountFrom)).BeginInit();
             this.SuspendLayout();
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            ">",
-            ">=",
-            "<",
-            "<=",
-            "="});
-            this.comboBox1.Location = new System.Drawing.Point(797, 106);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(59, 31);
-            this.comboBox1.TabIndex = 4;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.Location = new System.Drawing.Point(46, 158);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(101, 27);
-            this.checkBox3.TabIndex = 3;
-            this.checkBox3.Text = "Thể loại";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox6.Location = new System.Drawing.Point(639, 106);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(107, 27);
-            this.checkBox6.TabIndex = 3;
-            this.checkBox6.Text = "Số lượng";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(46, 108);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(106, 27);
-            this.checkBox2.TabIndex = 3;
-            this.checkBox2.Text = "Tên sách";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox4.Location = new System.Drawing.Point(639, 55);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(91, 27);
-            this.checkBox4.TabIndex = 2;
-            this.checkBox4.Text = "Tác giả";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(46, 55);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(101, 27);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "Mã sách";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(272, 158);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(281, 31);
-            this.textBox3.TabIndex = 1;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(272, 108);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(281, 31);
-            this.textBox2.TabIndex = 1;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(877, 106);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(281, 31);
-            this.textBox6.TabIndex = 1;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(272, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(281, 31);
-            this.textBox1.TabIndex = 1;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.comboBox1);
-            this.groupBox3.Controls.Add(this.checkBox3);
-            this.groupBox3.Controls.Add(this.checkBox6);
-            this.groupBox3.Controls.Add(this.checkBox2);
-            this.groupBox3.Controls.Add(this.checkBox4);
-            this.groupBox3.Controls.Add(this.checkBox1);
-            this.groupBox3.Controls.Add(this.textBox3);
-            this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Controls.Add(this.textBox6);
-            this.groupBox3.Controls.Add(this.textBox4);
-            this.groupBox3.Controls.Add(this.textBox1);
-            this.groupBox3.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(36, 109);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1213, 232);
-            this.groupBox3.TabIndex = 18;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Các tiêu chuẩn tra cứu";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(877, 55);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(281, 31);
-            this.textBox4.TabIndex = 1;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(1112, 23);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(141, 43);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Đóng";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(36, 23);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 43);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Cập nhật";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(0, 589);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(1285, 90);
-            this.groupBox2.TabIndex = 17;
-            this.groupBox2.TabStop = false;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(197, 23);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(141, 43);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "In";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // dtgvManageCustomer
-            // 
-            this.dtgvManageCustomer.AllowUserToAddRows = false;
-            this.dtgvManageCustomer.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
-            this.dtgvManageCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvManageCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT,
-            this.id,
-            this.name,
-            this.address,
-            this.phonenumber,
-            this.email});
-            this.dtgvManageCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvManageCustomer.Location = new System.Drawing.Point(4, 28);
-            this.dtgvManageCustomer.Margin = new System.Windows.Forms.Padding(4);
-            this.dtgvManageCustomer.Name = "dtgvManageCustomer";
-            this.dtgvManageCustomer.ReadOnly = true;
-            this.dtgvManageCustomer.RowHeadersVisible = false;
-            this.dtgvManageCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvManageCustomer.Size = new System.Drawing.Size(1213, 201);
-            this.dtgvManageCustomer.TabIndex = 2;
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "Mã sách";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "Tên sách";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // address
-            // 
-            this.address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.address.DataPropertyName = "address";
-            this.address.HeaderText = "Thể loại";
-            this.address.Name = "address";
-            this.address.ReadOnly = true;
-            // 
-            // phonenumber
-            // 
-            this.phonenumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.phonenumber.DataPropertyName = "phonenumber";
-            this.phonenumber.HeaderText = "Tác giả";
-            this.phonenumber.Name = "phonenumber";
-            this.phonenumber.ReadOnly = true;
-            // 
-            // email
-            // 
-            this.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.email.DataPropertyName = "email";
-            this.email.HeaderText = "Số lượng";
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dtgvManageCustomer);
-            this.groupBox1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(32, 348);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1221, 233);
-            this.groupBox1.TabIndex = 16;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Danh sách sách";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cambria", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Blue;
-            this.label3.Location = new System.Drawing.Point(466, 9);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(282, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(371, 59);
+            this.label3.Size = new System.Drawing.Size(384, 47);
             this.label3.TabIndex = 0;
-            this.label3.Text = "TRA CỨU SÁCH";
+            this.label3.Text = "TRA CỨU ĐẦU SÁCH";
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1285, 89);
+            this.panel1.Size = new System.Drawing.Size(964, 72);
             this.panel1.TabIndex = 15;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(27, 19);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(106, 35);
+            this.btnUpdate.TabIndex = 1;
+            this.btnUpdate.Text = "Cập nhật";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdateBookTitle_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(834, 19);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(106, 35);
+            this.btnExit.TabIndex = 1;
+            this.btnExit.Text = "Đóng";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnExit);
+            this.groupBox2.Controls.Add(this.btnUpdate);
+            this.groupBox2.Location = new System.Drawing.Point(0, 479);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(964, 73);
+            this.groupBox2.TabIndex = 17;
+            this.groupBox2.TabStop = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dtgvManageBookTitle);
+            this.groupBox1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(24, 283);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(916, 189);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Danh sách sách";
+            // 
+            // dtgvManageBookTitle
+            // 
+            this.dtgvManageBookTitle.AllowUserToAddRows = false;
+            this.dtgvManageBookTitle.AllowUserToDeleteRows = false;
+            this.dtgvManageBookTitle.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
+            this.dtgvManageBookTitle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvManageBookTitle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.STT,
+            this.id,
+            this.name,
+            this.category,
+            this.author,
+            this.countVersion,
+            this.totalCount});
+            this.dtgvManageBookTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvManageBookTitle.Location = new System.Drawing.Point(3, 22);
+            this.dtgvManageBookTitle.Name = "dtgvManageBookTitle";
+            this.dtgvManageBookTitle.ReadOnly = true;
+            this.dtgvManageBookTitle.RowHeadersVisible = false;
+            this.dtgvManageBookTitle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvManageBookTitle.Size = new System.Drawing.Size(910, 164);
+            this.dtgvManageBookTitle.TabIndex = 4;
+            // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            this.STT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "Mã đầu sách";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Tên đầu sách";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // category
+            // 
+            this.category.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.category.DataPropertyName = "category";
+            this.category.HeaderText = "Thể loại sách";
+            this.category.Name = "category";
+            this.category.ReadOnly = true;
+            this.category.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // author
+            // 
+            this.author.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.author.DataPropertyName = "author";
+            this.author.HeaderText = "Tác giả";
+            this.author.Name = "author";
+            this.author.ReadOnly = true;
+            this.author.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // countVersion
+            // 
+            this.countVersion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.countVersion.DataPropertyName = "countVersion";
+            this.countVersion.HeaderText = "Số phiên bản";
+            this.countVersion.Name = "countVersion";
+            this.countVersion.ReadOnly = true;
+            this.countVersion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // totalCount
+            // 
+            this.totalCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.totalCount.DataPropertyName = "totalCount";
+            this.totalCount.HeaderText = "Tổng lượng tồn";
+            this.totalCount.Name = "totalCount";
+            this.totalCount.ReadOnly = true;
+            this.totalCount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ckbIDBookTitle
+            // 
+            this.ckbIDBookTitle.AutoSize = true;
+            this.ckbIDBookTitle.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbIDBookTitle.Location = new System.Drawing.Point(34, 45);
+            this.ckbIDBookTitle.Margin = new System.Windows.Forms.Padding(2);
+            this.ckbIDBookTitle.Name = "ckbIDBookTitle";
+            this.ckbIDBookTitle.Size = new System.Drawing.Size(114, 23);
+            this.ckbIDBookTitle.TabIndex = 2;
+            this.ckbIDBookTitle.Text = "Mã đầu sách";
+            this.ckbIDBookTitle.UseVisualStyleBackColor = true;
+            this.ckbIDBookTitle.CheckedChanged += new System.EventHandler(this.ckbIDBookTitle_CheckedChanged);
+            // 
+            // ckbAuthor
+            // 
+            this.ckbAuthor.AutoSize = true;
+            this.ckbAuthor.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbAuthor.Location = new System.Drawing.Point(479, 45);
+            this.ckbAuthor.Margin = new System.Windows.Forms.Padding(2);
+            this.ckbAuthor.Name = "ckbAuthor";
+            this.ckbAuthor.Size = new System.Drawing.Size(75, 23);
+            this.ckbAuthor.TabIndex = 2;
+            this.ckbAuthor.Text = "Tác giả";
+            this.ckbAuthor.UseVisualStyleBackColor = true;
+            this.ckbAuthor.CheckedChanged += new System.EventHandler(this.ckbAuthor_CheckedChanged);
+            // 
+            // ckbCount
+            // 
+            this.ckbCount.AutoSize = true;
+            this.ckbCount.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbCount.Location = new System.Drawing.Point(479, 91);
+            this.ckbCount.Margin = new System.Windows.Forms.Padding(2);
+            this.ckbCount.Name = "ckbCount";
+            this.ckbCount.Size = new System.Drawing.Size(90, 23);
+            this.ckbCount.TabIndex = 3;
+            this.ckbCount.Text = "Số lượng";
+            this.ckbCount.UseVisualStyleBackColor = true;
+            this.ckbCount.CheckedChanged += new System.EventHandler(this.ckbCount_CheckedChanged);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(764, 139);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(106, 35);
+            this.btnSearch.TabIndex = 1;
+            this.btnSearch.Text = "Tra cứu";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // ckbCategory
+            // 
+            this.ckbCategory.AutoSize = true;
+            this.ckbCategory.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbCategory.Location = new System.Drawing.Point(34, 128);
+            this.ckbCategory.Margin = new System.Windows.Forms.Padding(2);
+            this.ckbCategory.Name = "ckbCategory";
+            this.ckbCategory.Size = new System.Drawing.Size(83, 23);
+            this.ckbCategory.TabIndex = 3;
+            this.ckbCategory.Text = "Thể loại";
+            this.ckbCategory.UseVisualStyleBackColor = true;
+            this.ckbCategory.CheckedChanged += new System.EventHandler(this.ckbCategory_CheckedChanged);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txbNameBookTitle);
+            this.groupBox3.Controls.Add(this.ckbNameBookTitle);
+            this.groupBox3.Controls.Add(this.cbIDBookTitle);
+            this.groupBox3.Controls.Add(this.cbCategory);
+            this.groupBox3.Controls.Add(this.cbAuthor);
+            this.groupBox3.Controls.Add(this.pictureBox2);
+            this.groupBox3.Controls.Add(this.nmCountTo);
+            this.groupBox3.Controls.Add(this.nmCountFrom);
+            this.groupBox3.Controls.Add(this.ckbCategory);
+            this.groupBox3.Controls.Add(this.btnSearch);
+            this.groupBox3.Controls.Add(this.ckbCount);
+            this.groupBox3.Controls.Add(this.ckbAuthor);
+            this.groupBox3.Controls.Add(this.ckbIDBookTitle);
+            this.groupBox3.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(27, 89);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Size = new System.Drawing.Size(910, 188);
+            this.groupBox3.TabIndex = 18;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Các tiêu chuẩn tra cứu";
+            // 
+            // txbNameBookTitle
+            // 
+            this.txbNameBookTitle.Location = new System.Drawing.Point(204, 86);
+            this.txbNameBookTitle.Name = "txbNameBookTitle";
+            this.txbNameBookTitle.Size = new System.Drawing.Size(212, 26);
+            this.txbNameBookTitle.TabIndex = 30;
+            // 
+            // ckbNameBookTitle
+            // 
+            this.ckbNameBookTitle.AutoSize = true;
+            this.ckbNameBookTitle.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbNameBookTitle.Location = new System.Drawing.Point(34, 89);
+            this.ckbNameBookTitle.Name = "ckbNameBookTitle";
+            this.ckbNameBookTitle.Size = new System.Drawing.Size(118, 23);
+            this.ckbNameBookTitle.TabIndex = 29;
+            this.ckbNameBookTitle.Text = "Tên đầu sách";
+            this.ckbNameBookTitle.UseVisualStyleBackColor = true;
+            this.ckbNameBookTitle.CheckedChanged += new System.EventHandler(this.ckbNameBookTitle_CheckedChanged);
+            // 
+            // cbIDBookTitle
+            // 
+            this.cbIDBookTitle.FormattingEnabled = true;
+            this.cbIDBookTitle.Location = new System.Drawing.Point(204, 46);
+            this.cbIDBookTitle.Name = "cbIDBookTitle";
+            this.cbIDBookTitle.Size = new System.Drawing.Size(212, 27);
+            this.cbIDBookTitle.TabIndex = 28;
+            // 
+            // cbCategory
+            // 
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Location = new System.Drawing.Point(204, 128);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(212, 27);
+            this.cbCategory.TabIndex = 27;
+            // 
+            // cbAuthor
+            // 
+            this.cbAuthor.FormattingEnabled = true;
+            this.cbAuthor.Location = new System.Drawing.Point(658, 41);
+            this.cbAuthor.Name = "cbAuthor";
+            this.cbAuthor.Size = new System.Drawing.Size(212, 27);
+            this.cbAuthor.TabIndex = 27;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(748, 94);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(32, 18);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 26;
+            this.pictureBox2.TabStop = false;
+            // 
+            // nmCountTo
+            // 
+            this.nmCountTo.Enabled = false;
+            this.nmCountTo.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
+            this.nmCountTo.ForeColor = System.Drawing.Color.Black;
+            this.nmCountTo.Location = new System.Drawing.Point(786, 89);
+            this.nmCountTo.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nmCountTo.Name = "nmCountTo";
+            this.nmCountTo.Size = new System.Drawing.Size(84, 26);
+            this.nmCountTo.TabIndex = 24;
+            // 
+            // nmCountFrom
+            // 
+            this.nmCountFrom.Enabled = false;
+            this.nmCountFrom.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
+            this.nmCountFrom.ForeColor = System.Drawing.Color.Black;
+            this.nmCountFrom.Location = new System.Drawing.Point(658, 89);
+            this.nmCountFrom.Name = "nmCountFrom";
+            this.nmCountFrom.Size = new System.Drawing.Size(84, 26);
+            this.nmCountFrom.TabIndex = 25;
             // 
             // FSearchBook
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1285, 679);
+            this.ClientSize = new System.Drawing.Size(964, 552);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FSearchBook";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tra cứu sách";
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvManageCustomer)).EndInit();
-            this.groupBox1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvManageBookTitle)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmCountTo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmCountFrom)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dtgvManageCustomer;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox ckbIDBookTitle;
+        private System.Windows.Forms.CheckBox ckbAuthor;
+        private System.Windows.Forms.CheckBox ckbCount;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.CheckBox ckbCategory;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.NumericUpDown nmCountTo;
+        private System.Windows.Forms.NumericUpDown nmCountFrom;
+        private System.Windows.Forms.DataGridView dtgvManageBookTitle;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ComboBox cbCategory;
+        private System.Windows.Forms.ComboBox cbAuthor;
+        private System.Windows.Forms.ComboBox cbIDBookTitle;
+        private System.Windows.Forms.TextBox txbNameBookTitle;
+        private System.Windows.Forms.CheckBox ckbNameBookTitle;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn address;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phonenumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn category;
+        private System.Windows.Forms.DataGridViewTextBoxColumn author;
+        private System.Windows.Forms.DataGridViewTextBoxColumn countVersion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalCount;
     }
 }

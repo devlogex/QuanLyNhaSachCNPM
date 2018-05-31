@@ -120,5 +120,12 @@ namespace QuanLyNhaSach
             }
             catch { MessageBox.Show("Xóa không thành công !"); }
         }
+
+        private void btnSearchBook_Click(object sender, EventArgs e)
+        {
+            FSearchBook f = new FSearchBook();
+            f.ShowDialog();
+            this.LoadForm();
+        }
     }
 }

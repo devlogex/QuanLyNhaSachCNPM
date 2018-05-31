@@ -29,43 +29,150 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FListBill));
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dtgvListBillInfo = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtgvListBill = new System.Windows.Forms.DataGridView();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.value = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dtgvListBillInfo = new System.Windows.Forms.DataGridView();
             this.STT2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idBookTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.author = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.publishing = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.count = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvListBill)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvListBillInfo)).BeginInit();
-            this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvListBillInfo)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvListBill)).BeginInit();
             this.SuspendLayout();
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.groupBox1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel3.Location = new System.Drawing.Point(0, 70);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(807, 188);
+            this.panel3.TabIndex = 12;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Cambria", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(221, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(370, 41);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "DANH SÁCH HÓA ĐƠN";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.btnExit);
+            this.panel4.Controls.Add(this.btnPrint);
+            this.panel4.Controls.Add(this.groupBox2);
+            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 70);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(807, 493);
+            this.panel4.TabIndex = 13;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(352, 194);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(807, 70);
+            this.panel1.TabIndex = 10;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dtgvListBillInfo);
+            this.groupBox2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.Blue;
+            this.groupBox2.Location = new System.Drawing.Point(12, 230);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(791, 212);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Chi tiết hóa đơn";
+            // 
+            // dtgvListBillInfo
+            // 
+            this.dtgvListBillInfo.AllowUserToAddRows = false;
+            this.dtgvListBillInfo.AllowUserToDeleteRows = false;
+            this.dtgvListBillInfo.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
+            this.dtgvListBillInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvListBillInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.STT2,
+            this.id,
+            this.idBookTitle,
+            this.name,
+            this.category,
+            this.author,
+            this.publishing,
+            this.count,
+            this.priceOut});
+            this.dtgvListBillInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvListBillInfo.Location = new System.Drawing.Point(3, 22);
+            this.dtgvListBillInfo.Name = "dtgvListBillInfo";
+            this.dtgvListBillInfo.ReadOnly = true;
+            this.dtgvListBillInfo.RowHeadersVisible = false;
+            this.dtgvListBillInfo.Size = new System.Drawing.Size(785, 187);
+            this.dtgvListBillInfo.TabIndex = 1;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.dtgvListBill);
+            this.groupBox1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Blue;
+            this.groupBox1.Location = new System.Drawing.Point(25, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(756, 188);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Danh sách hóa đơn";
             // 
             // dtgvListBill
             // 
             this.dtgvListBill.AllowUserToAddRows = false;
+            this.dtgvListBill.AllowUserToDeleteRows = false;
             this.dtgvListBill.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             this.dtgvListBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvListBill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -75,14 +182,37 @@
             this.nameCustomer,
             this.date,
             this.value});
-            this.dtgvListBill.Location = new System.Drawing.Point(119, 19);
+            this.dtgvListBill.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvListBill.Location = new System.Drawing.Point(3, 22);
             this.dtgvListBill.Name = "dtgvListBill";
             this.dtgvListBill.ReadOnly = true;
             this.dtgvListBill.RowHeadersVisible = false;
             this.dtgvListBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvListBill.Size = new System.Drawing.Size(713, 163);
+            this.dtgvListBill.Size = new System.Drawing.Size(750, 163);
             this.dtgvListBill.TabIndex = 0;
             this.dtgvListBill.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvListBill_CellClick);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.Location = new System.Drawing.Point(354, 449);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(98, 37);
+            this.btnPrint.TabIndex = 2;
+            this.btnPrint.Text = "In";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(705, 449);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(90, 37);
+            this.btnExit.TabIndex = 2;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // STT
             // 
@@ -131,84 +261,40 @@
             this.value.Name = "value";
             this.value.ReadOnly = true;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.groupBox1.Controls.Add(this.dtgvListBill);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.ForeColor = System.Drawing.Color.Blue;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(964, 188);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Danh sách hóa đơn";
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.groupBox1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(0, 57);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(964, 188);
-            this.panel3.TabIndex = 12;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.dtgvListBillInfo);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.ForeColor = System.Drawing.Color.Blue;
-            this.groupBox2.Location = new System.Drawing.Point(0, 0);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(964, 253);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Chi tiết hóa đơn";
-            // 
-            // dtgvListBillInfo
-            // 
-            this.dtgvListBillInfo.AllowUserToAddRows = false;
-            this.dtgvListBillInfo.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
-            this.dtgvListBillInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvListBillInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT2,
-            this.idBook,
-            this.nameBook,
-            this.category,
-            this.author,
-            this.count,
-            this.priceOut});
-            this.dtgvListBillInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvListBillInfo.Location = new System.Drawing.Point(3, 19);
-            this.dtgvListBillInfo.Name = "dtgvListBillInfo";
-            this.dtgvListBillInfo.RowHeadersVisible = false;
-            this.dtgvListBillInfo.Size = new System.Drawing.Size(958, 231);
-            this.dtgvListBillInfo.TabIndex = 1;
-            // 
             // STT2
             // 
             this.STT2.FillWeight = 23.13222F;
             this.STT2.HeaderText = "STT";
             this.STT2.Name = "STT2";
+            this.STT2.ReadOnly = true;
             this.STT2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.STT2.Width = 40;
             // 
-            // idBook
+            // id
             // 
-            this.idBook.DataPropertyName = "idBook";
-            this.idBook.FillWeight = 406.0914F;
-            this.idBook.HeaderText = "Mã sách";
-            this.idBook.Name = "idBook";
-            this.idBook.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.id.DataPropertyName = "id";
+            this.id.FillWeight = 406.0914F;
+            this.id.HeaderText = "Mã sách";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // nameBook
+            // idBookTitle
             // 
-            this.nameBook.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameBook.DataPropertyName = "nameBook";
-            this.nameBook.FillWeight = 61.79606F;
-            this.nameBook.HeaderText = "Tên sách";
-            this.nameBook.Name = "nameBook";
+            this.idBookTitle.DataPropertyName = "idBookTitle";
+            this.idBookTitle.HeaderText = "Mã đầu sách";
+            this.idBookTitle.Name = "idBookTitle";
+            this.idBookTitle.ReadOnly = true;
+            this.idBookTitle.Visible = false;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.DataPropertyName = "name";
+            this.name.FillWeight = 61.79606F;
+            this.name.HeaderText = "Tên sách";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
             // 
             // category
             // 
@@ -217,6 +303,7 @@
             this.category.FillWeight = 61.79606F;
             this.category.HeaderText = "Thể loại";
             this.category.Name = "category";
+            this.category.ReadOnly = true;
             // 
             // author
             // 
@@ -225,6 +312,13 @@
             this.author.Name = "author";
             this.author.ReadOnly = true;
             // 
+            // publishing
+            // 
+            this.publishing.DataPropertyName = "publishing";
+            this.publishing.HeaderText = "Nhà  XB/Năm XB";
+            this.publishing.Name = "publishing";
+            this.publishing.ReadOnly = true;
+            // 
             // count
             // 
             this.count.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -232,6 +326,7 @@
             this.count.FillWeight = 61.79606F;
             this.count.HeaderText = "Số lượng";
             this.count.Name = "count";
+            this.count.ReadOnly = true;
             // 
             // priceOut
             // 
@@ -240,107 +335,59 @@
             this.priceOut.FillWeight = 61.79606F;
             this.priceOut.HeaderText = "Đơn giá bán";
             this.priceOut.Name = "priceOut";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.groupBox2);
-            this.panel2.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(0, 296);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(964, 253);
-            this.panel2.TabIndex = 11;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Blue;
-            this.label3.Location = new System.Drawing.Point(345, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(284, 32);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "DANH SÁCH HÓA ĐƠN";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel4.Controls.Add(this.pictureBox1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 57);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(964, 495);
-            this.panel4.TabIndex = 13;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(432, 194);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(964, 57);
-            this.panel1.TabIndex = 10;
+            this.priceOut.ReadOnly = true;
             // 
             // FListBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(964, 552);
+            this.ClientSize = new System.Drawing.Size(807, 563);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FListBill";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh sách hóa đơn";
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvListBill)).EndInit();
-            this.groupBox1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvListBillInfo)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvListBillInfo)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvListBill)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dtgvListBill;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dtgvListBill;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dtgvListBillInfo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idBook;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameBook;
-        private System.Windows.Forms.DataGridViewTextBoxColumn category;
-        private System.Windows.Forms.DataGridViewTextBoxColumn author;
-        private System.Windows.Forms.DataGridViewTextBoxColumn count;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceOut;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn idBill;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCustomer;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameCustomer;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn value;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idBookTitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn category;
+        private System.Windows.Forms.DataGridViewTextBoxColumn author;
+        private System.Windows.Forms.DataGridViewTextBoxColumn publishing;
+        private System.Windows.Forms.DataGridViewTextBoxColumn count;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceOut;
     }
 }

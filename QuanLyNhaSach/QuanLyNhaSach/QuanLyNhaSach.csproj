@@ -188,6 +188,18 @@
     <Compile Include="FReportOwe.Designer.cs">
       <DependentUpon>FReportOwe.cs</DependentUpon>
     </Compile>
+    <Compile Include="FSearchBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FSearchBook.Designer.cs">
+      <DependentUpon>FSearchBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FSearchCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FSearchCustomer.Designer.cs">
+      <DependentUpon>FSearchCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="FSystem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,6 +280,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FReportOwe.resx">
       <DependentUpon>FReportOwe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FSearchBook.resx">
+      <DependentUpon>FSearchBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FSearchCustomer.resx">
+      <DependentUpon>FSearchCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FSystem.resx">
       <DependentUpon>FSystem.cs</DependentUpon>

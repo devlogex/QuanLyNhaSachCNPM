@@ -44,11 +44,9 @@ namespace QuanLyNhaSach.DAO
             }
             return list;
         }
-        public DataTable GetListBill()
+        public DataTable GetListBillByCustomerID(int id)
         {
-            return DataProvider.Instance.ExecuteQuery("EXEC USP_GetListBill");
+            return DataProvider.Instance.ExecuteQuery("EXEC USP_GetListBillByCustomerID @id",new object[] { id });
         }
-
-
     }
 }

@@ -31,6 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSearchBook = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnRemoveBookTitle = new System.Windows.Forms.Button();
             this.btnUpdateBookTitle = new System.Windows.Forms.Button();
@@ -63,7 +64,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cambria", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Blue;
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(290, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(371, 47);
@@ -72,23 +73,36 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnSearchBook);
             this.groupBox1.Controls.Add(this.btnExit);
             this.groupBox1.Controls.Add(this.btnRemoveBookTitle);
             this.groupBox1.Controls.Add(this.btnUpdateBookTitle);
             this.groupBox1.Controls.Add(this.btnAddBookTitle);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(0, 502);
+            this.groupBox1.Location = new System.Drawing.Point(0, 489);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(964, 50);
+            this.groupBox1.Size = new System.Drawing.Size(964, 63);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
+            // btnSearchBook
+            // 
+            this.btnSearchBook.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchBook.Location = new System.Drawing.Point(389, 20);
+            this.btnSearchBook.Name = "btnSearchBook";
+            this.btnSearchBook.Size = new System.Drawing.Size(106, 35);
+            this.btnSearchBook.TabIndex = 2;
+            this.btnSearchBook.Text = "Tìm sách";
+            this.btnSearchBook.UseVisualStyleBackColor = true;
+            this.btnSearchBook.Click += new System.EventHandler(this.btnSearchBook_Click);
+            // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(868, 15);
+            this.btnExit.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
+            this.btnExit.Location = new System.Drawing.Point(846, 19);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.Size = new System.Drawing.Size(106, 34);
             this.btnExit.TabIndex = 0;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -96,9 +110,10 @@
             // 
             // btnRemoveBookTitle
             // 
-            this.btnRemoveBookTitle.Location = new System.Drawing.Point(275, 15);
+            this.btnRemoveBookTitle.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
+            this.btnRemoveBookTitle.Location = new System.Drawing.Point(262, 20);
             this.btnRemoveBookTitle.Name = "btnRemoveBookTitle";
-            this.btnRemoveBookTitle.Size = new System.Drawing.Size(75, 23);
+            this.btnRemoveBookTitle.Size = new System.Drawing.Size(106, 35);
             this.btnRemoveBookTitle.TabIndex = 0;
             this.btnRemoveBookTitle.Text = "Xóa";
             this.btnRemoveBookTitle.UseVisualStyleBackColor = true;
@@ -106,9 +121,10 @@
             // 
             // btnUpdateBookTitle
             // 
-            this.btnUpdateBookTitle.Location = new System.Drawing.Point(161, 15);
+            this.btnUpdateBookTitle.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
+            this.btnUpdateBookTitle.Location = new System.Drawing.Point(137, 20);
             this.btnUpdateBookTitle.Name = "btnUpdateBookTitle";
-            this.btnUpdateBookTitle.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateBookTitle.Size = new System.Drawing.Size(106, 34);
             this.btnUpdateBookTitle.TabIndex = 0;
             this.btnUpdateBookTitle.Text = "Cập nhật";
             this.btnUpdateBookTitle.UseVisualStyleBackColor = true;
@@ -116,9 +132,10 @@
             // 
             // btnAddBookTitle
             // 
-            this.btnAddBookTitle.Location = new System.Drawing.Point(54, 15);
+            this.btnAddBookTitle.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
+            this.btnAddBookTitle.Location = new System.Drawing.Point(12, 20);
             this.btnAddBookTitle.Name = "btnAddBookTitle";
-            this.btnAddBookTitle.Size = new System.Drawing.Size(75, 23);
+            this.btnAddBookTitle.Size = new System.Drawing.Size(106, 33);
             this.btnAddBookTitle.TabIndex = 0;
             this.btnAddBookTitle.Text = "Thêm";
             this.btnAddBookTitle.UseVisualStyleBackColor = true;
@@ -128,10 +145,10 @@
             // 
             this.groupBox2.Controls.Add(this.dtgvManageBookTitle);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
             this.groupBox2.Location = new System.Drawing.Point(0, 72);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(964, 430);
+            this.groupBox2.Size = new System.Drawing.Size(964, 417);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Đầu sách";
@@ -151,12 +168,12 @@
             this.countVersion,
             this.totalCount});
             this.dtgvManageBookTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvManageBookTitle.Location = new System.Drawing.Point(3, 19);
+            this.dtgvManageBookTitle.Location = new System.Drawing.Point(3, 22);
             this.dtgvManageBookTitle.Name = "dtgvManageBookTitle";
             this.dtgvManageBookTitle.ReadOnly = true;
             this.dtgvManageBookTitle.RowHeadersVisible = false;
             this.dtgvManageBookTitle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvManageBookTitle.Size = new System.Drawing.Size(958, 408);
+            this.dtgvManageBookTitle.Size = new System.Drawing.Size(958, 392);
             this.dtgvManageBookTitle.TabIndex = 3;
             // 
             // STT
@@ -252,5 +269,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn author;
         private System.Windows.Forms.DataGridViewTextBoxColumn countVersion;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalCount;
+        private System.Windows.Forms.Button btnSearchBook;
     }
 }

@@ -86,5 +86,17 @@ namespace QuanLyNhaSach
             FSystem f = new FSystem();
             f.ShowDialog();
         }
+
+        private void lbSearchBook_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FSearchBook f = new FSearchBook();
+            f.ShowDialog();
+        }
+
+        private void lbSearchCustomer_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FSearchCustomer f = new FSearchCustomer();
+            f.ShowDialog();
+        }
     }
 }

@@ -111,7 +111,10 @@ namespace QuanLyNhaSach
         }
         private void btnHistoryBill_Click(object sender, EventArgs e)
         {
-            FListBill f = new FListBill();
+            if (dtgvManageCustomer.SelectedRows.Count == 0)
+                return;
+            Customer customer = CustomerDAO.Instance.GetCustomerByCustomerID(Int32.Parse(dtgvManageCustomer.SelectedRows[0].Cells["id"].Value.ToString()));
+            FListBill f = new FListBill(customer);
             f.ShowDialog();
         }
         #endregion
@@ -119,6 +122,13 @@ namespace QuanLyNhaSach
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            FSearchCustomer f = new FSearchCustomer();
+            f.ShowDialog();
+            this.LoadForm();
         }
     }
 }

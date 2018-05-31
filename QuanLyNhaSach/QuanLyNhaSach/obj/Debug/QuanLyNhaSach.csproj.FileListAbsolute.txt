@@ -54,3 +54,5 @@ C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\bi
 C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
 C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\Microsoft.SqlServer.Types.dll
 C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FSystem.resources
+C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FSearchBook.resources
+C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FSearchCustomer.resources

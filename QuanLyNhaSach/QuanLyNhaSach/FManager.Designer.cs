@@ -36,6 +36,7 @@
             this.itemDisplayName = new System.Windows.Forms.ToolStripMenuItem();
             this.itemAccount = new System.Windows.Forms.ToolStripMenuItem();
             this.itemLogOut = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.lbReportOwe = new System.Windows.Forms.LinkLabel();
@@ -56,7 +57,6 @@
             this.lbManageCategoryAndAuthor = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.itemAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -113,7 +113,7 @@
             this.itemDisplayName});
             this.menuStrip1.Location = new System.Drawing.Point(776, 8);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(223, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(103, 27);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -135,7 +135,7 @@
             this.itemAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
             this.itemAccount.ForeColor = System.Drawing.Color.Blue;
             this.itemAccount.Name = "itemAccount";
-            this.itemAccount.Size = new System.Drawing.Size(180, 24);
+            this.itemAccount.Size = new System.Drawing.Size(157, 24);
             this.itemAccount.Text = "Tài khoản";
             // 
             // itemLogOut
@@ -143,9 +143,17 @@
             this.itemLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
             this.itemLogOut.ForeColor = System.Drawing.Color.Blue;
             this.itemLogOut.Name = "itemLogOut";
-            this.itemLogOut.Size = new System.Drawing.Size(180, 24);
+            this.itemLogOut.Size = new System.Drawing.Size(157, 24);
             this.itemLogOut.Text = "Đăng xuất";
             this.itemLogOut.Click += new System.EventHandler(this.itemLogOut_Click);
+            // 
+            // itemAdmin
+            // 
+            this.itemAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
+            this.itemAdmin.ForeColor = System.Drawing.Color.Blue;
+            this.itemAdmin.Name = "itemAdmin";
+            this.itemAdmin.Size = new System.Drawing.Size(157, 24);
+            this.itemAdmin.Text = "Admin";
             // 
             // panel5
             // 
@@ -193,6 +201,7 @@
             this.lbSearchCustomer.TabIndex = 2;
             this.lbSearchCustomer.TabStop = true;
             this.lbSearchCustomer.Text = "Tra cứu khách hàng";
+            this.lbSearchCustomer.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbSearchCustomer_LinkClicked);
             // 
             // lbCollectMoney
             // 
@@ -324,6 +333,7 @@
             this.lbSearchBook.TabIndex = 2;
             this.lbSearchBook.TabStop = true;
             this.lbSearchBook.Text = "Tra cứu sách";
+            this.lbSearchBook.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbSearchBook_LinkClicked);
             // 
             // lbImportBook
             // 
@@ -381,14 +391,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // itemAdmin
-            // 
-            this.itemAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
-            this.itemAdmin.ForeColor = System.Drawing.Color.Blue;
-            this.itemAdmin.Name = "itemAdmin";
-            this.itemAdmin.Size = new System.Drawing.Size(180, 24);
-            this.itemAdmin.Text = "Admin";
             // 
             // FManager
             // 

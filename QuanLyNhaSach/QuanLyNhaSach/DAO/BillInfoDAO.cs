@@ -35,7 +35,33 @@ namespace QuanLyNhaSach.DAO
         }
         public DataTable LoadListBillInfo(int id)
         {
-            return DataProvider.Instance.ExecuteQuery("EXEC USP_LoadListBillInfo @id", new object[] { id });
+            DataTable data= DataProvider.Instance.ExecuteQuery("EXEC USP_LoadListBillInfo @id", new object[] { id });
+
+            data.Columns.Add("author");
+            data.Columns.Add("publishing");
+            foreach(DataRow row in data.Rows)
+            {
+                int idBookTitle = Int32.Parse(row["idBookTitle"].ToString());
+
+                string author = "";
+                List<Author> listAuthor = AuthorDAO.Instance.GetListAuthorByBookTitleID(idBookTitle); ;
+                for (int j = 0; j < listAuthor.Count - 1; j++)
+                {
+                    author += listAuthor[j].Name+ ", ";
+                }
+                if (listAuthor.Count > 0)
+                    author += listAuthor[listAuthor.Count-1].Name;
+                row["author"] = author;
+
+                int idBook = Int32.Parse(row["id"].ToString());
+                string publishing = "";
+                DataTable tablePublish = DataProvider.Instance.ExecuteQuery("EXEC USP_GetPublishingByBookID @id", new object[] { idBook });
+                if(tablePublish.Rows.Count>0)
+                    publishing += tablePublish.Rows[0]["publishCompany"].ToString() + ", năm " + tablePublish.Rows[0]["publishYear"].ToString();
+                row["publishing"] = publishing;
+            }
+
+            return data;
         }
     }
 }

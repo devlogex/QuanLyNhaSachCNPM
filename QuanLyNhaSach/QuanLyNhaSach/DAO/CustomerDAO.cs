@@ -55,23 +55,12 @@ namespace QuanLyNhaSach.DAO
         public List<Customer> SearchCustomerByName(string name)
         {
             List<Customer> list = new List<Customer>();
-            DataTable data = DataProvider.Instance.ExecuteQuery(String.Format("SELECT * FROM Customer WHERE dbo.fuConvertToUnsign1(name) LIKE N'%' + dbo.fuConvertToUnsign1(N'{0}') + '%'", name));
+            DataTable data = DataProvider.Instance.ExecuteQuery(String.Format("SELECT MaKhachHang as id,TenKhachHang as name,DiaChi as address, SoDienThoai as phoneNumber, Email as email, SoTienNo as owe FROM KHACHHANG WHERE dbo.fuConvertToUnsign1(TenKhachHang) LIKE N'%' + dbo.fuConvertToUnsign1(N'{0}') + '%'", name));
             foreach (DataRow item in data.Rows)
             {
                 list.Add(new Customer(item));
             }
             return list;
         }
-        public List<Customer> SearchCustomerByPhoneNumber(string phoneNumber)
-        {
-            List<Customer> list = new List<Customer>();
-            DataTable data = DataProvider.Instance.ExecuteQuery(String.Format("SELECT * FROM Customer WHERE phoneNumber='"+phoneNumber+"'"));
-            foreach (DataRow item in data.Rows)
-            {
-                list.Add(new Customer(item));
-            }
-            return list;
-        }
-
     }
 }

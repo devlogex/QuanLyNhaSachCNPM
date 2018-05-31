@@ -34,7 +34,7 @@ namespace QuanLyNhaSach.DAO
                 DataTable tableAuthor = DataProvider.Instance.ExecuteQuery("EXEC USP_GetAuthorsByBookTitleID @id", new object[] { id });
                 for (int j = 0; j < tableAuthor.Rows.Count - 1; j++)
                 {
-                    author += tableAuthor.Rows[j]["name"].ToString() + ", ";
+                    author += tableAuthor.Rows[j]["name"].ToString() + ",";
                 }
                 if (tableAuthor.Rows.Count > 0)
                     author += tableAuthor.Rows[tableAuthor.Rows.Count - 1]["name"].ToString();
@@ -112,6 +112,16 @@ namespace QuanLyNhaSach.DAO
             }
             else
                 return 1;
+        }
+        public List<int> SearchBookTitleByName(string name)
+        {
+            List<int> list = new List<int>();
+            DataTable data = DataProvider.Instance.ExecuteQuery(String.Format("SELECT MaDauSach as id FROM DAUSACH WHERE dbo.fuConvertToUnsign1(TenDauSach) LIKE N'%' + dbo.fuConvertToUnsign1(N'{0}') + '%'", name));
+            foreach (DataRow item in data.Rows)
+            {
+                list.Add(Int32.Parse(item["id"].ToString()));
+            }
+            return list;
         }
     }
 }
