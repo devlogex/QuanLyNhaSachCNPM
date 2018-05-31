@@ -959,3 +959,5 @@ BEGIN
 	DELETE NGUOIDUNG WHERE TenDangNhap=@userName
 END
 GO
+
+select*from CT_TACGIA
