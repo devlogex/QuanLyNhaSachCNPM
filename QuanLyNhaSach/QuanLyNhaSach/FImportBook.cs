@@ -41,6 +41,7 @@ namespace QuanLyNhaSach
             txbTotalPrice.Text = "0";
 
             cbAuthor.Items.Add("Thêm");
+            cbCategory.SelectedIndexChanged += cbCategory_SelectedIndexChanged;
             LoadSTT();
         }
         public void LoadSTT()
@@ -363,7 +364,6 @@ namespace QuanLyNhaSach
                 f.ShowDialog();
             }
         }
-
         #endregion
 
     }

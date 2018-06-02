@@ -93,7 +93,6 @@
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(103, 27);
             this.cbCategory.TabIndex = 5;
-            this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
             // 
             // txbNameBookTitle
             // 

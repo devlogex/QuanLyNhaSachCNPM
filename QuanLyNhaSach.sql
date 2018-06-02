@@ -1,7 +1,7 @@
-﻿CREATE DATABASE QuanLyNhaSach_CNPM
+﻿CREATE DATABASE QuanLyNhaSach
 GO
 
-USE QuanLyNhaSach_CNPM
+USE QuanLyNhaSach
 GO
 
 CREATE TABLE THELOAISACH
@@ -243,11 +243,6 @@ BEGIN
 	UPDATE THAMSO SET GiaTri=@check WHERE TenThamSo='ApDungQD4'
 END
 GO
-
-INSERT NHOMNGUOIDUNG(TenNhom)values('admin')
-INSERT NGUOIDUNG VALUES('admin','admin','admin',2)
-go
-
 
 CREATE PROC USP_AddAuthor
 @name NVARCHAR(100)
@@ -920,8 +915,6 @@ BEGIN
 	WHERE MaSach=@id
 END
 GO
-select*from SACH
-exec USP_GetPublishingByBookID @id=11
 
 CREATE PROC USP_UpdateAccountByUserName 
 @userName VARCHAR(100),
@@ -960,4 +953,3 @@ BEGIN
 END
 GO
 
-select*from CT_TACGIA

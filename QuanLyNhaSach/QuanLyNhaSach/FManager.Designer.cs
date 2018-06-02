@@ -70,10 +70,12 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(901, 90);
@@ -81,10 +83,12 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Cambria", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(252, 21);
+            this.label6.Location = new System.Drawing.Point(264, 24);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(374, 47);
             this.label6.TabIndex = 1;
@@ -92,6 +96,8 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -99,7 +105,6 @@
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.panel7);
             this.panel2.Controls.Add(this.panel4);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 90);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(901, 449);
@@ -107,13 +112,14 @@
             // 
             // msAccount
             // 
+            this.msAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.msAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
             this.msAccount.Dock = System.Windows.Forms.DockStyle.None;
             this.msAccount.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.itemDisplayName});
-            this.msAccount.Location = new System.Drawing.Point(703, 3);
+            this.msAccount.Location = new System.Drawing.Point(720, 3);
             this.msAccount.Name = "msAccount";
-            this.msAccount.Size = new System.Drawing.Size(223, 27);
+            this.msAccount.Size = new System.Drawing.Size(103, 27);
             this.msAccount.TabIndex = 3;
             this.msAccount.Text = "menuStrip1";
             // 
@@ -159,6 +165,9 @@
             // 
             // panel5
             // 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
             this.panel5.Controls.Add(this.pictureBox4);
             this.panel5.Controls.Add(this.lbReportOwe);
@@ -184,10 +193,10 @@
             // lbReportOwe
             // 
             this.lbReportOwe.AutoSize = true;
-            this.lbReportOwe.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbReportOwe.Location = new System.Drawing.Point(132, 115);
+            this.lbReportOwe.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbReportOwe.Location = new System.Drawing.Point(132, 122);
             this.lbReportOwe.Name = "lbReportOwe";
-            this.lbReportOwe.Size = new System.Drawing.Size(111, 17);
+            this.lbReportOwe.Size = new System.Drawing.Size(140, 22);
             this.lbReportOwe.TabIndex = 2;
             this.lbReportOwe.TabStop = true;
             this.lbReportOwe.Text = "Báo cáo công nợ";
@@ -196,10 +205,10 @@
             // lbSearchCustomer
             // 
             this.lbSearchCustomer.AutoSize = true;
-            this.lbSearchCustomer.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSearchCustomer.Location = new System.Drawing.Point(132, 87);
+            this.lbSearchCustomer.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSearchCustomer.Location = new System.Drawing.Point(132, 94);
             this.lbSearchCustomer.Name = "lbSearchCustomer";
-            this.lbSearchCustomer.Size = new System.Drawing.Size(132, 17);
+            this.lbSearchCustomer.Size = new System.Drawing.Size(168, 22);
             this.lbSearchCustomer.TabIndex = 2;
             this.lbSearchCustomer.TabStop = true;
             this.lbSearchCustomer.Text = "Tra cứu khách hàng";
@@ -208,10 +217,10 @@
             // lbCollectMoney
             // 
             this.lbCollectMoney.AutoSize = true;
-            this.lbCollectMoney.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCollectMoney.Location = new System.Drawing.Point(132, 55);
+            this.lbCollectMoney.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCollectMoney.Location = new System.Drawing.Point(132, 62);
             this.lbCollectMoney.Name = "lbCollectMoney";
-            this.lbCollectMoney.Size = new System.Drawing.Size(121, 17);
+            this.lbCollectMoney.Size = new System.Drawing.Size(154, 22);
             this.lbCollectMoney.TabIndex = 2;
             this.lbCollectMoney.TabStop = true;
             this.lbCollectMoney.Text = "Lập phiếu thu tiền";
@@ -220,21 +229,21 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Olive;
             this.label3.Location = new System.Drawing.Point(130, 1);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 22);
+            this.label3.Size = new System.Drawing.Size(138, 28);
             this.label3.TabIndex = 1;
             this.label3.Text = "Khách hàng";
             // 
             // lbManageCustomer
             // 
             this.lbManageCustomer.AutoSize = true;
-            this.lbManageCustomer.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbManageCustomer.Location = new System.Drawing.Point(131, 29);
+            this.lbManageCustomer.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbManageCustomer.Location = new System.Drawing.Point(131, 36);
             this.lbManageCustomer.Name = "lbManageCustomer";
-            this.lbManageCustomer.Size = new System.Drawing.Size(130, 17);
+            this.lbManageCustomer.Size = new System.Drawing.Size(165, 22);
             this.lbManageCustomer.TabIndex = 2;
             this.lbManageCustomer.TabStop = true;
             this.lbManageCustomer.Text = "Quản lý khách hàng";
@@ -242,6 +251,9 @@
             // 
             // panel7
             // 
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
             this.panel7.Controls.Add(this.pictureBox3);
             this.panel7.Controls.Add(this.lbSystem);
@@ -265,10 +277,10 @@
             // lbSystem
             // 
             this.lbSystem.AutoSize = true;
-            this.lbSystem.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSystem.Location = new System.Drawing.Point(131, 26);
+            this.lbSystem.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSystem.Location = new System.Drawing.Point(132, 38);
             this.lbSystem.Name = "lbSystem";
-            this.lbSystem.Size = new System.Drawing.Size(112, 17);
+            this.lbSystem.Size = new System.Drawing.Size(142, 22);
             this.lbSystem.TabIndex = 2;
             this.lbSystem.TabStop = true;
             this.lbSystem.Text = "Quản lý quy định";
@@ -277,16 +289,19 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Olive;
             this.label5.Location = new System.Drawing.Point(130, 1);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 22);
+            this.label5.Size = new System.Drawing.Size(110, 28);
             this.label5.TabIndex = 1;
             this.label5.Text = "Quy định";
             // 
             // panel4
             // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
             this.panel4.Controls.Add(this.lbManageBookTitle);
             this.panel4.Controls.Add(this.lbReportCount);
@@ -296,6 +311,7 @@
             this.panel4.Controls.Add(this.lbManageCategoryAndAuthor);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel4.Location = new System.Drawing.Point(51, 49);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(358, 233);
@@ -304,10 +320,10 @@
             // lbManageBookTitle
             // 
             this.lbManageBookTitle.AutoSize = true;
-            this.lbManageBookTitle.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbManageBookTitle.Location = new System.Drawing.Point(131, 23);
+            this.lbManageBookTitle.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbManageBookTitle.Location = new System.Drawing.Point(131, 40);
             this.lbManageBookTitle.Name = "lbManageBookTitle";
-            this.lbManageBookTitle.Size = new System.Drawing.Size(113, 17);
+            this.lbManageBookTitle.Size = new System.Drawing.Size(143, 22);
             this.lbManageBookTitle.TabIndex = 2;
             this.lbManageBookTitle.TabStop = true;
             this.lbManageBookTitle.Text = "Quản lý đầu sách";
@@ -316,10 +332,10 @@
             // lbReportCount
             // 
             this.lbReportCount.AutoSize = true;
-            this.lbReportCount.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbReportCount.Location = new System.Drawing.Point(129, 177);
+            this.lbReportCount.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbReportCount.Location = new System.Drawing.Point(129, 194);
             this.lbReportCount.Name = "lbReportCount";
-            this.lbReportCount.Size = new System.Drawing.Size(82, 17);
+            this.lbReportCount.Size = new System.Drawing.Size(104, 22);
             this.lbReportCount.TabIndex = 2;
             this.lbReportCount.TabStop = true;
             this.lbReportCount.Text = "Báo cáo tồn";
@@ -328,10 +344,10 @@
             // lbSearchBook
             // 
             this.lbSearchBook.AutoSize = true;
-            this.lbSearchBook.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSearchBook.Location = new System.Drawing.Point(128, 148);
+            this.lbSearchBook.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSearchBook.Location = new System.Drawing.Point(128, 165);
             this.lbSearchBook.Name = "lbSearchBook";
-            this.lbSearchBook.Size = new System.Drawing.Size(88, 17);
+            this.lbSearchBook.Size = new System.Drawing.Size(112, 22);
             this.lbSearchBook.TabIndex = 2;
             this.lbSearchBook.TabStop = true;
             this.lbSearchBook.Text = "Tra cứu sách";
@@ -340,10 +356,10 @@
             // lbImportBook
             // 
             this.lbImportBook.AutoSize = true;
-            this.lbImportBook.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbImportBook.Location = new System.Drawing.Point(129, 87);
+            this.lbImportBook.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbImportBook.Location = new System.Drawing.Point(129, 104);
             this.lbImportBook.Name = "lbImportBook";
-            this.lbImportBook.Size = new System.Drawing.Size(136, 17);
+            this.lbImportBook.Size = new System.Drawing.Size(171, 22);
             this.lbImportBook.TabIndex = 2;
             this.lbImportBook.TabStop = true;
             this.lbImportBook.Text = "Lập phiếu nhập sách";
@@ -352,10 +368,10 @@
             // lbBill
             // 
             this.lbBill.AutoSize = true;
-            this.lbBill.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBill.Location = new System.Drawing.Point(129, 119);
+            this.lbBill.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBill.Location = new System.Drawing.Point(129, 136);
             this.lbBill.Name = "lbBill";
-            this.lbBill.Size = new System.Drawing.Size(145, 17);
+            this.lbBill.Size = new System.Drawing.Size(182, 22);
             this.lbBill.TabIndex = 2;
             this.lbBill.TabStop = true;
             this.lbBill.Text = "Lập hóa đơn bán sách";
@@ -364,10 +380,10 @@
             // lbManageCategoryAndAuthor
             // 
             this.lbManageCategoryAndAuthor.AutoSize = true;
-            this.lbManageCategoryAndAuthor.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbManageCategoryAndAuthor.Location = new System.Drawing.Point(129, 54);
+            this.lbManageCategoryAndAuthor.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbManageCategoryAndAuthor.Location = new System.Drawing.Point(129, 71);
             this.lbManageCategoryAndAuthor.Name = "lbManageCategoryAndAuthor";
-            this.lbManageCategoryAndAuthor.Size = new System.Drawing.Size(168, 17);
+            this.lbManageCategoryAndAuthor.Size = new System.Drawing.Size(215, 22);
             this.lbManageCategoryAndAuthor.TabIndex = 2;
             this.lbManageCategoryAndAuthor.TabStop = true;
             this.lbManageCategoryAndAuthor.Text = "Quản lý thể loại và tác giả";
@@ -376,11 +392,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Olive;
-            this.label1.Location = new System.Drawing.Point(130, 1);
+            this.label1.Location = new System.Drawing.Point(129, 1);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 22);
+            this.label1.Size = new System.Drawing.Size(62, 28);
             this.label1.TabIndex = 1;
             this.label1.Text = "Sách";
             // 
@@ -424,6 +440,7 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

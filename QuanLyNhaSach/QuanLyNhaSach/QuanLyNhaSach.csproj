@@ -354,9 +354,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="itextsharp.dll" />
+    <Content Include="Resources\account_avatar_human_male_man_men_people_person_profile_user_users_icon_512.png" />
+    <Content Include="Resources\book-icon-blue-background-vector-free-vector-in-adobe-illustrator-ai-3.png" />
+    <Content Include="Resources\Close Window_26px.png" />
+    <Content Include="Resources\Close Window_50px.png" />
     <Content Include="Resources\Double Down_16px.png" />
     <Content Include="Resources\f4408a5c77ebaa90931ba19539718bb2.jpg" />
+    <Content Include="Resources\gear-1077550_960_720.png" />
     <Content Include="Resources\mau-slide-powerpoint-dep-031.png" />
+    <Content Include="Resources\Maximize Window_48px.png" />
     <Content Include="Resources\my-journal-powerpoint-backgrounds.jpg" />
     <Content Include="Resources\school-education-powerpoint-templates-presentation-9365-ppt-background-images-coloring-download-as-zip-4f.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />

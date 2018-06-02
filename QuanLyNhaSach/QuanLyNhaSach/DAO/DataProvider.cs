@@ -24,7 +24,7 @@ namespace QuanLyNhaSach.DAO
 
         private DataProvider() { }
 
-        private string connectionStr = "Data Source=(local);Initial Catalog=QuanLyNhaSach_CNPM;Integrated Security=True";
+        private string connectionStr = "Data Source=(local);Initial Catalog=QuanLyNhaSach;Integrated Security=True";
         public DataTable ExecuteQuery(string query, object[] paramater=null)
         {
             DataTable data = new DataTable();

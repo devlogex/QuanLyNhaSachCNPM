@@ -50,7 +50,13 @@ namespace QuanLyNhaSach.DAO
         }
         public int GetNewIDCustomer()
         {
-            return Int32.Parse(DataProvider.Instance.ExecuteQuery("EXEC USP_GetNewIDCustomer").Rows[0][0].ToString());
+            int id;
+            if (Int32.TryParse(DataProvider.Instance.ExecuteQuery("EXEC USP_GetNewIDCustomer").Rows[0][0].ToString(), out id))
+            {
+                return id;
+            }
+            else
+                return 1;
         }
         public List<Customer> SearchCustomerByName(string name)
         {
