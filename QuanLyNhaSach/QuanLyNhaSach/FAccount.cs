@@ -17,6 +17,7 @@ namespace QuanLyNhaSach
         public FAccount()
         {
             InitializeComponent();
+            LoadForm();
         }
 
         public void LoadForm()
@@ -45,22 +46,30 @@ namespace QuanLyNhaSach
 
         private void btnAddAccount_Click(object sender, EventArgs e)
         {
-            FAddAccount f = new FAddAccount();
-            f.UpdateListAccount += F_UpdateListAccount;
-            f.ShowDialog();
+            try
+            {
+                FAddAccount f = new FAddAccount();
+                f.UpdateListAccount += F_UpdateListAccount;
+                f.ShowDialog();
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
 
         private void btnUpdateAccount_Click(object sender, EventArgs e)
         {
-            if (dtgvAccount.SelectedCells.Count == 0)
+            try
             {
-                MessageBox.Show("Bạn chưa chọn tài khoản để sửa");
-                return;
+                if (dtgvAccount.SelectedCells.Count == 0)
+                {
+                    MessageBox.Show("Bạn chưa chọn tài khoản để sửa", "Thông báo");
+                    return;
+                }
+                Account acc = AccountDAO.Instance.GetAccountByUserName(dtgvAccount.SelectedRows[0].Cells["userName"].Value.ToString());
+                FUpdateAccount f = new FUpdateAccount(acc);
+                f.UpdateListAccount += F_UpdateListAccount;
+                f.ShowDialog();
             }
-            Account acc = AccountDAO.Instance.GetAccountByUserName(dtgvAccount.SelectedRows[0].Cells["userName"].Value.ToString());
-            FUpdateAccount f = new FUpdateAccount(acc);
-            f.UpdateListAccount += F_UpdateListAccount;
-            f.ShowDialog();
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
 
         private void btnRemoveAccount_Click(object sender, EventArgs e)
@@ -71,13 +80,13 @@ namespace QuanLyNhaSach
                 Account acc = AccountDAO.Instance.GetAccountByUserName(userName);
                 if (AccountDAO.Instance.RemoveAccountByUserName(userName))
                 {
-                    MessageBox.Show("Xóa tài khoản thành công !");
+                    MessageBox.Show("Xóa tài khoản thành công !","Thông báo");
                     LoadAccount();
                 }
                 else
-                    MessageBox.Show("Xóa không thành công ");
+                    MessageBox.Show("Xóa không thành công ","Thông báo");
             }
-            catch { MessageBox.Show("Có lỗi khi xóa"); }
+            catch { MessageBox.Show("Có lỗi khi xóa","Thông báo"); }
         }
     }
 }

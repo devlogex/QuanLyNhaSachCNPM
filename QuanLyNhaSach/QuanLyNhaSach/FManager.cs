@@ -26,57 +26,100 @@ namespace QuanLyNhaSach
         }
         public void LoadForm()
         {
-            itemDisplayName.Text = this.Acc.DisplayName;
+            if (this.Acc.DisplayName != "")
+                itemDisplayName.Text = this.Acc.DisplayName;
+            else
+                itemDisplayName.Text = this.Acc.UserName;
+
             if (this.Acc.Type == 1)
                 msAccount.Items.Remove(itemAdmin);
         }
 
         private void lbManageCategoryAndAuthor_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FManageCategoryAndAuthor f = new FManageCategoryAndAuthor();
-            f.ShowDialog();
+            try
+            {
+                FManageCategoryAndAuthor f = new FManageCategoryAndAuthor();
+                f.ShowDialog();
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
 
         private void lbManageBookTitle_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FManageBookTitle f = new FManageBookTitle();
-            f.ShowDialog();
+            try
+            {
+                FManageBookTitle f = new FManageBookTitle();
+                f.ShowDialog();
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
+
         }
 
         private void lbManageCustomer_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FManageCustomer f = new FManageCustomer();
-            f.ShowDialog();
+            try
+            {
+                FManageCustomer f = new FManageCustomer();
+                f.ShowDialog();
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
+
         }
 
         private void lbImportBook_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FImportBook f = new FImportBook();
-            f.ShowDialog();
+            try
+            {
+                FImportBook f = new FImportBook();
+                f.ShowDialog();
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
+
         }
 
         private void lbBill_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FBill f = new FBill();
-            f.ShowDialog();
+            try
+            {
+                FBill f = new FBill();
+                f.ShowDialog();
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
+
         }
 
         private void lbCollectMoney_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FReceipt f = new FReceipt();
-            f.ShowDialog();
+            try
+            {
+                FReceipt f = new FReceipt();
+                f.ShowDialog();
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
+
         }
 
         private void lbReportCount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FReportBook f = new FReportBook();
-            f.ShowDialog();
+            try
+            {
+                FReportBook f = new FReportBook();
+                f.ShowDialog();
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
+
         }
 
         private void lbReportOwe_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FReportOwe f = new FReportOwe();
-            f.ShowDialog();
+            try
+            {
+                FReportOwe f = new FReportOwe();
+                f.ShowDialog();
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
+
         }
 
         private void itemLogOut_Click(object sender, EventArgs e)
@@ -86,37 +129,65 @@ namespace QuanLyNhaSach
 
         private void lbSystem_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FSystem f = new FSystem();
-            f.ShowDialog();
+            try
+            {
+                FSystem f = new FSystem();
+                f.ShowDialog();
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
+
         }
 
         private void lbSearchBook_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FSearchBook f = new FSearchBook();
-            f.ShowDialog();
+            try
+            {
+                FSearchBook f = new FSearchBook();
+                f.ShowDialog();
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
+
         }
 
         private void lbSearchCustomer_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FSearchCustomer f = new FSearchCustomer();
-            f.ShowDialog();
+            try
+            {
+                FSearchCustomer f = new FSearchCustomer();
+                f.ShowDialog();
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
+
         }
 
         private void itemAccount_Click(object sender, EventArgs e)
         {
-            FUpdateAccount f = new FUpdateAccount(this.Acc);
-            f.UpdateListAccount += delegate (object _sender, EventArgs _e)
-              {
-                  this.Acc = AccountDAO.Instance.GetAccountByUserName(this.Acc.UserName);
-                  itemDisplayName.Text = this.Acc.DisplayName;
-              };
-            f.ShowDialog();
+            try
+            {
+                FUpdateAccount f = new FUpdateAccount(this.Acc);
+                f.UpdateListAccount += delegate (object _sender, EventArgs _e)
+                  {
+                      this.Acc = AccountDAO.Instance.GetAccountByUserName(this.Acc.UserName);
+                      if (this.Acc.DisplayName != "")
+                          itemDisplayName.Text = this.Acc.DisplayName;
+                      else
+                          itemDisplayName.Text = this.Acc.UserName;
+                  };
+                f.ShowDialog();
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
+
         }
 
         private void itemAdmin_Click(object sender, EventArgs e)
         {
-            FAccount f = new FAccount();
-            f.ShowDialog();
+            try
+            {
+                FAccount f = new FAccount();
+                f.ShowDialog();
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
+
         }
     }
 }

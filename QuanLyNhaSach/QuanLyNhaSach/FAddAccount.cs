@@ -35,17 +35,17 @@ namespace QuanLyNhaSach
         {
             if (errorProviderAccount.GetError(txbUserName) != "")
             {
-                MessageBox.Show("Lỗi tên đăng nhập !");
+                MessageBox.Show("Lỗi tên đăng nhập !","Thông báo");
                 return;
             }
             if (txbUserName.Text=="")
             {
-                MessageBox.Show("Bạn chưa nhập tên đăng nhập !");
+                MessageBox.Show("Bạn chưa nhập tên đăng nhập !","Thông báo");
                 return;
             }
             if(txbPassWord.Text=="")
             {
-                MessageBox.Show("Bạn chưa nhập mật khẩu !");
+                MessageBox.Show("Bạn chưa nhập mật khẩu !","Thông báo");
                 return;
             }
            
@@ -57,14 +57,14 @@ namespace QuanLyNhaSach
             {
                 if (AccountDAO.Instance.InsertAccount(userName, displayName, passWord))
                 {
-                    MessageBox.Show("Thêm tài khoản thành công !");
+                    MessageBox.Show("Thêm tài khoản thành công !","Thông báo");
                     if (updateListAccount != null)
                         updateListAccount(this, new EventArgs());
                 }
                 else
-                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không hợp lệ ");
+                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không hợp lệ ","Thông báo");
             }
-            catch { MessageBox.Show("Lỗi tài khoản mới thêm đã có ");}
+            catch { MessageBox.Show("Lỗi tài khoản tên đăng nhập đã tồn tại !","Thông báo");}
         }
 
         private void txbUserName_TextChanged(object sender, EventArgs e)

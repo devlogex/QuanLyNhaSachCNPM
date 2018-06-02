@@ -46,24 +46,28 @@ namespace QuanLyNhaSach
 
         private void btnUpdateAccount_Click(object sender, EventArgs e)
         {
-            if (txbPassWord.Text == "")
+            try
             {
-                MessageBox.Show("Bạn chưa nhập mật khẩu !");
-                return;
-            }
+                if (txbPassWord.Text == "")
+                {
+                    MessageBox.Show("Bạn chưa nhập mật khẩu !","Thông báo");
+                    return;
+                }
 
 
-            string userName = txbUserName.Text;
-            string passWord = txbPassWord.Text;
-            string displayName = txbDisplayName.Text;
-            if (AccountDAO.Instance.UpdateAccountByUserName(userName, displayName, passWord))
-            {
-                MessageBox.Show("Cập nhật tài khoản thành công !");
-                if (updateListAccount != null)
-                    updateListAccount(this, new EventArgs());
+                string userName = txbUserName.Text;
+                string passWord = txbPassWord.Text;
+                string displayName = txbDisplayName.Text;
+                if (AccountDAO.Instance.UpdateAccountByUserName(userName, displayName, passWord))
+                {
+                    MessageBox.Show("Cập nhật tài khoản thành công !","Thông báo");
+                    if (updateListAccount != null)
+                        updateListAccount(this, new EventArgs());
+                }
+                else
+                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không hợp lệ ","Thông báo");
             }
-            else
-                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không hợp lệ ");
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
     }
 }
