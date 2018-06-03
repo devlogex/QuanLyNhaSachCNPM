@@ -118,15 +118,16 @@
             this.lbManangeBook.AutoSize = true;
             this.lbManangeBook.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbManangeBook.ForeColor = System.Drawing.Color.Black;
-            this.lbManangeBook.Location = new System.Drawing.Point(138, 9);
+            this.lbManangeBook.Location = new System.Drawing.Point(116, 9);
             this.lbManangeBook.Name = "lbManangeBook";
-            this.lbManangeBook.Size = new System.Drawing.Size(154, 28);
+            this.lbManangeBook.Size = new System.Drawing.Size(208, 28);
             this.lbManangeBook.TabIndex = 40;
-            this.lbManangeBook.Text = "Sửa đầu sách";
+            this.lbManangeBook.Text = "Cập nhật đầu sách";
             // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.DarkGray;
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.Black;
             this.btnExit.Location = new System.Drawing.Point(303, 317);

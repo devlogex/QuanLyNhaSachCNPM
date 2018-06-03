@@ -26,6 +26,7 @@ namespace QuanLyNhaSach
         {
             txbIDReceipt.Text = CollectMoneyDAO.Instance.GetNewID().ToString();
             LoadCustomerIntoCombobox();
+            cbCustomer.SelectedIndex = -1;
             cbCustomer.SelectedIndexChanged += cbCustomer_SelectedIndexChanged;
             check = ThamSoDAO.Instance.GetCheck();
             if (check)
@@ -43,58 +44,71 @@ namespace QuanLyNhaSach
 
         private void cbCustomer_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbCustomer.SelectedItem != null)
+            try
             {
-                Customer customer = cbCustomer.SelectedItem as Customer;
-                txbCustomerName.Text = customer.Name;
-                txbAddress.Text = customer.Address;
-                txbEmail.Text = customer.Email;
-                txbMoneyOwe.Text = customer.Owe.ToString();
-                txbPhoneNumber.Text = customer.Phonenumber.ToString();
+                if (cbCustomer.SelectedItem != null)
+                {
+                    Customer customer = cbCustomer.SelectedItem as Customer;
+                    txbCustomerName.Text = customer.Name;
+                    txbAddress.Text = customer.Address;
+                    txbEmail.Text = customer.Email;
+                    txbMoneyOwe.Text = customer.Owe.ToString();
+                    txbPhoneNumber.Text = customer.Phonenumber.ToString();
+                }
             }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(btnSave.Tag!=null)
+            try
             {
-                MessageBox.Show("Bạn phải tạo phiếu thu mới trước !");
-                return;
+                if (btnSave.Tag != null)
+                {
+                    MessageBox.Show("Bạn phải tạo phiếu thu mới trước !", "Thông báo");
+                    return;
+                }
+                Customer customer = cbCustomer.SelectedItem as Customer;
+                double moneyCollect;
+                if (!Double.TryParse(txbReceiveMoney.Text, out moneyCollect))
+                {
+                    MessageBox.Show("Số tiền nhập không đúng đinh dạng !", "Thông báo");
+                    txbReceiveMoney.Text = "";
+                    return;
+                }
+                if (moneyCollect > customer.Owe && check)
+                {
+                    MessageBox.Show("Số tiền thu không được vượt quá số tiền khách hàng đang nợ !", "Thông báo");
+                    txbReceiveMoney.Text = "";
+                    return;
+                }
+                if (CollectMoneyDAO.Instance.SaveCollectMoney(customer.ID, dtpk.Value, (float)moneyCollect))
+                {
+                    MessageBox.Show("Lưu thành công !", "Thông báo");
+                    btnSave.Tag = 1;
+                }
+                else
+                    MessageBox.Show("Lưu thất bại !", "Thông báo");
             }
-            Customer customer = cbCustomer.SelectedItem as Customer;
-            double moneyCollect;
-            if(!Double.TryParse(txbReceiveMoney.Text,out moneyCollect))
-            {
-                MessageBox.Show("Số tiền nhập không đúng đinh dạng !");
-                txbReceiveMoney.Text = "";
-                return;
-            }
-            if(moneyCollect>customer.Owe && check)
-            {
-                MessageBox.Show("Số tiền thu không được vượt quá số tiền khách hàng đang nợ !");
-                txbReceiveMoney.Text = "";
-                return;
-            }
-            if (CollectMoneyDAO.Instance.SaveCollectMoney(customer.ID, dtpk.Value, (float)moneyCollect))
-            {
-                MessageBox.Show("Lưu thành công !");
-                btnSave.Tag = 1;
-            }
-            else
-                MessageBox.Show("Lưu thất bại !");
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
 
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            btnSave.Tag = null;
-            cbCustomer.SelectedIndex = -1;
-            txbCustomerName.Text = "";
-            txbAddress.Text = "";
-            txbEmail.Text = "";
-            txbMoneyOwe.Text ="";
-            txbPhoneNumber.Text ="";
-            txbReceiveMoney.Text = "";
+            try
+            {
+                LoadForm();
+                btnSave.Tag = null;
+                cbCustomer.SelectedIndex = -1;
+                txbCustomerName.Text = "";
+                txbAddress.Text = "";
+                txbEmail.Text = "";
+                txbMoneyOwe.Text = "";
+                txbPhoneNumber.Text = "";
+                txbReceiveMoney.Text = "";
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -106,7 +120,7 @@ namespace QuanLyNhaSach
         {
             if (btnSave.Tag == null)
             {
-                MessageBox.Show("Bạn phải lưu phiếu nhập trước !");
+                MessageBox.Show("Bạn phải lưu phiếu nhập trước !", "Thông báo");
                 return;
             }
 
@@ -130,7 +144,7 @@ namespace QuanLyNhaSach
                 if (MessageBox.Show("In thành công ! Bạn có muốn mở file ?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     Process.Start(name);
             }
-            catch { MessageBox.Show("In thất bại "); }
+            catch { MessageBox.Show("In thất bại ", "Thông báo"); }
         }
     }
 }

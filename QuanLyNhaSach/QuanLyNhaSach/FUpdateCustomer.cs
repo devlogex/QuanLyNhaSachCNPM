@@ -71,51 +71,55 @@ namespace QuanLyNhaSach
 
         private void btnUpdateCustomer_Click(object sender, EventArgs e)
         {
-            if (txbCustomerName.Text == "")
+            try
             {
-                MessageBox.Show("Bạn chưa nhập tên khách hàng ");
-                return;
-            }
-            if (txbPhoneNumber.Text == "")
-            {
-                MessageBox.Show("Bạn chưa nhập số điện thoại của khách hàng ");
-                return;
-            }
-            if (txbEmail.Text == "")
-            {
-                MessageBox.Show("Bạn chưa nhập email của khách hàng ");
-                return;
-            }
-            if (txbCustomerAddress.Text == "")
-            {
-                MessageBox.Show("Bạn chưa nhập địa chỉ của khách hàng ");
-                return;
-            }
-            if (!CheckIsPhone(txbPhoneNumber.Text))
-            {
-                MessageBox.Show("Số điện thoại không đúng đinh dạng");
-                return;
-            }
-            if (!CheckIsMail(txbEmail.Text))
-            {
-                MessageBox.Show("Email không đúng đinh dạng");
-                return;
-            }
+                if (txbCustomerName.Text == "")
+                {
+                    MessageBox.Show("Bạn chưa nhập tên khách hàng ", "Thông báo");
+                    return;
+                }
+                if (txbPhoneNumber.Text == "")
+                {
+                    MessageBox.Show("Bạn chưa nhập số điện thoại của khách hàng ", "Thông báo");
+                    return;
+                }
+                if (txbEmail.Text == "")
+                {
+                    MessageBox.Show("Bạn chưa nhập email của khách hàng ", "Thông báo");
+                    return;
+                }
+                if (txbCustomerAddress.Text == "")
+                {
+                    MessageBox.Show("Bạn chưa nhập địa chỉ của khách hàng ", "Thông báo");
+                    return;
+                }
+                if (!CheckIsPhone(txbPhoneNumber.Text))
+                {
+                    MessageBox.Show("Số điện thoại không đúng đinh dạng", "Thông báo");
+                    return;
+                }
+                if (!CheckIsMail(txbEmail.Text))
+                {
+                    MessageBox.Show("Email không đúng đinh dạng", "Thông báo");
+                    return;
+                }
 
-            int id = Customer.ID;
-            string name = txbCustomerName.Text;
-            string address = txbCustomerAddress.Text;
-            string phonenumber = txbPhoneNumber.Text;
-            string email = txbEmail.Text;
-            float owe = Customer.Owe;
-            if (UpdateCustomer(id, name, address, phonenumber, email, owe))
-            {
-                MessageBox.Show("Sửa khách hàng thành công !");
-                if (updateForm != null)
-                    updateForm(this, new EventArgs());
+                int id = Customer.ID;
+                string name = txbCustomerName.Text;
+                string address = txbCustomerAddress.Text;
+                string phonenumber = txbPhoneNumber.Text;
+                string email = txbEmail.Text;
+                float owe = Customer.Owe;
+                if (UpdateCustomer(id, name, address, phonenumber, email, owe))
+                {
+                    MessageBox.Show("Cập nhật khách hàng thành công !", "Thông báo");
+                    if (updateForm != null)
+                        updateForm(this, new EventArgs());
+                }
+                else
+                    MessageBox.Show("Cập nhật không thành công!", "Thông báo");
             }
-            else
-                MessageBox.Show("Sửa không thành công!");
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
         #endregion
     }

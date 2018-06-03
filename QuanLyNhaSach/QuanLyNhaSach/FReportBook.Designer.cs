@@ -40,6 +40,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.nmYear = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvReportBook = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmMonth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmYear)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvReportBook)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,7 +92,7 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(106, 35);
             this.btnExit.TabIndex = 4;
-            this.btnExit.Text = "Đóng";
+            this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -199,8 +201,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dtgvReportBook);
-            this.groupBox1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Controls.Add(this.panel2);
+            this.groupBox1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(30, 180);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
@@ -210,6 +212,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bảng thống kê sách tồn";
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dtgvReportBook);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(2, 25);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(684, 253);
+            this.panel2.TabIndex = 0;
+            // 
             // dtgvReportBook
             // 
             this.dtgvReportBook.AllowUserToAddRows = false;
@@ -217,7 +229,7 @@
             this.dtgvReportBook.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -230,13 +242,13 @@
             this.firstCount,
             this.addCount,
             this.lastCount});
-            this.dtgvReportBook.Location = new System.Drawing.Point(14, 25);
+            this.dtgvReportBook.Location = new System.Drawing.Point(16, 6);
             this.dtgvReportBook.Name = "dtgvReportBook";
             this.dtgvReportBook.ReadOnly = true;
             this.dtgvReportBook.RowHeadersVisible = false;
             this.dtgvReportBook.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvReportBook.Size = new System.Drawing.Size(652, 240);
-            this.dtgvReportBook.TabIndex = 3;
+            this.dtgvReportBook.TabIndex = 4;
             // 
             // STT
             // 
@@ -292,11 +304,13 @@
             // 
             // FReportBook
             // 
+            this.AcceptButton = this.btnReportBook;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(742, 552);
             this.Controls.Add(this.panel4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FReportBook";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Báo cáo tồn";
@@ -309,6 +323,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmMonth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmYear)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvReportBook)).EndInit();
             this.ResumeLayout(false);
 
@@ -327,8 +342,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown nmYear;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dtgvReportBook;
         private System.Windows.Forms.Button btnReportBook;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView dtgvReportBook;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn idBook;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstCount;

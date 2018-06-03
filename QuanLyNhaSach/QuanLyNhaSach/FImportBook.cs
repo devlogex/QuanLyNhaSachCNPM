@@ -36,13 +36,25 @@ namespace QuanLyNhaSach
             txbIDBook.Text = BookDAO.Instance.GetNewIDBook().ToString();
             dtpk.Value = DateTime.Now;
             LoadListBookIntoCombobox();
-            LoadCategoryIntoCombobox();
-            LoadBookTitleIntoCombobox();
             txbTotalPrice.Text = "0";
 
-            cbAuthor.Items.Add("Thêm");
+            cbAuthor.Items.Add("Chọn tác giả");
+            cbAuthor.SelectedIndex = -1;
+            cbAuthor.SelectedIndexChanged += cbAuthor_SelectedIndexChanged;
+
+            LoadCategoryIntoCombobox();
+            cbCategory.SelectedIndex = -1;
             cbCategory.SelectedIndexChanged += cbCategory_SelectedIndexChanged;
+
+            LoadBookTitleIntoCombobox();
+            cbBookTitle.SelectedIndex = -1;
+
             LoadSTT();
+
+            dtgvImportBook.CellEndEdit += dtgvImportBook_CellEndEdit;
+            dtgvImportBook.EditingControlShowing += dtgvImportBook_EditingControlShowing;
+            dtgvImportBook.RowsAdded += dtgvImportBook_RowsAdded;
+            dtgvImportBook.RowsRemoved += dtgvImportBook_RowsRemoved;
         }
         public void LoadSTT()
         {
@@ -70,7 +82,7 @@ namespace QuanLyNhaSach
         {
             if (!ImportBookDAO.Instance.InsertImportBook(date))
             {
-                MessageBox.Show("Có lỗi khi lưu phiếu nhập sách !");
+                MessageBox.Show("Có lỗi khi lưu phiếu nhập sách !", "Thông báo");
                 return;
             }
 
@@ -84,7 +96,7 @@ namespace QuanLyNhaSach
                     return;
                 }
             }
-            MessageBox.Show("Lưu phiếu nhập sách thành công !");
+            MessageBox.Show("Lưu phiếu nhập sách thành công !", "Thông báo");
             btnSaveImport.Tag = 1;
         }
         public bool AddBookTitle(string name, int idCategory, List<int> authors)
@@ -130,7 +142,7 @@ namespace QuanLyNhaSach
             {
                 dtgvImportBook.Rows[e.RowIndex].Cells["count"].Value = null;
                 dtgvImportBook.Rows[e.RowIndex].Cells["priceIn"].Value = null;
-                MessageBox.Show("Lỗi dữ liệu nhập không đúng định dạng !");
+                MessageBox.Show("Lỗi dữ liệu nhập không đúng định dạng !", "Thông báo");
             }
 
             double totalPrice = 0.0;
@@ -203,33 +215,41 @@ namespace QuanLyNhaSach
 
         private void btnSaveImport_Click(object sender, EventArgs e)
         {
-            if (btnSaveImport.Tag !=null)
+            try
             {
-                MessageBox.Show("Bạn phải tạo phiếu nhập mới !");
-                return;
-            }
-            for (int i = 0; i < dtgvImportBook.RowCount - 1; i++)
-            {
-                if (dtgvImportBook.Rows[i].Cells["totalPrice"].Value == null)
+                if (btnSaveImport.Tag != null)
                 {
-                    MessageBox.Show("Bạn chưa nhập đủ dữ liệu ở hàng thứ " + (i + 1).ToString());
+                    MessageBox.Show("Bạn phải tạo phiếu nhập mới !", "Thông báo");
                     return;
                 }
-                
-            }
+                for (int i = 0; i < dtgvImportBook.RowCount - 1; i++)
+                {
+                    if (dtgvImportBook.Rows[i].Cells["totalPrice"].Value == null)
+                    {
+                        MessageBox.Show("Bạn chưa nhập đủ dữ liệu ở hàng thứ " + (i + 1).ToString(), "Thông báo");
+                        return;
+                    }
 
-            DateTime date = dtpk.Value;
-            SaveImportBook(date);
+                }
+
+                DateTime date = dtpk.Value;
+                SaveImportBook(date);
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
 
         private void cbAuthor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cbAuthor.SelectedItem.ToString() =="Thêm")
+            try
             {
-                FChooseAuthor f = new FChooseAuthor();
-                f.UpdateForm += F_LoadAfterChooseAuthor;
-                f.ShowDialog();
+                if (cbAuthor.SelectedItem.ToString() == "Chọn tác giả")
+                {
+                    FChooseAuthor f = new FChooseAuthor();
+                    f.UpdateForm += F_LoadAfterChooseAuthor;
+                    f.ShowDialog();
+                }
             }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
 
         private void F_LoadAfterChooseAuthor(object sender, EventArgs e)
@@ -250,72 +270,79 @@ namespace QuanLyNhaSach
 
         private void btnAddBookTitle_Click(object sender, EventArgs e)
         {
-            if (txbNameBookTitle.Text == "")
+            try
             {
-                MessageBox.Show("Bạn chưa nhập tên đầu sách !");
-                return;
-            }
+                if (txbNameBookTitle.Text == "")
+                {
+                    MessageBox.Show("Bạn chưa nhập tên đầu sách !", "Thông báo");
+                    return;
+                }
 
-            if (cbCategory.SelectedItem == null)
-            {
-                MessageBox.Show("Bạn chưa chọn thể loại sách !");
-                return;
-            }
-            if (cbAuthor.SelectedItem == null)
-            {
-                MessageBox.Show("Bạn chưa nhập tác giả !");
-                return;
-            }
-            string name = txbNameBookTitle.Text;
-            int idCategory = (cbCategory.SelectedItem as CategoryBook).ID;
-            List<Author> authors = cbAuthor.Tag as List<Author>;
-            List<int> idAuthors = new List<int>();
-            foreach(Author item in authors)
-            {
-                idAuthors.Add(item.ID);
-            }
+                if (cbCategory.SelectedItem == null)
+                {
+                    MessageBox.Show("Bạn chưa chọn thể loại sách !", "Thông báo");
+                    return;
+                }
+                if (cbAuthor.SelectedItem == null)
+                {
+                    MessageBox.Show("Bạn chưa nhập tác giả !", "Thông báo");
+                    return;
+                }
+                string name = txbNameBookTitle.Text;
+                int idCategory = (cbCategory.SelectedItem as CategoryBook).ID;
+                List<Author> authors = cbAuthor.Tag as List<Author>;
+                List<int> idAuthors = new List<int>();
+                foreach (Author item in authors)
+                {
+                    idAuthors.Add(item.ID);
+                }
 
 
-            if (AddBookTitle(name, idCategory, idAuthors))
-            {
-                MessageBox.Show("Thêm đầu sách thành công!");
-                LoadBookTitleIntoCombobox();
-                txbIDBookTitle.Text = BookTitleDAO.Instance.GetNewIDBookTitle().ToString();
-                txbNameBookTitle.Text = "";
+                if (AddBookTitle(name, idCategory, idAuthors))
+                {
+                    MessageBox.Show("Thêm đầu sách thành công!", "Thông báo");
+                    LoadBookTitleIntoCombobox();
+                    txbIDBookTitle.Text = BookTitleDAO.Instance.GetNewIDBookTitle().ToString();
+                    txbNameBookTitle.Text = "";
+                }
+                else
+                    MessageBox.Show("Thêm đầu sách thất bại !", "Thông báo");
             }
-            else
-                MessageBox.Show("Thêm đầu sách thất bại !");
-
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
 
 
         private void btnAddBook_Click(object sender, EventArgs e)
         {
-            if(cbBookTitle.SelectedItem==null)
+            try
             {
-                MessageBox.Show("Bạn chưa nhập mã đầu sách !");
-                return;
+                if (cbBookTitle.SelectedItem == null)
+                {
+                    MessageBox.Show("Bạn chưa nhập mã đầu sách !", "Thông báo");
+                    return;
+                }
+                if (txbPublishCompany.Text == "")
+                {
+                    MessageBox.Show("Bạn chưa nhập nhà xuất bản !", "Thông báo");
+                    return;
+                }
+                if (txbPublishYear.Text == "")
+                {
+                    MessageBox.Show("Bạn chưa nhập năm xuất bản !", "Thông báo");
+                    return;
+                }
+                if (BookDAO.Instance.AddBook((cbBookTitle.SelectedItem as BookTitle).ID, txbPublishCompany.Text, Int32.Parse(txbPublishYear.Text)))
+                {
+                    MessageBox.Show("Thêm sách thành công !", "Thông báo");
+                    LoadListBookIntoCombobox();
+                    txbIDBook.Text = BookDAO.Instance.GetNewIDBook().ToString();
+                    txbPublishCompany.Text = "";
+                    txbPublishYear.Text = "";
+                }
+                else
+                    MessageBox.Show("Thêm sách thất bại !", "Thông báo");
             }
-            if(txbPublishCompany.Text=="")
-            {
-                MessageBox.Show("Bạn chưa nhập nhà xuất bản !");
-                return;
-            }
-            if (txbPublishYear.Text == "")
-            {
-                MessageBox.Show("Bạn chưa nhập năm xuất bản !");
-                return;
-            }
-            if (BookDAO.Instance.AddBook((cbBookTitle.SelectedItem as BookTitle).ID, txbPublishCompany.Text, Int32.Parse(txbPublishYear.Text)))
-            {
-                MessageBox.Show("Thêm sách thành công !");
-                LoadListBookIntoCombobox();
-                txbIDBook.Text = BookDAO.Instance.GetNewIDBook().ToString();
-                txbPublishCompany.Text = "";
-                txbPublishYear.Text = "";
-            }
-            else
-                MessageBox.Show("Thêm sách thất bại !");
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
 
         private void txbPublishYear_KeyPress(object sender, KeyPressEventArgs e)
@@ -330,7 +357,7 @@ namespace QuanLyNhaSach
         {
             if (btnSaveImport.Tag == null)
             {
-                MessageBox.Show("Bạn phải lưu phiếu nhập trước !");
+                MessageBox.Show("Bạn phải lưu phiếu nhập trước !", "Thông báo");
                 return;
             }
 
@@ -354,17 +381,20 @@ namespace QuanLyNhaSach
         }
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if ((cbCategory.SelectedItem as CategoryBook).ID == -1)
+            try
             {
-                FAddCategory f = new FAddCategory();
-                f.UpdateForm += delegate (object _sender, EventArgs _e)
+                if ((cbCategory.SelectedItem as CategoryBook).ID == -1)
                 {
-                    LoadCategoryIntoCombobox();
-                };
-                f.ShowDialog();
+                    FAddCategory f = new FAddCategory();
+                    f.UpdateForm += delegate (object _sender, EventArgs _e)
+                    {
+                        LoadCategoryIntoCombobox();
+                    };
+                    f.ShowDialog();
+                }
             }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
         #endregion
-
     }
 }

@@ -33,21 +33,25 @@ namespace QuanLyNhaSach
         }
         private void btnAddAuthor_Click(object sender, EventArgs e)
         {
-            string name = txbAuthor.Text;
-            if (name == "")
+            try
             {
-                MessageBox.Show("Bạn chưa nhập tên tác giả");
-                return;
-            }
+                string name = txbAuthor.Text;
+                if (name == "")
+                {
+                    MessageBox.Show("Bạn chưa nhập tên tác giả", "Thông báo");
+                    return;
+                }
 
-            if (AddAuthor(name))
-            {
-                MessageBox.Show("Thêm tác giả thành công !");
-                if (updateForm != null)
-                    updateForm(this, new EventArgs());
+                if (AddAuthor(name))
+                {
+                    MessageBox.Show("Thêm tác giả thành công !", "Thông báo");
+                    if (updateForm != null)
+                        updateForm(this, new EventArgs());
+                }
+                else
+                    MessageBox.Show("Thêm không thành công !", "Thông báo");
             }
-            else
-                MessageBox.Show("Thêm không thành công !");
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
     }
 }

@@ -58,11 +58,11 @@
             this.lbManangeBook.AutoSize = true;
             this.lbManangeBook.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbManangeBook.ForeColor = System.Drawing.Color.Black;
-            this.lbManangeBook.Location = new System.Drawing.Point(73, 9);
+            this.lbManangeBook.Location = new System.Drawing.Point(45, 9);
             this.lbManangeBook.Name = "lbManangeBook";
-            this.lbManangeBook.Size = new System.Drawing.Size(196, 28);
+            this.lbManangeBook.Size = new System.Drawing.Size(250, 28);
             this.lbManangeBook.TabIndex = 42;
-            this.lbManangeBook.Text = "Sửa thể loại sách";
+            this.lbManangeBook.Text = "Cập nhật thể loại sách";
             // 
             // btnUpdateCategory
             // 

@@ -33,6 +33,7 @@ namespace QuanLyNhaSach
                 }
             };
 
+            cbIDCustomer.SelectedIndex = -1;
             cbIDCustomer.Enabled = false;
             txbNameCustomer.Enabled = false;
             txbPhoneNumber.Enabled = false;
@@ -59,86 +60,100 @@ namespace QuanLyNhaSach
         }
         public void Search()
         {
-            customerList.DataSource = CustomerDAO.Instance.GetListCustomer();
-            if(ckbIDCustomer.Checked==true)
+            try
             {
-                for(int i=0;i<dtgvManageCustomer.RowCount;i++)
+                customerList.DataSource = CustomerDAO.Instance.GetListCustomer();
+                if (ckbIDCustomer.Checked == true)
                 {
-                    if(Int32.Parse(dtgvManageCustomer.Rows[i].Cells["id"].Value.ToString())!=(cbIDCustomer.SelectedItem as Customer).ID)
+                    if (cbIDCustomer.SelectedItem == null)
                     {
-                        dtgvManageCustomer.Rows.RemoveAt(i);
-                        i--;
+                        MessageBox.Show("Bạn chưa chọn mã khách hàng !", "Thông báo");
+                        return;
+                    }
+                    for (int i = 0; i < dtgvManageCustomer.RowCount; i++)
+                    {
+                        if (Int32.Parse(dtgvManageCustomer.Rows[i].Cells["id"].Value.ToString()) != (cbIDCustomer.SelectedItem as Customer).ID)
+                        {
+                            dtgvManageCustomer.Rows.RemoveAt(i);
+                            i--;
+                        }
                     }
                 }
-            }
-            if(ckbEmail.Checked==true)
-            {
-                for(int i=0;i<dtgvManageCustomer.RowCount;i++)
+                if (ckbEmail.Checked == true)
                 {
-                    if (dtgvManageCustomer.Rows[i].Cells["email"].Value.ToString() != (cbIDCustomer.SelectedItem as Customer).Email)
+                    for (int i = 0; i < dtgvManageCustomer.RowCount; i++)
                     {
-                        dtgvManageCustomer.Rows.RemoveAt(i);
-                        i--;
+                        if (dtgvManageCustomer.Rows[i].Cells["email"].Value.ToString() != (cbIDCustomer.SelectedItem as Customer).Email)
+                        {
+                            dtgvManageCustomer.Rows.RemoveAt(i);
+                            i--;
+                        }
                     }
                 }
-            }
-            if (ckbNameCustomer.Checked==true)
-            {
-                List<Customer> list = CustomerDAO.Instance.SearchCustomerByName(txbNameCustomer.Text);
-                for (int i = 0; i < dtgvManageCustomer.RowCount; i++)
+                if (ckbNameCustomer.Checked == true)
                 {
-                    int j = 0;
-                    for (; j < list.Count; j++)
+                    List<Customer> list = CustomerDAO.Instance.SearchCustomerByName(txbNameCustomer.Text);
+                    for (int i = 0; i < dtgvManageCustomer.RowCount; i++)
                     {
-                        if (dtgvManageCustomer.Rows[i].Cells["name"].Value.ToString() == list[j].Name)
-                            break;
-                    }
-                    if (j == list.Count)
-                    {
-                        dtgvManageCustomer.Rows.RemoveAt(i);
-                        i--;
+                        int j = 0;
+                        for (; j < list.Count; j++)
+                        {
+                            if (dtgvManageCustomer.Rows[i].Cells["name"].Value.ToString() == list[j].Name)
+                                break;
+                        }
+                        if (j == list.Count)
+                        {
+                            dtgvManageCustomer.Rows.RemoveAt(i);
+                            i--;
+                        }
                     }
                 }
-            }
-            if (ckbPhoneNumber.Checked == true)
-            {
-                for (int i = 0; i < dtgvManageCustomer.RowCount; i++)
+                if (ckbPhoneNumber.Checked == true)
                 {
-                    if (dtgvManageCustomer.Rows[i].Cells["phoneNumber"].Value.ToString() != txbPhoneNumber.Text)
+                    for (int i = 0; i < dtgvManageCustomer.RowCount; i++)
                     {
-                        dtgvManageCustomer.Rows.RemoveAt(i);
-                        i--;
+                        if (dtgvManageCustomer.Rows[i].Cells["phoneNumber"].Value.ToString() != txbPhoneNumber.Text)
+                        {
+                            dtgvManageCustomer.Rows.RemoveAt(i);
+                            i--;
+                        }
                     }
                 }
-            }
-            if (ckbMoneyOwe.Checked == true)
-            {
-                for (int i = 0; i < dtgvManageCustomer.RowCount; i++)
+                if (ckbMoneyOwe.Checked == true)
                 {
-                    if ((float)Double.Parse(dtgvManageCustomer.Rows[i].Cells["owe"].Value.ToString()) < (int)nmOweFrom.Value ||
-                        (float)Double.Parse(dtgvManageCustomer.Rows[i].Cells["owe"].Value.ToString()) > (int)nmOweTo.Value)
+                    for (int i = 0; i < dtgvManageCustomer.RowCount; i++)
                     {
-                        dtgvManageCustomer.Rows.RemoveAt(i);
-                        i--;
+                        if ((float)Double.Parse(dtgvManageCustomer.Rows[i].Cells["owe"].Value.ToString()) < (int)nmOweFrom.Value ||
+                            (float)Double.Parse(dtgvManageCustomer.Rows[i].Cells["owe"].Value.ToString()) > (int)nmOweTo.Value)
+                        {
+                            dtgvManageCustomer.Rows.RemoveAt(i);
+                            i--;
+                        }
                     }
                 }
+                LoadSTT();
             }
-            LoadSTT();
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
         #endregion
 
+        #region Event
         private void btnUpdateCustomer_Click(object sender, EventArgs e)
         {
-            if (dtgvManageCustomer.SelectedCells.Count == 0)
+            try
             {
-                MessageBox.Show("Bạn chưa chọn sách để sửa");
-                return;
-            }
+                if (dtgvManageCustomer.SelectedCells.Count == 0)
+                {
+                    MessageBox.Show("Bạn chưa chọn sách để sửa", "Thông báo");
+                    return;
+                }
 
-            Customer customer = CustomerDAO.Instance.GetCustomerByCustomerID((int)dtgvManageCustomer.SelectedRows[0].Cells["id"].Value);
-            FUpdateCustomer f = new FUpdateCustomer(customer);
-            f.UpdateForm += F_LoadAfterUpdate;
-            f.ShowDialog();
+                Customer customer = CustomerDAO.Instance.GetCustomerByCustomerID((int)dtgvManageCustomer.SelectedRows[0].Cells["id"].Value);
+                FUpdateCustomer f = new FUpdateCustomer(customer);
+                f.UpdateForm += F_LoadAfterUpdate;
+                f.ShowDialog();
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
 
         private void F_LoadAfterUpdate(object sender, EventArgs e)
@@ -148,11 +163,15 @@ namespace QuanLyNhaSach
 
         private void btnHistoryBill_Click(object sender, EventArgs e)
         {
-            if (dtgvManageCustomer.SelectedRows.Count == 0)
-                return;
-            Customer customer = CustomerDAO.Instance.GetCustomerByCustomerID(Int32.Parse(dtgvManageCustomer.SelectedRows[0].Cells["id"].Value.ToString()));
-            FListBill f = new FListBill(customer);
-            f.ShowDialog();
+            try
+            {
+                if (dtgvManageCustomer.SelectedRows.Count == 0)
+                    return;
+                Customer customer = CustomerDAO.Instance.GetCustomerByCustomerID(Int32.Parse(dtgvManageCustomer.SelectedRows[0].Cells["id"].Value.ToString()));
+                FListBill f = new FListBill(customer);
+                f.ShowDialog();
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -205,5 +224,6 @@ namespace QuanLyNhaSach
         {
             Search();
         }
+        #endregion
     }
 }

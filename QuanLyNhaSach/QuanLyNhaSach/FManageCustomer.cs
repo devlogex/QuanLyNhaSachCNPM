@@ -48,9 +48,13 @@ namespace QuanLyNhaSach
         #region Event
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            FAddCustomer f = new FAddCustomer();
-            f.UpdateForm += F_LoadAfterAdd;
-            f.ShowDialog();
+            try
+            {
+                FAddCustomer f = new FAddCustomer();
+                f.UpdateForm += F_LoadAfterAdd;
+                f.ShowDialog();
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
 
         private void F_LoadAfterAdd(object sender, EventArgs e)
@@ -65,16 +69,20 @@ namespace QuanLyNhaSach
 
         private void btnUpdateCustomer_Click(object sender, EventArgs e)
         {
-            if (dtgvManageCustomer.SelectedCells.Count == 0)
+            try
             {
-                MessageBox.Show("Bạn chưa chọn sách để sửa");
-                return;
-            }
+                if (dtgvManageCustomer.SelectedCells.Count == 0)
+                {
+                    MessageBox.Show("Bạn chưa chọn sách để sửa");
+                    return;
+                }
 
-            Customer customer = CustomerDAO.Instance.GetCustomerByCustomerID((int)dtgvManageCustomer.SelectedRows[0].Cells["id"].Value);
-            FUpdateCustomer f = new FUpdateCustomer(customer);
-            f.UpdateForm += F_LoadAfterUpdate;
-            f.ShowDialog();
+                Customer customer = CustomerDAO.Instance.GetCustomerByCustomerID((int)dtgvManageCustomer.SelectedRows[0].Cells["id"].Value);
+                FUpdateCustomer f = new FUpdateCustomer(customer);
+                f.UpdateForm += F_LoadAfterUpdate;
+                f.ShowDialog();
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
 
         private void F_LoadAfterUpdate(object sender, EventArgs e)
@@ -97,28 +105,34 @@ namespace QuanLyNhaSach
 
         private void btnRemoveCustomer_Click(object sender, EventArgs e)
         {
-            int id = Int32.Parse(dtgvManageCustomer.SelectedRows[0].Cells["id"].Value.ToString());
             try
             {
-                RemoveCustomerByCustomerID(id);
-                MessageBox.Show("Xóa khách hàng thành công !");
-                LoadListCustomer();
+                int id = Int32.Parse(dtgvManageCustomer.SelectedRows[0].Cells["id"].Value.ToString());
+                try
+                {
+                    RemoveCustomerByCustomerID(id);
+                    MessageBox.Show("Xóa khách hàng thành công !");
+                    LoadListCustomer();
+                }
+                catch
+                {
+                    MessageBox.Show("Xóa không thành công!");
+                }
             }
-            catch
-            {
-                MessageBox.Show("Xóa không thành công!");
-            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
         private void btnHistoryBill_Click(object sender, EventArgs e)
         {
-            if (dtgvManageCustomer.SelectedRows.Count == 0)
-                return;
-            Customer customer = CustomerDAO.Instance.GetCustomerByCustomerID(Int32.Parse(dtgvManageCustomer.SelectedRows[0].Cells["id"].Value.ToString()));
-            FListBill f = new FListBill(customer);
-            f.ShowDialog();
+            try
+            {
+                if (dtgvManageCustomer.SelectedRows.Count == 0)
+                    return;
+                Customer customer = CustomerDAO.Instance.GetCustomerByCustomerID(Int32.Parse(dtgvManageCustomer.SelectedRows[0].Cells["id"].Value.ToString()));
+                FListBill f = new FListBill(customer);
+                f.ShowDialog();
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
-        #endregion
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -126,9 +140,16 @@ namespace QuanLyNhaSach
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            FSearchCustomer f = new FSearchCustomer();
-            f.ShowDialog();
-            this.LoadForm();
+            try
+            {
+                FSearchCustomer f = new FSearchCustomer();
+                f.ShowDialog();
+                this.LoadForm();
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
+        #endregion
+
+
     }
 }

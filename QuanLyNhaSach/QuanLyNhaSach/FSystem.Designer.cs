@@ -44,6 +44,7 @@
             this.nmUD1 = new System.Windows.Forms.NumericUpDown();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnExit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmUD4)).BeginInit();
@@ -66,6 +67,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnExit);
             this.groupBox1.Controls.Add(this.txbPercentPrice);
             this.groupBox1.Controls.Add(this.btnUpdateSystem);
             this.groupBox1.Controls.Add(this.cbQD4);
@@ -100,7 +102,7 @@
             this.btnUpdateSystem.BackColor = System.Drawing.Color.DarkGray;
             this.btnUpdateSystem.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateSystem.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdateSystem.Location = new System.Drawing.Point(441, 312);
+            this.btnUpdateSystem.Location = new System.Drawing.Point(292, 317);
             this.btnUpdateSystem.Name = "btnUpdateSystem";
             this.btnUpdateSystem.Size = new System.Drawing.Size(155, 50);
             this.btnUpdateSystem.TabIndex = 6;
@@ -251,11 +253,23 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "THAY ĐỔI QUY ĐINH";
             // 
+            // btnExit
+            // 
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnExit.Location = new System.Drawing.Point(469, 317);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(153, 50);
+            this.btnExit.TabIndex = 44;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // FSystem
             // 
             this.AcceptButton = this.btnUpdateSystem;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(687, 482);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -293,5 +307,6 @@
         private System.Windows.Forms.NumericUpDown nmUD3;
         private System.Windows.Forms.NumericUpDown nmUD2;
         private System.Windows.Forms.NumericUpDown nmUD1;
+        private System.Windows.Forms.Button btnExit;
     }
 }

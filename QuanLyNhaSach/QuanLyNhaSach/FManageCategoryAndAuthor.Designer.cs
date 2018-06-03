@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -39,20 +40,25 @@
             this.btnUpdateCategory = new System.Windows.Forms.Button();
             this.btnAddCategory = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvManageCategory = new System.Windows.Forms.DataGridView();
             this.STTCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.dtgvManageAuthor = new System.Windows.Forms.DataGridView();
             this.STTAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvManageCategory)).BeginInit();
             this.groupBox3.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvManageAuthor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,6 +106,7 @@
             this.btnAddAuthor.Size = new System.Drawing.Size(89, 34);
             this.btnAddAuthor.TabIndex = 3;
             this.btnAddAuthor.Text = "Thêm";
+            this.toolTip1.SetToolTip(this.btnAddAuthor, "Thêm tác giả");
             this.btnAddAuthor.UseVisualStyleBackColor = true;
             this.btnAddAuthor.Click += new System.EventHandler(this.btnAddAuthor_Click);
             // 
@@ -123,6 +130,7 @@
             this.btnRemoveAuthor.Size = new System.Drawing.Size(89, 34);
             this.btnRemoveAuthor.TabIndex = 5;
             this.btnRemoveAuthor.Text = "Xóa";
+            this.toolTip1.SetToolTip(this.btnRemoveAuthor, "Xóa tác giả");
             this.btnRemoveAuthor.UseVisualStyleBackColor = true;
             this.btnRemoveAuthor.Click += new System.EventHandler(this.btnRemoveAuthor_Click);
             // 
@@ -134,6 +142,7 @@
             this.btnUpdateAuthor.Size = new System.Drawing.Size(89, 34);
             this.btnUpdateAuthor.TabIndex = 4;
             this.btnUpdateAuthor.Text = "Cập nhật";
+            this.toolTip1.SetToolTip(this.btnUpdateAuthor, "Cập nhật tác giả");
             this.btnUpdateAuthor.UseVisualStyleBackColor = true;
             this.btnUpdateAuthor.Click += new System.EventHandler(this.btnUpdateAuthor_Click);
             // 
@@ -145,6 +154,7 @@
             this.btnRemoveCategory.Size = new System.Drawing.Size(91, 34);
             this.btnRemoveCategory.TabIndex = 2;
             this.btnRemoveCategory.Text = "Xóa";
+            this.toolTip1.SetToolTip(this.btnRemoveCategory, "Xóa thể loại");
             this.btnRemoveCategory.UseVisualStyleBackColor = true;
             this.btnRemoveCategory.Click += new System.EventHandler(this.btnRemoveCategory_Click);
             // 
@@ -156,6 +166,7 @@
             this.btnUpdateCategory.Size = new System.Drawing.Size(89, 34);
             this.btnUpdateCategory.TabIndex = 1;
             this.btnUpdateCategory.Text = "Cập nhật";
+            this.toolTip1.SetToolTip(this.btnUpdateCategory, "Cập nhật thể loại");
             this.btnUpdateCategory.UseVisualStyleBackColor = true;
             this.btnUpdateCategory.Click += new System.EventHandler(this.btnUpdateCategory_Click);
             // 
@@ -167,20 +178,31 @@
             this.btnAddCategory.Size = new System.Drawing.Size(89, 34);
             this.btnAddCategory.TabIndex = 0;
             this.btnAddCategory.Text = "Thêm";
+            this.toolTip1.SetToolTip(this.btnAddCategory, "Thêm thể loại");
             this.btnAddCategory.UseVisualStyleBackColor = true;
             this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dtgvManageCategory);
+            this.groupBox2.Controls.Add(this.panel2);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(0, 72);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(492, 426);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thể loại";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dtgvManageCategory);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(3, 26);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(486, 397);
+            this.panel2.TabIndex = 0;
             // 
             // dtgvManageCategory
             // 
@@ -192,20 +214,20 @@
             this.STTCategory,
             this.idCategory,
             this.nameCategory});
-            this.dtgvManageCategory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvManageCategory.Location = new System.Drawing.Point(3, 22);
+            this.dtgvManageCategory.Location = new System.Drawing.Point(23, 11);
             this.dtgvManageCategory.Name = "dtgvManageCategory";
             this.dtgvManageCategory.ReadOnly = true;
             this.dtgvManageCategory.RowHeadersVisible = false;
             this.dtgvManageCategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvManageCategory.Size = new System.Drawing.Size(486, 401);
-            this.dtgvManageCategory.TabIndex = 2;
+            this.dtgvManageCategory.Size = new System.Drawing.Size(446, 367);
+            this.dtgvManageCategory.TabIndex = 3;
             // 
             // STTCategory
             // 
             this.STTCategory.HeaderText = "STT";
             this.STTCategory.Name = "STTCategory";
             this.STTCategory.ReadOnly = true;
+            this.STTCategory.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // idCategory
             // 
@@ -214,6 +236,7 @@
             this.idCategory.HeaderText = "Mã thể loại";
             this.idCategory.Name = "idCategory";
             this.idCategory.ReadOnly = true;
+            this.idCategory.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // nameCategory
             // 
@@ -222,18 +245,29 @@
             this.nameCategory.HeaderText = "Tên thể loại";
             this.nameCategory.Name = "nameCategory";
             this.nameCategory.ReadOnly = true;
+            this.nameCategory.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dtgvManageAuthor);
+            this.groupBox3.Controls.Add(this.panel3);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox3.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(498, 72);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(466, 426);
             this.groupBox3.TabIndex = 13;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tác giả";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.dtgvManageAuthor);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel3.Location = new System.Drawing.Point(3, 26);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(460, 397);
+            this.panel3.TabIndex = 0;
             // 
             // dtgvManageAuthor
             // 
@@ -245,20 +279,20 @@
             this.STTAuthor,
             this.idAuthor,
             this.nameAuthor});
-            this.dtgvManageAuthor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvManageAuthor.Location = new System.Drawing.Point(3, 22);
+            this.dtgvManageAuthor.Location = new System.Drawing.Point(18, 11);
             this.dtgvManageAuthor.Name = "dtgvManageAuthor";
             this.dtgvManageAuthor.ReadOnly = true;
             this.dtgvManageAuthor.RowHeadersVisible = false;
             this.dtgvManageAuthor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvManageAuthor.Size = new System.Drawing.Size(460, 401);
-            this.dtgvManageAuthor.TabIndex = 2;
+            this.dtgvManageAuthor.Size = new System.Drawing.Size(421, 367);
+            this.dtgvManageAuthor.TabIndex = 3;
             // 
             // STTAuthor
             // 
             this.STTAuthor.HeaderText = "STT";
             this.STTAuthor.Name = "STTAuthor";
             this.STTAuthor.ReadOnly = true;
+            this.STTAuthor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // idAuthor
             // 
@@ -267,6 +301,7 @@
             this.idAuthor.HeaderText = "Mã tác giả";
             this.idAuthor.Name = "idAuthor";
             this.idAuthor.ReadOnly = true;
+            this.idAuthor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // nameAuthor
             // 
@@ -275,6 +310,7 @@
             this.nameAuthor.HeaderText = "Tên tác giả";
             this.nameAuthor.Name = "nameAuthor";
             this.nameAuthor.ReadOnly = true;
+            this.nameAuthor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // FManageCategoryAndAuthor
             // 
@@ -294,8 +330,10 @@
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvManageCategory)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvManageAuthor)).EndInit();
             this.ResumeLayout(false);
 
@@ -314,8 +352,11 @@
         private System.Windows.Forms.Button btnUpdateCategory;
         private System.Windows.Forms.Button btnAddCategory;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dtgvManageCategory;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView dtgvManageCategory;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dtgvManageAuthor;
         private System.Windows.Forms.DataGridViewTextBoxColumn STTCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCategory;

@@ -21,6 +21,7 @@ namespace QuanLyNhaSach
             InitializeComponent();
             LoadForm();
         }
+        #region Method
         public void LoadForm()
         {
             LoadListBookTitle();
@@ -32,8 +33,12 @@ namespace QuanLyNhaSach
             };
             LoadListBookTitleIntoCombobox();
             LoadCategoryIntoCombobox();
-            cbAuthor.Items.Add("Thêm");
+            cbAuthor.Items.Add("Chọn tác giả");
+            cbAuthor.SelectedIndex = -1;
             cbAuthor.SelectedIndexChanged += cbAuthor_SelectedIndexChanged;
+
+            cbIDBookTitle.SelectedIndex = -1;
+            cbCategory.SelectedIndex = -1;
 
             cbIDBookTitle.Enabled = false;
             txbNameBookTitle.Enabled = false;
@@ -66,85 +71,97 @@ namespace QuanLyNhaSach
         }
         public void SearchBook()
         {
-            dtgvManageBookTitle.DataSource = BookTitleDAO.Instance.LoadListBookTitle();
-            if (ckbIDBookTitle.Checked ==true)
+            try
             {
-                BookTitle bookTitle =cbIDBookTitle.SelectedItem as BookTitle;
-                for(int i=0;i<dtgvManageBookTitle.RowCount;i++)
+                dtgvManageBookTitle.DataSource = BookTitleDAO.Instance.LoadListBookTitle();
+                if (ckbIDBookTitle.Checked == true)
                 {
-                    if (Int32.Parse(dtgvManageBookTitle.Rows[i].Cells["id"].Value.ToString()) != bookTitle.ID)
+                    if(cbIDBookTitle.SelectedItem==null)
                     {
-                        dtgvManageBookTitle.Rows.RemoveAt(i);
-                        i--;
+                        MessageBox.Show("Bạn chưa chọn mã đầu sách !", "Thông báo");
+                        return;
                     }
-                }
-            }
-            if(ckbNameBookTitle.Checked==true)
-            {
-                List<int> listIDBookTitle = BookTitleDAO.Instance.SearchBookTitleByName(txbNameBookTitle.Text);
-                for (int i = 0; i < dtgvManageBookTitle.RowCount; i++)
-                {
-                    int j = 0;
-                    for (;j<listIDBookTitle.Count;j++)
+                    BookTitle bookTitle = cbIDBookTitle.SelectedItem as BookTitle;
+                    for (int i = 0; i < dtgvManageBookTitle.RowCount; i++)
                     {
-                        if(Int32.Parse(dtgvManageBookTitle.Rows[i].Cells["id"].Value.ToString())==listIDBookTitle[j])
+                        if (Int32.Parse(dtgvManageBookTitle.Rows[i].Cells["id"].Value.ToString()) != bookTitle.ID)
                         {
-                            break;
+                            dtgvManageBookTitle.Rows.RemoveAt(i);
+                            i--;
                         }
                     }
-                    if(j==listIDBookTitle.Count)
-                    {
-                        dtgvManageBookTitle.Rows.RemoveAt(i);
-                        i--;
-                    }
                 }
-            }
-            if (ckbCategory.Checked == true)
-            {
-                for (int i = 0; i < dtgvManageBookTitle.RowCount; i++)
+                if (ckbNameBookTitle.Checked == true)
                 {
-                    if (dtgvManageBookTitle.Rows[i].Cells["category"].Value.ToString() != (cbCategory.SelectedItem as CategoryBook).Name)
+                    List<int> listIDBookTitle = BookTitleDAO.Instance.SearchBookTitleByName(txbNameBookTitle.Text);
+                    for (int i = 0; i < dtgvManageBookTitle.RowCount; i++)
                     {
-                        dtgvManageBookTitle.Rows.RemoveAt(i);
-                        i--;
-                    }
-                }
-            }
-            if (ckbAuthor.Checked == true)
-            {
-                string[] authorSearch = cbAuthor.SelectedItem.ToString().Split(',');
-                for(int i=0;i<dtgvManageBookTitle.RowCount;i++)
-                {
-                    string[] authorDTGV = dtgvManageBookTitle.Rows[i].Cells["author"].Value.ToString().Split(',');
-                    int j = 0;
-                    for(;j<authorSearch.Length;j++)
-                    {
-                        if(!authorDTGV.Contains(authorSearch[j]))
+                        int j = 0;
+                        for (; j < listIDBookTitle.Count; j++)
                         {
-                            break;
+                            if (Int32.Parse(dtgvManageBookTitle.Rows[i].Cells["id"].Value.ToString()) == listIDBookTitle[j])
+                            {
+                                break;
+                            }
+                        }
+                        if (j == listIDBookTitle.Count)
+                        {
+                            dtgvManageBookTitle.Rows.RemoveAt(i);
+                            i--;
                         }
                     }
-                    if (j != authorSearch.Length)
-                    {
-                        dtgvManageBookTitle.Rows.RemoveAt(i);
-                        i--;
-                    }
                 }
-            }
-            if (ckbCount.Checked == true)
-            {
-                for (int i = 0; i < dtgvManageBookTitle.RowCount; i++)
+                if (ckbCategory.Checked == true)
                 {
-                    if (Int32.Parse(dtgvManageBookTitle.Rows[i].Cells["totalCount"].Value.ToString()) < (int)nmCountFrom.Value ||
-                        Int32.Parse(dtgvManageBookTitle.Rows[i].Cells["totalCount"].Value.ToString()) > (int)nmCountTo.Value)
+                    for (int i = 0; i < dtgvManageBookTitle.RowCount; i++)
                     {
-                        dtgvManageBookTitle.Rows.RemoveAt(i);
-                        i--;
+                        if (dtgvManageBookTitle.Rows[i].Cells["category"].Value.ToString() != (cbCategory.SelectedItem as CategoryBook).Name)
+                        {
+                            dtgvManageBookTitle.Rows.RemoveAt(i);
+                            i--;
+                        }
                     }
                 }
+                if (ckbAuthor.Checked == true)
+                {
+                    string[] authorSearch = cbAuthor.SelectedItem.ToString().Split(',');
+                    for (int i = 0; i < dtgvManageBookTitle.RowCount; i++)
+                    {
+                        string[] authorDTGV = dtgvManageBookTitle.Rows[i].Cells["author"].Value.ToString().Split(',');
+                        int j = 0;
+                        for (; j < authorSearch.Length; j++)
+                        {
+                            if (!authorDTGV.Contains(authorSearch[j]))
+                            {
+                                break;
+                            }
+                        }
+                        if (j != authorSearch.Length)
+                        {
+                            dtgvManageBookTitle.Rows.RemoveAt(i);
+                            i--;
+                        }
+                    }
+                }
+                if (ckbCount.Checked == true)
+                {
+                    for (int i = 0; i < dtgvManageBookTitle.RowCount; i++)
+                    {
+                        if (Int32.Parse(dtgvManageBookTitle.Rows[i].Cells["totalCount"].Value.ToString()) < (int)nmCountFrom.Value ||
+                            Int32.Parse(dtgvManageBookTitle.Rows[i].Cells["totalCount"].Value.ToString()) > (int)nmCountTo.Value)
+                        {
+                            dtgvManageBookTitle.Rows.RemoveAt(i);
+                            i--;
+                        }
+                    }
+                }
+                LoadSTT();
             }
-            LoadSTT();
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
+        #endregion
+
+        #region Event
         private void btnSearch_Click(object sender, EventArgs e)
         {
             SearchBook();
@@ -192,12 +209,16 @@ namespace QuanLyNhaSach
         }
         private void cbAuthor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbAuthor.SelectedItem.ToString() == "Thêm")
+            try
             {
-                FChooseAuthor f = new FChooseAuthor();
-                f.UpdateForm += F_LoadAfterChooseAuthor;
-                f.ShowDialog();
+                if (cbAuthor.SelectedItem.ToString() == "Chọn tác giả")
+                {
+                    FChooseAuthor f = new FChooseAuthor();
+                    f.UpdateForm += F_LoadAfterChooseAuthor;
+                    f.ShowDialog();
+                }
             }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
 
         private void F_LoadAfterChooseAuthor(object sender, EventArgs e)
@@ -222,22 +243,26 @@ namespace QuanLyNhaSach
         }
         private void btnUpdateBookTitle_Click(object sender, EventArgs e)
         {
-            if (dtgvManageBookTitle.SelectedCells.Count == 0)
+            try
             {
-                MessageBox.Show("Bạn chưa chọn đầu sách để sửa");
-                return;
-            }
+                if (dtgvManageBookTitle.SelectedCells.Count == 0)
+                {
+                    MessageBox.Show("Bạn chưa chọn đầu sách để sửa", "Thông báo");
+                    return;
+                }
 
-            BookTitle bookTitle = BookTitleDAO.Instance.GetBookTitleByBookTitleID(Int32.Parse(dtgvManageBookTitle.SelectedRows[0].Cells["id"].Value.ToString()));
-            FUpdateBookTitle f = new FUpdateBookTitle(bookTitle);
-            f.UpdateForm += F_LoadListBookTitleAfterUpdate;
-            f.ShowDialog();
+                BookTitle bookTitle = BookTitleDAO.Instance.GetBookTitleByBookTitleID(Int32.Parse(dtgvManageBookTitle.SelectedRows[0].Cells["id"].Value.ToString()));
+                FUpdateBookTitle f = new FUpdateBookTitle(bookTitle);
+                f.UpdateForm += F_LoadListBookTitleAfterUpdate;
+                f.ShowDialog();
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
 
         private void F_LoadListBookTitleAfterUpdate(object sender, EventArgs e)
         {
             SearchBook();
         }
-
+        #endregion
     }
 }

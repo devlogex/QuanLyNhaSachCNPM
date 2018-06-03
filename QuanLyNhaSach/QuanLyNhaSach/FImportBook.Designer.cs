@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.txbNameBookTitle = new System.Windows.Forms.TextBox();
-            this.totalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txbTotalPrice = new System.Windows.Forms.TextBox();
             this.txbIDImportBook = new System.Windows.Forms.TextBox();
@@ -40,6 +39,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dtpk = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.dtgvImportBook = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -49,7 +50,7 @@
             this.publishing = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.count = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.totalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ttAdd = new System.Windows.Forms.ToolTip(this.components);
             this.btnAddBookTitle = new System.Windows.Forms.Button();
             this.btnAddBook = new System.Windows.Forms.Button();
@@ -77,8 +78,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvImportBook)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvImportBook)).BeginInit();
             this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -100,15 +102,6 @@
             this.txbNameBookTitle.Name = "txbNameBookTitle";
             this.txbNameBookTitle.Size = new System.Drawing.Size(103, 26);
             this.txbNameBookTitle.TabIndex = 4;
-            // 
-            // totalPrice
-            // 
-            this.totalPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.totalPrice.DataPropertyName = "totalPrice";
-            this.totalPrice.FillWeight = 77.1657F;
-            this.totalPrice.HeaderText = "Thành tiền";
-            this.totalPrice.Name = "totalPrice";
-            this.totalPrice.ReadOnly = true;
             // 
             // groupBox2
             // 
@@ -190,6 +183,27 @@
             this.label12.TabIndex = 6;
             this.label12.Text = "Tác giả";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.panel3);
+            this.groupBox1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(3, 155);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(958, 237);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Chi tiết phiếu nhập sách";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.dtgvImportBook);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel3.Location = new System.Drawing.Point(3, 26);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(952, 208);
+            this.panel3.TabIndex = 0;
+            // 
             // dtgvImportBook
             // 
             this.dtgvImportBook.AllowUserToOrderColumns = true;
@@ -205,15 +219,10 @@
             this.count,
             this.priceIn,
             this.totalPrice});
-            this.dtgvImportBook.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvImportBook.Location = new System.Drawing.Point(3, 22);
+            this.dtgvImportBook.Location = new System.Drawing.Point(16, 8);
             this.dtgvImportBook.Name = "dtgvImportBook";
-            this.dtgvImportBook.Size = new System.Drawing.Size(952, 172);
-            this.dtgvImportBook.TabIndex = 0;
-            this.dtgvImportBook.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvImportBook_CellEndEdit);
-            this.dtgvImportBook.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dtgvImportBook_EditingControlShowing);
-            this.dtgvImportBook.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dtgvImportBook_RowsAdded);
-            this.dtgvImportBook.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dtgvImportBook_RowsRemoved);
+            this.dtgvImportBook.Size = new System.Drawing.Size(920, 197);
+            this.dtgvImportBook.TabIndex = 1;
             // 
             // STT
             // 
@@ -232,7 +241,7 @@
             this.id.Name = "id";
             this.id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.id.Width = 95;
+            this.id.Width = 90;
             // 
             // name
             // 
@@ -286,16 +295,14 @@
             this.priceIn.HeaderText = "Đơn giá nhập";
             this.priceIn.Name = "priceIn";
             // 
-            // groupBox1
+            // totalPrice
             // 
-            this.groupBox1.Controls.Add(this.dtgvImportBook);
-            this.groupBox1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(3, 197);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(958, 197);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Chi tiết phiếu nhập sách";
+            this.totalPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.totalPrice.DataPropertyName = "totalPrice";
+            this.totalPrice.FillWeight = 77.1657F;
+            this.totalPrice.HeaderText = "Thành tiền";
+            this.totalPrice.Name = "totalPrice";
+            this.totalPrice.ReadOnly = true;
             // 
             // btnAddBookTitle
             // 
@@ -366,7 +373,7 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(105, 35);
             this.btnExit.TabIndex = 15;
-            this.btnExit.Text = "Đóng";
+            this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -417,6 +424,7 @@
             this.txbPublishYear.Name = "txbPublishYear";
             this.txbPublishYear.Size = new System.Drawing.Size(104, 26);
             this.txbPublishYear.TabIndex = 11;
+            this.txbPublishYear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPublishYear_KeyPress);
             // 
             // label13
             // 
@@ -458,9 +466,9 @@
             this.label9.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(13, 80);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(99, 19);
+            this.label9.Size = new System.Drawing.Size(101, 19);
             this.label9.TabIndex = 3;
-            this.label9.Text = "Nhà sản xuất";
+            this.label9.Text = "Nhà xuất bản";
             // 
             // label10
             // 
@@ -508,7 +516,6 @@
             this.cbAuthor.Name = "cbAuthor";
             this.cbAuthor.Size = new System.Drawing.Size(103, 27);
             this.cbAuthor.TabIndex = 6;
-            this.cbAuthor.SelectedIndexChanged += new System.EventHandler(this.cbAuthor_SelectedIndexChanged);
             // 
             // txbIDBookTitle
             // 
@@ -582,8 +589,9 @@
             this.Text = "Lập phiếu nhập sách";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvImportBook)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvImportBook)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -601,7 +609,6 @@
 
         private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.TextBox txbNameBookTitle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalPrice;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txbTotalPrice;
         private System.Windows.Forms.TextBox txbIDImportBook;
@@ -610,15 +617,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpk;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DataGridView dtgvImportBook;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewComboBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn category;
-        private System.Windows.Forms.DataGridViewTextBoxColumn author;
-        private System.Windows.Forms.DataGridViewTextBoxColumn publishing;
-        private System.Windows.Forms.DataGridViewTextBoxColumn count;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceIn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ToolTip ttAdd;
         private System.Windows.Forms.Button btnAddBookTitle;
@@ -646,5 +644,16 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DataGridView dtgvImportBook;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewComboBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn category;
+        private System.Windows.Forms.DataGridViewTextBoxColumn author;
+        private System.Windows.Forms.DataGridViewTextBoxColumn publishing;
+        private System.Windows.Forms.DataGridViewTextBoxColumn count;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceIn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalPrice;
     }
 }

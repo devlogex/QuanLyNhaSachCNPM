@@ -46,15 +46,16 @@
             this.lbManangeCustomer.AutoSize = true;
             this.lbManangeCustomer.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbManangeCustomer.ForeColor = System.Drawing.Color.Black;
-            this.lbManangeCustomer.Location = new System.Drawing.Point(110, 9);
+            this.lbManangeCustomer.Location = new System.Drawing.Point(84, 9);
             this.lbManangeCustomer.Name = "lbManangeCustomer";
-            this.lbManangeCustomer.Size = new System.Drawing.Size(183, 28);
+            this.lbManangeCustomer.Size = new System.Drawing.Size(237, 28);
             this.lbManangeCustomer.TabIndex = 43;
-            this.lbManangeCustomer.Text = "Sửa khách hàng";
+            this.lbManangeCustomer.Text = "Cập nhật khách hàng";
             // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.DarkGray;
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.Black;
             this.btnExit.Location = new System.Drawing.Point(278, 246);

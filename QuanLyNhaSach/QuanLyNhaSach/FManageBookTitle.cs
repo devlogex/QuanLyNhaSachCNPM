@@ -49,9 +49,13 @@ namespace QuanLyNhaSach
 
         private void btnAddBookTitle_Click(object sender, EventArgs e)
         {
-            FAddBookTitle f = new FAddBookTitle();
-            f.UpdateForm += F_LoadListBookTitleAfterAdd;
-            f.ShowDialog();
+            try
+            {
+                FAddBookTitle f = new FAddBookTitle();
+                f.UpdateForm += F_LoadListBookTitleAfterAdd;
+                f.ShowDialog();
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !","Thông báo"); }
         }
 
         private void F_LoadListBookTitleAfterAdd(object sender, EventArgs e)
@@ -69,9 +73,10 @@ namespace QuanLyNhaSach
 
         private void btnUpdateBookTitle_Click(object sender, EventArgs e)
         {
+            try { 
             if (dtgvManageBookTitle.SelectedCells.Count == 0)
             {
-                MessageBox.Show("Bạn chưa chọn đầu sách để sửa");
+                MessageBox.Show("Bạn chưa chọn đầu sách ", "Thông báo");
                 return;
             }
 
@@ -79,10 +84,13 @@ namespace QuanLyNhaSach
             FUpdateBookTitle f = new FUpdateBookTitle(bookTitle);
             f.UpdateForm += F_LoadListBookTitleAfterUpdate;
             f.ShowDialog();
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
 
         private void F_LoadListBookTitleAfterUpdate(object sender, EventArgs e)
         {
+            try { 
             LoadListBookTitle();
 
             for (int i = 0; i < dtgvManageBookTitle.SelectedRows.Count; i++)
@@ -97,6 +105,8 @@ namespace QuanLyNhaSach
                 index++;
             }
             dtgvManageBookTitle.Rows[index].Selected = true;
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
 
         private void btnRemoveBookTitle_Click(object sender, EventArgs e)
@@ -108,24 +118,27 @@ namespace QuanLyNhaSach
                     int id = Int32.Parse(dtgvManageBookTitle.SelectedCells[0].OwningRow.Cells["id"].Value.ToString());
                     if (RemoveBookTitleByBookTitleID(id))
                     {
-                        MessageBox.Show("Đã xóa thành công !");
+                        MessageBox.Show("Đã xóa thành công !", "Thông báo");
                         LoadListBookTitle();
                     }
                     else
-                        MessageBox.Show("Xóa không thành công !");
+                        MessageBox.Show("Xóa không thành công !", "Thông báo");
 
                 }
                 else
-                    MessageBox.Show("Bạn chưa chọn đầu sách ! ");
+                    MessageBox.Show("Bạn chưa chọn đầu sách ! ", "Thông báo");
             }
-            catch { MessageBox.Show("Xóa không thành công !"); }
+            catch { MessageBox.Show("Xóa không thành công !", "Thông báo"); }
         }
 
         private void btnSearchBook_Click(object sender, EventArgs e)
         {
+            try { 
             FSearchBook f = new FSearchBook();
             f.ShowDialog();
             this.LoadForm();
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
     }
 }

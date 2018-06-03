@@ -30,13 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FChooseAuthor));
             this.dtgvAuthor = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pbRemoveAuthor = new System.Windows.Forms.PictureBox();
             this.pbAddAuthor = new System.Windows.Forms.PictureBox();
             this.cbAuthor = new System.Windows.Forms.ComboBox();
             this.btnOK = new System.Windows.Forms.Button();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAuthor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRemoveAuthor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAddAuthor)).BeginInit();
@@ -60,6 +61,22 @@
             this.dtgvAuthor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvAuthor.Size = new System.Drawing.Size(115, 150);
             this.dtgvAuthor.TabIndex = 48;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Tác giả";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
             // 
             // pbRemoveAuthor
             // 
@@ -92,34 +109,17 @@
             this.cbAuthor.Name = "cbAuthor";
             this.cbAuthor.Size = new System.Drawing.Size(120, 150);
             this.cbAuthor.TabIndex = 45;
-            this.cbAuthor.SelectedIndexChanged += new System.EventHandler(this.cbAuthor_SelectedIndexChanged);
             // 
             // btnOK
             // 
             this.btnOK.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.Location = new System.Drawing.Point(219, 171);
+            this.btnOK.Location = new System.Drawing.Point(155, 175);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(85, 35);
             this.btnOK.TabIndex = 49;
             this.btnOK.Text = "Hoàn tất";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // name
-            // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "Tác giả";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
             // 
             // panel1
             // 
@@ -130,13 +130,27 @@
             this.panel1.Size = new System.Drawing.Size(115, 150);
             this.panel1.TabIndex = 50;
             // 
+            // btnExit
+            // 
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnExit.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(246, 175);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(84, 35);
+            this.btnExit.TabIndex = 51;
+            this.btnExit.Text = "Trở lại";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // FChooseAuthor
             // 
             this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(343, 223);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.pbRemoveAuthor);
@@ -164,5 +178,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnExit;
     }
 }

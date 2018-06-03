@@ -44,21 +44,25 @@ namespace QuanLyNhaSach
 
         private void btnUpdateCategory_Click(object sender, EventArgs e)
         {
-            int id = Category.ID;
-            string name = txbCategory.Text;
-            if(name=="")
+            try
             {
-                MessageBox.Show("Bạn chưa nhập tên thể loại sách");
-                return;
+                int id = Category.ID;
+                string name = txbCategory.Text;
+                if (name == "")
+                {
+                    MessageBox.Show("Bạn chưa nhập tên thể loại sách", "Thông báo");
+                    return;
+                }
+                if (UpdateCategory(id, name))
+                {
+                    MessageBox.Show("Cập nhật thể loại sách thành công !", "Thông báo");
+                    if (updateForm != null)
+                        updateForm(this, new EventArgs());
+                }
+                else
+                    MessageBox.Show("Cập nhật không thành công !", "Thông báo");
             }
-            if (UpdateCategory(id, name))
-            {
-                MessageBox.Show("Sửa thể loại sách thành công !");
-                if (updateForm != null)
-                    updateForm(this, new EventArgs());
-            }
-            else
-                MessageBox.Show("Sửa không thành công !");
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
     }
 }

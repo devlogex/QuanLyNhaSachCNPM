@@ -41,21 +41,25 @@ namespace QuanLyNhaSach
         }
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
-            string name = txbCategory.Text;
-            if(name=="")
+            try
             {
-                MessageBox.Show("Bạn chưa nhập tên thể loại sách");
-                return;
-            }
+                string name = txbCategory.Text;
+                if (name == "")
+                {
+                    MessageBox.Show("Bạn chưa nhập tên thể loại sách");
+                    return;
+                }
 
-            if (AddCategory(name))
-            {
-                MessageBox.Show("Thêm thể loại sách thành công !");
-                if (updateForm != null)
-                    updateForm(this, new EventArgs());
+                if (AddCategory(name))
+                {
+                    MessageBox.Show("Thêm thể loại sách thành công !");
+                    if (updateForm != null)
+                        updateForm(this, new EventArgs());
+                }
+                else
+                    MessageBox.Show("Thêm không thành công !");
             }
-            else
-                MessageBox.Show("Thêm không thành công !");
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
     }
 }

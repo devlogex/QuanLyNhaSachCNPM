@@ -37,21 +37,23 @@ namespace QuanLyNhaSach
                 ThamSoDAO.Instance.SetMinCount((int)nmUD4.Value) &&
                 ThamSoDAO.Instance.SetPercentPrice((float)Double.Parse((Double.Parse(txbPercentPrice.Text) / 100).ToString())) &&
                 ThamSoDAO.Instance.SetCheck(Convert.ToInt32(cbQD4.Checked == true)))
-                    MessageBox.Show("Cập nhật thành công ");
+                    MessageBox.Show("Cập nhật thành công ", "Thông báo");
                 else
-                    MessageBox.Show("Cập nhật không thành công ");
+                    MessageBox.Show("Cập nhật không thành công ", "Thông báo");
             }
-            catch (Exception)
-            {
-                MessageBox.Show("Có lỗi !");
-            }
-        }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
+}
         private void txbPercentPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !(e.KeyChar == '.') && !Char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

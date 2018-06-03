@@ -91,88 +91,108 @@ namespace QuanLyNhaSach
         }
         private void pbAddAuthor_Click(object sender, EventArgs e)
         {
-            if (cbAuthor.SelectedItem != null)
+            try
             {
-                Author author = cbAuthor.SelectedItem as Author;
-                for (int i = 0; i < dtgvAuthor.Rows.Count; i++)
+                if (cbAuthor.SelectedItem != null)
                 {
-                    if (Int32.Parse(dtgvAuthor.Rows[i].Cells["id"].Value.ToString()) == author.ID)
-                        return;
+                    Author author = cbAuthor.SelectedItem as Author;
+                    for (int i = 0; i < dtgvAuthor.Rows.Count; i++)
+                    {
+                        if (Int32.Parse(dtgvAuthor.Rows[i].Cells["id"].Value.ToString()) == author.ID)
+                            return;
+                    }
+                    dtgvAuthor.Rows.Add(author.ID, author.Name);
                 }
-                dtgvAuthor.Rows.Add(author.ID, author.Name);
             }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
 
         private void pbRemoveAuthor_Click(object sender, EventArgs e)
         {
-            if(dtgvAuthor.SelectedRows.Count>0)
+            try
             {
-                dtgvAuthor.Rows.RemoveAt(dtgvAuthor.SelectedRows[0].Index);
+                if (dtgvAuthor.SelectedRows.Count > 0)
+                {
+                    dtgvAuthor.Rows.RemoveAt(dtgvAuthor.SelectedRows[0].Index);
+                }
             }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
 
         private void btnUpdateBookTitle_Click(object sender, EventArgs e)
         {
-            if (txbBookTitle.Text == "")
+            try
             {
-                MessageBox.Show("Bạn chưa nhập tên sách !");
-                return;
-            }
-
-            if (cbCategory.SelectedItem == null)
-            {
-                MessageBox.Show("Bạn chưa chọn thể loại sách !");
-                return;
-            }
-            if (dtgvAuthor.RowCount == 0)
-            {
-                MessageBox.Show("Bạn chưa nhập tác giả !");
-                return;
-            }
-            string name = txbBookTitle.Text;
-            int idCategory = (cbCategory.SelectedItem as CategoryBook).ID;
-            List<int> authors = new List<int>();
-            for (int i = 0; i < dtgvAuthor.Rows.Count; i++)
-            {
-                authors.Add(Int32.Parse(dtgvAuthor.Rows[i].Cells["id"].Value.ToString()));
-            }
-
-
-            if (UpdateBookTitle(BookTitle.ID,name, idCategory, authors))
-            {
-                MessageBox.Show("Cập nhật thành công!");
-                if (updateForm != null)
+                if (txbBookTitle.Text == "")
                 {
-                    updateForm(this, new EventArgs());
+                    MessageBox.Show("Bạn chưa nhập tên sách !", "Thông báo");
+                    return;
                 }
+
+                if (cbCategory.SelectedItem == null)
+                {
+                    MessageBox.Show("Bạn chưa chọn thể loại sách !", "Thông báo");
+                    return;
+                }
+                if (dtgvAuthor.RowCount == 0)
+                {
+                    MessageBox.Show("Bạn chưa nhập tác giả !", "Thông báo");
+                    return;
+                }
+                string name = txbBookTitle.Text;
+                int idCategory = (cbCategory.SelectedItem as CategoryBook).ID;
+                List<int> authors = new List<int>();
+                for (int i = 0; i < dtgvAuthor.Rows.Count; i++)
+                {
+                    authors.Add(Int32.Parse(dtgvAuthor.Rows[i].Cells["id"].Value.ToString()));
+                }
+
+
+                if (UpdateBookTitle(BookTitle.ID, name, idCategory, authors))
+                {
+                    MessageBox.Show("Cập nhật thành công!", "Thông báo");
+                    if (updateForm != null)
+                    {
+                        updateForm(this, new EventArgs());
+                    }
+                }
+                else
+                    MessageBox.Show("Cập nhật thất bại !", "Thông báo");
             }
-            else
-                MessageBox.Show("Cập nhật thất bại !");
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if ((cbCategory.SelectedItem as CategoryBook).ID == -1)
+            try
             {
-                FAddCategory f = new FAddCategory();
-                f.UpdateForm += delegate (object _sender, EventArgs _e)
+                if ((cbCategory.SelectedItem as CategoryBook).ID == -1)
                 {
-                    LoadCategoryIntoCombobox();
-                };
-                f.ShowDialog();
+                    FAddCategory f = new FAddCategory();
+                    f.UpdateForm += delegate (object _sender, EventArgs _e)
+                    {
+                        LoadCategoryIntoCombobox();
+                    };
+                    f.ShowDialog();
+                }
             }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
 
         private void cbAuthor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if ((cbAuthor.SelectedItem as Author).ID == -1)
+            try
             {
-                FAddAuthor f = new FAddAuthor();
-                f.UpdateForm += delegate (object _sender, EventArgs _e)
+                if ((cbAuthor.SelectedItem as Author).ID == -1)
                 {
-                    LoadAuthorIntoCombobox();
-                };
-                f.ShowDialog();
+                    FAddAuthor f = new FAddAuthor();
+                    f.UpdateForm += delegate (object _sender, EventArgs _e)
+                    {
+                        LoadAuthorIntoCombobox();
+                    };
+                    f.ShowDialog();
+                }
             }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
     }
 }

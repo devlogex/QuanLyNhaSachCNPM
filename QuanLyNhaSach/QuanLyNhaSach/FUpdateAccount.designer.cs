@@ -119,11 +119,11 @@
             this.lbManangeAccount.AutoSize = true;
             this.lbManangeAccount.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbManangeAccount.ForeColor = System.Drawing.Color.Black;
-            this.lbManangeAccount.Location = new System.Drawing.Point(111, 9);
+            this.lbManangeAccount.Location = new System.Drawing.Point(78, 9);
             this.lbManangeAccount.Name = "lbManangeAccount";
-            this.lbManangeAccount.Size = new System.Drawing.Size(163, 28);
+            this.lbManangeAccount.Size = new System.Drawing.Size(217, 28);
             this.lbManangeAccount.TabIndex = 43;
-            this.lbManangeAccount.Text = "Sửa tài khoản";
+            this.lbManangeAccount.Text = "Cập nhật tài khoản";
             // 
             // btnUpdateAccount
             // 

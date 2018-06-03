@@ -45,21 +45,25 @@ namespace QuanLyNhaSach
 
         private void btnUpdateAuthor_Click(object sender, EventArgs e)
         {
-            int id = Author.ID;
-            string name = txbAuthor.Text;
-            if (name == "")
+            try
             {
-                MessageBox.Show("Bạn chưa nhập tên tác giả !");
-                return;
+                int id = Author.ID;
+                string name = txbAuthor.Text;
+                if (name == "")
+                {
+                    MessageBox.Show("Bạn chưa nhập tên tác giả !", "Thông báo");
+                    return;
+                }
+                if (UpdateAuthor(id, name))
+                {
+                    MessageBox.Show("Cập nhật tác giả thành công !", "Thông báo");
+                    if (updateForm != null)
+                        updateForm(this, new EventArgs());
+                }
+                else
+                    MessageBox.Show("Cập nhật không thành công !", "Thông báo");
             }
-            if (UpdateAuthor(id, name))
-            {
-                MessageBox.Show("Sửa tác giả thành công !");
-                if (updateForm != null)
-                    updateForm(this, new EventArgs());
-            }
-            else
-                MessageBox.Show("Sửa không thành công !");
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
     }
 }

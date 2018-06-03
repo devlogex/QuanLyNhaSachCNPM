@@ -41,9 +41,9 @@
             this.pbAddAuthor = new System.Windows.Forms.PictureBox();
             this.pbRemoveAuthor = new System.Windows.Forms.PictureBox();
             this.dtgvAuthor = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pbAddAuthor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRemoveAuthor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAuthor)).BeginInit();
@@ -77,7 +77,6 @@
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(236, 27);
             this.cbCategory.TabIndex = 1;
-            this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -148,7 +147,6 @@
             this.cbAuthor.Name = "cbAuthor";
             this.cbAuthor.Size = new System.Drawing.Size(120, 150);
             this.cbAuthor.TabIndex = 20;
-            this.cbAuthor.SelectedIndexChanged += new System.EventHandler(this.cbAuthor_SelectedIndexChanged);
             // 
             // pbAddAuthor
             // 
@@ -190,15 +188,6 @@
             this.dtgvAuthor.Size = new System.Drawing.Size(113, 150);
             this.dtgvAuthor.TabIndex = 43;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.dtgvAuthor);
-            this.panel1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(274, 141);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(113, 150);
-            this.panel1.TabIndex = 44;
-            // 
             // id
             // 
             this.id.DataPropertyName = "id";
@@ -214,6 +203,15 @@
             this.name.HeaderText = "Tác giả";
             this.name.Name = "name";
             this.name.ReadOnly = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dtgvAuthor);
+            this.panel1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(274, 141);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(113, 150);
+            this.panel1.TabIndex = 44;
             // 
             // FAddBookTitle
             // 

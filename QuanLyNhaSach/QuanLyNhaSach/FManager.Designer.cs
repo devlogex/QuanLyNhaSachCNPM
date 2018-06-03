@@ -141,7 +141,7 @@
             this.itemAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
             this.itemAccount.ForeColor = System.Drawing.Color.Blue;
             this.itemAccount.Name = "itemAccount";
-            this.itemAccount.Size = new System.Drawing.Size(180, 24);
+            this.itemAccount.Size = new System.Drawing.Size(157, 24);
             this.itemAccount.Text = "Tài khoản";
             this.itemAccount.Click += new System.EventHandler(this.itemAccount_Click);
             // 
@@ -150,7 +150,7 @@
             this.itemLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
             this.itemLogOut.ForeColor = System.Drawing.Color.Blue;
             this.itemLogOut.Name = "itemLogOut";
-            this.itemLogOut.Size = new System.Drawing.Size(180, 24);
+            this.itemLogOut.Size = new System.Drawing.Size(157, 24);
             this.itemLogOut.Text = "Đăng xuất";
             this.itemLogOut.Click += new System.EventHandler(this.itemLogOut_Click);
             // 
@@ -159,7 +159,7 @@
             this.itemAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
             this.itemAdmin.ForeColor = System.Drawing.Color.Blue;
             this.itemAdmin.Name = "itemAdmin";
-            this.itemAdmin.Size = new System.Drawing.Size(180, 24);
+            this.itemAdmin.Size = new System.Drawing.Size(157, 24);
             this.itemAdmin.Text = "Admin";
             this.itemAdmin.Click += new System.EventHandler(this.itemAdmin_Click);
             // 
@@ -177,7 +177,7 @@
             this.panel5.Controls.Add(this.lbManageCustomer);
             this.panel5.Location = new System.Drawing.Point(484, 49);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(358, 246);
+            this.panel5.Size = new System.Drawing.Size(358, 233);
             this.panel5.TabIndex = 1;
             // 
             // pictureBox4
@@ -194,7 +194,7 @@
             // 
             this.lbReportOwe.AutoSize = true;
             this.lbReportOwe.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbReportOwe.Location = new System.Drawing.Point(132, 122);
+            this.lbReportOwe.Location = new System.Drawing.Point(135, 136);
             this.lbReportOwe.Name = "lbReportOwe";
             this.lbReportOwe.Size = new System.Drawing.Size(140, 22);
             this.lbReportOwe.TabIndex = 2;
@@ -206,7 +206,7 @@
             // 
             this.lbSearchCustomer.AutoSize = true;
             this.lbSearchCustomer.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSearchCustomer.Location = new System.Drawing.Point(132, 94);
+            this.lbSearchCustomer.Location = new System.Drawing.Point(135, 104);
             this.lbSearchCustomer.Name = "lbSearchCustomer";
             this.lbSearchCustomer.Size = new System.Drawing.Size(168, 22);
             this.lbSearchCustomer.TabIndex = 2;
@@ -218,7 +218,7 @@
             // 
             this.lbCollectMoney.AutoSize = true;
             this.lbCollectMoney.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCollectMoney.Location = new System.Drawing.Point(132, 62);
+            this.lbCollectMoney.Location = new System.Drawing.Point(135, 71);
             this.lbCollectMoney.Name = "lbCollectMoney";
             this.lbCollectMoney.Size = new System.Drawing.Size(154, 22);
             this.lbCollectMoney.TabIndex = 2;
@@ -241,7 +241,7 @@
             // 
             this.lbManageCustomer.AutoSize = true;
             this.lbManageCustomer.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbManageCustomer.Location = new System.Drawing.Point(131, 36);
+            this.lbManageCustomer.Location = new System.Drawing.Point(135, 40);
             this.lbManageCustomer.Name = "lbManageCustomer";
             this.lbManageCustomer.Size = new System.Drawing.Size(165, 22);
             this.lbManageCustomer.TabIndex = 2;

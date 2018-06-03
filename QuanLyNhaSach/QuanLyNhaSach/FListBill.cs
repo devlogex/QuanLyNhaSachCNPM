@@ -46,13 +46,17 @@ namespace QuanLyNhaSach
 
         private void dtgvListBill_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int id = Int32.Parse(dtgvListBill.SelectedRows[0].Cells["idBill"].Value.ToString());
-            dtgvListBillInfo.DataSource = BillInfoDAO.Instance.LoadListBillInfo(id);
-
-            for (int i = 0; i < dtgvListBillInfo.Rows.Count; i++)
+            try
             {
-                dtgvListBillInfo.Rows[i].Cells["STT2"].Value = i + 1;
+                int id = Int32.Parse(dtgvListBill.SelectedRows[0].Cells["idBill"].Value.ToString());
+                dtgvListBillInfo.DataSource = BillInfoDAO.Instance.LoadListBillInfo(id);
+
+                for (int i = 0; i < dtgvListBillInfo.Rows.Count; i++)
+                {
+                    dtgvListBillInfo.Rows[i].Cells["STT2"].Value = i + 1;
+                }
             }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -64,7 +68,7 @@ namespace QuanLyNhaSach
         {
             if(dtgvListBill.SelectedRows.Count==0)
             {
-                MessageBox.Show("Bạn chưa chọn hóa đơn !");
+                MessageBox.Show("Bạn chưa chọn hóa đơn !", "Thông báo");
                 return;
             }
             string name = "HOADON" + dtgvListBill.SelectedRows[0].Cells["idBill"].Value.ToString() + ".pdf";
@@ -83,7 +87,7 @@ namespace QuanLyNhaSach
                 if (MessageBox.Show("In thành công ! Bạn có muốn mở file ?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     Process.Start(name);
             }
-            catch { MessageBox.Show("In thất bại "); }
+            catch { MessageBox.Show("In thất bại ", "Thông báo"); }
         }
     }
 }

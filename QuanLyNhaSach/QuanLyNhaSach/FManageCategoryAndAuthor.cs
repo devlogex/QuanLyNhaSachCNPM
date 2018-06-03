@@ -73,9 +73,13 @@ namespace QuanLyNhaSach
         }
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
-            FAddCategory f = new FAddCategory();
-            f.UpdateForm += F_LoadListCategoryAfterAdd;
-            f.ShowDialog();
+            try
+            {
+                FAddCategory f = new FAddCategory();
+                f.UpdateForm += F_LoadListCategoryAfterAdd;
+                f.ShowDialog();
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
 
         private void F_LoadListCategoryAfterAdd(object sender, EventArgs e)
@@ -91,16 +95,20 @@ namespace QuanLyNhaSach
 
         private void btnUpdateCategory_Click(object sender, EventArgs e)
         {
-            if (dtgvManageCategory.SelectedCells.Count == 0)
+            try
             {
-                MessageBox.Show("Bạn chưa chọn thể loại sách để sửa");
-                return;
-            }
+                if (dtgvManageCategory.SelectedCells.Count == 0)
+                {
+                    MessageBox.Show("Bạn chưa chọn thể loại sách để sửa", "Thông báo");
+                    return;
+                }
 
-            CategoryBook category = new CategoryBook(Int32.Parse(dtgvManageCategory.SelectedRows[0].Cells["idCategory"].Value.ToString()), dtgvManageCategory.SelectedRows[0].Cells["nameCategory"].Value.ToString());
-            FUpdateCategory f = new FUpdateCategory(category);
-            f.UpdateForm += F_LoadListCategoryAfterUpdate;
-            f.ShowDialog();
+                CategoryBook category = new CategoryBook(Int32.Parse(dtgvManageCategory.SelectedRows[0].Cells["idCategory"].Value.ToString()), dtgvManageCategory.SelectedRows[0].Cells["nameCategory"].Value.ToString());
+                FUpdateCategory f = new FUpdateCategory(category);
+                f.UpdateForm += F_LoadListCategoryAfterUpdate;
+                f.ShowDialog();
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
 
         private void F_LoadListCategoryAfterUpdate(object sender, EventArgs e)
@@ -130,24 +138,28 @@ namespace QuanLyNhaSach
                     int id = Int32.Parse(dtgvManageCategory.SelectedCells[0].OwningRow.Cells["idCategory"].Value.ToString());
                     if (RemoveCategoryByCategoryID(id))
                     {
-                        MessageBox.Show("Đã xóa thành công !");
+                        MessageBox.Show("Đã xóa thành công !", "Thông báo");
                         LoadListCategory();
                     }
                     else
-                        MessageBox.Show("Xóa không thành công !");
+                        MessageBox.Show("Xóa không thành công !", "Thông báo");
 
                 }
                 else
-                    MessageBox.Show("Bạn chưa chọn thể loại sách ! ");
+                    MessageBox.Show("Bạn chưa chọn thể loại sách ! ", "Thông báo");
             }
-            catch { MessageBox.Show("Xóa không thành công !"); }
+            catch { MessageBox.Show("Xóa không thành công !", "Thông báo"); }
         }
 
         private void btnAddAuthor_Click(object sender, EventArgs e)
         {
-            FAddAuthor f = new FAddAuthor();
-            f.UpdateForm += F_LoadListAuthorAfterAdd;
-            f.ShowDialog();
+            try
+            {
+                FAddAuthor f = new FAddAuthor();
+                f.UpdateForm += F_LoadListAuthorAfterAdd;
+                f.ShowDialog();
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
 
         private void F_LoadListAuthorAfterAdd(object sender, EventArgs e)
@@ -170,31 +182,35 @@ namespace QuanLyNhaSach
                     int id = Int32.Parse(dtgvManageAuthor.SelectedCells[0].OwningRow.Cells["idAuthor"].Value.ToString());
                     if (RemoveAuthorByAuthorID(id))
                     {
-                        MessageBox.Show("Đã xóa thành công !");
+                        MessageBox.Show("Đã xóa thành công !", "Thông báo");
                         LoadListAuthor();
                     }
                     else
-                        MessageBox.Show("Xóa không thành công !");
+                        MessageBox.Show("Xóa không thành công !", "Thông báo");
 
                 }
                 else
-                    MessageBox.Show("Bạn chưa chọn tác giả ");
+                    MessageBox.Show("Bạn chưa chọn tác giả ", "Thông báo");
             }
-            catch { MessageBox.Show("Xóa không thành công !"); }
+            catch { MessageBox.Show("Xóa không thành công !", "Thông báo"); }
         }
 
         private void btnUpdateAuthor_Click(object sender, EventArgs e)
         {
-            if (dtgvManageAuthor.SelectedCells.Count == 0)
+            try
             {
-                MessageBox.Show("Bạn chưa chọn tác giả để sửa");
-                return;
-            }
+                if (dtgvManageAuthor.SelectedCells.Count == 0)
+                {
+                    MessageBox.Show("Bạn chưa chọn tác giả để cập nhật", "Thông báo");
+                    return;
+                }
 
-            Author author = new Author(Int32.Parse(dtgvManageAuthor.SelectedRows[0].Cells["idAuthor"].Value.ToString()), dtgvManageAuthor.SelectedRows[0].Cells["nameAuthor"].Value.ToString());
-            FUpdateAuthor f = new FUpdateAuthor(author);
-            f.UpdateForm += F_LoadListAuthorAfterUpdate; ;
-            f.ShowDialog();
+                Author author = new Author(Int32.Parse(dtgvManageAuthor.SelectedRows[0].Cells["idAuthor"].Value.ToString()), dtgvManageAuthor.SelectedRows[0].Cells["nameAuthor"].Value.ToString());
+                FUpdateAuthor f = new FUpdateAuthor(author);
+                f.UpdateForm += F_LoadListAuthorAfterUpdate; ;
+                f.ShowDialog();
+            }
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
 
         private void F_LoadListAuthorAfterUpdate(object sender, EventArgs e)

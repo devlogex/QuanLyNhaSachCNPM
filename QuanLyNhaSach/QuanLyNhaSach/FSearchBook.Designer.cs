@@ -35,6 +35,7 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvManageBookTitle = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +61,7 @@
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvManageBookTitle)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -106,7 +108,7 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(106, 35);
             this.btnExit.TabIndex = 13;
-            this.btnExit.Text = "Đóng";
+            this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -122,14 +124,24 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dtgvManageBookTitle);
-            this.groupBox1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Controls.Add(this.panel2);
+            this.groupBox1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(24, 283);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(916, 189);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách sách";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dtgvManageBookTitle);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(3, 26);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(910, 160);
+            this.panel2.TabIndex = 0;
             // 
             // dtgvManageBookTitle
             // 
@@ -146,13 +158,13 @@
             this.countVersion,
             this.totalCount});
             this.dtgvManageBookTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvManageBookTitle.Location = new System.Drawing.Point(3, 22);
+            this.dtgvManageBookTitle.Location = new System.Drawing.Point(0, 0);
             this.dtgvManageBookTitle.Name = "dtgvManageBookTitle";
             this.dtgvManageBookTitle.ReadOnly = true;
             this.dtgvManageBookTitle.RowHeadersVisible = false;
             this.dtgvManageBookTitle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvManageBookTitle.Size = new System.Drawing.Size(910, 164);
-            this.dtgvManageBookTitle.TabIndex = 4;
+            this.dtgvManageBookTitle.Size = new System.Drawing.Size(910, 160);
+            this.dtgvManageBookTitle.TabIndex = 5;
             // 
             // STT
             // 
@@ -400,6 +412,7 @@
             this.panel1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvManageBookTitle)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -426,13 +439,14 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.NumericUpDown nmCountTo;
         private System.Windows.Forms.NumericUpDown nmCountFrom;
-        private System.Windows.Forms.DataGridView dtgvManageBookTitle;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.ComboBox cbAuthor;
         private System.Windows.Forms.ComboBox cbIDBookTitle;
         private System.Windows.Forms.TextBox txbNameBookTitle;
         private System.Windows.Forms.CheckBox ckbNameBookTitle;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView dtgvManageBookTitle;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;

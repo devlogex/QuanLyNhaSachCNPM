@@ -79,48 +79,52 @@ namespace QuanLyNhaSach
 
                 if (!ReportOweDAO.Instance.InsertReportOwe(month, year, customer.ID, firstOwe, addOwe, lastOwe))
                 {
-                    MessageBox.Show("Có lỗi khi tạo báo cáo tháng!");
+                    MessageBox.Show("Có lỗi khi tạo báo cáo tháng!", "Thông báo");
                     return;
                 }
             }
         }
         private void btnReportOwe_Click(object sender, EventArgs e)
         {
-            DateTime today = DateTime.Now;
-            DateTime date = new DateTime((int)nmYear.Value, (int)nmMonth.Value, 1);
-            if (date > today)
+            try
             {
-                MessageBox.Show("Thời gian không hợp lệ !");
-                return;
-            }
-
-            if (CheckReportOwe(date.Month, date.Year))
-            {
-                LoadReportOwe(date.Month, date.Year);
-            }
-            else
-            {
-                if (today.Month == date.Month && today.Year == date.Year)
+                DateTime today = DateTime.Now;
+                DateTime date = new DateTime((int)nmYear.Value, (int)nmMonth.Value, 1);
+                if (date > today)
                 {
-                    if (today.Month == date.Month && today.Year == date.Year)
-                    {
-                        MessageBox.Show("Chưa có báo cáo trong tháng này !");
-                        return;
-                    }
+                    MessageBox.Show("Thời gian không hợp lệ !", "Thông báo");
+                    return;
+                }
+
+                if (CheckReportOwe(date.Month, date.Year))
+                {
+                    LoadReportOwe(date.Month, date.Year);
                 }
                 else
                 {
-                    CreateReportOwe(date.Month, date.Year);
-                    LoadReportOwe(date.Month, date.Year);
+                    if (today.Month == date.Month && today.Year == date.Year)
+                    {
+                        if (today.Month == date.Month && today.Year == date.Year)
+                        {
+                            MessageBox.Show("Chưa có báo cáo trong tháng này !", "Thông báo");
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        CreateReportOwe(date.Month, date.Year);
+                        LoadReportOwe(date.Month, date.Year);
+                    }
                 }
+                btnReportOwe.Tag = 1;
             }
-            btnReportOwe.Tag = 1;
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
         private void btnPrint_Click(object sender, EventArgs e)
         {
             if (btnReportOwe.Tag == null)
             {
-                MessageBox.Show("Bạn chưa thông kê báo cáo nào cả !");
+                MessageBox.Show("Bạn chưa thông kê báo cáo nào cả !", "Thông báo");
                 return;
             }
             string name = "BAOCAOCONGNO" + nmMonth.Value.ToString() + "_" + nmYear.Value.ToString() + ".pdf";
@@ -135,7 +139,7 @@ namespace QuanLyNhaSach
                 if (MessageBox.Show("In thành công ! Bạn có muốn mở file ?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     Process.Start(name);
             }
-            catch { MessageBox.Show("In thất bại "); }
+            catch { MessageBox.Show("In thất bại ", "Thông báo"); }
         }
 
         private void btnExit_Click(object sender, EventArgs e)

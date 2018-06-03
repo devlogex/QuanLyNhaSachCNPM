@@ -50,6 +50,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dtpk = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvBill = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -77,6 +78,7 @@
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -295,14 +297,24 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dtgvBill);
-            this.groupBox1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Controls.Add(this.panel2);
+            this.groupBox1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(6, 196);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(958, 268);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chi tiết phiếu nhập sách";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dtgvBill);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(3, 26);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(952, 239);
+            this.panel2.TabIndex = 0;
             // 
             // dtgvBill
             // 
@@ -319,15 +331,10 @@
             this.count,
             this.priceOut,
             this.totalPrice});
-            this.dtgvBill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvBill.Location = new System.Drawing.Point(3, 22);
+            this.dtgvBill.Location = new System.Drawing.Point(14, 9);
             this.dtgvBill.Name = "dtgvBill";
-            this.dtgvBill.Size = new System.Drawing.Size(952, 243);
-            this.dtgvBill.TabIndex = 2;
-            this.dtgvBill.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvBill_CellEndEdit);
-            this.dtgvBill.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dtgvBill_EditingControlShowing);
-            this.dtgvBill.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dtgvBill_RowsAdded);
-            this.dtgvBill.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dtgvBill_RowsRemoved);
+            this.dtgvBill.Size = new System.Drawing.Size(923, 227);
+            this.dtgvBill.TabIndex = 3;
             // 
             // STT
             // 
@@ -346,7 +353,7 @@
             this.id.Name = "id";
             this.id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.id.Width = 87;
+            this.id.Width = 83;
             // 
             // name
             // 
@@ -430,7 +437,7 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(105, 35);
             this.btnExit.TabIndex = 15;
-            this.btnExit.Text = "Đóng";
+            this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -519,6 +526,7 @@
             this.txbReceiveMoney.Name = "txbReceiveMoney";
             this.txbReceiveMoney.Size = new System.Drawing.Size(125, 26);
             this.txbReceiveMoney.TabIndex = 4;
+            this.txbReceiveMoney.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbReceiveMoney_KeyPress);
             // 
             // label5
             // 
@@ -574,6 +582,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
@@ -604,16 +613,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpk;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dtgvBill;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewComboBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn category;
-        private System.Windows.Forms.DataGridViewTextBoxColumn author;
-        private System.Windows.Forms.DataGridViewTextBoxColumn publishing;
-        private System.Windows.Forms.DataGridViewTextBoxColumn count;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceOut;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalPrice;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnPrint;
@@ -630,5 +629,16 @@
         private System.Windows.Forms.Button btnAddCustomer;
         private System.Windows.Forms.TextBox txbIdCustomer;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView dtgvBill;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewComboBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn category;
+        private System.Windows.Forms.DataGridViewTextBoxColumn author;
+        private System.Windows.Forms.DataGridViewTextBoxColumn publishing;
+        private System.Windows.Forms.DataGridViewTextBoxColumn count;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceOut;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalPrice;
     }
 }

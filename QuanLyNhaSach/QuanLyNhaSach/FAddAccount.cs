@@ -33,38 +33,42 @@ namespace QuanLyNhaSach
 
         private void btnAddAccount_Click(object sender, EventArgs e)
         {
-            if (errorProviderAccount.GetError(txbUserName) != "")
-            {
-                MessageBox.Show("Lỗi tên đăng nhập !","Thông báo");
-                return;
-            }
-            if (txbUserName.Text=="")
-            {
-                MessageBox.Show("Bạn chưa nhập tên đăng nhập !","Thông báo");
-                return;
-            }
-            if(txbPassWord.Text=="")
-            {
-                MessageBox.Show("Bạn chưa nhập mật khẩu !","Thông báo");
-                return;
-            }
-           
-
-            string userName = txbUserName.Text;
-            string passWord = txbPassWord.Text;
-            string displayName = txbDisplayName.Text;
             try
             {
-                if (AccountDAO.Instance.InsertAccount(userName, displayName, passWord))
+                if (errorProviderAccount.GetError(txbUserName) != "")
                 {
-                    MessageBox.Show("Thêm tài khoản thành công !","Thông báo");
-                    if (updateListAccount != null)
-                        updateListAccount(this, new EventArgs());
+                    MessageBox.Show("Lỗi tên đăng nhập !", "Thông báo");
+                    return;
                 }
-                else
-                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không hợp lệ ","Thông báo");
+                if (txbUserName.Text == "")
+                {
+                    MessageBox.Show("Bạn chưa nhập tên đăng nhập !", "Thông báo");
+                    return;
+                }
+                if (txbPassWord.Text == "")
+                {
+                    MessageBox.Show("Bạn chưa nhập mật khẩu !", "Thông báo");
+                    return;
+                }
+
+
+                string userName = txbUserName.Text;
+                string passWord = txbPassWord.Text;
+                string displayName = txbDisplayName.Text;
+                try
+                {
+                    if (AccountDAO.Instance.InsertAccount(userName, displayName, passWord))
+                    {
+                        MessageBox.Show("Thêm tài khoản thành công !", "Thông báo");
+                        if (updateListAccount != null)
+                            updateListAccount(this, new EventArgs());
+                    }
+                    else
+                        MessageBox.Show("Tên đăng nhập hoặc mật khẩu không hợp lệ ", "Thông báo");
+                }
+                catch { MessageBox.Show("Lỗi tài khoản tên đăng nhập đã tồn tại !", "Thông báo"); }
             }
-            catch { MessageBox.Show("Lỗi tài khoản tên đăng nhập đã tồn tại !","Thông báo");}
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
 
         private void txbUserName_TextChanged(object sender, EventArgs e)

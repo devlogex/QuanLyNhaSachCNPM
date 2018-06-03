@@ -31,6 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvManageCustomer = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,10 +45,11 @@
             this.btnHistoryBill = new System.Windows.Forms.Button();
             this.btnRemoveCustomer = new System.Windows.Forms.Button();
             this.btnUpdateCustomer = new System.Windows.Forms.Button();
-            this.btnAddCustomer = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.btnAddCustomer = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvManageCustomer)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -74,9 +76,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dtgvManageCustomer);
+            this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 72);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(964, 423);
@@ -84,9 +86,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Khách hàng";
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dtgvManageCustomer);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(3, 26);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(958, 394);
+            this.panel2.TabIndex = 0;
+            // 
             // dtgvManageCustomer
             // 
             this.dtgvManageCustomer.AllowUserToAddRows = false;
+            this.dtgvManageCustomer.AllowUserToDeleteRows = false;
             this.dtgvManageCustomer.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             this.dtgvManageCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvManageCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -97,20 +110,20 @@
             this.phonenumber,
             this.email,
             this.owe});
-            this.dtgvManageCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvManageCustomer.Location = new System.Drawing.Point(3, 22);
+            this.dtgvManageCustomer.Location = new System.Drawing.Point(24, 14);
             this.dtgvManageCustomer.Name = "dtgvManageCustomer";
             this.dtgvManageCustomer.ReadOnly = true;
             this.dtgvManageCustomer.RowHeadersVisible = false;
             this.dtgvManageCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvManageCustomer.Size = new System.Drawing.Size(958, 398);
-            this.dtgvManageCustomer.TabIndex = 2;
+            this.dtgvManageCustomer.Size = new System.Drawing.Size(910, 366);
+            this.dtgvManageCustomer.TabIndex = 3;
             // 
             // STT
             // 
             this.STT.HeaderText = "STT";
             this.STT.Name = "STT";
             this.STT.ReadOnly = true;
+            this.STT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // id
             // 
@@ -119,6 +132,7 @@
             this.id.HeaderText = "Mã khách hàng";
             this.id.Name = "id";
             this.id.ReadOnly = true;
+            this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // name
             // 
@@ -127,6 +141,7 @@
             this.name.HeaderText = "Tên khách hàng";
             this.name.Name = "name";
             this.name.ReadOnly = true;
+            this.name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // address
             // 
@@ -135,6 +150,7 @@
             this.address.HeaderText = "Địa chỉ";
             this.address.Name = "address";
             this.address.ReadOnly = true;
+            this.address.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // phonenumber
             // 
@@ -143,6 +159,7 @@
             this.phonenumber.HeaderText = "Số điện thoại";
             this.phonenumber.Name = "phonenumber";
             this.phonenumber.ReadOnly = true;
+            this.phonenumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // email
             // 
@@ -151,6 +168,7 @@
             this.email.HeaderText = "Email";
             this.email.Name = "email";
             this.email.ReadOnly = true;
+            this.email.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // owe
             // 
@@ -159,6 +177,7 @@
             this.owe.HeaderText = "Số nợ";
             this.owe.Name = "owe";
             this.owe.ReadOnly = true;
+            this.owe.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // groupBox2
             // 
@@ -219,17 +238,6 @@
             this.btnUpdateCustomer.UseVisualStyleBackColor = true;
             this.btnUpdateCustomer.Click += new System.EventHandler(this.btnUpdateCustomer_Click);
             // 
-            // btnAddCustomer
-            // 
-            this.btnAddCustomer.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddCustomer.Location = new System.Drawing.Point(13, 11);
-            this.btnAddCustomer.Name = "btnAddCustomer";
-            this.btnAddCustomer.Size = new System.Drawing.Size(90, 34);
-            this.btnAddCustomer.TabIndex = 0;
-            this.btnAddCustomer.Text = "Thêm";
-            this.btnAddCustomer.UseVisualStyleBackColor = true;
-            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
-            // 
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -240,6 +248,17 @@
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnAddCustomer
+            // 
+            this.btnAddCustomer.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCustomer.Location = new System.Drawing.Point(13, 11);
+            this.btnAddCustomer.Name = "btnAddCustomer";
+            this.btnAddCustomer.Size = new System.Drawing.Size(90, 34);
+            this.btnAddCustomer.TabIndex = 0;
+            this.btnAddCustomer.Text = "Thêm";
+            this.btnAddCustomer.UseVisualStyleBackColor = true;
+            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
             // 
             // FManageCustomer
             // 
@@ -255,6 +274,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvManageCustomer)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -266,6 +286,14 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnHistoryBill;
+        private System.Windows.Forms.Button btnRemoveCustomer;
+        private System.Windows.Forms.Button btnUpdateCustomer;
+        private System.Windows.Forms.Button btnAddCustomer;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dtgvManageCustomer;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
@@ -274,12 +302,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phonenumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn owe;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnHistoryBill;
-        private System.Windows.Forms.Button btnRemoveCustomer;
-        private System.Windows.Forms.Button btnUpdateCustomer;
-        private System.Windows.Forms.Button btnAddCustomer;
-        private System.Windows.Forms.Button btnSearch;
     }
 }

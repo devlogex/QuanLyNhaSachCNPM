@@ -25,7 +25,7 @@ namespace QuanLyNhaSach
             InitializeComponent();
             LoadForm();
         }
-
+        #region Method
         public void LoadForm()
         {
             dtpk.Value = DateTime.Now;
@@ -47,6 +47,10 @@ namespace QuanLyNhaSach
 
             txbIdCustomer.Text = CustomerDAO.Instance.GetNewIDCustomer().ToString();
 
+            dtgvBill.CellEndEdit += dtgvBill_CellEndEdit;
+            dtgvBill.EditingControlShowing += dtgvBill_EditingControlShowing;
+            dtgvBill.RowsAdded += dtgvBill_RowsAdded;
+            dtgvBill.RowsRemoved += dtgvBill_RowsRemoved;
         }
 
         private void LoadListCustomerIntoCombobox()
@@ -66,10 +70,10 @@ namespace QuanLyNhaSach
                 dtgvBill.Rows[i].Cells["STT"].Value = i + 1;
         }
 
+        #endregion
 
 
-
-        //#region Event
+        #region Event
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -108,13 +112,13 @@ namespace QuanLyNhaSach
                     
                     if ((book.Count - Int64.Parse(dtgvBill.Rows[e.RowIndex].Cells["count"].Value.ToString())) < 0)
                     {
-                        MessageBox.Show("Số lượng sách không đủ. Sách " + book.Name + " hiện tại chỉ còn " + book.Count.ToString());
+                        MessageBox.Show("Số lượng sách không đủ. Sách " + book.Name + " hiện tại chỉ còn " + book.Count.ToString(), "Thông báo");
                         dtgvBill.Rows[e.RowIndex].Cells["count"].Value = null;
                         return;
                     }
                     if ((book.Count - Int64.Parse(dtgvBill.Rows[e.RowIndex].Cells["count"].Value.ToString())) < minCount)
                     {
-                        MessageBox.Show("Số lượng sách sau khi bán phải nhỏ hơn "+minCount.ToString()+" . Sách " + book.Name + " hiện tại chỉ còn " + book.Count.ToString());
+                        MessageBox.Show("Số lượng sách sau khi bán phải nhỏ hơn "+minCount.ToString()+" . Sách " + book.Name + " hiện tại chỉ còn " + book.Count.ToString(), "Thông báo");
                         dtgvBill.Rows[e.RowIndex].Cells["count"].Value = null;
                         return;
                     }
@@ -130,7 +134,7 @@ namespace QuanLyNhaSach
                     }
                     if (countBookTitle - Int64.Parse(dtgvBill.Rows[e.RowIndex].Cells["count"].Value.ToString()) < minCount)
                     {
-                        MessageBox.Show("Đầu sách có lượng tồn sau khi bán ít nhất là " + minCount.ToString() + "\nĐầu sách " + book.Name + " có lượng tồn là " + countBookTitle.ToString());
+                        MessageBox.Show("Đầu sách có lượng tồn sau khi bán ít nhất là " + minCount.ToString() + "\nĐầu sách " + book.Name + " có lượng tồn là " + countBookTitle.ToString(), "Thông báo");
                         dtgvBill.Rows[e.RowIndex].Cells["count"].Value = null;
                         return;
                     }
@@ -145,7 +149,7 @@ namespace QuanLyNhaSach
             catch
             {
                 dtgvBill.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = null;
-                MessageBox.Show("Lỗi dữ liệu nhập không đúng định dạng !");
+                MessageBox.Show("Lỗi dữ liệu nhập không đúng định dạng !", "Thông báo");
             }
 
             double totalMoney = 0.0;
@@ -232,69 +236,73 @@ namespace QuanLyNhaSach
             Customer customer = cbIdCustomer.SelectedItem as Customer;
             if(customer.Owe >maxOwe)
             {
-                MessageBox.Show("Khách hàng nợ quá quy định !");
+                MessageBox.Show("Khách hàng nợ quá quy định !", "Thông báo");
                 cbIdCustomer.SelectedIndex = -1;
                 return;
             }
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (btnSave.Tag != null)
-                if (Int32.Parse(btnSave.Tag.ToString()) == 1)
+            try
+            {
+                if (btnSave.Tag != null)
+                    if (Int32.Parse(btnSave.Tag.ToString()) == 1)
+                    {
+                        MessageBox.Show("Bạn chưa tạo hóa đơn mới !", "Thông báo");
+                        return;
+                    }
+                if (cbIdCustomer.SelectedItem == null)
                 {
-                    MessageBox.Show("Bạn chưa tạo hóa đơn mới !");
+                    MessageBox.Show("Bạn chưa nhập khách hàng !", "Thông báo");
                     return;
                 }
-            if(cbIdCustomer.SelectedItem==null)
-            {
-                MessageBox.Show("Bạn chưa nhập khách hàng !");
-                return;
-            }
-            if(dtgvBill.RowCount==1)
-            {
-                MessageBox.Show("Bạn chưa nhập sách !");
-                return;
-            }
-            for(int i=0;i<dtgvBill.RowCount-1;i++)
-            {
-                if(dtgvBill.Rows[i].Cells["totalPrice"].Value==null)
+                if (dtgvBill.RowCount == 1)
                 {
-                    MessageBox.Show("Bạn chưa nhập số lượng của sách !");
-                    dtgvBill.Rows[i].Cells["count"].Selected = true;
+                    MessageBox.Show("Bạn chưa nhập sách !", "Thông báo");
                     return;
                 }
-            }
-            if(((cbIdCustomer.SelectedItem as Customer).Owe+Double.Parse(txbMoneyOwe.Text))>maxOwe)
-            {
-                MessageBox.Show("Nợ cũ và nợ lần này của khách hàng vượt quá quy định !");
-                return;
-            }
+                for (int i = 0; i < dtgvBill.RowCount - 1; i++)
+                {
+                    if (dtgvBill.Rows[i].Cells["totalPrice"].Value == null)
+                    {
+                        MessageBox.Show("Bạn chưa nhập số lượng của sách !", "Thông báo");
+                        dtgvBill.Rows[i].Cells["count"].Selected = true;
+                        return;
+                    }
+                }
+                if (((cbIdCustomer.SelectedItem as Customer).Owe + Double.Parse(txbMoneyOwe.Text)) > maxOwe)
+                {
+                    MessageBox.Show("Nợ cũ và nợ lần này của khách hàng vượt quá quy định !", "Thông báo");
+                    return;
+                }
 
-            Customer customer = cbIdCustomer.SelectedItem as Customer;
-            DateTime date = dtpk.Value;
-            float totalMoney = (float)Double.Parse(txbTotalMoney.Text);
-            float receiveMoney = (float)Double.Parse(txbReceiveMoney.Text);
-            float moneyOwe = (float)Double.Parse(txbMoneyOwe.Text);
+                Customer customer = cbIdCustomer.SelectedItem as Customer;
+                DateTime date = dtpk.Value;
+                float totalMoney = (float)Double.Parse(txbTotalMoney.Text);
+                float receiveMoney = (float)Double.Parse(txbReceiveMoney.Text);
+                float moneyOwe = (float)Double.Parse(txbMoneyOwe.Text);
 
-            if (!BillDAO.Instance.InsertBill(customer,date,totalMoney,receiveMoney,moneyOwe))
-            {
-                MessageBox.Show("Thêm hóa đơn thất bại !");
-                return;
-            }
-            for(int i=0;i<dtgvBill.RowCount-1;i++)
-            {
-                int idBook = Int32.Parse(dtgvBill.Rows[i].Cells["id"].Value.ToString());
-                int count= Int32.Parse(dtgvBill.Rows[i].Cells["count"].Value.ToString());
-                float priceOut= (float)Double.Parse(dtgvBill.Rows[i].Cells["priceOut"].Value.ToString());
-                float totalPrice = (float)Double.Parse(dtgvBill.Rows[i].Cells["totalPrice"].Value.ToString());
-                if (!BillInfoDAO.Instance.InsertBillInfo(idBook,count,priceOut,totalPrice))
+                if (!BillDAO.Instance.InsertBill(customer, date, totalMoney, receiveMoney, moneyOwe))
                 {
-                    MessageBox.Show("Thêm hóa đơn thất bại !");
+                    MessageBox.Show("Thêm hóa đơn thất bại !", "Thông báo");
                     return;
                 }
+                for (int i = 0; i < dtgvBill.RowCount - 1; i++)
+                {
+                    int idBook = Int32.Parse(dtgvBill.Rows[i].Cells["id"].Value.ToString());
+                    int count = Int32.Parse(dtgvBill.Rows[i].Cells["count"].Value.ToString());
+                    float priceOut = (float)Double.Parse(dtgvBill.Rows[i].Cells["priceOut"].Value.ToString());
+                    float totalPrice = (float)Double.Parse(dtgvBill.Rows[i].Cells["totalPrice"].Value.ToString());
+                    if (!BillInfoDAO.Instance.InsertBillInfo(idBook, count, priceOut, totalPrice))
+                    {
+                        MessageBox.Show("Thêm hóa đơn thất bại !", "Thông báo");
+                        return;
+                    }
+                }
+                MessageBox.Show("Thêm hóa đơn thành công !", "Thông báo");
+                btnSave.Tag = 1;
             }
-            MessageBox.Show("Thêm hóa đơn thành công !");
-            btnSave.Tag = 1;
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
 
         private void btnCreateBill_Click(object sender, EventArgs e)
@@ -312,7 +320,7 @@ namespace QuanLyNhaSach
         {
             if (btnSave.Tag == null)
             {
-                MessageBox.Show("Bạn phải lưu phiếu nhập trước !");
+                MessageBox.Show("Bạn phải lưu phiếu nhập trước !","Thông báo");
                 return;
             }
 
@@ -362,51 +370,70 @@ namespace QuanLyNhaSach
         }
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            if (txbCustomerName.Text == "")
+            try
             {
-                MessageBox.Show("Bạn chưa nhập tên khách hàng ");
-                return;
-            }
-            if (txbPhoneNumber.Text == "")
-            {
-                MessageBox.Show("Bạn chưa nhập số điện thoại của khách hàng ");
-                return;
-            }
-            if (txbEmail.Text == "")
-            {
-                MessageBox.Show("Bạn chưa nhập email của khách hàng ");
-                return;
-            }
-            if (txbCustomerAddress.Text == "")
-            {
-                MessageBox.Show("Bạn chưa nhập địa chỉ của khách hàng ");
-                return;
-            }
-            if (!CheckIsPhone(txbPhoneNumber.Text))
-            {
-                MessageBox.Show("Số điện thoại không đúng đinh dạng");
-                return;
-            }
-            if (!CheckIsMail(txbEmail.Text))
-            {
-                MessageBox.Show("Email không đúng đinh dạng");
-                return;
-            }
+                if (txbCustomerName.Text == "")
+                {
+                    MessageBox.Show("Bạn chưa nhập tên khách hàng ", "Thông báo");
+                    return;
+                }
+                if (txbPhoneNumber.Text == "")
+                {
+                    MessageBox.Show("Bạn chưa nhập số điện thoại của khách hàng ", "Thông báo");
+                    return;
+                }
+                if (txbEmail.Text == "")
+                {
+                    MessageBox.Show("Bạn chưa nhập email của khách hàng ", "Thông báo");
+                    return;
+                }
+                if (txbCustomerAddress.Text == "")
+                {
+                    MessageBox.Show("Bạn chưa nhập địa chỉ của khách hàng ", "Thông báo");
+                    return;
+                }
+                if (!CheckIsPhone(txbPhoneNumber.Text))
+                {
+                    MessageBox.Show("Số điện thoại không đúng đinh dạng", "Thông báo");
+                    return;
+                }
+                if (!CheckIsMail(txbEmail.Text))
+                {
+                    MessageBox.Show("Email không đúng đinh dạng", "Thông báo");
+                    return;
+                }
 
 
-            string name = txbCustomerName.Text;
-            string address = txbCustomerAddress.Text;
-            string phonenumber = txbPhoneNumber.Text;
-            string email = txbEmail.Text;
-            float owe = 0.0f;
-            if (AddCustomer(name, address, phonenumber, email, owe))
-            {
-                MessageBox.Show("Thêm khách hàng thành công !");
-                LoadListCustomerIntoCombobox();
-                txbIdCustomer.Text = CustomerDAO.Instance.GetNewIDCustomer().ToString();
+                string name = txbCustomerName.Text;
+                string address = txbCustomerAddress.Text;
+                string phonenumber = txbPhoneNumber.Text;
+                string email = txbEmail.Text;
+                float owe = 0.0f;
+                if (AddCustomer(name, address, phonenumber, email, owe))
+                {
+                    MessageBox.Show("Thêm khách hàng thành công !", "Thông báo");
+                    LoadListCustomerIntoCombobox();
+                    txbCustomerName.Text = "";
+                    txbCustomerAddress.Text = "";
+                    txbPhoneNumber.Text = "";
+                    txbEmail.Text = "";
+                    txbIdCustomer.Text = CustomerDAO.Instance.GetNewIDCustomer().ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm không thành công!", "Thông báo");
+                }
             }
-            else
-                MessageBox.Show("Thêm không thành công!");
+            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
+
+        private void txbReceiveMoney_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!Char.IsControl(e.KeyChar) && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        #endregion
     }
 }

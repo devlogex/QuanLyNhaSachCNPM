@@ -37,6 +37,7 @@
             this.btnUpdateBookTitle = new System.Windows.Forms.Button();
             this.btnAddBookTitle = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvManageBookTitle = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +49,7 @@
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvManageBookTitle)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,15 +146,26 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dtgvManageBookTitle);
+            this.groupBox2.Controls.Add(this.panel2);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
+            this.groupBox2.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(0, 72);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(964, 417);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Đầu sách";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dtgvManageBookTitle);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(3, 26);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(958, 388);
+            this.panel2.TabIndex = 4;
             // 
             // dtgvManageBookTitle
             // 
@@ -168,20 +181,20 @@
             this.author,
             this.countVersion,
             this.totalCount});
-            this.dtgvManageBookTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvManageBookTitle.Location = new System.Drawing.Point(3, 22);
+            this.dtgvManageBookTitle.Location = new System.Drawing.Point(50, 14);
             this.dtgvManageBookTitle.Name = "dtgvManageBookTitle";
             this.dtgvManageBookTitle.ReadOnly = true;
             this.dtgvManageBookTitle.RowHeadersVisible = false;
             this.dtgvManageBookTitle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvManageBookTitle.Size = new System.Drawing.Size(958, 392);
-            this.dtgvManageBookTitle.TabIndex = 3;
+            this.dtgvManageBookTitle.Size = new System.Drawing.Size(858, 365);
+            this.dtgvManageBookTitle.TabIndex = 4;
             // 
             // STT
             // 
             this.STT.HeaderText = "STT";
             this.STT.Name = "STT";
             this.STT.ReadOnly = true;
+            this.STT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // id
             // 
@@ -190,6 +203,7 @@
             this.id.HeaderText = "Mã đầu sách";
             this.id.Name = "id";
             this.id.ReadOnly = true;
+            this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // name
             // 
@@ -198,6 +212,7 @@
             this.name.HeaderText = "Tên đầu sách";
             this.name.Name = "name";
             this.name.ReadOnly = true;
+            this.name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // category
             // 
@@ -206,6 +221,7 @@
             this.category.HeaderText = "Thể loại sách";
             this.category.Name = "category";
             this.category.ReadOnly = true;
+            this.category.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // author
             // 
@@ -214,6 +230,7 @@
             this.author.HeaderText = "Tác giả";
             this.author.Name = "author";
             this.author.ReadOnly = true;
+            this.author.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // countVersion
             // 
@@ -222,6 +239,7 @@
             this.countVersion.HeaderText = "Số phiên bản";
             this.countVersion.Name = "countVersion";
             this.countVersion.ReadOnly = true;
+            this.countVersion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // totalCount
             // 
@@ -230,6 +248,7 @@
             this.totalCount.HeaderText = "Tổng lượng tồn";
             this.totalCount.Name = "totalCount";
             this.totalCount.ReadOnly = true;
+            this.totalCount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // FManageBookTitle
             // 
@@ -248,6 +267,7 @@
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvManageBookTitle)).EndInit();
             this.ResumeLayout(false);
 
@@ -263,6 +283,8 @@
         private System.Windows.Forms.Button btnRemoveBookTitle;
         private System.Windows.Forms.Button btnUpdateBookTitle;
         private System.Windows.Forms.Button btnAddBookTitle;
+        private System.Windows.Forms.Button btnSearchBook;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dtgvManageBookTitle;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
@@ -271,6 +293,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn author;
         private System.Windows.Forms.DataGridViewTextBoxColumn countVersion;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalCount;
-        private System.Windows.Forms.Button btnSearchBook;
     }
 }
