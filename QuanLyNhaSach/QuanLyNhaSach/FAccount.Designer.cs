@@ -33,16 +33,16 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvAccount = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passWord = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.displayName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnRemoveAccount = new System.Windows.Forms.Button();
             this.btnUpdateAccount = new System.Windows.Forms.Button();
             this.btnAddAccount = new System.Windows.Forms.Button();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passWord = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.displayName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -112,49 +112,6 @@
             this.dtgvAccount.Size = new System.Drawing.Size(754, 264);
             this.dtgvAccount.TabIndex = 3;
             // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            this.STT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // userName
-            // 
-            this.userName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.userName.DataPropertyName = "userName";
-            this.userName.HeaderText = "Tên đăng nhập";
-            this.userName.Name = "userName";
-            this.userName.ReadOnly = true;
-            this.userName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // passWord
-            // 
-            this.passWord.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.passWord.DataPropertyName = "passWord";
-            this.passWord.HeaderText = "Mật khẩu";
-            this.passWord.Name = "passWord";
-            this.passWord.ReadOnly = true;
-            this.passWord.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // displayName
-            // 
-            this.displayName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.displayName.DataPropertyName = "displayName";
-            this.displayName.HeaderText = "Tên hiển thị";
-            this.displayName.Name = "displayName";
-            this.displayName.ReadOnly = true;
-            this.displayName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // type
-            // 
-            this.type.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.type.DataPropertyName = "type";
-            this.type.HeaderText = "Loại tài khoản";
-            this.type.Name = "type";
-            this.type.ReadOnly = true;
-            this.type.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnExit);
@@ -208,6 +165,44 @@
             this.btnAddAccount.Text = "Thêm";
             this.btnAddAccount.UseVisualStyleBackColor = true;
             this.btnAddAccount.Click += new System.EventHandler(this.btnAddAccount_Click);
+            // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            // 
+            // userName
+            // 
+            this.userName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.userName.DataPropertyName = "userName";
+            this.userName.HeaderText = "Tên đăng nhập";
+            this.userName.Name = "userName";
+            this.userName.ReadOnly = true;
+            // 
+            // passWord
+            // 
+            this.passWord.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.passWord.DataPropertyName = "passWord";
+            this.passWord.HeaderText = "Mật khẩu";
+            this.passWord.Name = "passWord";
+            this.passWord.ReadOnly = true;
+            // 
+            // displayName
+            // 
+            this.displayName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.displayName.DataPropertyName = "displayName";
+            this.displayName.HeaderText = "Tên hiển thị";
+            this.displayName.Name = "displayName";
+            this.displayName.ReadOnly = true;
+            // 
+            // type
+            // 
+            this.type.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.type.DataPropertyName = "type";
+            this.type.HeaderText = "Loại tài khoản";
+            this.type.Name = "type";
+            this.type.ReadOnly = true;
             // 
             // FAccount
             // 

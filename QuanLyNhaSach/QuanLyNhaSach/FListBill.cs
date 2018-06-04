@@ -42,6 +42,22 @@ namespace QuanLyNhaSach
             }
 
             dtgvListBill.CellClick += dtgvListBill_CellClick;
+
+            dtgvListBill.Sorted += delegate (object _sender, EventArgs _e)
+            {
+                for (int i = 0; i < dtgvListBill.Rows.Count; i++)
+                {
+                    dtgvListBill.Rows[i].Cells["STT"].Value = i + 1;
+                }
+            };
+
+            dtgvListBillInfo.Sorted += delegate (object _sender, EventArgs _e)
+            {
+                for (int i = 0; i < dtgvListBillInfo.Rows.Count; i++)
+                {
+                    dtgvListBillInfo.Rows[i].Cells["STT2"].Value = i + 1;
+                }
+            };
         }
 
         private void dtgvListBill_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -83,9 +99,16 @@ namespace QuanLyNhaSach
                     ExportDataToPDF.Instance.GetPhrase("Ngày lập: "+ dtgvListBill.SelectedRows[0].Cells["date"].Value.ToString()+'\n'),
                     ExportDataToPDF.Instance.GetPhrase("Tổng tiền: "+dtgvListBill.SelectedRows[0].Cells["value"].Value.ToString()+'\n'),
                 };
-                ExportDataToPDF.Instance.ExportDataToPdf(name, data, ExportDataToPDF.Instance.GetTable(dtgvListBillInfo));
-                if (MessageBox.Show("In thành công ! Bạn có muốn mở file ?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    Process.Start(name);
+                string path=ExportDataToPDF.Instance.ExportDataToPdf(name, data, ExportDataToPDF.Instance.GetTable(dtgvListBillInfo));
+                if (path != "")
+                {
+                    if (MessageBox.Show("In thành công ! Bạn có muốn mở file ?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        Process.Start(path);
+                }
+                else
+                {
+                    MessageBox.Show("In thất bại !", "Thông báo");
+                }
             }
             catch { MessageBox.Show("In thất bại ", "Thông báo"); }
         }

@@ -51,6 +51,11 @@ namespace QuanLyNhaSach
             dtgvBill.EditingControlShowing += dtgvBill_EditingControlShowing;
             dtgvBill.RowsAdded += dtgvBill_RowsAdded;
             dtgvBill.RowsRemoved += dtgvBill_RowsRemoved;
+
+            dtgvBill.Sorted += delegate (object _sender, EventArgs _e)
+            {
+                LoadSTT();
+            };
         }
 
         private void LoadListCustomerIntoCombobox()
@@ -339,9 +344,16 @@ namespace QuanLyNhaSach
                     ExportDataToPDF.Instance.GetPhrase("Còn lại: "+txbMoneyOwe.Text+'\n')
 
                 };
-                ExportDataToPDF.Instance.ExportDataToPdf(name, data, ExportDataToPDF.Instance.GetTable(dtgvBill));
-                if (MessageBox.Show("In thành công ! Bạn có muốn mở file ?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    Process.Start( name);
+                string path=ExportDataToPDF.Instance.ExportDataToPdf(name, data, ExportDataToPDF.Instance.GetTable(dtgvBill));
+                if (path != "")
+                {
+                    if (MessageBox.Show("In thành công ! Bạn có muốn mở file ?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        Process.Start(path);
+                }
+                else
+                {
+                    MessageBox.Show("In thất bại !", "Thông báo");
+                }
             }
             catch { MessageBox.Show("In thất bại "); }
         }

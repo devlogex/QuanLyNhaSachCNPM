@@ -55,6 +55,11 @@ namespace QuanLyNhaSach
             dtgvImportBook.EditingControlShowing += dtgvImportBook_EditingControlShowing;
             dtgvImportBook.RowsAdded += dtgvImportBook_RowsAdded;
             dtgvImportBook.RowsRemoved += dtgvImportBook_RowsRemoved;
+
+            dtgvImportBook.Sorted += delegate (object _sender, EventArgs _e)
+            {
+                LoadSTT();
+            };
         }
         public void LoadSTT()
         {
@@ -372,9 +377,16 @@ namespace QuanLyNhaSach
                     ExportDataToPDF.Instance.GetPhrase("Ngày lập: \t"+ dtpk.Value.ToString()+'\n'),
                     ExportDataToPDF.Instance.GetPhrase("Tổng tiền: \t"+txbTotalPrice.Text+'\n')
                 };
-                ExportDataToPDF.Instance.ExportDataToPdf(name,data,ExportDataToPDF.Instance.GetTable(dtgvImportBook));
-                if(MessageBox.Show("In thành công ! Bạn có muốn mở file ?","Thông báo",MessageBoxButtons.YesNo)==DialogResult.Yes)
-                    Process.Start(name);
+                string path=ExportDataToPDF.Instance.ExportDataToPdf(name,data,ExportDataToPDF.Instance.GetTable(dtgvImportBook));
+                if (path != "")
+                {
+                    if (MessageBox.Show("In thành công ! Bạn có muốn mở file ?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        Process.Start(path);
+                }
+                else
+                {
+                    MessageBox.Show("In thất bại !", "Thông báo");
+                }
             }
             catch { MessageBox.Show("In thất bại "); }
 

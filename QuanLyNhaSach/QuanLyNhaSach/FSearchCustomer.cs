@@ -40,6 +40,11 @@ namespace QuanLyNhaSach
             txbEmail.Enabled = false;
             nmOweFrom.Enabled = false;
             nmOweTo.Enabled = false;
+
+            dtgvManageCustomer.Sorted += delegate (object _sender, EventArgs _e)
+            {
+                LoadSTT();
+            };
         }
         public void LoadListCustomer()
         {

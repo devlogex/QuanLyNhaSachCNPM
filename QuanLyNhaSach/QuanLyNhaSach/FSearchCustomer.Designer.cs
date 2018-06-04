@@ -138,6 +138,7 @@
             // dtgvManageCustomer
             // 
             this.dtgvManageCustomer.AllowUserToAddRows = false;
+            this.dtgvManageCustomer.AllowUserToDeleteRows = false;
             this.dtgvManageCustomer.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             this.dtgvManageCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvManageCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {

@@ -140,9 +140,16 @@ namespace QuanLyNhaSach
                     ExportDataToPDF.Instance.GetPhrase("Số tiền nợ: "+txbMoneyOwe.Text+'\n'),
                     ExportDataToPDF.Instance.GetPhrase("Số tiền thu: "+txbReceiveMoney.Text+'\n')
                 };
-                ExportDataToPDF.Instance.ExportDataToPdf(name, data);
-                if (MessageBox.Show("In thành công ! Bạn có muốn mở file ?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    Process.Start(name);
+                string path=ExportDataToPDF.Instance.ExportDataToPdf(name, data);
+                if (path != "")
+                {
+                    if (MessageBox.Show("In thành công ! Bạn có muốn mở file ?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        Process.Start(path);
+                }
+                else
+                {
+                    MessageBox.Show("In thất bại !", "Thông báo");
+                }
             }
             catch { MessageBox.Show("In thất bại ", "Thông báo"); }
         }

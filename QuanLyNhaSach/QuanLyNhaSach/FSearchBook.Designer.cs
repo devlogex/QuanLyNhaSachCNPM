@@ -37,13 +37,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvManageBookTitle = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.author = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ckbIDBookTitle = new System.Windows.Forms.CheckBox();
             this.ckbAuthor = new System.Windows.Forms.CheckBox();
             this.ckbCount = new System.Windows.Forms.CheckBox();
@@ -58,6 +51,13 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.nmCountTo = new System.Windows.Forms.NumericUpDown();
             this.nmCountFrom = new System.Windows.Forms.NumericUpDown();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.author = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -165,67 +165,6 @@
             this.dtgvManageBookTitle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvManageBookTitle.Size = new System.Drawing.Size(910, 160);
             this.dtgvManageBookTitle.TabIndex = 5;
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            this.STT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "Mã đầu sách";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // name
-            // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "Tên đầu sách";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            this.name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // category
-            // 
-            this.category.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.category.DataPropertyName = "category";
-            this.category.HeaderText = "Thể loại sách";
-            this.category.Name = "category";
-            this.category.ReadOnly = true;
-            this.category.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // author
-            // 
-            this.author.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.author.DataPropertyName = "author";
-            this.author.HeaderText = "Tác giả";
-            this.author.Name = "author";
-            this.author.ReadOnly = true;
-            this.author.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // countVersion
-            // 
-            this.countVersion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.countVersion.DataPropertyName = "countVersion";
-            this.countVersion.HeaderText = "Số phiên bản";
-            this.countVersion.Name = "countVersion";
-            this.countVersion.ReadOnly = true;
-            this.countVersion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // totalCount
-            // 
-            this.totalCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.totalCount.DataPropertyName = "totalCount";
-            this.totalCount.HeaderText = "Tổng lượng tồn";
-            this.totalCount.Name = "totalCount";
-            this.totalCount.ReadOnly = true;
-            this.totalCount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // ckbIDBookTitle
             // 
@@ -392,6 +331,60 @@
             this.nmCountFrom.Name = "nmCountFrom";
             this.nmCountFrom.Size = new System.Drawing.Size(84, 26);
             this.nmCountFrom.TabIndex = 9;
+            // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "Mã đầu sách";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Tên đầu sách";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // category
+            // 
+            this.category.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.category.DataPropertyName = "category";
+            this.category.HeaderText = "Thể loại sách";
+            this.category.Name = "category";
+            this.category.ReadOnly = true;
+            // 
+            // author
+            // 
+            this.author.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.author.DataPropertyName = "author";
+            this.author.HeaderText = "Tác giả";
+            this.author.Name = "author";
+            this.author.ReadOnly = true;
+            // 
+            // countVersion
+            // 
+            this.countVersion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.countVersion.DataPropertyName = "countVersion";
+            this.countVersion.HeaderText = "Số phiên bản";
+            this.countVersion.Name = "countVersion";
+            this.countVersion.ReadOnly = true;
+            // 
+            // totalCount
+            // 
+            this.totalCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.totalCount.DataPropertyName = "totalCount";
+            this.totalCount.HeaderText = "Tổng lượng tồn";
+            this.totalCount.Name = "totalCount";
+            this.totalCount.ReadOnly = true;
             // 
             // FSearchBook
             // 

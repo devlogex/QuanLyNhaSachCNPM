@@ -28,6 +28,14 @@ namespace QuanLyNhaSach
                     dtgvManageBookTitle.Rows[i].Cells["STT"].Value = i + 1;
                 }
             };
+
+            dtgvManageBookTitle.Sorted += delegate (object _sender, EventArgs _e)
+            {
+                for (int i = 0; i < dtgvManageBookTitle.Rows.Count; i++)
+                {
+                    dtgvManageBookTitle.Rows[i].Cells["STT"].Value = i + 1;
+                }
+            };
         }
         public void LoadListBookTitle()
         {

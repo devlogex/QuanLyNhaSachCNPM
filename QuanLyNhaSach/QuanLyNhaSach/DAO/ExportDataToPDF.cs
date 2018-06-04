@@ -18,54 +18,14 @@ namespace QuanLyNhaSach.DAO
     public class ExportDataToPDF
     {
         private static ExportDataToPDF instance;
-
         public static ExportDataToPDF Instance
         {
             get { if (instance == null) instance = new ExportDataToPDF(); return instance; }
             set => instance = value;
         }
+
         private ExportDataToPDF() { }
 
-        //public bool EDTGVToPdf(DataGridView dtgv, string name)
-        //{
-
-        //        BaseFont font = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
-        //        PdfPTable table = new PdfPTable(dtgv.ColumnCount);
-        //        table.DefaultCell.Padding = 3;
-        //        table.WidthPercentage = 100;
-        //        table.HorizontalAlignment = Element.ALIGN_LEFT;
-        //        table.DefaultCell.BorderWidth = 1;
-
-        //        Font text = new Font(font, 10, Font.NORMAL);
-        //        foreach (DataGridViewColumn item in dtgv.Columns)
-        //        {
-        //            PdfPCell cell = new PdfPCell(new Phrase(item.Name, text));
-        //            cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
-        //            table.AddCell(cell);
-        //        }
-
-        //        foreach (DataGridViewRow row in dtgv.Rows)
-        //        {
-        //            foreach (DataGridViewCell cell in row.Cells)
-        //            {
-        //                if(cell.Value!=null)
-        //                    table.AddCell(new Phrase(cell.Value.ToString(), text));
-        //                else
-        //                table.AddCell(new Phrase("", text));
-        //        }
-        //    }
-
-        //        using (FileStream stream = new FileStream(name, FileMode.Create))
-        //        {
-        //            Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
-        //            PdfWriter.GetInstance(pdfDoc, stream);
-        //            pdfDoc.Open();
-        //            pdfDoc.Add(table);
-        //            pdfDoc.Close();
-        //            stream.Close();
-        //        }
-        //        return true;
-        //}
         public static string convertToUnSign3(string s)
         {
             Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
@@ -116,21 +76,39 @@ namespace QuanLyNhaSach.DAO
             Phrase phrase = new Phrase(convertToUnSign3(data), text);
             return phrase;
         }
-        public bool ExportDataToPdf(string name,List<Phrase> datas, PdfPTable table=null)
+        public string ExportDataToPdf(string name,List<Phrase> datas, PdfPTable table=null)
         {
-            using (FileStream stream = new FileStream(name, FileMode.Create))
+            try
             {
-                Document pdfDoc = new Document(PageSize.A4, 30f, 30f, 30f, 0f);
-                PdfWriter.GetInstance(pdfDoc, stream);
-                pdfDoc.Open();
-                foreach (Phrase item in datas)
-                    pdfDoc.Add(item);
-                if(table!=null)
-                    pdfDoc.Add(table);
-                pdfDoc.Close();
-                stream.Close();
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+                saveFileDialog.Filter = "pdf files (*.pdf)|*.pdf|All files (*.*)|*.*";
+                saveFileDialog.FilterIndex = 2;
+                saveFileDialog.RestoreDirectory = false;
+                saveFileDialog.FileName = name;
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (FileStream stream = new FileStream(saveFileDialog.FileName, FileMode.Create))
+                    {
+                        Document pdfDoc = new Document(PageSize.A4, 30f, 30f, 30f, 0f);
+                        PdfWriter.GetInstance(pdfDoc, stream);
+                        pdfDoc.Open();
+                        foreach (Phrase item in datas)
+                            pdfDoc.Add(item);
+                        if (table != null)
+                            pdfDoc.Add(table);
+                        pdfDoc.Close();
+                        stream.Close();
+                    }
+                    return saveFileDialog.FileName;
+                }
+                return "";
             }
-            return true;
+            catch
+            {
+                return "";
+            }
         }
     }
 }

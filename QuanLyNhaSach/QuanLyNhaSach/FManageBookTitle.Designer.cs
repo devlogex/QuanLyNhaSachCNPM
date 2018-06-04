@@ -194,7 +194,6 @@
             this.STT.HeaderText = "STT";
             this.STT.Name = "STT";
             this.STT.ReadOnly = true;
-            this.STT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // id
             // 
@@ -203,7 +202,6 @@
             this.id.HeaderText = "Mã đầu sách";
             this.id.Name = "id";
             this.id.ReadOnly = true;
-            this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // name
             // 
@@ -212,7 +210,6 @@
             this.name.HeaderText = "Tên đầu sách";
             this.name.Name = "name";
             this.name.ReadOnly = true;
-            this.name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // category
             // 
@@ -221,7 +218,6 @@
             this.category.HeaderText = "Thể loại sách";
             this.category.Name = "category";
             this.category.ReadOnly = true;
-            this.category.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // author
             // 
@@ -230,7 +226,6 @@
             this.author.HeaderText = "Tác giả";
             this.author.Name = "author";
             this.author.ReadOnly = true;
-            this.author.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // countVersion
             // 
@@ -239,7 +234,6 @@
             this.countVersion.HeaderText = "Số phiên bản";
             this.countVersion.Name = "countVersion";
             this.countVersion.ReadOnly = true;
-            this.countVersion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // totalCount
             // 
@@ -248,7 +242,6 @@
             this.totalCount.HeaderText = "Tổng lượng tồn";
             this.totalCount.Name = "totalCount";
             this.totalCount.ReadOnly = true;
-            this.totalCount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // FManageBookTitle
             // 

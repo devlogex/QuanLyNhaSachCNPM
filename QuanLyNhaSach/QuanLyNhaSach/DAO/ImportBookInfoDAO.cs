@@ -33,8 +33,6 @@ namespace QuanLyNhaSach.DAO
             }
             return list;
         }
-        //public DataTable LoadListImportBookInfo(int id)
-        //{
-        //    return DataProvider.Instance.ExecuteQuery("EXEC USP_LoadListImportBookInfo @id", new object[] { id });
+       
     }
 }

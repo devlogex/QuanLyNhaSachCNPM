@@ -28,7 +28,15 @@ namespace QuanLyNhaSach
                 for (int i = 0; i < dtgvAccount.RowCount; i++)
                     dtgvAccount.Rows[i].Cells["STT"].Value = i + 1;
             };
+
+            dtgvAccount.Sorted += delegate (object _sender, EventArgs _e)
+            {
+                for (int i = 0; i < dtgvAccount.RowCount; i++)
+                    dtgvAccount.Rows[i].Cells["STT"].Value = i + 1;
+            };
         }
+
+
         public void LoadAccount()
         {
             dtgvAccount.DataSource = AccountDAO.Instance.GetListAccount();

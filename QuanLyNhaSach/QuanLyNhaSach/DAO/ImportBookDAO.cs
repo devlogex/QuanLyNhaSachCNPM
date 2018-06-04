@@ -34,15 +34,5 @@ namespace QuanLyNhaSach.DAO
         {
             return DataProvider.Instance.ExecuteNonQuery("EXEC USP_InsertImportBookIntoDatabase @date", new object[] { date }) > 0;
         }
-        // public List<ImportBook> GetListImportBook()
-        // {
-        //     List<ImportBook> list = new List<ImportBook>();
-        //     DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_GetListImportBook");
-        //     foreach(DataRow item in data.Rows)
-        //     {
-        //         list.Add(new ImportBook(item));
-        //     }
-        //     return list;
-        // }
     }
 }

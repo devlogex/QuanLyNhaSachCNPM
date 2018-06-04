@@ -33,12 +33,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvListBill = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
@@ -46,6 +40,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dtgvListBillInfo = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.STT2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idBookTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,8 +51,12 @@
             this.publishing = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.count = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -123,53 +123,6 @@
             this.dtgvListBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvListBill.Size = new System.Drawing.Size(733, 145);
             this.dtgvListBill.TabIndex = 2;
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            this.STT.Width = 40;
-            // 
-            // idBill
-            // 
-            this.idBill.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idBill.DataPropertyName = "idBill";
-            this.idBill.HeaderText = "Số hóa đơn";
-            this.idBill.Name = "idBill";
-            this.idBill.ReadOnly = true;
-            // 
-            // idCustomer
-            // 
-            this.idCustomer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idCustomer.DataPropertyName = "idCustomer";
-            this.idCustomer.HeaderText = "Mã khách hàng";
-            this.idCustomer.Name = "idCustomer";
-            this.idCustomer.ReadOnly = true;
-            // 
-            // nameCustomer
-            // 
-            this.nameCustomer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameCustomer.DataPropertyName = "nameCustomer";
-            this.nameCustomer.HeaderText = "Tên khách hàng";
-            this.nameCustomer.Name = "nameCustomer";
-            this.nameCustomer.ReadOnly = true;
-            // 
-            // date
-            // 
-            this.date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.date.DataPropertyName = "date";
-            this.date.HeaderText = "Ngày lập";
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            // 
-            // value
-            // 
-            this.value.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.value.DataPropertyName = "value";
-            this.value.HeaderText = "Tổng tiền";
-            this.value.Name = "value";
-            this.value.ReadOnly = true;
             // 
             // label3
             // 
@@ -263,91 +216,6 @@
             this.dtgvListBillInfo.Size = new System.Drawing.Size(753, 167);
             this.dtgvListBillInfo.TabIndex = 3;
             // 
-            // STT2
-            // 
-            this.STT2.FillWeight = 23.13222F;
-            this.STT2.HeaderText = "STT";
-            this.STT2.Name = "STT2";
-            this.STT2.ReadOnly = true;
-            this.STT2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.STT2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.STT2.Width = 40;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.FillWeight = 406.0914F;
-            this.id.HeaderText = "Mã sách";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // idBookTitle
-            // 
-            this.idBookTitle.DataPropertyName = "idBookTitle";
-            this.idBookTitle.HeaderText = "Mã đầu sách";
-            this.idBookTitle.Name = "idBookTitle";
-            this.idBookTitle.ReadOnly = true;
-            this.idBookTitle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.idBookTitle.Visible = false;
-            // 
-            // name
-            // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.name.DataPropertyName = "name";
-            this.name.FillWeight = 61.79606F;
-            this.name.HeaderText = "Tên sách";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            this.name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // category
-            // 
-            this.category.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.category.DataPropertyName = "category";
-            this.category.FillWeight = 61.79606F;
-            this.category.HeaderText = "Thể loại";
-            this.category.Name = "category";
-            this.category.ReadOnly = true;
-            this.category.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // author
-            // 
-            this.author.DataPropertyName = "author";
-            this.author.HeaderText = "Tác giả";
-            this.author.Name = "author";
-            this.author.ReadOnly = true;
-            this.author.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // publishing
-            // 
-            this.publishing.DataPropertyName = "publishing";
-            this.publishing.HeaderText = "Nhà  XB/Năm XB";
-            this.publishing.Name = "publishing";
-            this.publishing.ReadOnly = true;
-            this.publishing.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // count
-            // 
-            this.count.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.count.DataPropertyName = "count";
-            this.count.FillWeight = 61.79606F;
-            this.count.HeaderText = "Số lượng";
-            this.count.Name = "count";
-            this.count.ReadOnly = true;
-            this.count.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // priceOut
-            // 
-            this.priceOut.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.priceOut.DataPropertyName = "priceOut";
-            this.priceOut.FillWeight = 61.79606F;
-            this.priceOut.HeaderText = "Đơn giá bán";
-            this.priceOut.Name = "priceOut";
-            this.priceOut.ReadOnly = true;
-            this.priceOut.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -367,6 +235,129 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(807, 70);
             this.panel1.TabIndex = 10;
+            // 
+            // STT2
+            // 
+            this.STT2.FillWeight = 23.13222F;
+            this.STT2.HeaderText = "STT";
+            this.STT2.Name = "STT2";
+            this.STT2.ReadOnly = true;
+            this.STT2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.STT2.Width = 40;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.FillWeight = 406.0914F;
+            this.id.HeaderText = "Mã sách";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // idBookTitle
+            // 
+            this.idBookTitle.DataPropertyName = "idBookTitle";
+            this.idBookTitle.HeaderText = "Mã đầu sách";
+            this.idBookTitle.Name = "idBookTitle";
+            this.idBookTitle.ReadOnly = true;
+            this.idBookTitle.Visible = false;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.DataPropertyName = "name";
+            this.name.FillWeight = 61.79606F;
+            this.name.HeaderText = "Tên sách";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // category
+            // 
+            this.category.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.category.DataPropertyName = "category";
+            this.category.FillWeight = 61.79606F;
+            this.category.HeaderText = "Thể loại";
+            this.category.Name = "category";
+            this.category.ReadOnly = true;
+            // 
+            // author
+            // 
+            this.author.DataPropertyName = "author";
+            this.author.HeaderText = "Tác giả";
+            this.author.Name = "author";
+            this.author.ReadOnly = true;
+            // 
+            // publishing
+            // 
+            this.publishing.DataPropertyName = "publishing";
+            this.publishing.HeaderText = "Nhà  XB/Năm XB";
+            this.publishing.Name = "publishing";
+            this.publishing.ReadOnly = true;
+            // 
+            // count
+            // 
+            this.count.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.count.DataPropertyName = "count";
+            this.count.FillWeight = 61.79606F;
+            this.count.HeaderText = "Số lượng";
+            this.count.Name = "count";
+            this.count.ReadOnly = true;
+            // 
+            // priceOut
+            // 
+            this.priceOut.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.priceOut.DataPropertyName = "priceOut";
+            this.priceOut.FillWeight = 61.79606F;
+            this.priceOut.HeaderText = "Đơn giá bán";
+            this.priceOut.Name = "priceOut";
+            this.priceOut.ReadOnly = true;
+            // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            this.STT.Width = 40;
+            // 
+            // idBill
+            // 
+            this.idBill.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idBill.DataPropertyName = "idBill";
+            this.idBill.HeaderText = "Số hóa đơn";
+            this.idBill.Name = "idBill";
+            this.idBill.ReadOnly = true;
+            // 
+            // idCustomer
+            // 
+            this.idCustomer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idCustomer.DataPropertyName = "idCustomer";
+            this.idCustomer.HeaderText = "Mã khách hàng";
+            this.idCustomer.Name = "idCustomer";
+            this.idCustomer.ReadOnly = true;
+            // 
+            // nameCustomer
+            // 
+            this.nameCustomer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameCustomer.DataPropertyName = "nameCustomer";
+            this.nameCustomer.HeaderText = "Tên khách hàng";
+            this.nameCustomer.Name = "nameCustomer";
+            this.nameCustomer.ReadOnly = true;
+            // 
+            // date
+            // 
+            this.date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.date.DataPropertyName = "date";
+            this.date.HeaderText = "Ngày lập";
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            // 
+            // value
+            // 
+            this.value.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.value.DataPropertyName = "value";
+            this.value.HeaderText = "Tổng tiền";
+            this.value.Name = "value";
+            this.value.ReadOnly = true;
             // 
             // FListBill
             // 
@@ -409,14 +400,14 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dtgvListBill;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.DataGridView dtgvListBillInfo;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn idBill;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCustomer;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameCustomer;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn value;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.DataGridView dtgvListBillInfo;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT2;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn idBookTitle;

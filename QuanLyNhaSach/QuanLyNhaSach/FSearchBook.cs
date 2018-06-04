@@ -46,6 +46,11 @@ namespace QuanLyNhaSach
             cbAuthor.Enabled = false;
             nmCountFrom.Enabled = false;
             nmCountTo.Enabled = false;
+
+            dtgvManageBookTitle.Sorted += delegate (object _sender, EventArgs _e)
+            {
+                LoadSTT();
+            };
         }
         public void LoadListBookTitle()
         {

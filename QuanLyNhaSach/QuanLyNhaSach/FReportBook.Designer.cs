@@ -42,12 +42,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvReportBook = new System.Windows.Forms.DataGridView();
+            this.btnReportBook = new System.Windows.Forms.Button();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnReportBook = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -250,45 +250,6 @@
             this.dtgvReportBook.Size = new System.Drawing.Size(652, 240);
             this.dtgvReportBook.TabIndex = 4;
             // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            this.STT.Width = 50;
-            // 
-            // idBook
-            // 
-            this.idBook.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idBook.DataPropertyName = "idBook";
-            this.idBook.HeaderText = "Mã sách";
-            this.idBook.Name = "idBook";
-            this.idBook.ReadOnly = true;
-            // 
-            // firstCount
-            // 
-            this.firstCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.firstCount.DataPropertyName = "firstCount";
-            this.firstCount.HeaderText = "Tồn đầu";
-            this.firstCount.Name = "firstCount";
-            this.firstCount.ReadOnly = true;
-            // 
-            // addCount
-            // 
-            this.addCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.addCount.DataPropertyName = "addCount";
-            this.addCount.HeaderText = "Phát sinh";
-            this.addCount.Name = "addCount";
-            this.addCount.ReadOnly = true;
-            // 
-            // lastCount
-            // 
-            this.lastCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.lastCount.DataPropertyName = "lastCount";
-            this.lastCount.HeaderText = "Tồn cuối";
-            this.lastCount.Name = "lastCount";
-            this.lastCount.ReadOnly = true;
-            // 
             // btnReportBook
             // 
             this.btnReportBook.BackColor = System.Drawing.SystemColors.Control;
@@ -301,6 +262,50 @@
             this.btnReportBook.Text = "Thống kê";
             this.btnReportBook.UseVisualStyleBackColor = false;
             this.btnReportBook.Click += new System.EventHandler(this.btnReportBook_Click);
+            // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            this.STT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.STT.Width = 50;
+            // 
+            // idBook
+            // 
+            this.idBook.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idBook.DataPropertyName = "idBook";
+            this.idBook.HeaderText = "Mã sách";
+            this.idBook.Name = "idBook";
+            this.idBook.ReadOnly = true;
+            this.idBook.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // firstCount
+            // 
+            this.firstCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.firstCount.DataPropertyName = "firstCount";
+            this.firstCount.HeaderText = "Tồn đầu";
+            this.firstCount.Name = "firstCount";
+            this.firstCount.ReadOnly = true;
+            this.firstCount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // addCount
+            // 
+            this.addCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.addCount.DataPropertyName = "addCount";
+            this.addCount.HeaderText = "Phát sinh";
+            this.addCount.Name = "addCount";
+            this.addCount.ReadOnly = true;
+            this.addCount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // lastCount
+            // 
+            this.lastCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.lastCount.DataPropertyName = "lastCount";
+            this.lastCount.HeaderText = "Tồn cuối";
+            this.lastCount.Name = "lastCount";
+            this.lastCount.ReadOnly = true;
+            this.lastCount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // FReportBook
             // 

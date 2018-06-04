@@ -140,9 +140,16 @@ namespace QuanLyNhaSach
                     ExportDataToPDF.Instance.GetPhraseHeader("BÁO CÁO TỒN\n"),
                     ExportDataToPDF.Instance.GetPhrase("Tháng/Năm: "+nmMonth.Value.ToString()+"/"+nmYear.Value.ToString()),
                 };
-                ExportDataToPDF.Instance.ExportDataToPdf(name, data, ExportDataToPDF.Instance.GetTable(dtgvReportBook));
-                if (MessageBox.Show("In thành công ! Bạn có muốn mở file ?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    Process.Start(name);
+                string path=ExportDataToPDF.Instance.ExportDataToPdf(name, data, ExportDataToPDF.Instance.GetTable(dtgvReportBook));
+                if (path != "")
+                {
+                    if (MessageBox.Show("In thành công ! Bạn có muốn mở file ?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        Process.Start(path);
+                }
+                else
+                {
+                    MessageBox.Show("In thất bại !", "Thông báo");
+                }
             }
             catch { MessageBox.Show("In thất bại ", "Thông báo"); }
         }

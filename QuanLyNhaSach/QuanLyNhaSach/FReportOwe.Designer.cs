@@ -40,14 +40,14 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvReportOwe = new System.Windows.Forms.DataGridView();
+            this.btnReportOwe = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstOwe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addOwe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastOwe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnReportOwe = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -228,45 +228,6 @@
             this.dtgvReportOwe.Size = new System.Drawing.Size(652, 264);
             this.dtgvReportOwe.TabIndex = 4;
             // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            this.STT.Width = 50;
-            // 
-            // idCustomer
-            // 
-            this.idCustomer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idCustomer.DataPropertyName = "idCustomer";
-            this.idCustomer.HeaderText = "Mã khách hàng";
-            this.idCustomer.Name = "idCustomer";
-            this.idCustomer.ReadOnly = true;
-            // 
-            // firstOwe
-            // 
-            this.firstOwe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.firstOwe.DataPropertyName = "firstOwe";
-            this.firstOwe.HeaderText = "Nợ đầu";
-            this.firstOwe.Name = "firstOwe";
-            this.firstOwe.ReadOnly = true;
-            // 
-            // addOwe
-            // 
-            this.addOwe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.addOwe.DataPropertyName = "addOwe";
-            this.addOwe.HeaderText = "Phát sinh";
-            this.addOwe.Name = "addOwe";
-            this.addOwe.ReadOnly = true;
-            // 
-            // lastOwe
-            // 
-            this.lastOwe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.lastOwe.DataPropertyName = "lastOwe";
-            this.lastOwe.HeaderText = "Nợ cuối";
-            this.lastOwe.Name = "lastOwe";
-            this.lastOwe.ReadOnly = true;
-            // 
             // btnReportOwe
             // 
             this.btnReportOwe.BackColor = System.Drawing.SystemColors.Control;
@@ -299,6 +260,50 @@
             this.label3.Size = new System.Drawing.Size(445, 47);
             this.label3.TabIndex = 0;
             this.label3.Text = "LẬP BÁO CÁO CÔNG NỢ";
+            // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            this.STT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.STT.Width = 50;
+            // 
+            // idCustomer
+            // 
+            this.idCustomer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idCustomer.DataPropertyName = "idCustomer";
+            this.idCustomer.HeaderText = "Mã khách hàng";
+            this.idCustomer.Name = "idCustomer";
+            this.idCustomer.ReadOnly = true;
+            this.idCustomer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // firstOwe
+            // 
+            this.firstOwe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.firstOwe.DataPropertyName = "firstOwe";
+            this.firstOwe.HeaderText = "Nợ đầu";
+            this.firstOwe.Name = "firstOwe";
+            this.firstOwe.ReadOnly = true;
+            this.firstOwe.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // addOwe
+            // 
+            this.addOwe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.addOwe.DataPropertyName = "addOwe";
+            this.addOwe.HeaderText = "Phát sinh";
+            this.addOwe.Name = "addOwe";
+            this.addOwe.ReadOnly = true;
+            this.addOwe.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // lastOwe
+            // 
+            this.lastOwe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.lastOwe.DataPropertyName = "lastOwe";
+            this.lastOwe.HeaderText = "Nợ cuối";
+            this.lastOwe.Name = "lastOwe";
+            this.lastOwe.ReadOnly = true;
+            this.lastOwe.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // FReportOwe
             // 

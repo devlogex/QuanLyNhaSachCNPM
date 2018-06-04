@@ -31,6 +31,14 @@ namespace QuanLyNhaSach
                     dtgvManageCustomer.Rows[i].Cells["STT"].Value = i + 1;
                 }
             };
+
+            dtgvManageCustomer.Sorted += delegate (object _sender, EventArgs _e)
+            {
+                for (int i = 0; i < dtgvManageCustomer.Rows.Count; i++)
+                {
+                    dtgvManageCustomer.Rows[i].Cells["STT"].Value = i + 1;
+                }
+            };
         }
         public void LoadListCustomer()
         {

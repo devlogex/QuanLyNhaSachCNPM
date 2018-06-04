@@ -42,16 +42,16 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvManageCategory = new System.Windows.Forms.DataGridView();
-            this.STTCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dtgvManageAuthor = new System.Windows.Forms.DataGridView();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.STTCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.STTAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -222,31 +222,6 @@
             this.dtgvManageCategory.Size = new System.Drawing.Size(446, 367);
             this.dtgvManageCategory.TabIndex = 3;
             // 
-            // STTCategory
-            // 
-            this.STTCategory.HeaderText = "STT";
-            this.STTCategory.Name = "STTCategory";
-            this.STTCategory.ReadOnly = true;
-            this.STTCategory.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // idCategory
-            // 
-            this.idCategory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idCategory.DataPropertyName = "id";
-            this.idCategory.HeaderText = "Mã thể loại";
-            this.idCategory.Name = "idCategory";
-            this.idCategory.ReadOnly = true;
-            this.idCategory.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // nameCategory
-            // 
-            this.nameCategory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameCategory.DataPropertyName = "name";
-            this.nameCategory.HeaderText = "Tên thể loại";
-            this.nameCategory.Name = "nameCategory";
-            this.nameCategory.ReadOnly = true;
-            this.nameCategory.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.panel3);
@@ -287,12 +262,33 @@
             this.dtgvManageAuthor.Size = new System.Drawing.Size(421, 367);
             this.dtgvManageAuthor.TabIndex = 3;
             // 
+            // STTCategory
+            // 
+            this.STTCategory.HeaderText = "STT";
+            this.STTCategory.Name = "STTCategory";
+            this.STTCategory.ReadOnly = true;
+            // 
+            // idCategory
+            // 
+            this.idCategory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idCategory.DataPropertyName = "id";
+            this.idCategory.HeaderText = "Mã thể loại";
+            this.idCategory.Name = "idCategory";
+            this.idCategory.ReadOnly = true;
+            // 
+            // nameCategory
+            // 
+            this.nameCategory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameCategory.DataPropertyName = "name";
+            this.nameCategory.HeaderText = "Tên thể loại";
+            this.nameCategory.Name = "nameCategory";
+            this.nameCategory.ReadOnly = true;
+            // 
             // STTAuthor
             // 
             this.STTAuthor.HeaderText = "STT";
             this.STTAuthor.Name = "STTAuthor";
             this.STTAuthor.ReadOnly = true;
-            this.STTAuthor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // idAuthor
             // 
@@ -301,7 +297,6 @@
             this.idAuthor.HeaderText = "Mã tác giả";
             this.idAuthor.Name = "idAuthor";
             this.idAuthor.ReadOnly = true;
-            this.idAuthor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // nameAuthor
             // 
@@ -310,7 +305,6 @@
             this.nameAuthor.HeaderText = "Tên tác giả";
             this.nameAuthor.Name = "nameAuthor";
             this.nameAuthor.ReadOnly = true;
-            this.nameAuthor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // FManageCategoryAndAuthor
             // 

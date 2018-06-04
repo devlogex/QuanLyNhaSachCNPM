@@ -41,6 +41,22 @@ namespace QuanLyNhaSach
                     dtgvManageAuthor.Rows[i].Cells["STTAuthor"].Value = i + 1;
                 }
             };
+
+            dtgvManageAuthor.Sorted += delegate (object _sender, EventArgs _e)
+            {
+                for (int i = 0; i < dtgvManageAuthor.Rows.Count; i++)
+                {
+                    dtgvManageAuthor.Rows[i].Cells["STTAuthor"].Value = i + 1;
+                }
+            };
+
+            dtgvManageCategory.Sorted += delegate (object _sender, EventArgs _e)
+            {
+                for (int i = 0; i < dtgvManageCategory.Rows.Count; i++)
+                {
+                    dtgvManageCategory.Rows[i].Cells["STTCategory"].Value = i + 1;
+                }
+            };
         }
         void LoadListCategory()
         {
