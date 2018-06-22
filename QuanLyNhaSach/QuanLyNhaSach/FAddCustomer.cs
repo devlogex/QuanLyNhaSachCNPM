@@ -115,5 +115,10 @@ namespace QuanLyNhaSach
             catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
         #endregion
+
+        private void txbPhoneNumber_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

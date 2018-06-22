@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QuanLyNhaSach.DAO
 {
@@ -33,15 +34,15 @@ namespace QuanLyNhaSach.DAO
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
-                if(paramater != null)
+                if (paramater != null)
                 {
                     string[] listPara = query.Split(' ');
                     int i = 0;
-                    foreach(string item in listPara)
+                    foreach (string item in listPara)
                     {
-                        if(item.Contains('@'))
+                        if (item.Contains('@'))
                         {
-                            command.Parameters.AddWithValue(item,paramater[i]);
+                            command.Parameters.AddWithValue(item, paramater[i]);
                             i++;
                         }
                     }
@@ -50,6 +51,7 @@ namespace QuanLyNhaSach.DAO
                 adapter.Fill(data);
                 connection.Close();
             }
+           
             return data;
         }
 
@@ -74,7 +76,7 @@ namespace QuanLyNhaSach.DAO
                         }
                     }
                 }
-                data=command.ExecuteNonQuery();
+                data = command.ExecuteNonQuery();
                 connection.Close();
             }
             return data;
@@ -103,6 +105,7 @@ namespace QuanLyNhaSach.DAO
                 data = command.ExecuteScalar();
                 connection.Close();
             }
+            
             return data;
         }
     }

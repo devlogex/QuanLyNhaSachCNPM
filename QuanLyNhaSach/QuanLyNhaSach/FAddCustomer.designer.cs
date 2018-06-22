@@ -110,6 +110,7 @@
             this.txbPhoneNumber.Name = "txbPhoneNumber";
             this.txbPhoneNumber.Size = new System.Drawing.Size(195, 26);
             this.txbPhoneNumber.TabIndex = 2;
+            this.txbPhoneNumber.TextChanged += new System.EventHandler(this.txbPhoneNumber_TextChanged);
             // 
             // lable
             // 
