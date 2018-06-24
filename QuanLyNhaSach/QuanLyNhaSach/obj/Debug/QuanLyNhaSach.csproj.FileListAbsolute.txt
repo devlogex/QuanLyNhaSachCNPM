@@ -29,14 +29,12 @@ C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\ob
 C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.exe
 C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.pdb
 C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FManageCategoryAndAuthor.resources
-C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FManageBookTitle.resources
 C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FAddCategory.resources
 C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FUpdateCategory.resources
 C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FAddAuthor.resources
 C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FUpdateAuthor.resources
 C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FAddBookTitle.resources
 C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FUpdateBookTitle.resources
-C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FManageCustomer.resources
 C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FAddCustomer.resources
 C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FUpdateCustomer.resources
 C:\Users\TND16\Documents\GitHub\QuanLyNhaSachCNPM\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FReceipt.resources

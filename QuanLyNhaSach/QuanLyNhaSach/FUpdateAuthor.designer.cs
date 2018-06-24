@@ -37,7 +37,7 @@
             // 
             // txbAuthor
             // 
-            this.txbAuthor.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbAuthor.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbAuthor.Location = new System.Drawing.Point(78, 51);
             this.txbAuthor.Name = "txbAuthor";
             this.txbAuthor.Size = new System.Drawing.Size(247, 26);
@@ -57,12 +57,12 @@
             // 
             this.lbManangeBook.AutoSize = true;
             this.lbManangeBook.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbManangeBook.ForeColor = System.Drawing.Color.Black;
-            this.lbManangeBook.Location = new System.Drawing.Point(82, 9);
+            this.lbManangeBook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lbManangeBook.Location = new System.Drawing.Point(58, 9);
             this.lbManangeBook.Name = "lbManangeBook";
-            this.lbManangeBook.Size = new System.Drawing.Size(184, 28);
+            this.lbManangeBook.Size = new System.Drawing.Size(215, 28);
             this.lbManangeBook.TabIndex = 42;
-            this.lbManangeBook.Text = "Cập nhật tác giả";
+            this.lbManangeBook.Text = "CẬP NHẬT TÁC GIẢ";
             // 
             // btnUpdateAuthor
             // 
@@ -72,7 +72,7 @@
             this.btnUpdateAuthor.Location = new System.Drawing.Point(123, 99);
             this.btnUpdateAuthor.Name = "btnUpdateAuthor";
             this.btnUpdateAuthor.Size = new System.Drawing.Size(91, 37);
-            this.btnUpdateAuthor.TabIndex = 44;
+            this.btnUpdateAuthor.TabIndex = 1;
             this.btnUpdateAuthor.Text = "Cập nhật";
             this.btnUpdateAuthor.UseVisualStyleBackColor = false;
             this.btnUpdateAuthor.Click += new System.EventHandler(this.btnUpdateAuthor_Click);
@@ -86,7 +86,7 @@
             this.btnExit.Location = new System.Drawing.Point(220, 99);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(91, 37);
-            this.btnExit.TabIndex = 44;
+            this.btnExit.TabIndex = 2;
             this.btnExit.Text = "Trở lại";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -96,7 +96,7 @@
             this.AcceptButton = this.btnUpdateAuthor;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(337, 148);
             this.Controls.Add(this.btnExit);

@@ -128,15 +128,274 @@ CREATE TABLE BAOCAOCONGNO
 )
 GO
 
+CREATE TABLE CHUCNANG
+(
+	MaChucNang INT PRIMARY KEY,
+	TenChucNang NVARCHAR(100) NOT NULL,
+	TenManHinhDuocLoad VARCHAR(100) NOT NULL
+)
+
+CREATE TABLE NHOMNGUOIDUNG
+(
+	MaNhom INT PRIMARY KEY,
+	TenNhom NVARCHAR(100) NOT NULL,
+)
+
+CREATE TABLE PHANQUYEN
+(
+	MaNhom INT FOREIGN KEY REFERENCES NHOMNGUOIDUNG(MaNhom),
+	MaChucNang INT FOREIGN KEY REFERENCES CHUCNANG(MaChucNang),
+	PRIMARY KEY(MaNhom,MaChucNang)
+)
+
 CREATE TABLE NGUOIDUNG
 (
 	TenDangNhap VARCHAR(100) NOT NULL DEFAULT '' PRIMARY KEY,
 	TenHienThi NVARCHAR(100),
 	MatKhau VARCHAR(100) NOT NULL DEFAULT '',
-	LoaiTaiKhoan INT NOT NULL DEFAULT 0 --0:ADMIN , 1:STAFF
+	MaNhom INT NOT NULL
 )
 GO 
+
+INSERT CHUCNANG VALUES
+(
+	1,
+	N'Quản lý đầu sách',
+	'FManageBookTitle'
+)
+GO
+INSERT CHUCNANG VALUES
+(
+	2,
+	N'Quản lý thể loại và tác giả',
+	'FManageCategoryAndAuthor'
+)
+GO
+INSERT CHUCNANG VALUES
+(
+	3,
+	N'Lập phiếu nhập sách',
+	'FImportBook'
+)
+GO
+INSERT CHUCNANG VALUES
+(
+	4,
+	N'Lập hóa đơn bán sách',
+	'FBill'
+)
+GO
+INSERT CHUCNANG VALUES
+(
+	5,
+	N'Tra cứu sách',
+	'FSearchBook'
+)
+GO
+INSERT CHUCNANG VALUES
+(
+	6,
+	N'Báo cáo tồn',
+	'FReportBook'
+)
+GO
+INSERT CHUCNANG VALUES
+(
+	7,
+	N'Quản lý khách hàng',
+	'FManageCustomer'
+)
+GO
+INSERT CHUCNANG VALUES
+(
+	8,
+	N'Lập phiếu thu tiền',
+	'FReceipt'
+)
+GO
+INSERT CHUCNANG VALUES
+(
+	9,
+	N'Tra cứu khách hàng',
+	'FSearchCustomer'
+)
+GO
+INSERT CHUCNANG VALUES
+(
+	10,
+	N'Báo cáo công nợ',
+	'FReportOwe'
+)
+GO
+INSERT CHUCNANG VALUES
+(
+	11,
+	N'Quản lý quy định',
+	'FSystem'
+)
+GO
+INSERT CHUCNANG VALUES
+(
+	12,
+	N'Admin',
+	'FAccount'
+)
+GO
+
+INSERT NHOMNGUOIDUNG VALUES
+(
+	0,
+	'Admin'
+)
+GO
+INSERT NHOMNGUOIDUNG VALUES
+(
+	1,
+	N'Nhân viên'
+)
+GO
+
 INSERT NGUOIDUNG VALUES('admin','admin','admin',0)
+GO
+
+INSERT INTO PHANQUYEN VALUES
+(
+	0,
+	1
+)
+GO
+INSERT INTO PHANQUYEN VALUES
+(
+	0,
+	2
+)
+GO
+INSERT INTO PHANQUYEN VALUES
+(
+	0,
+	3
+)
+GO
+INSERT INTO PHANQUYEN VALUES
+(
+	0,
+	4
+)
+GO
+INSERT INTO PHANQUYEN VALUES
+(
+	0,
+	5
+)
+GO
+INSERT INTO PHANQUYEN VALUES
+(
+	0,
+	6
+)
+GO
+INSERT INTO PHANQUYEN VALUES
+(
+	0,
+	7
+)
+GO
+INSERT INTO PHANQUYEN VALUES
+(
+	0,
+	8
+)
+GO
+INSERT INTO PHANQUYEN VALUES
+(
+	0,
+	9
+)
+GO
+INSERT INTO PHANQUYEN VALUES
+(
+	0,
+	10
+)
+GO
+INSERT INTO PHANQUYEN VALUES
+(
+	0,
+	11
+)
+GO
+INSERT INTO PHANQUYEN VALUES
+(
+	0,
+	12
+)
+GO
+INSERT INTO PHANQUYEN VALUES
+(
+	1,
+	1
+)
+GO
+INSERT INTO PHANQUYEN VALUES
+(
+	1,
+	2
+)
+GO
+INSERT INTO PHANQUYEN VALUES
+(
+	1,
+	3
+)
+GO
+INSERT INTO PHANQUYEN VALUES
+(
+	1,
+	4
+)
+GO
+INSERT INTO PHANQUYEN VALUES
+(
+	1,
+	5
+)
+GO
+INSERT INTO PHANQUYEN VALUES
+(
+	1,
+	6
+)
+GO
+INSERT INTO PHANQUYEN VALUES
+(
+	1,
+	7
+)
+GO
+INSERT INTO PHANQUYEN VALUES
+(
+	1,
+	8
+)
+GO
+INSERT INTO PHANQUYEN VALUES
+(
+	1,
+	9
+)
+GO
+INSERT INTO PHANQUYEN VALUES
+(
+	1,
+	10
+)
+GO
+
+INSERT INTO PHANQUYEN VALUES
+(
+	1,
+	11
+)
 GO
 
 CREATE TABLE THAMSO
@@ -310,7 +569,7 @@ CREATE PROC USP_GetAccountByUserName
 @userName VARCHAR(100)
 AS
 BEGIN
-	SELECT TenDangNhap as userName,TenHienThi as displayName,MatKhau as passWord,LoaiTaiKhoan as type FROM NGUOIDUNG WHERE TenDangNhap=@userName
+	SELECT TenDangNhap as userName,TenHienThi as displayName,MatKhau as passWord,MaNhom as type FROM NGUOIDUNG WHERE TenDangNhap=@userName
 END
 GO
 
@@ -407,36 +666,12 @@ SELECT * FROM dbo.NGUOIDUNG WHERE @userName=TenDangNhap AND @passWord=MatKhau
 END
 GO
 
-CREATE PROC USP_RemoveAuthorByAuthorID
-@id INT
-AS
-BEGIN
-DELETE TACGIA WHERE MaTacGia =@id
-END
-GO
-
 CREATE PROC USP_RemoveBookTitleByBookTitleID
 @id INT
 AS
 BEGIN
 	DELETE CT_TACGIA WHERE MaDauSach=@id
 	DELETE DAUSACH WHERE MaDauSach=@id
-END
-GO
-
-CREATE PROC USP_RemoveCategoryByCategoryID
-@id INT
-AS
-BEGIN
-DELETE THELOAISACH WHERE MaTheLoai =@id
-END
-GO
-
-CREATE PROC USP_RemoveCustomerByCustomerID
-@id INT
-AS
-BEGIN
-	DELETE KHACHHANG WHERE MaKhachHang= @id
 END
 GO
 
@@ -939,9 +1174,9 @@ GO
 CREATE PROC USP_GetListAccount
 AS
 BEGIN
-	SELECT TenDangNhap as userName,TenHienThi as displayName,MatKhau as passWord,LoaiTaiKhoan as type
-	FROM NGUOIDUNG 
-	WHERE LoaiTaiKhoan=1
+	SELECT d.TenDangNhap as userName,d.TenHienThi as displayName,d.MatKhau as passWord,nd.TenNhom as type
+	FROM NGUOIDUNG d,NHOMNGUOIDUNG nd
+	WHERE d.MaNhom=1 AND d.MaNhom=nd.MaNhom
 END
 GO
 

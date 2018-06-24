@@ -82,23 +82,23 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(86, 37);
             this.btnExit.TabIndex = 5;
-            this.btnExit.Text = "Trở lại";
+            this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // txbPassWord
             // 
-            this.txbPassWord.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbPassWord.ForeColor = System.Drawing.Color.Blue;
-            this.txbPassWord.Location = new System.Drawing.Point(126, 120);
+            this.txbPassWord.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbPassWord.ForeColor = System.Drawing.Color.Black;
+            this.txbPassWord.Location = new System.Drawing.Point(127, 120);
             this.txbPassWord.Name = "txbPassWord";
             this.txbPassWord.Size = new System.Drawing.Size(208, 26);
             this.txbPassWord.TabIndex = 2;
             // 
             // txbDisplayName
             // 
-            this.txbDisplayName.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbDisplayName.ForeColor = System.Drawing.Color.Blue;
+            this.txbDisplayName.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbDisplayName.ForeColor = System.Drawing.Color.Black;
             this.txbDisplayName.Location = new System.Drawing.Point(128, 84);
             this.txbDisplayName.Name = "txbDisplayName";
             this.txbDisplayName.Size = new System.Drawing.Size(208, 26);
@@ -106,8 +106,9 @@
             // 
             // txbUserName
             // 
-            this.txbUserName.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbUserName.ForeColor = System.Drawing.Color.Blue;
+            this.txbUserName.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txbUserName.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbUserName.ForeColor = System.Drawing.Color.Black;
             this.txbUserName.Location = new System.Drawing.Point(129, 47);
             this.txbUserName.Name = "txbUserName";
             this.txbUserName.ReadOnly = true;
@@ -118,12 +119,12 @@
             // 
             this.lbManangeAccount.AutoSize = true;
             this.lbManangeAccount.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbManangeAccount.ForeColor = System.Drawing.Color.Black;
-            this.lbManangeAccount.Location = new System.Drawing.Point(78, 9);
+            this.lbManangeAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lbManangeAccount.Location = new System.Drawing.Point(54, 9);
             this.lbManangeAccount.Name = "lbManangeAccount";
-            this.lbManangeAccount.Size = new System.Drawing.Size(217, 28);
+            this.lbManangeAccount.Size = new System.Drawing.Size(251, 28);
             this.lbManangeAccount.TabIndex = 43;
-            this.lbManangeAccount.Text = "Cập nhật tài khoản";
+            this.lbManangeAccount.Text = "CẬP NHẬT TÀI KHOẢN";
             // 
             // btnUpdateAccount
             // 
@@ -143,7 +144,7 @@
             this.AcceptButton = this.btnUpdateAccount;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(364, 215);
             this.Controls.Add(this.lbManangeAccount);

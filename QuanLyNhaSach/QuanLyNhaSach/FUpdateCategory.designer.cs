@@ -37,8 +37,8 @@
             // 
             // txbCategory
             // 
-            this.txbCategory.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbCategory.Location = new System.Drawing.Point(109, 63);
+            this.txbCategory.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbCategory.Location = new System.Drawing.Point(110, 55);
             this.txbCategory.Name = "txbCategory";
             this.txbCategory.Size = new System.Drawing.Size(215, 26);
             this.txbCategory.TabIndex = 0;
@@ -47,7 +47,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 70);
+            this.label1.Location = new System.Drawing.Point(23, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 19);
             this.label1.TabIndex = 19;
@@ -57,12 +57,12 @@
             // 
             this.lbManangeBook.AutoSize = true;
             this.lbManangeBook.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbManangeBook.ForeColor = System.Drawing.Color.Black;
-            this.lbManangeBook.Location = new System.Drawing.Point(45, 9);
+            this.lbManangeBook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lbManangeBook.Location = new System.Drawing.Point(21, 9);
             this.lbManangeBook.Name = "lbManangeBook";
-            this.lbManangeBook.Size = new System.Drawing.Size(250, 28);
+            this.lbManangeBook.Size = new System.Drawing.Size(296, 28);
             this.lbManangeBook.TabIndex = 42;
-            this.lbManangeBook.Text = "Cập nhật thể loại sách";
+            this.lbManangeBook.Text = "CẬP NHẬT THỂ LOẠI SÁCH";
             // 
             // btnUpdateCategory
             // 
@@ -96,7 +96,7 @@
             this.AcceptButton = this.btnUpdateCategory;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(337, 152);
             this.Controls.Add(this.btnExit);

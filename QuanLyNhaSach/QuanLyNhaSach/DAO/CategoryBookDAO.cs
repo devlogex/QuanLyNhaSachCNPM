@@ -33,10 +33,6 @@ namespace QuanLyNhaSach.DAO
         {
             return DataProvider.Instance.ExecuteNonQuery("EXEC USP_AddCategory @name", new object[] { name }) > 0;
         }
-        public bool RemoveCategoryByCategoryID(int id)
-        {
-            return DataProvider.Instance.ExecuteNonQuery("EXEC USP_RemoveCategoryByCategoryID @id", new object[] { id }) > 0;
-        }
         public bool UpdateCategory(int id,string name)
         {
             return DataProvider.Instance.ExecuteNonQuery("EXEC USP_UpdateCategory @id , @name", new object[] { id, name }) > 0;

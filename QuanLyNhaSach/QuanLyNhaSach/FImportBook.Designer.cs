@@ -42,6 +42,15 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dtgvImportBook = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.author = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.publishing = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.count = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ttAdd = new System.Windows.Forms.ToolTip(this.components);
             this.btnAddBookTitle = new System.Windows.Forms.Button();
             this.btnAddBook = new System.Windows.Forms.Button();
@@ -68,15 +77,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.author = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.publishing = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.count = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -90,6 +90,7 @@
             // 
             // cbCategory
             // 
+            this.cbCategory.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCategory.FormattingEnabled = true;
             this.cbCategory.Location = new System.Drawing.Point(128, 78);
             this.cbCategory.Name = "cbCategory";
@@ -98,6 +99,7 @@
             // 
             // txbNameBookTitle
             // 
+            this.txbNameBookTitle.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbNameBookTitle.Location = new System.Drawing.Point(128, 50);
             this.txbNameBookTitle.Name = "txbNameBookTitle";
             this.txbNameBookTitle.Size = new System.Drawing.Size(103, 26);
@@ -111,16 +113,17 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.dtpk);
-            this.groupBox2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(6, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(261, 108);
+            this.groupBox2.Size = new System.Drawing.Size(261, 143);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin phiếu nhập";
             // 
             // txbTotalPrice
             // 
+            this.txbTotalPrice.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbTotalPrice.Location = new System.Drawing.Point(140, 78);
             this.txbTotalPrice.Name = "txbTotalPrice";
             this.txbTotalPrice.ReadOnly = true;
@@ -129,6 +132,7 @@
             // 
             // txbIDImportBook
             // 
+            this.txbIDImportBook.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbIDImportBook.Location = new System.Drawing.Point(140, 22);
             this.txbIDImportBook.Name = "txbIDImportBook";
             this.txbIDImportBook.ReadOnly = true;
@@ -167,7 +171,9 @@
             // 
             // dtpk
             // 
-            this.dtpk.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpk.CustomFormat = "dd/MM/yyyy";
+            this.dtpk.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpk.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpk.Location = new System.Drawing.Point(140, 50);
             this.dtpk.Name = "dtpk";
             this.dtpk.Size = new System.Drawing.Size(111, 26);
@@ -223,6 +229,87 @@
             this.dtgvImportBook.Name = "dtgvImportBook";
             this.dtgvImportBook.Size = new System.Drawing.Size(920, 197);
             this.dtgvImportBook.TabIndex = 1;
+            // 
+            // STT
+            // 
+            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.STT.FillWeight = 28.88556F;
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            this.STT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.id.FillWeight = 283.2487F;
+            this.id.HeaderText = "Mã sách";
+            this.id.Name = "id";
+            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.id.Width = 90;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.DataPropertyName = "name";
+            this.name.FillWeight = 77.1657F;
+            this.name.HeaderText = "Tên sách";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // category
+            // 
+            this.category.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.category.DataPropertyName = "category";
+            this.category.FillWeight = 77.1657F;
+            this.category.HeaderText = "Thể loại";
+            this.category.Name = "category";
+            this.category.ReadOnly = true;
+            // 
+            // author
+            // 
+            this.author.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.author.DataPropertyName = "author";
+            this.author.FillWeight = 77.1657F;
+            this.author.HeaderText = "Tác giả";
+            this.author.Name = "author";
+            this.author.ReadOnly = true;
+            // 
+            // publishing
+            // 
+            this.publishing.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.publishing.DataPropertyName = "publishing";
+            this.publishing.FillWeight = 124.8715F;
+            this.publishing.HeaderText = "NXB/Năm XB";
+            this.publishing.Name = "publishing";
+            this.publishing.ReadOnly = true;
+            this.publishing.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // count
+            // 
+            this.count.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.count.DataPropertyName = "count";
+            this.count.FillWeight = 77.1657F;
+            this.count.HeaderText = "Số lượng";
+            this.count.Name = "count";
+            // 
+            // priceIn
+            // 
+            this.priceIn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.priceIn.DataPropertyName = "priceIn";
+            this.priceIn.FillWeight = 77.1657F;
+            this.priceIn.HeaderText = "Đơn giá nhập";
+            this.priceIn.Name = "priceIn";
+            // 
+            // totalPrice
+            // 
+            this.totalPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.totalPrice.DataPropertyName = "totalPrice";
+            this.totalPrice.FillWeight = 77.1657F;
+            this.totalPrice.HeaderText = "Thành tiền";
+            this.totalPrice.Name = "totalPrice";
+            this.totalPrice.ReadOnly = true;
             // 
             // btnAddBookTitle
             // 
@@ -330,7 +417,7 @@
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.label11);
-            this.groupBox4.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(629, 6);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(315, 143);
@@ -340,6 +427,7 @@
             // 
             // txbPublishYear
             // 
+            this.txbPublishYear.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbPublishYear.Location = new System.Drawing.Point(115, 107);
             this.txbPublishYear.Name = "txbPublishYear";
             this.txbPublishYear.Size = new System.Drawing.Size(104, 26);
@@ -358,6 +446,7 @@
             // 
             // cbBookTitle
             // 
+            this.cbBookTitle.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbBookTitle.FormattingEnabled = true;
             this.cbBookTitle.Location = new System.Drawing.Point(115, 22);
             this.cbBookTitle.Margin = new System.Windows.Forms.Padding(2);
@@ -367,7 +456,8 @@
             // 
             // txbIDBook
             // 
-            this.txbIDBook.Location = new System.Drawing.Point(115, 50);
+            this.txbIDBook.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbIDBook.Location = new System.Drawing.Point(115, 51);
             this.txbIDBook.Name = "txbIDBook";
             this.txbIDBook.ReadOnly = true;
             this.txbIDBook.Size = new System.Drawing.Size(103, 26);
@@ -375,7 +465,8 @@
             // 
             // txbPublishCompany
             // 
-            this.txbPublishCompany.Location = new System.Drawing.Point(115, 80);
+            this.txbPublishCompany.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbPublishCompany.Location = new System.Drawing.Point(115, 79);
             this.txbPublishCompany.Name = "txbPublishCompany";
             this.txbPublishCompany.Size = new System.Drawing.Size(104, 26);
             this.txbPublishCompany.TabIndex = 10;
@@ -421,7 +512,7 @@
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Controls.Add(this.label7);
             this.groupBox5.Controls.Add(this.label8);
-            this.groupBox5.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(281, 6);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(326, 143);
@@ -431,6 +522,7 @@
             // 
             // cbAuthor
             // 
+            this.cbAuthor.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbAuthor.FormattingEnabled = true;
             this.cbAuthor.Location = new System.Drawing.Point(128, 107);
             this.cbAuthor.Name = "cbAuthor";
@@ -439,6 +531,7 @@
             // 
             // txbIDBookTitle
             // 
+            this.txbIDBookTitle.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbIDBookTitle.Location = new System.Drawing.Point(128, 22);
             this.txbIDBookTitle.Name = "txbIDBookTitle";
             this.txbIDBookTitle.ReadOnly = true;
@@ -488,92 +581,12 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cambria", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Blue;
             this.label3.Location = new System.Drawing.Point(263, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(442, 47);
             this.label3.TabIndex = 0;
             this.label3.Text = "LẬP PHIẾU NHẬP SÁCH";
-            // 
-            // STT
-            // 
-            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.STT.FillWeight = 28.88556F;
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            this.STT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.id.FillWeight = 283.2487F;
-            this.id.HeaderText = "Mã sách";
-            this.id.Name = "id";
-            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.id.Width = 90;
-            // 
-            // name
-            // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.name.DataPropertyName = "name";
-            this.name.FillWeight = 77.1657F;
-            this.name.HeaderText = "Tên sách";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // category
-            // 
-            this.category.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.category.DataPropertyName = "category";
-            this.category.FillWeight = 77.1657F;
-            this.category.HeaderText = "Thể loại";
-            this.category.Name = "category";
-            this.category.ReadOnly = true;
-            // 
-            // author
-            // 
-            this.author.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.author.DataPropertyName = "author";
-            this.author.FillWeight = 77.1657F;
-            this.author.HeaderText = "Tác giả";
-            this.author.Name = "author";
-            this.author.ReadOnly = true;
-            // 
-            // publishing
-            // 
-            this.publishing.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.publishing.DataPropertyName = "publishing";
-            this.publishing.FillWeight = 124.8715F;
-            this.publishing.HeaderText = "NXB/Năm XB";
-            this.publishing.Name = "publishing";
-            this.publishing.ReadOnly = true;
-            this.publishing.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // count
-            // 
-            this.count.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.count.DataPropertyName = "count";
-            this.count.FillWeight = 77.1657F;
-            this.count.HeaderText = "Số lượng";
-            this.count.Name = "count";
-            // 
-            // priceIn
-            // 
-            this.priceIn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.priceIn.DataPropertyName = "priceIn";
-            this.priceIn.FillWeight = 77.1657F;
-            this.priceIn.HeaderText = "Đơn giá nhập";
-            this.priceIn.Name = "priceIn";
-            // 
-            // totalPrice
-            // 
-            this.totalPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.totalPrice.DataPropertyName = "totalPrice";
-            this.totalPrice.FillWeight = 77.1657F;
-            this.totalPrice.HeaderText = "Thành tiền";
-            this.totalPrice.Name = "totalPrice";
-            this.totalPrice.ReadOnly = true;
             // 
             // FImportBook
             // 

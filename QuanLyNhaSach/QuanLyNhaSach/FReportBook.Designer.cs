@@ -42,12 +42,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvReportBook = new System.Windows.Forms.DataGridView();
-            this.btnReportBook = new System.Windows.Forms.Button();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnReportBook = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -120,7 +121,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cambria", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.ForeColor = System.Drawing.Color.Blue;
             this.label3.Location = new System.Drawing.Point(158, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(461, 47);
@@ -130,9 +131,10 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.nmMonth);
+            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.nmYear);
-            this.groupBox2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(30, 88);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
@@ -144,8 +146,8 @@
             // 
             // nmMonth
             // 
-            this.nmMonth.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nmMonth.Location = new System.Drawing.Point(118, 28);
+            this.nmMonth.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nmMonth.Location = new System.Drawing.Point(75, 28);
             this.nmMonth.Maximum = new decimal(new int[] {
             12,
             0,
@@ -157,7 +159,7 @@
             0,
             0});
             this.nmMonth.Name = "nmMonth";
-            this.nmMonth.Size = new System.Drawing.Size(59, 24);
+            this.nmMonth.Size = new System.Drawing.Size(59, 26);
             this.nmMonth.TabIndex = 0;
             this.nmMonth.Value = new decimal(new int[] {
             4,
@@ -168,18 +170,18 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(16, 28);
+            this.label5.Location = new System.Drawing.Point(9, 32);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 17);
+            this.label5.Size = new System.Drawing.Size(60, 19);
             this.label5.TabIndex = 16;
-            this.label5.Text = "Tháng/Năm :";
+            this.label5.Text = "Tháng :";
             // 
             // nmYear
             // 
-            this.nmYear.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nmYear.Location = new System.Drawing.Point(182, 28);
+            this.nmYear.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nmYear.Location = new System.Drawing.Point(208, 28);
             this.nmYear.Maximum = new decimal(new int[] {
             2050,
             0,
@@ -191,7 +193,7 @@
             0,
             0});
             this.nmYear.Name = "nmYear";
-            this.nmYear.Size = new System.Drawing.Size(59, 24);
+            this.nmYear.Size = new System.Drawing.Size(59, 26);
             this.nmYear.TabIndex = 1;
             this.nmYear.Value = new decimal(new int[] {
             2018,
@@ -250,19 +252,6 @@
             this.dtgvReportBook.Size = new System.Drawing.Size(652, 240);
             this.dtgvReportBook.TabIndex = 4;
             // 
-            // btnReportBook
-            // 
-            this.btnReportBook.BackColor = System.Drawing.SystemColors.Control;
-            this.btnReportBook.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReportBook.ForeColor = System.Drawing.Color.Black;
-            this.btnReportBook.Location = new System.Drawing.Point(327, 106);
-            this.btnReportBook.Name = "btnReportBook";
-            this.btnReportBook.Size = new System.Drawing.Size(102, 38);
-            this.btnReportBook.TabIndex = 2;
-            this.btnReportBook.Text = "Thống kê";
-            this.btnReportBook.UseVisualStyleBackColor = false;
-            this.btnReportBook.Click += new System.EventHandler(this.btnReportBook_Click);
-            // 
             // STT
             // 
             this.STT.HeaderText = "STT";
@@ -306,6 +295,30 @@
             this.lastCount.Name = "lastCount";
             this.lastCount.ReadOnly = true;
             this.lastCount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // btnReportBook
+            // 
+            this.btnReportBook.BackColor = System.Drawing.SystemColors.Control;
+            this.btnReportBook.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportBook.ForeColor = System.Drawing.Color.Black;
+            this.btnReportBook.Location = new System.Drawing.Point(327, 106);
+            this.btnReportBook.Name = "btnReportBook";
+            this.btnReportBook.Size = new System.Drawing.Size(102, 38);
+            this.btnReportBook.TabIndex = 2;
+            this.btnReportBook.Text = "Thống kê";
+            this.btnReportBook.UseVisualStyleBackColor = false;
+            this.btnReportBook.Click += new System.EventHandler(this.btnReportBook_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(153, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 19);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Năm :";
             // 
             // FReportBook
             // 
@@ -355,5 +368,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn firstCount;
         private System.Windows.Forms.DataGridViewTextBoxColumn addCount;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastCount;
+        private System.Windows.Forms.Label label1;
     }
 }

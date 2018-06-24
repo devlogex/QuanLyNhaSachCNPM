@@ -152,12 +152,6 @@
     <Compile Include="FManageCategoryAndAuthor.Designer.cs">
       <DependentUpon>FManageCategoryAndAuthor.cs</DependentUpon>
     </Compile>
-    <Compile Include="FManageCustomer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FManageCustomer.Designer.cs">
-      <DependentUpon>FManageCustomer.cs</DependentUpon>
-    </Compile>
     <Compile Include="FManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,12 +169,6 @@
     </Compile>
     <Compile Include="FListBill.Designer.cs">
       <DependentUpon>FListBill.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FManageBookTitle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FManageBookTitle.Designer.cs">
-      <DependentUpon>FManageBookTitle.cs</DependentUpon>
     </Compile>
     <Compile Include="FReceipt.cs">
       <SubType>Form</SubType>
@@ -284,17 +272,11 @@
     <EmbeddedResource Include="FManageCategoryAndAuthor.resx">
       <DependentUpon>FManageCategoryAndAuthor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FManageCustomer.resx">
-      <DependentUpon>FManageCustomer.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FManager.resx">
       <DependentUpon>FManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FImportBook.resx">
       <DependentUpon>FImportBook.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FManageBookTitle.resx">
-      <DependentUpon>FManageBookTitle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FReceipt.resx">
       <DependentUpon>FReceipt.cs</DependentUpon>

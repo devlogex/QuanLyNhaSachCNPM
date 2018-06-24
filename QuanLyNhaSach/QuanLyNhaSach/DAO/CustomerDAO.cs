@@ -37,10 +37,6 @@ namespace QuanLyNhaSach.DAO
         {
             return DataProvider.Instance.ExecuteNonQuery("EXEC USP_UpdateCustomer @id , @name , @address , @phoneNumber , @email , @owe", new object[] {id, name, address, phonenumber, email, owe }) > 0;
         }
-        public bool RemoveCustomerByCustomerID(int id)
-        {
-            return DataProvider.Instance.ExecuteNonQuery("EXEC USP_RemoveCustomerByCustomerID @id", new object[] { id}) > 0;
-        }
         public Customer GetCustomerByCustomerID(int id)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_GetCustomerByCustomerID @id", new object[] { id });

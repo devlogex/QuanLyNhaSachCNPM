@@ -45,28 +45,6 @@ namespace QuanLyNhaSach
             catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
         }
 
-        private void lbManageBookTitle_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            try
-            {
-                FManageBookTitle f = new FManageBookTitle();
-                f.ShowDialog();
-            }
-            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
-
-        }
-
-        private void lbManageCustomer_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            try
-            {
-                FManageCustomer f = new FManageCustomer();
-                f.ShowDialog();
-            }
-            catch { MessageBox.Show("Tác vụ bị lỗi !", "Thông báo"); }
-
-        }
-
         private void lbImportBook_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             try

@@ -40,14 +40,15 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvReportOwe = new System.Windows.Forms.DataGridView();
-            this.btnReportOwe = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstOwe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addOwe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastOwe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnReportOwe = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -109,9 +110,10 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.nmMonth);
+            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.nmYear);
-            this.groupBox2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(40, 5);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
@@ -123,8 +125,8 @@
             // 
             // nmMonth
             // 
-            this.nmMonth.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nmMonth.Location = new System.Drawing.Point(118, 23);
+            this.nmMonth.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nmMonth.Location = new System.Drawing.Point(71, 24);
             this.nmMonth.Maximum = new decimal(new int[] {
             12,
             0,
@@ -136,7 +138,7 @@
             0,
             0});
             this.nmMonth.Name = "nmMonth";
-            this.nmMonth.Size = new System.Drawing.Size(59, 24);
+            this.nmMonth.Size = new System.Drawing.Size(59, 26);
             this.nmMonth.TabIndex = 0;
             this.nmMonth.Value = new decimal(new int[] {
             4,
@@ -147,18 +149,18 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(16, 23);
+            this.label5.Location = new System.Drawing.Point(5, 28);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 17);
+            this.label5.Size = new System.Drawing.Size(60, 19);
             this.label5.TabIndex = 16;
-            this.label5.Text = "Tháng/Năm :";
+            this.label5.Text = "Tháng :";
             // 
             // nmYear
             // 
-            this.nmYear.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nmYear.Location = new System.Drawing.Point(182, 23);
+            this.nmYear.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nmYear.Location = new System.Drawing.Point(208, 24);
             this.nmYear.Maximum = new decimal(new int[] {
             2050,
             0,
@@ -170,7 +172,7 @@
             0,
             0});
             this.nmYear.Name = "nmYear";
-            this.nmYear.Size = new System.Drawing.Size(59, 24);
+            this.nmYear.Size = new System.Drawing.Size(59, 26);
             this.nmYear.TabIndex = 1;
             this.nmYear.Value = new decimal(new int[] {
             2018,
@@ -228,39 +230,6 @@
             this.dtgvReportOwe.Size = new System.Drawing.Size(652, 264);
             this.dtgvReportOwe.TabIndex = 4;
             // 
-            // btnReportOwe
-            // 
-            this.btnReportOwe.BackColor = System.Drawing.SystemColors.Control;
-            this.btnReportOwe.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReportOwe.ForeColor = System.Drawing.Color.Black;
-            this.btnReportOwe.Location = new System.Drawing.Point(331, 28);
-            this.btnReportOwe.Name = "btnReportOwe";
-            this.btnReportOwe.Size = new System.Drawing.Size(102, 38);
-            this.btnReportOwe.TabIndex = 2;
-            this.btnReportOwe.Text = "Thống kê";
-            this.btnReportOwe.UseVisualStyleBackColor = false;
-            this.btnReportOwe.Click += new System.EventHandler(this.btnReportOwe_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(756, 72);
-            this.panel1.TabIndex = 17;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Cambria", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(161, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(445, 47);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "LẬP BÁO CÁO CÔNG NỢ";
-            // 
             // STT
             // 
             this.STT.HeaderText = "STT";
@@ -304,6 +273,50 @@
             this.lastOwe.Name = "lastOwe";
             this.lastOwe.ReadOnly = true;
             this.lastOwe.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // btnReportOwe
+            // 
+            this.btnReportOwe.BackColor = System.Drawing.SystemColors.Control;
+            this.btnReportOwe.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportOwe.ForeColor = System.Drawing.Color.Black;
+            this.btnReportOwe.Location = new System.Drawing.Point(331, 28);
+            this.btnReportOwe.Name = "btnReportOwe";
+            this.btnReportOwe.Size = new System.Drawing.Size(102, 38);
+            this.btnReportOwe.TabIndex = 2;
+            this.btnReportOwe.Text = "Thống kê";
+            this.btnReportOwe.UseVisualStyleBackColor = false;
+            this.btnReportOwe.Click += new System.EventHandler(this.btnReportOwe_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(756, 72);
+            this.panel1.TabIndex = 17;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Cambria", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Blue;
+            this.label3.Location = new System.Drawing.Point(161, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(445, 47);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "LẬP BÁO CÁO CÔNG NỢ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(153, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 19);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Năm :";
             // 
             // FReportOwe
             // 
@@ -354,5 +367,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn firstOwe;
         private System.Windows.Forms.DataGridViewTextBoxColumn addOwe;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastOwe;
+        private System.Windows.Forms.Label label1;
     }
 }

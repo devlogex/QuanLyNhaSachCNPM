@@ -37,7 +37,7 @@
             // 
             // txbCategory
             // 
-            this.txbCategory.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbCategory.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbCategory.Location = new System.Drawing.Point(95, 52);
             this.txbCategory.Name = "txbCategory";
             this.txbCategory.Size = new System.Drawing.Size(221, 26);
@@ -57,12 +57,12 @@
             // 
             this.lbManangeBook.AutoSize = true;
             this.lbManangeBook.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbManangeBook.ForeColor = System.Drawing.Color.Black;
-            this.lbManangeBook.Location = new System.Drawing.Point(64, 9);
+            this.lbManangeBook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lbManangeBook.Location = new System.Drawing.Point(49, 9);
             this.lbManangeBook.Name = "lbManangeBook";
-            this.lbManangeBook.Size = new System.Drawing.Size(217, 28);
+            this.lbManangeBook.Size = new System.Drawing.Size(250, 28);
             this.lbManangeBook.TabIndex = 42;
-            this.lbManangeBook.Text = "Thêm thể loại sách";
+            this.lbManangeBook.Text = "THÊM THỂ LOẠI SÁCH";
             // 
             // btnExit
             // 
@@ -74,7 +74,7 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(85, 30);
             this.btnExit.TabIndex = 2;
-            this.btnExit.Text = "Trở lại";
+            this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -96,7 +96,7 @@
             this.AcceptButton = this.btnAddCategory;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(337, 145);
             this.Controls.Add(this.btnAddCategory);

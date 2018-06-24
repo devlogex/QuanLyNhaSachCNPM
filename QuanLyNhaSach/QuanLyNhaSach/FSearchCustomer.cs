@@ -149,7 +149,7 @@ namespace QuanLyNhaSach
             {
                 if (dtgvManageCustomer.SelectedCells.Count == 0)
                 {
-                    MessageBox.Show("Bạn chưa chọn sách để sửa", "Thông báo");
+                    MessageBox.Show("Bạn chưa chọn khách hàng !", "Thông báo");
                     return;
                 }
 

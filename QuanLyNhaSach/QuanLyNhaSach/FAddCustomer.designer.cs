@@ -44,13 +44,14 @@
             // lbManangeCustomer
             // 
             this.lbManangeCustomer.AutoSize = true;
+            this.lbManangeCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.lbManangeCustomer.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbManangeCustomer.ForeColor = System.Drawing.Color.Black;
-            this.lbManangeCustomer.Location = new System.Drawing.Point(91, 9);
+            this.lbManangeCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lbManangeCustomer.Location = new System.Drawing.Point(81, 9);
             this.lbManangeCustomer.Name = "lbManangeCustomer";
-            this.lbManangeCustomer.Size = new System.Drawing.Size(204, 28);
+            this.lbManangeCustomer.Size = new System.Drawing.Size(232, 28);
             this.lbManangeCustomer.TabIndex = 43;
-            this.lbManangeCustomer.Text = "Thêm khách hàng";
+            this.lbManangeCustomer.Text = "THÊM KHÁCH HÀNG";
             // 
             // btnExit
             // 
@@ -81,7 +82,7 @@
             // 
             // txbCustomerAddress
             // 
-            this.txbCustomerAddress.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbCustomerAddress.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbCustomerAddress.Location = new System.Drawing.Point(150, 85);
             this.txbCustomerAddress.Name = "txbCustomerAddress";
             this.txbCustomerAddress.Size = new System.Drawing.Size(195, 26);
@@ -89,7 +90,7 @@
             // 
             // txbCustomerName
             // 
-            this.txbCustomerName.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbCustomerName.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbCustomerName.Location = new System.Drawing.Point(150, 53);
             this.txbCustomerName.Name = "txbCustomerName";
             this.txbCustomerName.Size = new System.Drawing.Size(195, 26);
@@ -97,7 +98,7 @@
             // 
             // txbEmail
             // 
-            this.txbEmail.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbEmail.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbEmail.Location = new System.Drawing.Point(150, 165);
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(195, 26);
@@ -105,7 +106,7 @@
             // 
             // txbPhoneNumber
             // 
-            this.txbPhoneNumber.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbPhoneNumber.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbPhoneNumber.Location = new System.Drawing.Point(150, 123);
             this.txbPhoneNumber.Name = "txbPhoneNumber";
             this.txbPhoneNumber.Size = new System.Drawing.Size(195, 26);
@@ -161,7 +162,7 @@
             this.AcceptButton = this.btnAddCustomer;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(387, 259);
             this.Controls.Add(this.txbCustomerAddress);

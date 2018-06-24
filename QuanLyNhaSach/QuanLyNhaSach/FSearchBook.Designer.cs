@@ -73,7 +73,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cambria", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.ForeColor = System.Drawing.Color.Blue;
             this.label3.Location = new System.Drawing.Point(282, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(384, 47);
@@ -244,7 +244,7 @@
             this.groupBox3.Controls.Add(this.ckbCount);
             this.groupBox3.Controls.Add(this.ckbAuthor);
             this.groupBox3.Controls.Add(this.ckbIDBookTitle);
-            this.groupBox3.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(27, 89);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
@@ -256,6 +256,7 @@
             // 
             // txbNameBookTitle
             // 
+            this.txbNameBookTitle.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbNameBookTitle.Location = new System.Drawing.Point(204, 86);
             this.txbNameBookTitle.Name = "txbNameBookTitle";
             this.txbNameBookTitle.Size = new System.Drawing.Size(212, 26);
@@ -275,6 +276,7 @@
             // 
             // cbIDBookTitle
             // 
+            this.cbIDBookTitle.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbIDBookTitle.FormattingEnabled = true;
             this.cbIDBookTitle.Location = new System.Drawing.Point(204, 46);
             this.cbIDBookTitle.Name = "cbIDBookTitle";
@@ -283,6 +285,7 @@
             // 
             // cbCategory
             // 
+            this.cbCategory.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCategory.FormattingEnabled = true;
             this.cbCategory.Location = new System.Drawing.Point(204, 128);
             this.cbCategory.Name = "cbCategory";
@@ -291,6 +294,7 @@
             // 
             // cbAuthor
             // 
+            this.cbAuthor.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbAuthor.FormattingEnabled = true;
             this.cbAuthor.Location = new System.Drawing.Point(658, 41);
             this.cbAuthor.Name = "cbAuthor";
@@ -310,7 +314,7 @@
             // nmCountTo
             // 
             this.nmCountTo.Enabled = false;
-            this.nmCountTo.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
+            this.nmCountTo.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nmCountTo.ForeColor = System.Drawing.Color.Black;
             this.nmCountTo.Location = new System.Drawing.Point(786, 89);
             this.nmCountTo.Maximum = new decimal(new int[] {
@@ -325,7 +329,7 @@
             // nmCountFrom
             // 
             this.nmCountFrom.Enabled = false;
-            this.nmCountFrom.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
+            this.nmCountFrom.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nmCountFrom.ForeColor = System.Drawing.Color.Black;
             this.nmCountFrom.Location = new System.Drawing.Point(658, 89);
             this.nmCountFrom.Name = "nmCountFrom";

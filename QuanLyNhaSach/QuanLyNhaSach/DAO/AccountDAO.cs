@@ -35,15 +35,11 @@ namespace QuanLyNhaSach.DAO
             Account acc = new Account(data.Rows[0]);
             return acc;
         }
-        public List<Account> GetListAccount()
+        public DataTable GetListAccount()
         {
-            List<Account> list = new List<Account>();
-            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_GetListAccount");
-            foreach (DataRow item in data.Rows)
-            {
-                list.Add(new Account(item));
-            }
-            return list;
+            DataTable data = new DataTable();
+            data = DataProvider.Instance.ExecuteQuery("EXEC USP_GetListAccount");
+            return data;
         }
         public bool InsertAccount(string userName, string displayName, string passWord)
         {

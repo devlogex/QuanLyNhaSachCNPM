@@ -43,13 +43,11 @@
             this.lbSearchCustomer = new System.Windows.Forms.LinkLabel();
             this.lbCollectMoney = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
-            this.lbManageCustomer = new System.Windows.Forms.LinkLabel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lbSystem = new System.Windows.Forms.LinkLabel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.lbManageBookTitle = new System.Windows.Forms.LinkLabel();
             this.lbReportCount = new System.Windows.Forms.LinkLabel();
             this.lbSearchBook = new System.Windows.Forms.LinkLabel();
             this.lbImportBook = new System.Windows.Forms.LinkLabel();
@@ -169,12 +167,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
+            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
             this.panel5.Controls.Add(this.pictureBox4);
             this.panel5.Controls.Add(this.lbReportOwe);
             this.panel5.Controls.Add(this.lbSearchCustomer);
             this.panel5.Controls.Add(this.lbCollectMoney);
             this.panel5.Controls.Add(this.label3);
-            this.panel5.Controls.Add(this.lbManageCustomer);
             this.panel5.Location = new System.Drawing.Point(484, 49);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(358, 233);
@@ -194,7 +192,7 @@
             // 
             this.lbReportOwe.AutoSize = true;
             this.lbReportOwe.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbReportOwe.Location = new System.Drawing.Point(135, 136);
+            this.lbReportOwe.Location = new System.Drawing.Point(131, 104);
             this.lbReportOwe.Name = "lbReportOwe";
             this.lbReportOwe.Size = new System.Drawing.Size(140, 22);
             this.lbReportOwe.TabIndex = 2;
@@ -206,7 +204,7 @@
             // 
             this.lbSearchCustomer.AutoSize = true;
             this.lbSearchCustomer.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSearchCustomer.Location = new System.Drawing.Point(135, 104);
+            this.lbSearchCustomer.Location = new System.Drawing.Point(131, 39);
             this.lbSearchCustomer.Name = "lbSearchCustomer";
             this.lbSearchCustomer.Size = new System.Drawing.Size(168, 22);
             this.lbSearchCustomer.TabIndex = 2;
@@ -218,7 +216,7 @@
             // 
             this.lbCollectMoney.AutoSize = true;
             this.lbCollectMoney.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCollectMoney.Location = new System.Drawing.Point(135, 71);
+            this.lbCollectMoney.Location = new System.Drawing.Point(131, 72);
             this.lbCollectMoney.Name = "lbCollectMoney";
             this.lbCollectMoney.Size = new System.Drawing.Size(154, 22);
             this.lbCollectMoney.TabIndex = 2;
@@ -237,24 +235,13 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Khách hàng";
             // 
-            // lbManageCustomer
-            // 
-            this.lbManageCustomer.AutoSize = true;
-            this.lbManageCustomer.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbManageCustomer.Location = new System.Drawing.Point(135, 40);
-            this.lbManageCustomer.Name = "lbManageCustomer";
-            this.lbManageCustomer.Size = new System.Drawing.Size(165, 22);
-            this.lbManageCustomer.TabIndex = 2;
-            this.lbManageCustomer.TabStop = true;
-            this.lbManageCustomer.Text = "Quản lý khách hàng";
-            this.lbManageCustomer.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbManageCustomer_LinkClicked);
-            // 
             // panel7
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
+            this.panel7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel7.BackgroundImage")));
             this.panel7.Controls.Add(this.pictureBox3);
             this.panel7.Controls.Add(this.lbSystem);
             this.panel7.Controls.Add(this.label5);
@@ -303,7 +290,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(141)))));
-            this.panel4.Controls.Add(this.lbManageBookTitle);
+            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
             this.panel4.Controls.Add(this.lbReportCount);
             this.panel4.Controls.Add(this.lbSearchBook);
             this.panel4.Controls.Add(this.lbImportBook);
@@ -317,23 +304,11 @@
             this.panel4.Size = new System.Drawing.Size(358, 233);
             this.panel4.TabIndex = 1;
             // 
-            // lbManageBookTitle
-            // 
-            this.lbManageBookTitle.AutoSize = true;
-            this.lbManageBookTitle.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbManageBookTitle.Location = new System.Drawing.Point(131, 40);
-            this.lbManageBookTitle.Name = "lbManageBookTitle";
-            this.lbManageBookTitle.Size = new System.Drawing.Size(143, 22);
-            this.lbManageBookTitle.TabIndex = 2;
-            this.lbManageBookTitle.TabStop = true;
-            this.lbManageBookTitle.Text = "Quản lý đầu sách";
-            this.lbManageBookTitle.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbManageBookTitle_LinkClicked);
-            // 
             // lbReportCount
             // 
             this.lbReportCount.AutoSize = true;
             this.lbReportCount.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbReportCount.Location = new System.Drawing.Point(129, 194);
+            this.lbReportCount.Location = new System.Drawing.Point(133, 139);
             this.lbReportCount.Name = "lbReportCount";
             this.lbReportCount.Size = new System.Drawing.Size(104, 22);
             this.lbReportCount.TabIndex = 2;
@@ -345,7 +320,7 @@
             // 
             this.lbSearchBook.AutoSize = true;
             this.lbSearchBook.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSearchBook.Location = new System.Drawing.Point(128, 165);
+            this.lbSearchBook.Location = new System.Drawing.Point(132, 39);
             this.lbSearchBook.Name = "lbSearchBook";
             this.lbSearchBook.Size = new System.Drawing.Size(112, 22);
             this.lbSearchBook.TabIndex = 2;
@@ -357,7 +332,7 @@
             // 
             this.lbImportBook.AutoSize = true;
             this.lbImportBook.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbImportBook.Location = new System.Drawing.Point(129, 104);
+            this.lbImportBook.Location = new System.Drawing.Point(132, 72);
             this.lbImportBook.Name = "lbImportBook";
             this.lbImportBook.Size = new System.Drawing.Size(171, 22);
             this.lbImportBook.TabIndex = 2;
@@ -369,7 +344,7 @@
             // 
             this.lbBill.AutoSize = true;
             this.lbBill.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBill.Location = new System.Drawing.Point(129, 136);
+            this.lbBill.Location = new System.Drawing.Point(132, 104);
             this.lbBill.Name = "lbBill";
             this.lbBill.Size = new System.Drawing.Size(182, 22);
             this.lbBill.TabIndex = 2;
@@ -381,7 +356,7 @@
             // 
             this.lbManageCategoryAndAuthor.AutoSize = true;
             this.lbManageCategoryAndAuthor.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbManageCategoryAndAuthor.Location = new System.Drawing.Point(129, 71);
+            this.lbManageCategoryAndAuthor.Location = new System.Drawing.Point(132, 173);
             this.lbManageCategoryAndAuthor.Name = "lbManageCategoryAndAuthor";
             this.lbManageCategoryAndAuthor.Size = new System.Drawing.Size(215, 22);
             this.lbManageCategoryAndAuthor.TabIndex = 2;
@@ -449,9 +424,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.LinkLabel lbManageBookTitle;
         private System.Windows.Forms.LinkLabel lbManageCategoryAndAuthor;
-        private System.Windows.Forms.LinkLabel lbManageCustomer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label6;

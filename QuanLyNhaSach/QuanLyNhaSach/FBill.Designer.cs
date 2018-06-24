@@ -52,6 +52,15 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvBill = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.author = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.publishing = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.count = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
@@ -65,15 +74,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txbTotalMoney = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.author = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.publishing = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.count = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -97,7 +97,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cambria", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.ForeColor = System.Drawing.Color.Blue;
             this.label3.Location = new System.Drawing.Point(249, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(473, 47);
@@ -117,7 +117,7 @@
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.label11);
-            this.groupBox4.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(501, 83);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
@@ -129,6 +129,7 @@
             // 
             // btnAddCustomer
             // 
+            this.btnAddCustomer.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddCustomer.Location = new System.Drawing.Point(350, 81);
             this.btnAddCustomer.Name = "btnAddCustomer";
             this.btnAddCustomer.Size = new System.Drawing.Size(103, 33);
@@ -139,6 +140,7 @@
             // 
             // txbEmail
             // 
+            this.txbEmail.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbEmail.Location = new System.Drawing.Point(350, 53);
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(103, 26);
@@ -146,6 +148,7 @@
             // 
             // txbPhoneNumber
             // 
+            this.txbPhoneNumber.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbPhoneNumber.Location = new System.Drawing.Point(350, 23);
             this.txbPhoneNumber.Name = "txbPhoneNumber";
             this.txbPhoneNumber.Size = new System.Drawing.Size(103, 26);
@@ -154,25 +157,26 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(290, 53);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(44, 17);
+            this.label13.Size = new System.Drawing.Size(47, 19);
             this.label13.TabIndex = 13;
             this.label13.Text = "Email";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(290, 24);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(34, 17);
+            this.label14.Size = new System.Drawing.Size(37, 19);
             this.label14.TabIndex = 14;
             this.label14.Text = "SĐT";
             // 
             // txbCustomerAddress
             // 
+            this.txbCustomerAddress.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbCustomerAddress.Location = new System.Drawing.Point(122, 80);
             this.txbCustomerAddress.Name = "txbCustomerAddress";
             this.txbCustomerAddress.Size = new System.Drawing.Size(137, 26);
@@ -180,6 +184,7 @@
             // 
             // txbCustomerName
             // 
+            this.txbCustomerName.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbCustomerName.Location = new System.Drawing.Point(122, 52);
             this.txbCustomerName.Name = "txbCustomerName";
             this.txbCustomerName.Size = new System.Drawing.Size(137, 26);
@@ -187,6 +192,7 @@
             // 
             // txbIdCustomer
             // 
+            this.txbIdCustomer.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbIdCustomer.Location = new System.Drawing.Point(122, 24);
             this.txbIdCustomer.Name = "txbIdCustomer";
             this.txbIdCustomer.ReadOnly = true;
@@ -196,30 +202,30 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(12, 80);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(51, 17);
+            this.label9.Size = new System.Drawing.Size(56, 19);
             this.label9.TabIndex = 10;
             this.label9.Text = "Địa chỉ";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(12, 53);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(105, 17);
+            this.label10.Size = new System.Drawing.Size(117, 19);
             this.label10.TabIndex = 8;
             this.label10.Text = "Tên khách hàng";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(12, 24);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(101, 17);
+            this.label11.Size = new System.Drawing.Size(113, 19);
             this.label11.TabIndex = 9;
             this.label11.Text = "Mã khách hàng";
             // 
@@ -231,57 +237,59 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.dtpk);
-            this.groupBox2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(5, 78);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(240, 108);
+            this.groupBox2.Size = new System.Drawing.Size(240, 117);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin hóa đơn";
             // 
             // cbIdCustomer
             // 
+            this.cbIdCustomer.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbIdCustomer.FormattingEnabled = true;
-            this.cbIdCustomer.Location = new System.Drawing.Point(118, 78);
+            this.cbIdCustomer.Location = new System.Drawing.Point(131, 78);
             this.cbIdCustomer.Name = "cbIdCustomer";
-            this.cbIdCustomer.Size = new System.Drawing.Size(113, 27);
+            this.cbIdCustomer.Size = new System.Drawing.Size(100, 27);
             this.cbIdCustomer.TabIndex = 2;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(12, 81);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(101, 17);
+            this.label7.Size = new System.Drawing.Size(113, 19);
             this.label7.TabIndex = 5;
             this.label7.Text = "Mã khách hàng";
             // 
             // txbIdBill
             // 
-            this.txbIdBill.Location = new System.Drawing.Point(118, 25);
+            this.txbIdBill.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbIdBill.Location = new System.Drawing.Point(131, 20);
             this.txbIdBill.Name = "txbIdBill";
             this.txbIdBill.ReadOnly = true;
-            this.txbIdBill.Size = new System.Drawing.Size(113, 26);
+            this.txbIdBill.Size = new System.Drawing.Size(100, 26);
             this.txbIdBill.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 17);
+            this.label1.Size = new System.Drawing.Size(69, 19);
             this.label1.TabIndex = 3;
             this.label1.Text = "Ngày lập";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 17);
+            this.label2.Size = new System.Drawing.Size(88, 19);
             this.label2.TabIndex = 3;
             this.label2.Text = "Số hóa đơn";
             // 
@@ -289,10 +297,11 @@
             // 
             this.dtpk.CalendarFont = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpk.CustomFormat = "dd/MM/yyyy";
+            this.dtpk.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpk.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpk.Location = new System.Drawing.Point(118, 52);
+            this.dtpk.Location = new System.Drawing.Point(131, 49);
             this.dtpk.Name = "dtpk";
-            this.dtpk.Size = new System.Drawing.Size(113, 26);
+            this.dtpk.Size = new System.Drawing.Size(100, 26);
             this.dtpk.TabIndex = 1;
             // 
             // groupBox1
@@ -335,6 +344,88 @@
             this.dtgvBill.Name = "dtgvBill";
             this.dtgvBill.Size = new System.Drawing.Size(923, 227);
             this.dtgvBill.TabIndex = 3;
+            // 
+            // STT
+            // 
+            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.STT.FillWeight = 28.88556F;
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            this.STT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.id.FillWeight = 283.2487F;
+            this.id.HeaderText = "Mã sách";
+            this.id.Name = "id";
+            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.id.Width = 83;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.DataPropertyName = "name";
+            this.name.FillWeight = 77.1657F;
+            this.name.HeaderText = "Tên sách";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // category
+            // 
+            this.category.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.category.DataPropertyName = "category";
+            this.category.FillWeight = 77.1657F;
+            this.category.HeaderText = "Thể loại";
+            this.category.Name = "category";
+            this.category.ReadOnly = true;
+            // 
+            // author
+            // 
+            this.author.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.author.DataPropertyName = "author";
+            this.author.FillWeight = 77.1657F;
+            this.author.HeaderText = "Tác giả";
+            this.author.Name = "author";
+            this.author.ReadOnly = true;
+            // 
+            // publishing
+            // 
+            this.publishing.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.publishing.DataPropertyName = "publishing";
+            this.publishing.FillWeight = 124.8715F;
+            this.publishing.HeaderText = "Nhà XB/Năm XB";
+            this.publishing.Name = "publishing";
+            this.publishing.ReadOnly = true;
+            this.publishing.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // count
+            // 
+            this.count.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.count.DataPropertyName = "count";
+            this.count.FillWeight = 77.1657F;
+            this.count.HeaderText = "Số lượng";
+            this.count.Name = "count";
+            // 
+            // priceOut
+            // 
+            this.priceOut.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.priceOut.DataPropertyName = "priceOut";
+            this.priceOut.FillWeight = 77.1657F;
+            this.priceOut.HeaderText = "Đơn giá bán";
+            this.priceOut.Name = "priceOut";
+            this.priceOut.ReadOnly = true;
+            // 
+            // totalPrice
+            // 
+            this.totalPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.totalPrice.DataPropertyName = "totalPrice";
+            this.totalPrice.FillWeight = 77.1657F;
+            this.totalPrice.HeaderText = "Thành tiền";
+            this.totalPrice.Name = "totalPrice";
+            this.totalPrice.ReadOnly = true;
             // 
             // groupBox3
             // 
@@ -413,7 +504,7 @@
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.txbTotalMoney);
             this.groupBox5.Controls.Add(this.label4);
-            this.groupBox5.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(251, 83);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(227, 112);
@@ -423,6 +514,7 @@
             // 
             // txbMoneyOwe
             // 
+            this.txbMoneyOwe.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbMoneyOwe.Location = new System.Drawing.Point(92, 79);
             this.txbMoneyOwe.Name = "txbMoneyOwe";
             this.txbMoneyOwe.ReadOnly = true;
@@ -432,15 +524,16 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(9, 78);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 17);
+            this.label6.Size = new System.Drawing.Size(56, 19);
             this.label6.TabIndex = 7;
             this.label6.Text = "Còn lại";
             // 
             // txbReceiveMoney
             // 
+            this.txbReceiveMoney.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbReceiveMoney.Location = new System.Drawing.Point(92, 51);
             this.txbReceiveMoney.Name = "txbReceiveMoney";
             this.txbReceiveMoney.Size = new System.Drawing.Size(125, 26);
@@ -450,15 +543,16 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(9, 52);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 17);
+            this.label5.Size = new System.Drawing.Size(80, 19);
             this.label5.TabIndex = 8;
             this.label5.Text = "Số tiền trả";
             // 
             // txbTotalMoney
             // 
+            this.txbTotalMoney.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbTotalMoney.Location = new System.Drawing.Point(92, 24);
             this.txbTotalMoney.Name = "txbTotalMoney";
             this.txbTotalMoney.ReadOnly = true;
@@ -469,94 +563,12 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(9, 24);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 17);
+            this.label4.Size = new System.Drawing.Size(73, 19);
             this.label4.TabIndex = 9;
             this.label4.Text = "Tổng tiền";
-            // 
-            // STT
-            // 
-            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.STT.FillWeight = 28.88556F;
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            this.STT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.id.FillWeight = 283.2487F;
-            this.id.HeaderText = "Mã sách";
-            this.id.Name = "id";
-            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.id.Width = 90;
-            // 
-            // name
-            // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.name.DataPropertyName = "name";
-            this.name.FillWeight = 77.1657F;
-            this.name.HeaderText = "Tên sách";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // category
-            // 
-            this.category.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.category.DataPropertyName = "category";
-            this.category.FillWeight = 77.1657F;
-            this.category.HeaderText = "Thể loại";
-            this.category.Name = "category";
-            this.category.ReadOnly = true;
-            // 
-            // author
-            // 
-            this.author.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.author.DataPropertyName = "author";
-            this.author.FillWeight = 77.1657F;
-            this.author.HeaderText = "Tác giả";
-            this.author.Name = "author";
-            this.author.ReadOnly = true;
-            // 
-            // publishing
-            // 
-            this.publishing.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.publishing.DataPropertyName = "publishing";
-            this.publishing.FillWeight = 124.8715F;
-            this.publishing.HeaderText = "Nhà XB/Năm XB";
-            this.publishing.Name = "publishing";
-            this.publishing.ReadOnly = true;
-            this.publishing.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // count
-            // 
-            this.count.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.count.DataPropertyName = "count";
-            this.count.FillWeight = 77.1657F;
-            this.count.HeaderText = "Số lượng";
-            this.count.Name = "count";
-            // 
-            // priceOut
-            // 
-            this.priceOut.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.priceOut.DataPropertyName = "priceOut";
-            this.priceOut.FillWeight = 77.1657F;
-            this.priceOut.HeaderText = "Đơn giá bán";
-            this.priceOut.Name = "priceOut";
-            this.priceOut.ReadOnly = true;
-            // 
-            // totalPrice
-            // 
-            this.totalPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.totalPrice.DataPropertyName = "totalPrice";
-            this.totalPrice.FillWeight = 77.1657F;
-            this.totalPrice.HeaderText = "Thành tiền";
-            this.totalPrice.Name = "totalPrice";
-            this.totalPrice.ReadOnly = true;
             // 
             // FBill
             // 

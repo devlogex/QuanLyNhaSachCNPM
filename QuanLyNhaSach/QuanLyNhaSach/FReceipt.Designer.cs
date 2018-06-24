@@ -102,181 +102,191 @@
             // 
             // txbMoneyOwe
             // 
+            this.txbMoneyOwe.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbMoneyOwe.Location = new System.Drawing.Point(257, 373);
             this.txbMoneyOwe.Margin = new System.Windows.Forms.Padding(5);
             this.txbMoneyOwe.Name = "txbMoneyOwe";
             this.txbMoneyOwe.ReadOnly = true;
-            this.txbMoneyOwe.Size = new System.Drawing.Size(315, 24);
+            this.txbMoneyOwe.Size = new System.Drawing.Size(315, 26);
             this.txbMoneyOwe.TabIndex = 7;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(83, 373);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 17);
+            this.label3.Size = new System.Drawing.Size(79, 19);
             this.label3.TabIndex = 8;
             this.label3.Text = "Số tiền nợ";
             // 
             // cbCustomer
             // 
+            this.cbCustomer.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCustomer.FormattingEnabled = true;
             this.cbCustomer.Location = new System.Drawing.Point(257, 131);
             this.cbCustomer.Margin = new System.Windows.Forms.Padding(5);
             this.cbCustomer.Name = "cbCustomer";
-            this.cbCustomer.Size = new System.Drawing.Size(315, 24);
+            this.cbCustomer.Size = new System.Drawing.Size(315, 27);
             this.cbCustomer.TabIndex = 2;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(83, 131);
             this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(101, 17);
+            this.label7.Size = new System.Drawing.Size(113, 19);
             this.label7.TabIndex = 5;
             this.label7.Text = "Mã khách hàng";
             // 
             // txbIDReceipt
             // 
+            this.txbIDReceipt.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbIDReceipt.Location = new System.Drawing.Point(257, 32);
             this.txbIDReceipt.Margin = new System.Windows.Forms.Padding(5);
             this.txbIDReceipt.Name = "txbIDReceipt";
             this.txbIDReceipt.ReadOnly = true;
-            this.txbIDReceipt.Size = new System.Drawing.Size(315, 24);
+            this.txbIDReceipt.Size = new System.Drawing.Size(315, 26);
             this.txbIDReceipt.TabIndex = 0;
             // 
             // txbReceiveMoney
             // 
+            this.txbReceiveMoney.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbReceiveMoney.Location = new System.Drawing.Point(257, 417);
             this.txbReceiveMoney.Margin = new System.Windows.Forms.Padding(5);
             this.txbReceiveMoney.Name = "txbReceiveMoney";
-            this.txbReceiveMoney.Size = new System.Drawing.Size(315, 24);
+            this.txbReceiveMoney.Size = new System.Drawing.Size(315, 26);
             this.txbReceiveMoney.TabIndex = 8;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(83, 32);
             this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(85, 17);
+            this.label9.Size = new System.Drawing.Size(96, 19);
             this.label9.TabIndex = 5;
             this.label9.Text = "Số phiếu thu";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(83, 417);
             this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(74, 17);
+            this.label8.Size = new System.Drawing.Size(83, 19);
             this.label8.TabIndex = 5;
             this.label8.Text = "Số tiền thu";
             // 
             // txbEmail
             // 
+            this.txbEmail.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbEmail.Location = new System.Drawing.Point(257, 329);
             this.txbEmail.Margin = new System.Windows.Forms.Padding(5);
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.ReadOnly = true;
-            this.txbEmail.Size = new System.Drawing.Size(315, 24);
+            this.txbEmail.Size = new System.Drawing.Size(315, 26);
             this.txbEmail.TabIndex = 6;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(83, 329);
             this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 17);
+            this.label6.Size = new System.Drawing.Size(47, 19);
             this.label6.TabIndex = 5;
             this.label6.Text = "Email";
             // 
             // txbPhoneNumber
             // 
+            this.txbPhoneNumber.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbPhoneNumber.Location = new System.Drawing.Point(257, 280);
             this.txbPhoneNumber.Margin = new System.Windows.Forms.Padding(5);
             this.txbPhoneNumber.Name = "txbPhoneNumber";
             this.txbPhoneNumber.ReadOnly = true;
-            this.txbPhoneNumber.Size = new System.Drawing.Size(315, 24);
+            this.txbPhoneNumber.Size = new System.Drawing.Size(315, 26);
             this.txbPhoneNumber.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(83, 280);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 17);
+            this.label4.Size = new System.Drawing.Size(99, 19);
             this.label4.TabIndex = 5;
             this.label4.Text = "Số điện thoại";
             // 
             // txbAddress
             // 
+            this.txbAddress.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbAddress.Location = new System.Drawing.Point(257, 231);
             this.txbAddress.Margin = new System.Windows.Forms.Padding(5);
             this.txbAddress.Name = "txbAddress";
             this.txbAddress.ReadOnly = true;
-            this.txbAddress.Size = new System.Drawing.Size(315, 24);
+            this.txbAddress.Size = new System.Drawing.Size(315, 26);
             this.txbAddress.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(83, 231);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 17);
+            this.label2.Size = new System.Drawing.Size(60, 19);
             this.label2.TabIndex = 5;
             this.label2.Text = "Địa chỉ ";
             // 
             // txbCustomerName
             // 
+            this.txbCustomerName.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbCustomerName.Location = new System.Drawing.Point(257, 181);
             this.txbCustomerName.Margin = new System.Windows.Forms.Padding(5);
             this.txbCustomerName.Name = "txbCustomerName";
             this.txbCustomerName.ReadOnly = true;
-            this.txbCustomerName.Size = new System.Drawing.Size(315, 24);
+            this.txbCustomerName.Size = new System.Drawing.Size(315, 26);
             this.txbCustomerName.TabIndex = 3;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(83, 181);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(123, 17);
+            this.label5.Size = new System.Drawing.Size(138, 19);
             this.label5.TabIndex = 5;
             this.label5.Text = "Họ tên khách hàng";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(83, 78);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 17);
+            this.label1.Size = new System.Drawing.Size(71, 19);
             this.label1.TabIndex = 3;
             this.label1.Text = "Ngày thu";
             // 
             // dtpk
             // 
-            this.dtpk.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpk.CustomFormat = "dd/MM/yyyy";
+            this.dtpk.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpk.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpk.Location = new System.Drawing.Point(257, 78);
             this.dtpk.Margin = new System.Windows.Forms.Padding(5);
             this.dtpk.Name = "dtpk";
-            this.dtpk.Size = new System.Drawing.Size(315, 24);
+            this.dtpk.Size = new System.Drawing.Size(315, 26);
             this.dtpk.TabIndex = 1;
             // 
             // btnSave
@@ -353,6 +363,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Cambria", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Blue;
             this.label10.Location = new System.Drawing.Point(185, 22);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";

@@ -31,18 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FSearchCustomer));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnHistoryBill = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvManageCustomer = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phonenumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.owe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txbPhoneNumber = new System.Windows.Forms.TextBox();
@@ -59,6 +52,13 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbIDCustomer = new System.Windows.Forms.ComboBox();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phonenumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.owe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -73,7 +73,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnHistoryBill);
-            this.groupBox2.Controls.Add(this.button4);
+            this.groupBox2.Controls.Add(this.btnExit);
             this.groupBox2.Controls.Add(this.btnUpdate);
             this.groupBox2.Location = new System.Drawing.Point(0, 479);
             this.groupBox2.Name = "groupBox2";
@@ -92,16 +92,16 @@
             this.btnHistoryBill.UseVisualStyleBackColor = true;
             this.btnHistoryBill.Click += new System.EventHandler(this.btnHistoryBill_Click);
             // 
-            // button4
+            // btnExit
             // 
-            this.button4.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(834, 19);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(106, 35);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "Thoát";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnExit.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(831, 19);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(106, 35);
+            this.btnExit.TabIndex = 14;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnUpdate
             // 
@@ -158,65 +158,11 @@
             this.dtgvManageCustomer.Size = new System.Drawing.Size(910, 160);
             this.dtgvManageCustomer.TabIndex = 3;
             // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "Mã khách hàng";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "Tên khách hàng";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // address
-            // 
-            this.address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.address.DataPropertyName = "address";
-            this.address.HeaderText = "Địa chỉ";
-            this.address.Name = "address";
-            this.address.ReadOnly = true;
-            // 
-            // phonenumber
-            // 
-            this.phonenumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.phonenumber.DataPropertyName = "phonenumber";
-            this.phonenumber.HeaderText = "Số điện thoại";
-            this.phonenumber.Name = "phonenumber";
-            this.phonenumber.ReadOnly = true;
-            // 
-            // email
-            // 
-            this.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.email.DataPropertyName = "email";
-            this.email.HeaderText = "Email";
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            // 
-            // owe
-            // 
-            this.owe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.owe.DataPropertyName = "owe";
-            this.owe.HeaderText = "Số tiền nợ";
-            this.owe.Name = "owe";
-            this.owe.ReadOnly = true;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cambria", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.ForeColor = System.Drawing.Color.Blue;
             this.label3.Location = new System.Drawing.Point(255, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(449, 47);
@@ -234,6 +180,7 @@
             // 
             // txbPhoneNumber
             // 
+            this.txbPhoneNumber.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbPhoneNumber.Location = new System.Drawing.Point(201, 120);
             this.txbPhoneNumber.Margin = new System.Windows.Forms.Padding(2);
             this.txbPhoneNumber.Name = "txbPhoneNumber";
@@ -242,6 +189,7 @@
             // 
             // txbEmail
             // 
+            this.txbEmail.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbEmail.Location = new System.Drawing.Point(644, 35);
             this.txbEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txbEmail.Name = "txbEmail";
@@ -250,6 +198,7 @@
             // 
             // txbNameCustomer
             // 
+            this.txbNameCustomer.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbNameCustomer.Location = new System.Drawing.Point(201, 78);
             this.txbNameCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.txbNameCustomer.Name = "txbNameCustomer";
@@ -324,7 +273,7 @@
             // nmOweFrom
             // 
             this.nmOweFrom.Enabled = false;
-            this.nmOweFrom.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
+            this.nmOweFrom.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nmOweFrom.ForeColor = System.Drawing.Color.Black;
             this.nmOweFrom.Location = new System.Drawing.Point(644, 72);
             this.nmOweFrom.Name = "nmOweFrom";
@@ -334,7 +283,7 @@
             // nmOweTo
             // 
             this.nmOweTo.Enabled = false;
-            this.nmOweTo.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
+            this.nmOweTo.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nmOweTo.ForeColor = System.Drawing.Color.Black;
             this.nmOweTo.Location = new System.Drawing.Point(772, 72);
             this.nmOweTo.Maximum = new decimal(new int[] {
@@ -382,7 +331,7 @@
             this.groupBox3.Controls.Add(this.txbNameCustomer);
             this.groupBox3.Controls.Add(this.txbEmail);
             this.groupBox3.Controls.Add(this.txbPhoneNumber);
-            this.groupBox3.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(27, 89);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
@@ -394,16 +343,73 @@
             // 
             // cbIDCustomer
             // 
+            this.cbIDCustomer.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbIDCustomer.FormattingEnabled = true;
             this.cbIDCustomer.Location = new System.Drawing.Point(201, 36);
             this.cbIDCustomer.Name = "cbIDCustomer";
             this.cbIDCustomer.Size = new System.Drawing.Size(212, 27);
             this.cbIDCustomer.TabIndex = 1;
             // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "Mã khách hàng";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Tên khách hàng";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // address
+            // 
+            this.address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.address.DataPropertyName = "address";
+            this.address.HeaderText = "Địa chỉ";
+            this.address.Name = "address";
+            this.address.ReadOnly = true;
+            // 
+            // phonenumber
+            // 
+            this.phonenumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.phonenumber.DataPropertyName = "phonenumber";
+            this.phonenumber.HeaderText = "Số điện thoại";
+            this.phonenumber.Name = "phonenumber";
+            this.phonenumber.ReadOnly = true;
+            // 
+            // email
+            // 
+            this.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.email.DataPropertyName = "email";
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            // 
+            // owe
+            // 
+            this.owe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.owe.DataPropertyName = "owe";
+            this.owe.HeaderText = "Số tiền nợ";
+            this.owe.Name = "owe";
+            this.owe.ReadOnly = true;
+            // 
             // FSearchCustomer
             // 
+            this.AcceptButton = this.btnSearch;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(964, 566);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -430,7 +436,7 @@
         #endregion
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnHistoryBill;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;

@@ -43,10 +43,7 @@ namespace QuanLyNhaSach.DAO
         {
             return DataProvider.Instance.ExecuteNonQuery("EXEC USP_AddAuthor @name",new object[] { name })>0;
         }
-        public bool RemoveAuthorByAuthorID(int id)
-        {
-            return DataProvider.Instance.ExecuteNonQuery("EXEC USP_RemoveAuthorByAuthorID @id", new object[] { id }) > 0;
-        }
+
         public bool UpdateAuthor(int id,string name)
         {
             return DataProvider.Instance.ExecuteNonQuery("EXEC USP_UpdateAuthor @id , @name", new object[] { id, name }) > 0;

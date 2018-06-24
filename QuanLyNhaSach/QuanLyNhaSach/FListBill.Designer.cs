@@ -33,6 +33,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvListBill = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
@@ -40,8 +46,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dtgvListBillInfo = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.STT2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idBookTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,12 +55,8 @@
             this.publishing = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.count = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.value = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -124,11 +124,58 @@
             this.dtgvListBill.Size = new System.Drawing.Size(733, 145);
             this.dtgvListBill.TabIndex = 2;
             // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            this.STT.Width = 40;
+            // 
+            // idBill
+            // 
+            this.idBill.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idBill.DataPropertyName = "idBill";
+            this.idBill.HeaderText = "Số hóa đơn";
+            this.idBill.Name = "idBill";
+            this.idBill.ReadOnly = true;
+            // 
+            // idCustomer
+            // 
+            this.idCustomer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idCustomer.DataPropertyName = "idCustomer";
+            this.idCustomer.HeaderText = "Mã khách hàng";
+            this.idCustomer.Name = "idCustomer";
+            this.idCustomer.ReadOnly = true;
+            // 
+            // nameCustomer
+            // 
+            this.nameCustomer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameCustomer.DataPropertyName = "nameCustomer";
+            this.nameCustomer.HeaderText = "Tên khách hàng";
+            this.nameCustomer.Name = "nameCustomer";
+            this.nameCustomer.ReadOnly = true;
+            // 
+            // date
+            // 
+            this.date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.date.DataPropertyName = "date";
+            this.date.HeaderText = "Ngày lập";
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            // 
+            // value
+            // 
+            this.value.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.value.DataPropertyName = "value";
+            this.value.HeaderText = "Tổng tiền";
+            this.value.Name = "value";
+            this.value.ReadOnly = true;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cambria", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.ForeColor = System.Drawing.Color.Blue;
             this.label3.Location = new System.Drawing.Point(221, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(370, 41);
@@ -152,7 +199,7 @@
             // 
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(705, 449);
+            this.btnExit.Location = new System.Drawing.Point(691, 449);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(90, 37);
             this.btnExit.TabIndex = 2;
@@ -163,7 +210,7 @@
             // btnPrint
             // 
             this.btnPrint.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.Location = new System.Drawing.Point(354, 449);
+            this.btnPrint.Location = new System.Drawing.Point(37, 449);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(98, 37);
             this.btnPrint.TabIndex = 2;
@@ -215,26 +262,6 @@
             this.dtgvListBillInfo.RowHeadersVisible = false;
             this.dtgvListBillInfo.Size = new System.Drawing.Size(753, 167);
             this.dtgvListBillInfo.TabIndex = 3;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(352, 194);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(807, 70);
-            this.panel1.TabIndex = 10;
             // 
             // STT2
             // 
@@ -312,52 +339,25 @@
             this.priceOut.Name = "priceOut";
             this.priceOut.ReadOnly = true;
             // 
-            // STT
+            // pictureBox1
             // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            this.STT.Width = 40;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(352, 194);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // idBill
+            // panel1
             // 
-            this.idBill.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idBill.DataPropertyName = "idBill";
-            this.idBill.HeaderText = "Số hóa đơn";
-            this.idBill.Name = "idBill";
-            this.idBill.ReadOnly = true;
-            // 
-            // idCustomer
-            // 
-            this.idCustomer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idCustomer.DataPropertyName = "idCustomer";
-            this.idCustomer.HeaderText = "Mã khách hàng";
-            this.idCustomer.Name = "idCustomer";
-            this.idCustomer.ReadOnly = true;
-            // 
-            // nameCustomer
-            // 
-            this.nameCustomer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameCustomer.DataPropertyName = "nameCustomer";
-            this.nameCustomer.HeaderText = "Tên khách hàng";
-            this.nameCustomer.Name = "nameCustomer";
-            this.nameCustomer.ReadOnly = true;
-            // 
-            // date
-            // 
-            this.date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.date.DataPropertyName = "date";
-            this.date.HeaderText = "Ngày lập";
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            // 
-            // value
-            // 
-            this.value.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.value.DataPropertyName = "value";
-            this.value.HeaderText = "Tổng tiền";
-            this.value.Name = "value";
-            this.value.ReadOnly = true;
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(807, 70);
+            this.panel1.TabIndex = 10;
             // 
             // FListBill
             // 

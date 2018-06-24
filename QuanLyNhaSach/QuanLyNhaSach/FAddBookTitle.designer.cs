@@ -52,7 +52,7 @@
             // 
             // txbBookTitle
             // 
-            this.txbBookTitle.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbBookTitle.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbBookTitle.Location = new System.Drawing.Point(138, 59);
             this.txbBookTitle.Name = "txbBookTitle";
             this.txbBookTitle.Size = new System.Drawing.Size(236, 26);
@@ -71,7 +71,7 @@
             // 
             // cbCategory
             // 
-            this.cbCategory.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCategory.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCategory.FormattingEnabled = true;
             this.cbCategory.Location = new System.Drawing.Point(138, 94);
             this.cbCategory.Name = "cbCategory";
@@ -117,12 +117,12 @@
             // 
             this.lbManangeBook.AutoSize = true;
             this.lbManangeBook.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbManangeBook.ForeColor = System.Drawing.Color.Black;
-            this.lbManangeBook.Location = new System.Drawing.Point(121, 9);
+            this.lbManangeBook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lbManangeBook.Location = new System.Drawing.Point(103, 9);
             this.lbManangeBook.Name = "lbManangeBook";
-            this.lbManangeBook.Size = new System.Drawing.Size(175, 28);
+            this.lbManangeBook.Size = new System.Drawing.Size(193, 28);
             this.lbManangeBook.TabIndex = 40;
-            this.lbManangeBook.Text = "Thêm đầu sách";
+            this.lbManangeBook.Text = "THÊM ĐẦU SÁCH";
             // 
             // btnExit
             // 
@@ -141,7 +141,7 @@
             // cbAuthor
             // 
             this.cbAuthor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.cbAuthor.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbAuthor.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbAuthor.FormattingEnabled = true;
             this.cbAuthor.Location = new System.Drawing.Point(100, 141);
             this.cbAuthor.Name = "cbAuthor";
@@ -207,7 +207,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.dtgvAuthor);
-            this.panel1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(274, 141);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(113, 150);
@@ -218,7 +218,7 @@
             this.AcceptButton = this.btnAddBookTitle;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(410, 346);
             this.Controls.Add(this.panel1);

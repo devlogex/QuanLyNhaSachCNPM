@@ -38,6 +38,7 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAuthor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRemoveAuthor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAddAuthor)).BeginInit();
@@ -81,7 +82,7 @@
             // pbRemoveAuthor
             // 
             this.pbRemoveAuthor.Image = ((System.Drawing.Image)(resources.GetObject("pbRemoveAuthor.Image")));
-            this.pbRemoveAuthor.Location = new System.Drawing.Point(152, 98);
+            this.pbRemoveAuthor.Location = new System.Drawing.Point(151, 136);
             this.pbRemoveAuthor.Name = "pbRemoveAuthor";
             this.pbRemoveAuthor.Size = new System.Drawing.Size(42, 40);
             this.pbRemoveAuthor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -92,7 +93,7 @@
             // pbAddAuthor
             // 
             this.pbAddAuthor.Image = ((System.Drawing.Image)(resources.GetObject("pbAddAuthor.Image")));
-            this.pbAddAuthor.Location = new System.Drawing.Point(152, 42);
+            this.pbAddAuthor.Location = new System.Drawing.Point(151, 80);
             this.pbAddAuthor.Name = "pbAddAuthor";
             this.pbAddAuthor.Size = new System.Drawing.Size(42, 40);
             this.pbAddAuthor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -103,9 +104,9 @@
             // cbAuthor
             // 
             this.cbAuthor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.cbAuthor.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbAuthor.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbAuthor.FormattingEnabled = true;
-            this.cbAuthor.Location = new System.Drawing.Point(26, 15);
+            this.cbAuthor.Location = new System.Drawing.Point(25, 53);
             this.cbAuthor.Name = "cbAuthor";
             this.cbAuthor.Size = new System.Drawing.Size(120, 150);
             this.cbAuthor.TabIndex = 45;
@@ -113,7 +114,7 @@
             // btnOK
             // 
             this.btnOK.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.Location = new System.Drawing.Point(155, 175);
+            this.btnOK.Location = new System.Drawing.Point(154, 213);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(85, 35);
             this.btnOK.TabIndex = 49;
@@ -124,8 +125,8 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.dtgvAuthor);
-            this.panel1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(200, 15);
+            this.panel1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(199, 53);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(115, 150);
             this.panel1.TabIndex = 50;
@@ -134,22 +135,34 @@
             // 
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(246, 175);
+            this.btnExit.Location = new System.Drawing.Point(245, 213);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(84, 35);
             this.btnExit.TabIndex = 51;
-            this.btnExit.Text = "Trở lại";
+            this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label1.Location = new System.Drawing.Point(90, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(167, 28);
+            this.label1.TabIndex = 52;
+            this.label1.Text = "CHỌN TÁC GIẢ";
             // 
             // FChooseAuthor
             // 
             this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.CancelButton = this.btnExit;
-            this.ClientSize = new System.Drawing.Size(343, 223);
+            this.ClientSize = new System.Drawing.Size(343, 266);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnOK);
@@ -165,6 +178,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbAddAuthor)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -179,5 +193,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Label label1;
     }
 }
