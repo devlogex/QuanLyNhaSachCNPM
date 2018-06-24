@@ -43,8 +43,6 @@ namespace QuanLyNhaSach
             cbAuthor.SelectedIndexChanged += cbAuthor_SelectedIndexChanged;
 
             LoadCategoryIntoCombobox();
-            cbCategory.SelectedIndex = -1;
-            cbCategory.SelectedIndexChanged += cbCategory_SelectedIndexChanged;
 
             LoadBookTitleIntoCombobox();
             cbBookTitle.SelectedIndex = -1;
@@ -74,10 +72,18 @@ namespace QuanLyNhaSach
         }
         public void LoadCategoryIntoCombobox()
         {
-            List<CategoryBook> list = CategoryBookDAO.Instance.GetListCategory();
-            list.Add(new CategoryBook(-1, "Thêm"));
+            List<CategoryBook> temple = CategoryBookDAO.Instance.GetListCategory();
+            List<CategoryBook> list = new List<CategoryBook>();
+            list.Add(new CategoryBook(-1, "Thêm..."));
+            foreach(CategoryBook item in temple)
+            {
+                list.Add(item);
+            }
+            cbCategory.SelectedIndexChanged -= cbCategory_SelectedIndexChanged;
             cbCategory.DataSource = list;
             cbCategory.DisplayMember = "name";
+            cbCategory.SelectedIndex = -1;
+            cbCategory.SelectedIndexChanged += cbCategory_SelectedIndexChanged;
         }
         public void LoadBookTitleIntoCombobox()
         {

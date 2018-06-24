@@ -23,8 +23,7 @@ namespace QuanLyNhaSach
         public void LoadForm()
         {
             LoadAuthorIntoCombobox();
-            cbAuthor.SelectedIndex = -1;
-            cbAuthor.SelectedIndexChanged += cbAuthor_SelectedIndexChanged;
+           
         }
         private event EventHandler updateForm;
         public event EventHandler UpdateForm
@@ -34,15 +33,18 @@ namespace QuanLyNhaSach
         }
         public void LoadAuthorIntoCombobox()
         {
-            List<Author> list = new List<Author>();
             List<Author> temple = AuthorDAO.Instance.GetListAuthor();
+            List<Author> list = new List<Author>();
             list.Add(new Author(-1, "Thêm..."));
             foreach(Author item in temple)
             {
                 list.Add(item);
             }
+            cbAuthor.SelectedIndexChanged -= cbAuthor_SelectedIndexChanged;
             cbAuthor.DataSource = list;
             cbAuthor.DisplayMember = "name";
+            cbAuthor.SelectedIndex = -1;
+            cbAuthor.SelectedIndexChanged += cbAuthor_SelectedIndexChanged;
         }
         private void pbAddAuthor_Click(object sender, EventArgs e)
         {

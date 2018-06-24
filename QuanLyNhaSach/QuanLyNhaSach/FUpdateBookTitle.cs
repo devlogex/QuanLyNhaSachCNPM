@@ -47,8 +47,6 @@ namespace QuanLyNhaSach
 
             LoadListAuthor();
 
-            cbAuthor.SelectedIndexChanged += cbAuthor_SelectedIndexChanged;
-            cbCategory.SelectedIndexChanged += cbCategory_SelectedIndexChanged;
         }
         public void LoadListAuthor()
         {
@@ -59,17 +57,33 @@ namespace QuanLyNhaSach
         }
         public void LoadCategoryIntoCombobox()
         {
-            List<CategoryBook> list = CategoryBookDAO.Instance.GetListCategory();
-            list.Add(new CategoryBook(-1, "Thêm"));
+            List<CategoryBook> temple = CategoryBookDAO.Instance.GetListCategory();
+            List<CategoryBook> list = new List<CategoryBook>();
+            list.Add(new CategoryBook(-1, "Thêm..."));
+            foreach (CategoryBook item in temple)
+            {
+                list.Add(item);
+            }
+            cbCategory.SelectedIndexChanged -= cbCategory_SelectedIndexChanged;
             cbCategory.DataSource = list;
             cbCategory.DisplayMember = "name";
+            cbCategory.SelectedIndex = -1;
+            cbCategory.SelectedIndexChanged += cbCategory_SelectedIndexChanged;
         }
         public void LoadAuthorIntoCombobox()
         {
-            List<Author> list = AuthorDAO.Instance.GetListAuthor();
-            list.Add(new Author(-1, "Thêm"));
+            List<Author> temple = AuthorDAO.Instance.GetListAuthor();
+            List<Author> list = new List<Author>();
+            list.Add(new Author(-1, "Thêm..."));
+            foreach (Author item in temple)
+            {
+                list.Add(item);
+            }
+            cbAuthor.SelectedIndexChanged -= cbAuthor_SelectedIndexChanged;
             cbAuthor.DataSource = list;
             cbAuthor.DisplayMember = "name";
+            cbAuthor.SelectedIndex = -1;
+            cbAuthor.SelectedIndexChanged += cbAuthor_SelectedIndexChanged;
         }
         public bool UpdateBookTitle(int id, string name, int idCategory, List<int> authors)
         {

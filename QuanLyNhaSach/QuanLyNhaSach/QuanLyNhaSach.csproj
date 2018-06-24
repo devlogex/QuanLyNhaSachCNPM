@@ -110,23 +110,11 @@
     <Compile Include="FAddAuthor.designer.cs">
       <DependentUpon>FAddAuthor.cs</DependentUpon>
     </Compile>
-    <Compile Include="FAddBookTitle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FAddBookTitle.designer.cs">
-      <DependentUpon>FAddBookTitle.cs</DependentUpon>
-    </Compile>
     <Compile Include="FAddCategory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FAddCategory.designer.cs">
       <DependentUpon>FAddCategory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FAddCustomer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FAddCustomer.designer.cs">
-      <DependentUpon>FAddCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="FBill.cs">
       <SubType>Form</SubType>
@@ -248,14 +236,8 @@
     <EmbeddedResource Include="FAddAuthor.resx">
       <DependentUpon>FAddAuthor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FAddBookTitle.resx">
-      <DependentUpon>FAddBookTitle.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FAddCategory.resx">
       <DependentUpon>FAddCategory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FAddCustomer.resx">
-      <DependentUpon>FAddCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FBill.resx">
       <DependentUpon>FBill.cs</DependentUpon>
