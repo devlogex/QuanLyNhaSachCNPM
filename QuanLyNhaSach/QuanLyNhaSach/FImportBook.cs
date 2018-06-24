@@ -38,7 +38,7 @@ namespace QuanLyNhaSach
             LoadListBookIntoCombobox();
             txbTotalPrice.Text = "0";
 
-            cbAuthor.Items.Add("Chọn tác giả");
+            cbAuthor.Items.Add("Chọn tác giả...");
             cbAuthor.SelectedIndex = -1;
             cbAuthor.SelectedIndexChanged += cbAuthor_SelectedIndexChanged;
 
@@ -248,7 +248,7 @@ namespace QuanLyNhaSach
         {
             try
             {
-                if (cbAuthor.SelectedItem.ToString() == "Chọn tác giả")
+                if (cbAuthor.SelectedItem.ToString() == "Chọn tác giả...")
                 {
                     FChooseAuthor f = new FChooseAuthor();
                     f.UpdateForm += F_LoadAfterChooseAuthor;

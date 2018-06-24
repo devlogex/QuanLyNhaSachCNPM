@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.txbNameBookTitle = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -516,8 +516,8 @@
             // STT
             // 
             this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
-            this.STT.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.LightGray;
+            this.STT.DefaultCellStyle = dataGridViewCellStyle13;
             this.STT.FillWeight = 28.88556F;
             this.STT.HeaderText = "STT";
             this.STT.Name = "STT";
@@ -538,8 +538,8 @@
             // 
             this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.name.DataPropertyName = "name";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
-            this.name.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.LightGray;
+            this.name.DefaultCellStyle = dataGridViewCellStyle14;
             this.name.FillWeight = 77.1657F;
             this.name.HeaderText = "Tên sách";
             this.name.Name = "name";
@@ -549,8 +549,8 @@
             // 
             this.category.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.category.DataPropertyName = "category";
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGray;
-            this.category.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.LightGray;
+            this.category.DefaultCellStyle = dataGridViewCellStyle15;
             this.category.FillWeight = 77.1657F;
             this.category.HeaderText = "Thể loại";
             this.category.Name = "category";
@@ -560,8 +560,8 @@
             // 
             this.author.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.author.DataPropertyName = "author";
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightGray;
-            this.author.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.LightGray;
+            this.author.DefaultCellStyle = dataGridViewCellStyle16;
             this.author.FillWeight = 77.1657F;
             this.author.HeaderText = "Tác giả";
             this.author.Name = "author";
@@ -571,8 +571,8 @@
             // 
             this.publishing.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.publishing.DataPropertyName = "publishing";
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightGray;
-            this.publishing.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.LightGray;
+            this.publishing.DefaultCellStyle = dataGridViewCellStyle17;
             this.publishing.FillWeight = 124.8715F;
             this.publishing.HeaderText = "NXB/Năm XB";
             this.publishing.Name = "publishing";
@@ -599,8 +599,8 @@
             // 
             this.totalPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.totalPrice.DataPropertyName = "totalPrice";
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightGray;
-            this.totalPrice.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.LightGray;
+            this.totalPrice.DefaultCellStyle = dataGridViewCellStyle18;
             this.totalPrice.FillWeight = 77.1657F;
             this.totalPrice.HeaderText = "Thành tiền";
             this.totalPrice.Name = "totalPrice";

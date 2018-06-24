@@ -34,8 +34,13 @@ namespace QuanLyNhaSach
         }
         public void LoadAuthorIntoCombobox()
         {
-            List<Author> list = AuthorDAO.Instance.GetListAuthor();
-            list.Add(new Author(-1, "Thêm"));
+            List<Author> list = new List<Author>();
+            List<Author> temple = AuthorDAO.Instance.GetListAuthor();
+            list.Add(new Author(-1, "Thêm..."));
+            foreach(Author item in temple)
+            {
+                list.Add(item);
+            }
             cbAuthor.DataSource = list;
             cbAuthor.DisplayMember = "name";
         }
