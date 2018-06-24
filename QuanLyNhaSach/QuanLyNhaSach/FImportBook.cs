@@ -61,13 +61,6 @@ namespace QuanLyNhaSach
                 LoadSTT();
             };
 
-            dtgvImportBook.Columns["STT"].DefaultCellStyle.BackColor = Color.LightGray;
-            dtgvImportBook.Columns["name"].DefaultCellStyle.BackColor = Color.LightGray;
-            dtgvImportBook.Columns["category"].DefaultCellStyle.BackColor = Color.LightGray;
-            dtgvImportBook.Columns["author"].DefaultCellStyle.BackColor = Color.LightGray;
-            dtgvImportBook.Columns["publishing"].DefaultCellStyle.BackColor = Color.LightGray;
-            dtgvImportBook.Columns["totalPrice"].DefaultCellStyle.BackColor = Color.LightGray;
-
         }
         public void LoadSTT()
         {

@@ -28,6 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -52,15 +59,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvBill = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.author = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.publishing = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.count = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
@@ -74,6 +72,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txbTotalMoney = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.author = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.publishing = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.count = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -345,88 +352,6 @@
             this.dtgvBill.Size = new System.Drawing.Size(923, 227);
             this.dtgvBill.TabIndex = 3;
             // 
-            // STT
-            // 
-            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.STT.FillWeight = 28.88556F;
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            this.STT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.id.FillWeight = 283.2487F;
-            this.id.HeaderText = "Mã sách";
-            this.id.Name = "id";
-            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.id.Width = 83;
-            // 
-            // name
-            // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.name.DataPropertyName = "name";
-            this.name.FillWeight = 77.1657F;
-            this.name.HeaderText = "Tên sách";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // category
-            // 
-            this.category.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.category.DataPropertyName = "category";
-            this.category.FillWeight = 77.1657F;
-            this.category.HeaderText = "Thể loại";
-            this.category.Name = "category";
-            this.category.ReadOnly = true;
-            // 
-            // author
-            // 
-            this.author.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.author.DataPropertyName = "author";
-            this.author.FillWeight = 77.1657F;
-            this.author.HeaderText = "Tác giả";
-            this.author.Name = "author";
-            this.author.ReadOnly = true;
-            // 
-            // publishing
-            // 
-            this.publishing.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.publishing.DataPropertyName = "publishing";
-            this.publishing.FillWeight = 124.8715F;
-            this.publishing.HeaderText = "Nhà XB/Năm XB";
-            this.publishing.Name = "publishing";
-            this.publishing.ReadOnly = true;
-            this.publishing.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // count
-            // 
-            this.count.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.count.DataPropertyName = "count";
-            this.count.FillWeight = 77.1657F;
-            this.count.HeaderText = "Số lượng";
-            this.count.Name = "count";
-            // 
-            // priceOut
-            // 
-            this.priceOut.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.priceOut.DataPropertyName = "priceOut";
-            this.priceOut.FillWeight = 77.1657F;
-            this.priceOut.HeaderText = "Đơn giá bán";
-            this.priceOut.Name = "priceOut";
-            this.priceOut.ReadOnly = true;
-            // 
-            // totalPrice
-            // 
-            this.totalPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.totalPrice.DataPropertyName = "totalPrice";
-            this.totalPrice.FillWeight = 77.1657F;
-            this.totalPrice.HeaderText = "Thành tiền";
-            this.totalPrice.Name = "totalPrice";
-            this.totalPrice.ReadOnly = true;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnExit);
@@ -569,6 +494,101 @@
             this.label4.Size = new System.Drawing.Size(73, 19);
             this.label4.TabIndex = 9;
             this.label4.Text = "Tổng tiền";
+            // 
+            // STT
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.STT.DefaultCellStyle = dataGridViewCellStyle1;
+            this.STT.FillWeight = 194.2523F;
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            this.STT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.STT.Width = 40;
+            // 
+            // id
+            // 
+            this.id.FillWeight = 283.2487F;
+            this.id.HeaderText = "Mã sách";
+            this.id.Name = "id";
+            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.id.Width = 70;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.DataPropertyName = "name";
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
+            this.name.DefaultCellStyle = dataGridViewCellStyle2;
+            this.name.FillWeight = 55.45897F;
+            this.name.HeaderText = "Tên sách";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // category
+            // 
+            this.category.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.category.DataPropertyName = "category";
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGray;
+            this.category.DefaultCellStyle = dataGridViewCellStyle3;
+            this.category.FillWeight = 55.45897F;
+            this.category.HeaderText = "Thể loại";
+            this.category.Name = "category";
+            this.category.ReadOnly = true;
+            // 
+            // author
+            // 
+            this.author.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.author.DataPropertyName = "author";
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightGray;
+            this.author.DefaultCellStyle = dataGridViewCellStyle4;
+            this.author.FillWeight = 55.45897F;
+            this.author.HeaderText = "Tác giả";
+            this.author.Name = "author";
+            this.author.ReadOnly = true;
+            // 
+            // publishing
+            // 
+            this.publishing.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.publishing.DataPropertyName = "publishing";
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightGray;
+            this.publishing.DefaultCellStyle = dataGridViewCellStyle5;
+            this.publishing.FillWeight = 89.74511F;
+            this.publishing.HeaderText = "Nhà XB/Năm XB";
+            this.publishing.Name = "publishing";
+            this.publishing.ReadOnly = true;
+            this.publishing.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // count
+            // 
+            this.count.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.count.DataPropertyName = "count";
+            this.count.FillWeight = 55.45897F;
+            this.count.HeaderText = "Số lượng";
+            this.count.Name = "count";
+            // 
+            // priceOut
+            // 
+            this.priceOut.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.priceOut.DataPropertyName = "priceOut";
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightGray;
+            this.priceOut.DefaultCellStyle = dataGridViewCellStyle6;
+            this.priceOut.FillWeight = 55.45897F;
+            this.priceOut.HeaderText = "Đơn giá bán";
+            this.priceOut.Name = "priceOut";
+            this.priceOut.ReadOnly = true;
+            // 
+            // totalPrice
+            // 
+            this.totalPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.totalPrice.DataPropertyName = "totalPrice";
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightGray;
+            this.totalPrice.DefaultCellStyle = dataGridViewCellStyle7;
+            this.totalPrice.FillWeight = 55.45897F;
+            this.totalPrice.HeaderText = "Thành tiền";
+            this.totalPrice.Name = "totalPrice";
+            this.totalPrice.ReadOnly = true;
             // 
             // FBill
             // 

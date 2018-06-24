@@ -57,14 +57,6 @@ namespace QuanLyNhaSach
                 LoadSTT();
             };
 
-            dtgvBill.Columns["STT"].DefaultCellStyle.BackColor = Color.LightGray;
-            dtgvBill.Columns["name"].DefaultCellStyle.BackColor = Color.LightGray;
-            dtgvBill.Columns["category"].DefaultCellStyle.BackColor = Color.LightGray;
-            dtgvBill.Columns["author"].DefaultCellStyle.BackColor = Color.LightGray;
-            dtgvBill.Columns["publishing"].DefaultCellStyle.BackColor = Color.LightGray;
-            dtgvBill.Columns["priceOut"].DefaultCellStyle.BackColor = Color.LightGray;
-            dtgvBill.Columns["totalPrice"].DefaultCellStyle.BackColor = Color.LightGray;
-
         }
 
         private void LoadListCustomerIntoCombobox()

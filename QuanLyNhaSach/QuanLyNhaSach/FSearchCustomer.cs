@@ -171,7 +171,10 @@ namespace QuanLyNhaSach
             try
             {
                 if (dtgvManageCustomer.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Chưa chọn khách hàng !", "Thông báo");
                     return;
+                }
                 Customer customer = CustomerDAO.Instance.GetCustomerByCustomerID(Int32.Parse(dtgvManageCustomer.SelectedRows[0].Cells["id"].Value.ToString()));
                 FListBill f = new FListBill(customer);
                 f.ShowDialog();
