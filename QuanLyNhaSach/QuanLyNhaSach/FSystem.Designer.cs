@@ -173,9 +173,9 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(17, 80);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(402, 19);
+            this.label2.Size = new System.Drawing.Size(341, 19);
             this.label2.TabIndex = 42;
-            this.label2.Text = "Lượng tồn tối thiểu của sách khi nhập sách phải nhỏ hơn";
+            this.label2.Text = "Lượng tồn của sách khi nhập sách phải nhỏ hơn";
             // 
             // label6
             // 
@@ -262,7 +262,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(396, 47);
             this.label3.TabIndex = 1;
-            this.label3.Text = "THAY ĐỔI QUY ĐINH";
+            this.label3.Text = "THAY ĐỔI QUY ĐỊNH";
             // 
             // FSystem
             // 
